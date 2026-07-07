@@ -52,13 +52,13 @@ ul { list-style: none; }
   padding: 0 clamp(1.5rem, 4vw, 3rem);
 }
 .nav-logo { display: flex; align-items: center; gap: .75rem; }
-.nav-logo-mark { font-family: var(--font-d); font-weight: 900; font-size: 2rem; color: var(--sun); letter-spacing: .02em; line-height: 1; }
+.nav-logo-mark { font-family: var(--font-d); font-weight: 900; font-size: 2rem; color: var(--teal-lt); letter-spacing: .02em; line-height: 1; }
 .nav-logo-sub { font-size: .6rem; font-weight: 700; text-transform: uppercase; letter-spacing: .22em; color: rgba(247,241,230,.35); }
 .nav-links { display: flex; align-items: center; gap: .2rem; }
 .nav-links a { color: rgba(247,241,230,.5); font-size: .78rem; font-weight: 600; padding: .45rem .85rem; border-radius: 6px; transition: color .15s, background .15s; white-space: nowrap; }
 .nav-links a:hover, .nav-links a.active { color: var(--foam); background: rgba(255,255,255,.06); }
-.nav-cta { background: var(--sun) !important; color: var(--deep) !important; padding: .6rem 1.5rem !important; border-radius: 6px !important; font-weight: 800 !important; font-size: .75rem !important; letter-spacing: .1em !important; text-transform: uppercase !important; transition: background .15s, transform .15s !important; }
-.nav-cta:hover { background: #f9cc55 !important; transform: translateY(-1px) !important; }
+.nav-cta { background: var(--teal) !important; color: var(--foam) !important; padding: .6rem 1.5rem !important; border-radius: 6px !important; font-weight: 800 !important; font-size: .75rem !important; letter-spacing: .1em !important; text-transform: uppercase !important; transition: background .15s, transform .15s !important; }
+.nav-cta:hover { background: var(--teal-lt) !important; transform: translateY(-1px) !important; }
 
 /* ============================================================
    HERO — dark, stacked mega typography
@@ -68,7 +68,7 @@ ul { list-style: none; }
   padding: clamp(3rem,6vw,6rem) clamp(1.5rem,5vw,5rem) clamp(4rem,8vw,8rem);
   position: relative;
   overflow: hidden;
-  min-height: 82vh;
+  min-height: 68vh;
   display: flex; flex-direction: column; justify-content: center;
 }
 
@@ -119,12 +119,12 @@ ul { list-style: none; }
   text-transform: uppercase;
   letter-spacing: .01em;
 }
-.hero__word--sun  { color: var(--sun); }
+.hero__word--sun  { color: var(--foam); }
 .hero__word--outline {
   color: transparent;
   -webkit-text-stroke: 3px var(--teal-lt);
 }
-.hero__word--foam { color: var(--foam); }
+.hero__word--foam { color: var(--teal-lt); }
 
 /* "Het water wacht op jou." tagline */
 .hero__tagline {
@@ -133,9 +133,22 @@ ul { list-style: none; }
   font-size: clamp(1rem, 2.2vw, 1.6rem);
   text-transform: uppercase;
   letter-spacing: .1em;
-  color: var(--sun);
+  color: var(--teal-lt);
   margin-bottom: 1.25rem;
 }
+
+.hero__journey {
+  position: relative; z-index: 2;
+  display: flex; align-items: center; gap: .6rem; flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.hero__step {
+  font-size: .65rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .14em; color: rgba(42,136,153,.55);
+  font-family: var(--font-b);
+}
+.hero__step--lit { color: var(--teal-lt); }
+.hero__step-arrow { color: rgba(42,136,153,.3); font-size: .65rem; }
 
 .hero__sub {
   position: relative; z-index: 2;
@@ -253,21 +266,21 @@ ul { list-style: none; }
 .sport-split { display: grid; grid-template-columns: 1fr 1fr; }
 .sport-half { padding: clamp(2rem,3.5vw,3.5rem) clamp(1.5rem,3vw,3rem); }
 .sport-half--teal { background: var(--teal); }
-.sport-half--sun  { background: var(--sun); }
+.sport-half--sun  { background: var(--deep); border-left: 1.5px solid rgba(42,136,153,.3); }
 .sport-half__icon { font-size: 2.5rem; margin-bottom: .75rem; }
 .sport-half__n  { font-family: var(--font-d); font-size: clamp(2.5rem,5vw,4rem); text-transform: uppercase; line-height: .9; margin-bottom: .4rem; }
 .sport-half--teal .sport-half__n { color: var(--foam); }
-.sport-half--sun  .sport-half__n { color: var(--deep); }
+.sport-half--sun  .sport-half__n { color: var(--foam); }
 .sport-half__p  { font-size: .92rem; line-height: 1.75; max-width: 36ch; margin-bottom: 1.75rem; }
 .sport-half--teal .sport-half__p { color: rgba(247,241,230,.7); }
-.sport-half--sun  .sport-half__p { color: rgba(14,52,63,.65); }
+.sport-half--sun  .sport-half__p { color: rgba(247,241,230,.6); }
 .sport-half__phases { display: flex; flex-direction: column; gap: .5rem; margin-bottom: 2rem; }
 .sport-half__phase { display: flex; align-items: center; gap: .75rem; font-size: .8rem; font-weight: 600; }
 .sport-half--teal .sport-half__phase { color: rgba(247,241,230,.8); }
-.sport-half--sun  .sport-half__phase { color: rgba(14,52,63,.75); }
+.sport-half--sun  .sport-half__phase { color: rgba(247,241,230,.75); }
 .sport-half__phase-n { font-family: var(--font-d); font-size: 1.1rem; min-width: 1.5rem; }
-.sport-half--teal .sport-half__phase-n { color: var(--sun); }
-.sport-half--sun  .sport-half__phase-n { color: var(--teal); }
+.sport-half--teal .sport-half__phase-n { color: var(--teal-lt); }
+.sport-half--sun  .sport-half__phase-n { color: var(--teal-lt); }
 
 /* ============================================================
    STATS — big numbers
@@ -557,4 +570,6 @@ ul { list-style: none; }
 .footer-links       { display:flex; flex-direction:column; gap:.6rem; }
 .footer-links a     { font-size:.82rem; color:rgba(247,241,230,.4); transition:color .15s; }
 .footer-links a:hover { color:var(--foam); }
+
+
 
