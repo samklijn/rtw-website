@@ -426,12 +426,12 @@ ul { list-style: none; }
 
 /* on foam/light bg */
 .phase-card--light { background: var(--white); border-color: var(--border); }
-.phase-card--light:hover { border-color: var(--teal); background: #f0f9fb; transform: translateY(-3px); }
-.phase-card--light .phase-card__n { color: rgba(28,110,126,.15); }
-.phase-card--light .phase-card__tag { color: var(--teal); }
+.phase-card--light:hover { border-color: rgba(14,52,63,.3); background: var(--foam); transform: translateY(-3px); }
+.phase-card--light .phase-card__n { color: rgba(14,52,63,.12); }
+.phase-card--light .phase-card__tag { color: var(--muted); }
 .phase-card--light .phase-card__h { color: var(--deep); }
 .phase-card--light .phase-card__p { color: var(--muted); }
-.phase-card--light .phase-card__reward { color: var(--teal); }
+.phase-card--light .phase-card__reward { color: var(--deep); }
 
 /* ============================================================
    BRING-A-FRIEND / REFERRAL
@@ -470,10 +470,10 @@ ul { list-style: none; }
 
 /* on light bg */
 .testi--light { background: var(--white); border-color: var(--border); }
-.testi--light:hover { border-color: var(--teal); }
+.testi--light:hover { border-color: rgba(14,52,63,.25); }
 .testi--light .testi__name { color: var(--deep); }
-.testi--light .testi__role { color: var(--teal); }
-.testi--light .testi__quote { color: var(--muted); border-left-color: var(--teal); }
+.testi--light .testi__role { color: var(--muted); }
+.testi--light .testi__quote { color: var(--muted); border-left-color: var(--sun); }
 
 /* ============================================================
    SCHOOL SECTION
