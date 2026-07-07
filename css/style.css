@@ -78,11 +78,11 @@ ul { list-style: none; }
   width: 100%; height: 100%;
   object-fit: cover;
   z-index: 0;
-  opacity: 0.55;
+  opacity: 0.75;
 }
 .hero__overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(14,52,63,.82) 0%, rgba(10,40,48,.55) 55%, rgba(14,52,63,.72) 100%);
+  background: linear-gradient(135deg, rgba(14,52,63,.72) 0%, rgba(10,40,48,.38) 50%, rgba(14,52,63,.6) 100%);
   z-index: 1;
 }
 
@@ -333,40 +333,54 @@ ul { list-style: none; }
 
 
 /* ============================================================
-   SPORT TEASE — homepage 2-card teaser
+   SPORT BANDS — homepage horizontal photo bands
    ============================================================ */
-.sport-tease { display: grid; grid-template-columns: 1fr 1fr; }
-.sport-tease__card {
+.sport-bands { display: flex; flex-direction: column; }
+.sport-band {
   position: relative; overflow: hidden;
-  min-height: clamp(380px, 50vh, 560px);
-  display: flex; align-items: flex-end;
+  height: clamp(260px, 38vh, 420px);
+  display: flex; align-items: center;
   text-decoration: none;
-  transition: transform .3s;
 }
-.sport-tease__card--surf .sport-tease__img {
+.sport-band__bg {
   position: absolute; inset: 0;
-  background: url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=900&q=80') center/cover;
-  transition: transform .5s;
+  background-size: cover;
+  background-position: center 40%;
+  transition: transform .6s ease;
 }
-.sport-tease__card--kite .sport-tease__img {
-  position: absolute; inset: 0;
-  background: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=900&q=80') center/cover;
-  transition: transform .5s;
+.sport-band--surf .sport-band__bg {
+  background-image: url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=80');
 }
-.sport-tease__card:hover .sport-tease__img { transform: scale(1.04); }
-.sport-tease__card::after {
+.sport-band--kite .sport-band__bg {
+  background-image: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=1800&q=80');
+  background-position: center 55%;
+}
+.sport-band:hover .sport-band__bg { transform: scale(1.03); }
+.sport-band::after {
   content: '';
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(14,52,63,.97) 0%, rgba(14,52,63,.45) 55%, rgba(14,52,63,.1) 100%);
+  background: linear-gradient(to right, rgba(14,52,63,.88) 0%, rgba(14,52,63,.45) 60%, rgba(14,52,63,.1) 100%);
   transition: background .3s;
 }
-.sport-tease__card:hover::after { background: linear-gradient(to top, rgba(14,52,63,.98) 0%, rgba(14,52,63,.6) 65%, rgba(14,52,63,.2) 100%); }
-.sport-tease__body { position: relative; z-index: 2; padding: clamp(1.75rem,3vw,2.75rem); width: 100%; }
-.sport-tease__label { font-size: .58rem; font-weight: 700; text-transform: uppercase; letter-spacing: .18em; color: var(--teal-lt); display: block; margin-bottom: .5rem; }
-.sport-tease__n { font-family: var(--font-d); font-size: clamp(2.8rem,5.5vw,5rem); text-transform: uppercase; line-height: .88; color: var(--sun); margin-bottom: 1.1rem; }
-.sport-tease__cta { font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; color: var(--foam); border-bottom: 1.5px solid rgba(247,241,230,.3); padding-bottom: .15rem; transition: color .2s, border-color .2s; }
-.sport-tease__card:hover .sport-tease__cta { color: var(--sun); border-color: rgba(244,189,42,.5); }
-@media (max-width: 640px) { .sport-tease { grid-template-columns: 1fr; } }
+.sport-band:hover::after { background: linear-gradient(to right, rgba(14,52,63,.82) 0%, rgba(14,52,63,.35) 60%, rgba(14,52,63,.05) 100%); }
+.sport-band__body {
+  position: relative; z-index: 2;
+  padding: 0 clamp(2rem,5vw,5rem);
+  display: flex; align-items: center; gap: clamp(2rem,4vw,4rem);
+}
+.sport-band__stack { line-height: .85; }
+.sport-band__w1 { display: block; font-family: var(--font-d); font-size: clamp(3rem,7vw,6.5rem); text-transform: uppercase; color: var(--sun); }
+.sport-band__w2 { display: block; font-family: var(--font-d); font-size: clamp(3rem,7vw,6.5rem); text-transform: uppercase; color: transparent; -webkit-text-stroke: 2px rgba(247,241,230,.6); }
+.sport-band__info { max-width: 34ch; }
+.sport-band__label { font-size: .58rem; font-weight: 700; text-transform: uppercase; letter-spacing: .2em; color: var(--teal-lt); margin-bottom: .6rem; display: block; }
+.sport-band__sub { font-size: clamp(.82rem,1.2vw,.95rem); color: rgba(247,241,230,.65); line-height: 1.65; margin-bottom: 1.25rem; }
+.sport-band__cta { display: inline-flex; align-items: center; gap: .4rem; font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; color: var(--sun); border-bottom: 1.5px solid rgba(244,189,42,.35); padding-bottom: .15rem; transition: gap .2s, border-color .2s; }
+.sport-band:hover .sport-band__cta { gap: .75rem; border-color: var(--sun); }
+@media (max-width: 640px) {
+  .sport-band { height: auto; padding: 2.5rem 0; }
+  .sport-band__body { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 0 1.5rem; }
+  .sport-band__w1, .sport-band__w2 { font-size: clamp(3rem, 14vw, 5rem); }
+}
 /* ============================================================
    SPORT SPLIT — 2 sports side by side (kept for backward compat)
    ============================================================ */
