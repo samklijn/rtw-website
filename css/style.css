@@ -1,9 +1,9 @@
-/* ============================================================
+﻿/* ============================================================
    RIDE THE WAVE — Design System v4
    Style: Dark editorial · bold typography · kleurrijk
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
   --deep:    #0E343F;
@@ -26,8 +26,8 @@
   --shadow-md: 0 8px 40px rgba(14,52,63,.25);
   --shadow-lg: 0 16px 64px rgba(14,52,63,.3);
 
-  --font-d: 'Nunito', Impact, sans-serif;
-  --font-b: 'Nunito', 'Segoe UI', system-ui, sans-serif;
+  --font-d: 'Anton', Impact, sans-serif;
+  --font-b: 'Inter', 'Segoe UI', system-ui, sans-serif;
   --max:    1160px;
   --nav-h:  72px;
 }
@@ -110,29 +110,40 @@ ul { list-style: none; }
 }
 .hero__loc-sep { color: rgba(28,110,126,.5); font-size: .65rem; }
 
-.hero__stack { position: relative; z-index: 2; line-height: .88; margin-bottom: clamp(2rem,4vw,4rem); }
+.hero__stack { position: relative; z-index: 2; line-height: .85; margin-bottom: 1.5rem; }
 .hero__word {
   display: block;
   font-family: var(--font-d);
-  font-weight: 900;
-  font-size: clamp(5rem, 18vw, 16rem);
+  font-weight: 400; /* Anton is always regular weight */
+  font-size: clamp(5rem, 17vw, 14rem);
   text-transform: uppercase;
-  letter-spacing: -.02em;
+  letter-spacing: .01em;
 }
 .hero__word--sun  { color: var(--sun); }
 .hero__word--outline {
-  color: var(--teal-lt);
-  -webkit-text-stroke: 0;
+  color: transparent;
+  -webkit-text-stroke: 3px var(--teal-lt);
 }
 .hero__word--foam { color: var(--foam); }
 
+/* "Het water wacht op jou." tagline */
+.hero__tagline {
+  position: relative; z-index: 2;
+  font-family: var(--font-d);
+  font-size: clamp(1rem, 2.2vw, 1.6rem);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--sun);
+  margin-bottom: 1.25rem;
+}
+
 .hero__sub {
   position: relative; z-index: 2;
-  font-size: clamp(1rem, 1.8vw, 1.25rem);
-  color: rgba(247,241,230,.65);
-  max-width: 40ch;
-  line-height: 1.7;
-  margin-bottom: 2.5rem;
+  font-size: clamp(.9rem, 1.5vw, 1.1rem);
+  color: rgba(247,241,230,.6);
+  max-width: 44ch;
+  line-height: 1.75;
+  margin-bottom: 2rem;
 }
 .hero__btns { display: flex; gap: .75rem; flex-wrap: wrap; position: relative; z-index: 2; }
 
@@ -168,6 +179,7 @@ ul { list-style: none; }
 .page-hero__h .acc-teal   { color: transparent; -webkit-text-stroke: 2px var(--teal-lt); }
 .page-hero__sub { font-size: 1.05rem; color: rgba(247,241,230,.6); max-width: 52ch; line-height: 1.75; }
 .page-hero__eyebrow { font-size: .62rem; font-weight: 700; text-transform: uppercase; letter-spacing: .22em; color: var(--teal-lt); margin-bottom: 1.25rem; }
+.page-hero__tagline--inner { font-family: var(--font-d); font-size: clamp(.85rem,1.8vw,1.2rem); text-transform: uppercase; letter-spacing: .1em; color: var(--sun); margin-bottom: .75rem; }
 
 /* ============================================================
    BUTTONS
@@ -239,11 +251,11 @@ ul { list-style: none; }
    SPORT SPLIT — 2 sports side by side
    ============================================================ */
 .sport-split { display: grid; grid-template-columns: 1fr 1fr; }
-.sport-half { padding: clamp(3rem,5vw,5rem) clamp(2rem,4vw,4rem); }
+.sport-half { padding: clamp(2rem,3.5vw,3.5rem) clamp(1.5rem,3vw,3rem); }
 .sport-half--teal { background: var(--teal); }
 .sport-half--sun  { background: var(--sun); }
-.sport-half__icon { font-size: 3.5rem; margin-bottom: 1.25rem; }
-.sport-half__n  { font-family: var(--font-d); font-size: clamp(3rem,6vw,5.5rem); text-transform: uppercase; line-height: .9; margin-bottom: .5rem; }
+.sport-half__icon { font-size: 2.5rem; margin-bottom: .75rem; }
+.sport-half__n  { font-family: var(--font-d); font-size: clamp(2.5rem,5vw,4rem); text-transform: uppercase; line-height: .9; margin-bottom: .4rem; }
 .sport-half--teal .sport-half__n { color: var(--foam); }
 .sport-half--sun  .sport-half__n { color: var(--deep); }
 .sport-half__p  { font-size: .92rem; line-height: 1.75; max-width: 36ch; margin-bottom: 1.75rem; }
@@ -545,3 +557,4 @@ ul { list-style: none; }
 .footer-links       { display:flex; flex-direction:column; gap:.6rem; }
 .footer-links a     { font-size:.82rem; color:rgba(247,241,230,.4); transition:color .15s; }
 .footer-links a:hover { color:var(--foam); }
+
