@@ -290,6 +290,42 @@ ul { list-style: none; }
 .sport-card__cta:hover { gap: .7rem; border-color: var(--sun); }
 @media (max-width: 700px) { .sport-cards { grid-template-columns: 1fr; height: auto; } .sport-card { min-height: 320px; } }
 
+
+/* ============================================================
+   SPORT TEASE — homepage 2-card teaser
+   ============================================================ */
+.sport-tease { display: grid; grid-template-columns: 1fr 1fr; }
+.sport-tease__card {
+  position: relative; overflow: hidden;
+  min-height: clamp(380px, 50vh, 560px);
+  display: flex; align-items: flex-end;
+  text-decoration: none;
+  transition: transform .3s;
+}
+.sport-tease__card--surf .sport-tease__img {
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=900&q=80') center/cover;
+  transition: transform .5s;
+}
+.sport-tease__card--kite .sport-tease__img {
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=900&q=80') center/cover;
+  transition: transform .5s;
+}
+.sport-tease__card:hover .sport-tease__img { transform: scale(1.04); }
+.sport-tease__card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(14,52,63,.97) 0%, rgba(14,52,63,.45) 55%, rgba(14,52,63,.1) 100%);
+  transition: background .3s;
+}
+.sport-tease__card:hover::after { background: linear-gradient(to top, rgba(14,52,63,.98) 0%, rgba(14,52,63,.6) 65%, rgba(14,52,63,.2) 100%); }
+.sport-tease__body { position: relative; z-index: 2; padding: clamp(1.75rem,3vw,2.75rem); width: 100%; }
+.sport-tease__label { font-size: .58rem; font-weight: 700; text-transform: uppercase; letter-spacing: .18em; color: var(--teal-lt); display: block; margin-bottom: .5rem; }
+.sport-tease__n { font-family: var(--font-d); font-size: clamp(2.8rem,5.5vw,5rem); text-transform: uppercase; line-height: .88; color: var(--sun); margin-bottom: 1.1rem; }
+.sport-tease__cta { font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; color: var(--foam); border-bottom: 1.5px solid rgba(247,241,230,.3); padding-bottom: .15rem; transition: color .2s, border-color .2s; }
+.sport-tease__card:hover .sport-tease__cta { color: var(--sun); border-color: rgba(244,189,42,.5); }
+@media (max-width: 640px) { .sport-tease { grid-template-columns: 1fr; } }
 /* ============================================================
    SPORT SPLIT — 2 sports side by side (kept for backward compat)
    ============================================================ */
@@ -605,6 +641,7 @@ ul { list-style: none; }
 .footer-links       { display:flex; flex-direction:column; gap:.6rem; }
 .footer-links a     { font-size:.82rem; color:rgba(247,241,230,.4); transition:color .15s; }
 .footer-links a:hover { color:var(--foam); }
+
 
 
 

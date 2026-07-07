@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kitesurfen — Ride the Wave</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=7">
+  <style>
+    .kite-hero { background-image: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=1800&q=80'); }
+
+    .phases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .phase-card {
+      background: rgba(42,136,153,.08);
+      border: 1.5px solid rgba(42,136,153,.18);
+      border-radius: 16px;
+      padding: 2rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+    .phase-card__n {
+      font-family: var(--font-d);
+      font-weight: 900;
+      font-size: 3.5rem;
+      line-height: 1;
+      color: rgba(42,136,153,.35);
+    }
+    .phase-card__tag {
+      font-size: .6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      color: var(--teal-lt);
+    }
+    .phase-card__h {
+      font-family: var(--font-d);
+      font-weight: 900;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      color: var(--foam);
+      line-height: 1.1;
+    }
+    .phase-card__p {
+      font-size: .9rem;
+      color: rgba(247,241,230,.7);
+      line-height: 1.75;
+      flex: 1;
+    }
+    .phase-card__reward {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(244,189,42,.1);
+      border: 1.5px solid rgba(244,189,42,.2);
+      color: var(--sun);
+      font-size: .75rem;
+      font-weight: 800;
+      padding: .5rem 1rem;
+      border-radius: 99px;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+    }
+    .phase-card__reward::before { content: '★'; }
+
+    .location-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .location-pill {
+      background: rgba(247,241,230,.08);
+      border: 1.5px solid rgba(247,241,230,.15);
+      color: var(--foam);
+      padding: .85rem 1.75rem;
+      border-radius: 99px;
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+    .location-pill strong {
+      color: var(--sun);
+      font-size: 1rem;
+      display: block;
+      font-family: var(--font-d);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      line-height: 1.2;
+    }
+
+    @media(max-width:700px) {
+      .phases-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-mark">RTW</div>
+    <div class="nav-logo-sub">Ride the Wave</div>
+  </a>
+  <div class="nav-links">
+    <a href="surfen.html">Surfen</a>
+    <a href="kitesurfen.html" class="active">Kitesurfen</a>
+    <a href="community.html">Community</a>
+    <a href="scholen.html">Scholen</a>
+    <a href="sponsoren.html">Sponsors</a>
+    <a href="verhalen.html">Verhalen</a>
+    <a href="aanmelden.html" class="nav-cta">Aanmelden</a>
+  </div>
+</nav>
+
+<main>
+
+  <section class="page-hero kite-hero page-hero--short">
+    <div class="page-hero__inner">
+      <span class="page-hero__eyebrow">Kitesurfen · Noordwijk · Ouddorp</span>
+      <h1 class="page-hero__h"><span class="acc-sun">Kite</span><br>surfen.</h1>
+      <p class="page-hero__tagline--inner">Het water wacht op jou.</p>
+      <p class="page-hero__sub">Wind, kite, water. Van je eerste vluchtles tot IKO-gecertificeerd kitesurfinstructeur. Gratis, in jouw tempo.</p>
+      <div class="page-hero__btns" style="margin-top:1.5rem">
+        <a href="aanmelden.html" class="btn btn--sun btn--lg">Meld je aan — gratis</a>
+        <a href="surfen.html" class="btn btn--outline-foam btn--lg">Liever golfsurfen?</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--deep" id="fases">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:2.5rem">
+        <span class="eyebrow eyebrow--sun">5 Fases</span>
+        <h2 class="sec-h sec-h--xl sec-h--foam">Jouw pad</h2>
+      </div>
+      <div class="phases-grid">
+
+        <div class="phase-card">
+          <div class="phase-card__n">01</div>
+          <div class="phase-card__tag">5 LESDAGEN</div>
+          <div class="phase-card__h">Kitesurflessen</div>
+          <p class="phase-card__p">Maak kennis met de kitesurfsport. Binnen 5 lesdagen leer je praktijk én theorie. Plezier, veiligheid en samenwerken staan centraal.</p>
+          <div class="phase-card__reward">Certificaat fase 1 + eigen wetsuit</div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-card__n">02</div>
+          <div class="phase-card__tag">12 MAANDEN</div>
+          <div class="phase-card__h">Zelfstandig varen</div>
+          <p class="phase-card__p">Na fase 1 ben je klaar voor het echte werk. Je wetsuit heb je, de kitesurfspullen liggen op vaste momenten voor je klaar.</p>
+          <div class="phase-card__reward">Trapeze en kiteboard (bruikleen) + optioneel Junior Crew Member</div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-card__n">03</div>
+          <div class="phase-card__tag">12 MAANDEN</div>
+          <div class="phase-card__h">Laat het rippen beginnen</div>
+          <p class="phase-card__p">Je vaart lekker heen en weer en maakt je eerste sprongen. Met je eigen wetsuit, trapeze en board geniet je volop.</p>
+          <div class="phase-card__reward">Eigen kiteboard en kite met bar (bruikleen) + optioneel Crew Member</div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-card__n">04</div>
+          <div class="phase-card__tag">12 MAANDEN · MIN. 16 JAAR</div>
+          <div class="phase-card__h">RTW Kitesurfinstructeur</div>
+          <p class="phase-card__p">Word IKO gecertificeerd kitesurfinstructeur en ga direct aan de slag bij verbonden kitesurfscholen.</p>
+          <div class="phase-card__reward">Internationaal IKO kitesurfinstructeur certificaat</div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-card__n">05</div>
+          <div class="phase-card__tag">6 MAANDEN · MIN. 18 JAAR</div>
+          <div class="phase-card__h">Internationaal Kitesurfinstructeur</div>
+          <p class="phase-card__p">Met skills en instructeurservaring ben je klaar voor internationale kitesurfscholen met een sterke ESG-focus.</p>
+          <div class="phase-card__reward">Ultimate Ride the Wave ambassadeur</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--teal" id="locaties">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:.5rem">
+        <span class="eyebrow eyebrow--sun">Waar je kitet</span>
+        <h2 class="sec-h sec-h--xl sec-h--foam">Locaties</h2>
+      </div>
+      <div class="location-pills">
+        <div class="location-pill">
+          <strong>Noordwijk</strong>
+          Beach Break
+        </div>
+        <div class="location-pill">
+          <strong>Ouddorp</strong>
+          Natural High
+        </div>
+        <div class="location-pill">
+          <strong>Costa Rica</strong>
+          2026
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--deep" style="text-align:center;">
+    <div class="container--xs">
+      <h2 class="sec-h sec-h--xl sec-h--sun" style="margin-bottom:1rem;">Klaar om te beginnen?</h2>
+      <p style="color:rgba(247,241,230,.65); font-size:1rem; line-height:1.75; margin-bottom:2rem; font-weight:600;">Meld je gratis aan en kom langs voor een inlooples. Geen verplichtingen.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="aanmelden.html" class="btn btn--sun btn--lg">Meld je aan</a>
+        <a href="surfen.html" class="btn btn--outline-foam btn--lg">Liever golfsurfen?</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand__mark">RIDE THE WAVE</div>
+      <p class="footer-brand__tagline">Gratis surfen en kitesurfen voor jongeren van 14 tot 23 jaar.</p>
+    </div>
+    <div>
+      <div class="footer-col__title">Pagina's</div>
+      <div class="footer-col__links">
+        <a href="index.html">Home</a><a href="surfen.html">Surfen</a><a href="kitesurfen.html">Kitesurfen</a><a href="community.html">Community</a>
+        <a href="scholen.html">Voor scholen</a><a href="sponsoren.html">Sponsoren</a><a href="verhalen.html">Verhalen</a><a href="aanmelden.html">Aanmelden</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col__title">Contact</div>
+      <div class="footer-col__links">
+        <a href="mailto:info@ridethewave.nl">info@ridethewave.nl</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col__title">Locaties</div>
+      <div class="footer-col__links">
+        <a href="#">Amsterdam</a><a href="#">Scheveningen</a><a href="#">Noordwijk</a><a href="#">Ouddorp</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-meta">© 2026 Stichting Ride the Wave · ANBI · KvK 12345678</span>
+    <div class="footer-social"><a href="#">IG</a><a href="#">TT</a><a href="#">LI</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
+
