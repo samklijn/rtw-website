@@ -65,7 +65,7 @@ ul { list-style: none; }
    ============================================================ */
 .hero {
   background: var(--deep);
-  padding: clamp(3rem,6vw,6rem) clamp(1.5rem,5vw,5rem) clamp(4rem,8vw,8rem);
+  padding: clamp(2rem,3.5vw,3.5rem) clamp(1.5rem,5vw,5rem) clamp(2.5rem,4vw,4rem);
   position: relative;
   overflow: hidden;
   min-height: 68vh;
@@ -101,7 +101,7 @@ ul { list-style: none; }
 
 .hero__locs {
   display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;
-  margin-bottom: clamp(2rem, 4vw, 4rem);
+  margin-bottom: clamp(1rem, 2vw, 1.75rem);
   position: relative; z-index: 2;
 }
 .hero__loc {
@@ -110,12 +110,12 @@ ul { list-style: none; }
 }
 .hero__loc-sep { color: rgba(28,110,126,.5); font-size: .65rem; }
 
-.hero__stack { position: relative; z-index: 2; line-height: .85; margin-bottom: 1.5rem; }
+.hero__stack { position: relative; z-index: 2; line-height: .85; margin-bottom: .75rem; }
 .hero__word {
   display: block;
   font-family: var(--font-d);
   font-weight: 400; /* Anton is always regular weight */
-  font-size: clamp(5rem, 17vw, 14rem);
+  font-size: clamp(3.2rem, 9vw, 7.5rem);
   text-transform: uppercase;
   letter-spacing: .01em;
 }
@@ -134,13 +134,13 @@ ul { list-style: none; }
   text-transform: uppercase;
   letter-spacing: .1em;
   color: var(--sun);
-  margin-bottom: 1.25rem;
+  margin-bottom: .6rem;
 }
 
 .hero__journey {
   position: relative; z-index: 2;
   display: flex; align-items: center; gap: .6rem; flex-wrap: wrap;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 .hero__step {
   font-size: .65rem; font-weight: 700; text-transform: uppercase;
@@ -261,7 +261,36 @@ ul { list-style: none; }
 .sec-p--center { max-width: 52ch; margin: 0 auto; text-align: center; }
 
 /* ============================================================
-   SPORT SPLIT — 2 sports side by side
+   SPORT CARDS — foto-based sport tiles
+   ============================================================ */
+.sport-cards { display: grid; grid-template-columns: 1fr 1fr; height: clamp(420px, 55vh, 620px); }
+.sport-card {
+  position: relative; overflow: hidden;
+  background-size: cover; background-position: center;
+  display: flex; align-items: flex-end;
+  transition: flex .45s cubic-bezier(.4,0,.2,1);
+}
+.sport-card--surf { background-image: url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1000&q=80'); }
+.sport-card--kite { background-image: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=1000&q=80'); }
+.sport-card__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(14,52,63,.96) 0%, rgba(14,52,63,.4) 55%, rgba(14,52,63,.15) 100%);
+  transition: background .45s;
+}
+.sport-card:hover .sport-card__overlay { background: linear-gradient(to top, rgba(14,52,63,.97) 0%, rgba(14,52,63,.6) 70%, rgba(14,52,63,.3) 100%); }
+.sport-card__body { position: relative; z-index: 2; padding: 2.5rem clamp(1.5rem,3vw,2.75rem); width: 100%; }
+.sport-card__label { font-size: .58rem; font-weight: 700; text-transform: uppercase; letter-spacing: .22em; color: var(--teal-lt); display: block; margin-bottom: .4rem; }
+.sport-card__n { font-family: var(--font-d); font-size: clamp(3rem,6vw,5.5rem); text-transform: uppercase; line-height: .9; color: var(--sun); margin-bottom: .75rem; }
+.sport-card__p { font-size: .85rem; color: rgba(247,241,230,.65); line-height: 1.65; max-width: 34ch; margin-bottom: 1.1rem; }
+.sport-card__steps { display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; margin-bottom: 1.25rem; font-size: .6rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: rgba(244,189,42,.45); }
+.sport-card__steps span:last-child { color: var(--sun); }
+.sc-arr { color: rgba(244,189,42,.25); }
+.sport-card__cta { display: inline-flex; align-items: center; gap: .4rem; font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; color: var(--sun); border-bottom: 1.5px solid rgba(244,189,42,.35); padding-bottom: .15rem; transition: gap .2s, border-color .2s; }
+.sport-card__cta:hover { gap: .7rem; border-color: var(--sun); }
+@media (max-width: 700px) { .sport-cards { grid-template-columns: 1fr; height: auto; } .sport-card { min-height: 320px; } }
+
+/* ============================================================
+   SPORT SPLIT — 2 sports side by side (kept for backward compat)
    ============================================================ */
 .sport-split { display: grid; grid-template-columns: 1fr 1fr; }
 .sport-half { padding: clamp(2rem,3.5vw,3.5rem) clamp(1.5rem,3vw,3rem); }
@@ -570,6 +599,7 @@ ul { list-style: none; }
 .footer-links       { display:flex; flex-direction:column; gap:.6rem; }
 .footer-links a     { font-size:.82rem; color:rgba(247,241,230,.4); transition:color .15s; }
 .footer-links a:hover { color:var(--foam); }
+
 
 
 
