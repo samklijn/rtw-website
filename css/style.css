@@ -3,6 +3,8 @@
    Style: Dark editorial · bold typography · kleurrijk
    ============================================================ */
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
 :root {
   --deep:    #0E343F;
   --deep2:   #0a2830;
@@ -24,8 +26,8 @@
   --shadow-md: 0 8px 40px rgba(14,52,63,.25);
   --shadow-lg: 0 16px 64px rgba(14,52,63,.3);
 
-  --font-d: Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
-  --font-b: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-d: 'Nunito', Impact, sans-serif;
+  --font-b: 'Nunito', 'Segoe UI', system-ui, sans-serif;
   --max:    1160px;
   --nav-h:  72px;
 }
@@ -50,7 +52,7 @@ ul { list-style: none; }
   padding: 0 clamp(1.5rem, 4vw, 3rem);
 }
 .nav-logo { display: flex; align-items: center; gap: .75rem; }
-.nav-logo-mark { font-family: var(--font-d); font-size: 2rem; color: var(--sun); letter-spacing: .04em; line-height: 1; }
+.nav-logo-mark { font-family: var(--font-d); font-weight: 900; font-size: 2rem; color: var(--sun); letter-spacing: .02em; line-height: 1; }
 .nav-logo-sub { font-size: .6rem; font-weight: 700; text-transform: uppercase; letter-spacing: .22em; color: rgba(247,241,230,.35); }
 .nav-links { display: flex; align-items: center; gap: .2rem; }
 .nav-links a { color: rgba(247,241,230,.5); font-size: .78rem; font-weight: 600; padding: .45rem .85rem; border-radius: 6px; transition: color .15s, background .15s; white-space: nowrap; }
@@ -66,8 +68,22 @@ ul { list-style: none; }
   padding: clamp(3rem,6vw,6rem) clamp(1.5rem,5vw,5rem) clamp(4rem,8vw,8rem);
   position: relative;
   overflow: hidden;
-  min-height: calc(100vh - var(--nav-h));
+  min-height: 82vh;
   display: flex; flex-direction: column; justify-content: center;
+}
+
+/* Video background */
+.hero__video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.28;
+}
+.hero__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(145deg, rgba(14,52,63,.92) 0%, rgba(10,40,48,.78) 60%, rgba(14,52,63,.88) 100%);
+  z-index: 1;
 }
 
 /* Decorative circle top-right */
@@ -98,15 +114,15 @@ ul { list-style: none; }
 .hero__word {
   display: block;
   font-family: var(--font-d);
+  font-weight: 900;
   font-size: clamp(5rem, 18vw, 16rem);
   text-transform: uppercase;
-  letter-spacing: -.01em;
+  letter-spacing: -.02em;
 }
 .hero__word--sun  { color: var(--sun); }
 .hero__word--outline {
-  color: transparent;
-  -webkit-text-stroke: 3px var(--teal-lt);
-  text-stroke: 3px var(--teal-lt);
+  color: var(--teal-lt);
+  -webkit-text-stroke: 0;
 }
 .hero__word--foam { color: var(--foam); }
 
@@ -195,7 +211,7 @@ ul { list-style: none; }
 .eyebrow--deep  { color: var(--teal-lt); background: rgba(28,110,126,.15); }
 
 /* Section headings */
-.sec-h { font-family: var(--font-d); text-transform: uppercase; line-height: .92; letter-spacing: -.01em; text-wrap: balance; }
+.sec-h { font-family: var(--font-d); font-weight: 900; text-transform: uppercase; line-height: .92; letter-spacing: -.01em; text-wrap: balance; }
 .sec-h--xl { font-size: clamp(2.5rem, 5vw, 4.5rem); }
 .sec-h--lg { font-size: clamp(2rem, 3.5vw, 3.25rem); }
 .sec-h--md { font-size: clamp(1.6rem, 2.5vw, 2.25rem); }

@@ -1,147 +1,105 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Community — Ride the Wave</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    .comm-hero { background-image: url('https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=80'); }
-    .crew-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-    .crew-photo { border-radius: var(--radius); overflow: hidden; aspect-ratio: 3/4; }
-    .crew-photo img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .35s; }
-    .crew-photo:hover img { transform: scale(1.04); }
-    .challenge-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .surfbus-block { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: center; }
-    .surfbus-img { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 16/9; }
-    .surfbus-img img { width:100%; height:100%; object-fit:cover; }
-    .baf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-    @media (max-width:900px) { .challenge-grid{grid-template-columns:1fr 1fr} .crew-grid{grid-template-columns:repeat(2,1fr)} .surfbus-block{grid-template-columns:1fr} .baf-grid{grid-template-columns:1fr} }
-    @media (max-width:600px) { .challenge-grid{grid-template-columns:1fr} }
-  </style>
 </head>
 <body>
 <nav class="nav">
-  <a href="index.html" class="nav-logo"><span class="nav-logo-mark">RTW</span><div><div class="nav-logo-sub">Ride the Wave</div></div></a>
+  <a href="index.html" class="nav-logo"><div class="nav-logo-mark">RTW</div><div class="nav-logo-sub">Ride the Wave</div></a>
   <div class="nav-links">
-    <a href="index.html">Home</a><a href="programma.html">Programma</a><a href="community.html" class="active">Community</a>
+    <a href="index.html">Home</a><a href="programma.html">Programma</a><a href="community.html">Community</a>
     <a href="scholen.html">Scholen</a><a href="sponsoren.html">Sponsors</a><a href="verhalen.html">Verhalen</a>
     <a href="aanmelden.html" class="nav-cta">Aanmelden</a>
   </div>
 </nav>
 <main>
-
-  <section class="page-hero comm-hero page-hero--short">
+  <section class="page-hero">
     <div class="page-hero__inner">
-      <span class="hero-eyebrow">Junior Crew · Bring-a-friend · Challenges</span>
-      <h1 class="hero-h1 hero-h1--lg">De <span class="accent">crew</span><br>maakt het</h1>
-      <p class="hero-sub">RTW is meer dan lessen. Het is een plek waar je vrienden maakt, je vrienden meeneemt en samen groeit.</p>
+      <div class="page-hero__eyebrow">Junior Crew · Bring-a-friend · Challenges</div>
+      <h1 class="page-hero__h"><span class="acc-sun">De</span><br>community.</h1>
+      <p class="page-hero__sub">RTW is meer dan een les. Het is een groep mensen die elkaar ophalen — letterlijk en figuurlijk.</p>
     </div>
   </section>
 
-  <section class="section section--foam">
+  <section class="section section--teal">
     <div class="container">
-      <div class="baf-grid">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
         <div>
-          <span class="sec-eyebrow">Bring-a-friend</span>
-          <h2 class="sec-h sec-h--xl sec-h--deep" style="margin-bottom:1.25rem">Neem een vriend mee</h2>
-          <p class="sec-p" style="margin-bottom:1.5rem">RTW is bedoeld om samen te doen. Heb je een vriend of vriendin die ook wil meedoen? Stuur ze een WhatsApp met de aanmeldlink. Jullie kunnen samen starten in dezelfde groep.</p>
-          <p class="sec-p" style="margin-bottom:2rem">Al 200+ deelnemers hebben zo iemand meegenomen. De community groeit van binnenuit.</p>
-          <a href="https://wa.me/?text=Hey! Ik doe mee met Ride the Wave — gratis surfen voor jongeren. Doe jij ook mee? Aanmelden via ridethewave.nl" class="btn btn--wa btn--lg">📲 Stuur aanmeldlink via WhatsApp</a>
+          <span class="eyebrow eyebrow--sun">Junior Crew</span>
+          <h2 class="sec-h sec-h--xl sec-h--foam" style="margin-bottom:1.25rem;">Jij bent<br>het voorbeeld.</h2>
+          <p class="sec-p sec-p--foam" style="margin-bottom:1rem;">Vanaf fase 2 kun je Junior Crew worden. Je begeleidt beginners op het strand, bewaakt de groepsdynamiek en bent rolmodel. Je werkt samen met een vaste begeleider vanuit de stichting.</p>
+          <p class="sec-p sec-p--foam" style="margin-bottom:1.5rem;">Junior Crew krijgt exclusieve RTW-kleding, structurele begeleiding en een vrijwilligersvergoeding.</p>
+          <ul style="display:flex;flex-direction:column;gap:.6rem;margin-bottom:2rem;">
+            <li style="font-size:.9rem;color:rgba(247,241,230,.85);display:flex;align-items:center;gap:.75rem;font-weight:700;"><span style="color:var(--sun);">→</span>Exclusieve RTW Crew-kleding</li>
+            <li style="font-size:.9rem;color:rgba(247,241,230,.85);display:flex;align-items:center;gap:.75rem;font-weight:700;"><span style="color:var(--sun);">→</span>Vrijwilligersvergoeding via overeenkomst</li>
+            <li style="font-size:.9rem;color:rgba(247,241,230,.85);display:flex;align-items:center;gap:.75rem;font-weight:700;"><span style="color:var(--sun);">→</span>Structurele begeleiding en evaluatiemomenten</li>
+            <li style="font-size:.9rem;color:rgba(247,241,230,.85);display:flex;align-items:center;gap:.75rem;font-weight:700;"><span style="color:var(--sun);">→</span>Jaarlijkse maatschappelijke projectdag</li>
+          </ul>
+          <a href="aanmelden.html" class="btn btn--sun btn--lg">Word Junior Crew</a>
         </div>
-        <div style="display:flex;flex-direction:column;gap:14px;">
-          <div class="card"><div class="card__body"><div class="card__icon">👋</div><div class="card__h">Samen starten</div><p class="card__p">Vrienden die samen aanmelden worden zoveel mogelijk in dezelfde groep geplaatst.</p></div></div>
-          <div class="card"><div class="card__body"><div class="card__icon">🏄</div><div class="card__h">Buddy-systeem</div><p class="card__p">In de eerste lessen koppelen we deelnemers met een buddy. Samen beginnen is makkelijker.</p></div></div>
-          <div class="card"><div class="card__body"><div class="card__icon">🌟</div><div class="card__h">Referral-bonus</div><p class="card__p">Breng 3 nieuwe deelnemers mee die ook starten en je krijgt een RTW-cap.</p></div></div>
+        <div class="crew-grid">
+          <div class="crew-photo"><img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=400&q=80" alt="Surfer" loading="lazy"></div>
+          <div class="crew-photo"><img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=400&q=80" alt="Surf actie" loading="lazy"></div>
+          <div class="crew-photo"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Surfer op golf" loading="lazy"></div>
+          <div class="crew-photo"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=400&q=80" alt="Surf water" loading="lazy"></div>
         </div>
       </div>
     </div>
+    <style>@media(max-width:860px){.section--teal .container>div[style]{grid-template-columns:1fr!important}}</style>
   </section>
 
   <section class="section section--deep">
     <div class="container">
-      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2.5rem;flex-wrap:wrap;gap:1rem">
+      <div style="background:var(--sun);border-radius:20px;padding:3.5rem clamp(2rem,4vw,4rem);display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;">
         <div>
-          <span class="sec-eyebrow sec-eyebrow--light">Fase 4+</span>
-          <h2 class="sec-h sec-h--xl sec-h--sun">Junior Crew</h2>
+          <span class="eyebrow eyebrow--teal">Bring a friend</span>
+          <h2 style="font-family:var(--font-d);font-weight:900;font-size:clamp(2rem,4vw,3rem);text-transform:uppercase;color:var(--deep);line-height:.92;margin-bottom:.75rem;">Neem iemand mee. 🤙</h2>
+          <p style="font-size:.95rem;color:rgba(14,52,63,.7);max-width:44ch;line-height:1.7;font-weight:600;">We groeien van binnenuit. Geef een naam op bij je aanmelding, stuur de WhatsApp-link of vraag om een buddy-uitnodiging.</p>
         </div>
-        <p style="font-size:.88rem;color:rgba(247,241,230,.55);max-width:40ch;line-height:1.7">De Junior Crew zijn deelnemers die fase 4 hebben gehaald. Ze helpen nieuwe deelnemers, organiseren events en zijn het gezicht van RTW.</p>
-      </div>
-      <div class="crew-grid">
-        <div class="crew-photo"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Crew" loading="lazy"></div>
-        <div class="crew-photo"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80" alt="Crew" loading="lazy"></div>
-        <div class="crew-photo"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80" alt="Crew" loading="lazy"></div>
-        <div class="crew-photo"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Crew" loading="lazy"></div>
-        <div class="crew-photo"><img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80" alt="Crew" loading="lazy"></div>
-        <div class="crew-photo"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80" alt="Crew" loading="lazy"></div>
-        <div class="crew-photo"><img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&w=400&q=80" alt="Crew" loading="lazy"></div>
-        <div class="crew-photo"><img src="https://images.unsplash.com/photo-1488161628813-04466f872be2?auto=format&fit=crop&w=400&q=80" alt="Crew" loading="lazy"></div>
-      </div>
-      <div style="margin-top:2.5rem;display:flex;gap:14px;flex-wrap:wrap">
-        <div class="card card--teal" style="flex:1;min-width:180px"><div class="card__body"><div class="card__tag card__tag--muted">Privilege</div><div class="card__h card__h--white">Surfbus-rijrecht</div><p class="card__p card__p--light">Junior Crew mag de RTW-surfbus rijden naar de locaties.</p></div></div>
-        <div class="card card--teal" style="flex:1;min-width:180px"><div class="card__body"><div class="card__tag card__tag--muted">Privilege</div><div class="card__h card__h--white">Eigen events</div><p class="card__p card__p--light">Crew organiseert eigen barbecues, filmavonden en trips.</p></div></div>
-        <div class="card card--teal" style="flex:1;min-width:180px"><div class="card__body"><div class="card__tag card__tag--muted">Privilege</div><div class="card__h card__h--white">Mentorschap</div><p class="card__p card__p--light">Crew begeleidt nieuwe deelnemers als buddy.</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--white">
-    <div class="container">
-      <div style="text-align:center;margin-bottom:2.5rem">
-        <span class="sec-eyebrow">Seizoen 2026</span>
-        <h2 class="sec-h sec-h--xl sec-h--deep">Challenges</h2>
-        <p class="sec-p sec-p--center" style="margin-top:.75rem">Elke maand een challenge. Punt scoren voor je crew. Beste crew krijgt de RTW Trophy.</p>
-      </div>
-      <div class="challenge-grid">
-        <div class="card"><div class="card__body"><div class="card__icon">🏆</div><div class="card__tag">Maandelijks</div><div class="card__h">Most Waves Ridden</div><p class="card__p">Wie pakt de meeste golven in één sessie? Community stemt op de beste rit.</p></div></div>
-        <div class="card"><div class="card__body"><div class="card__icon">📸</div><div class="card__tag">Social media</div><div class="card__h">Shot of the Month</div><p class="card__p">Post je beste surf- of kitefoto. Community kiest de winnaar. Prijs: RTW-hoodie.</p></div></div>
-        <div class="card"><div class="card__body"><div class="card__icon">🤝</div><div class="card__tag">Bring-a-friend</div><div class="card__h">Wie brengt de meeste vrienden?</div><p class="card__p">De deelnemer die de meeste nieuwe deelnemers meebrengt krijgt een gratis week surfkamp.</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--foam">
-    <div class="container">
-      <div class="surfbus-block">
-        <div>
-          <span class="sec-eyebrow">RTW-Surfbus</span>
-          <h2 class="sec-h sec-h--xl sec-h--deep" style="margin-bottom:1.25rem">Gratis vervoer naar het strand</h2>
-          <p class="sec-p" style="margin-bottom:1.5rem">Geen auto of rijbewijs? Geen probleem. De surfbus rijdt vanuit Rotterdam, Den Haag en Amsterdam naar de locaties.</p>
-          <div class="steps" style="margin-top:1.5rem">
-            <div class="step"><span class="step-n step-n--teal">1</span><div><div class="step-t">Aanmelden voor de bus</div><div class="step-d">Via de aanmeldpagina geef je aan of je de bus wil en vanuit welke stad.</div></div></div>
-            <div class="step"><span class="step-n step-n--teal">2</span><div><div class="step-t">WhatsApp-groep</div><div class="step-d">Je wordt toegevoegd aan de groepsapp voor je regio.</div></div></div>
-            <div class="step"><span class="step-n step-n--teal">3</span><div><div class="step-t">Instappen en gaan</div><div class="step-d">Wetsuits, boards en eten zijn al in de bus. Jij hoeft alleen op te komen dagen.</div></div></div>
-          </div>
+        <div style="display:flex;flex-direction:column;gap:.75rem;align-items:flex-end;">
+          <a href="https://wa.me/?text=H%C3%A9%20doe%20je%20mee%3F%20RTW%20is%20gratis%20surfen%20en%20kitesurfen.%20ridethewave.nl" target="_blank" class="btn btn--deep btn--lg">📲 WhatsApp-uitnodiging</a>
+          <a href="aanmelden.html" class="btn btn--outline-deep btn--lg">Samen aanmelden</a>
         </div>
-        <div class="surfbus-img"><img src="https://images.unsplash.com/photo-1506461883276-594a12b11cf3?auto=format&fit=crop&w=800&q=80" alt="RTW surfbus" loading="lazy"></div>
       </div>
     </div>
   </section>
 
-  <section style="background:var(--deep);padding:5rem 2rem;text-align:center">
-    <div class="container--sm">
-      <h2 class="sec-h sec-h--lg sec-h--sun" style="margin-bottom:1rem">Kom er gewoon bij</h2>
-      <p style="color:rgba(247,241,230,.6);font-size:1rem;margin-bottom:2rem">Meld je aan, breng een vriend mee en word onderdeel van de crew.</p>
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-        <a href="aanmelden.html" class="btn btn--sun btn--lg">Aanmelden</a>
-        <a href="https://wa.me/?text=Hey! Doe jij ook mee met RTW? Gratis surfen: ridethewave.nl" class="btn btn--outline-white btn--lg">📲 Vriend meenemen</a>
+  <section class="section section--deep2">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3rem;">
+        <span class="eyebrow eyebrow--sun">Jaarkalender</span>
+        <h2 class="sec-h sec-h--xl sec-h--foam">Vaste momenten in het jaar.</h2>
+      </div>
+      <div class="steps" style="max-width:700px;margin:0 auto;">
+        <div class="step" style="border-color:rgba(255,255,255,.08);"><div class="step-n">Apr</div><div><div class="step-t step-t--foam">Stranddag Vrienden &amp; Familie</div><div class="step-d step-d--muted">Seizoensopening per locatie. Breng iedereen mee die je wil laten zien wat RTW is.</div></div></div>
+        <div class="step" style="border-color:rgba(255,255,255,.08);"><div class="step-n">Jun</div><div><div class="step-t step-t--foam">Zomerbijeenkomst Crew (BBQ)</div><div class="step-d step-d--muted">Jaarlijkse BBQ voor alle Junior Crew en Crew Members. Terugblik, vooruitblik en veel eten.</div></div></div>
+        <div class="step" style="border-color:rgba(255,255,255,.08);"><div class="step-n">Sep</div><div><div class="step-t step-t--foam">Sponsorstranddag</div><div class="step-d step-d--muted">BBQ en surfen samen met onze sponsoren. Deelnemers ontmoeten de mensen die het mogelijk maken.</div></div></div>
+        <div class="step" style="border-color:rgba(255,255,255,.08);border-bottom:none;"><div class="step-n">Nov–<br>Mrt</div><div><div class="step-t step-t--foam">Winterprogramma</div><div class="step-d step-d--muted">Sport, workshops en community-activiteiten. De band blijft sterk ook als er geen golven zijn.</div></div></div>
       </div>
     </div>
   </section>
 
+  <section class="section section--sun" style="text-align:center;">
+    <div class="container--xs">
+      <h2 class="sec-h sec-h--deep" style="font-size:clamp(3rem,8vw,6rem);margin-bottom:1rem;">Word lid.</h2>
+      <p style="font-size:1rem;color:rgba(14,52,63,.7);max-width:36ch;margin:0 auto 2rem;line-height:1.75;font-weight:600;">Meld je aan en je bent meteen onderdeel van de community.</p>
+      <a href="aanmelden.html" class="btn btn--deep btn--lg">Aanmelden</a>
+    </div>
+  </section>
 </main>
-
 <footer class="footer">
   <div class="footer-top">
-    <div><div class="footer-brand-mark">RIDE THE WAVE</div><p class="footer-brand-text">Gratis surfen en kitesurfen voor jongeren van 14 tot 23 jaar.</p></div>
-    <div><div class="footer-col-title">Pagina's</div><div class="footer-links"><a href="programma.html">Programma</a><a href="community.html">Community</a><a href="scholen.html">Voor scholen</a><a href="sponsoren.html">Sponsoren</a><a href="verhalen.html">Verhalen</a><a href="aanmelden.html">Aanmelden</a></div></div>
-    <div><div class="footer-col-title">Contact</div><div class="footer-links"><a href="mailto:info@ridethewave.nl">info@ridethewave.nl</a><a href="https://wa.me/31000000000">WhatsApp</a></div></div>
-    <div><div class="footer-col-title">Locaties</div><div class="footer-links"><a href="#">Scheveningen</a><a href="#">Noordwijk</a><a href="#">Ouddorp</a></div></div>
+    <div><div class="footer-brand__mark">RIDE THE WAVE</div><p class="footer-brand__tagline">Gratis surfen en kitesurfen voor jongeren van 14 tot 23 jaar.</p></div>
+    <div><div class="footer-col__title">Pagina's</div><div class="footer-col__links"><a href="index.html">Home</a><a href="programma.html">Programma</a><a href="community.html">Community</a><a href="scholen.html">Scholen</a><a href="sponsoren.html">Sponsoren</a><a href="verhalen.html">Verhalen</a><a href="aanmelden.html">Aanmelden</a></div></div>
+    <div><div class="footer-col__title">Contact</div><div class="footer-col__links"><a href="mailto:info@ridethewave.nl">info@ridethewave.nl</a></div></div>
+    <div><div class="footer-col__title">Locaties</div><div class="footer-col__links"><a href="#">Amsterdam</a><a href="#">Scheveningen</a><a href="#">Noordwijk</a><a href="#">Ouddorp</a></div></div>
   </div>
-  <div class="footer-bottom">
-    <span class="footer-meta">© 2026 Stichting Ride the Wave · ANBI · KvK 12345678</span>
-    <div class="footer-social"><a href="#">IG</a><a href="#">TT</a><a href="#">LI</a></div>
-  </div>
+  <div class="footer-bottom"><span class="footer-meta">© 2026 Stichting Ride the Wave · ANBI · KvK 12345678</span><div class="footer-social"><a href="#">IG</a><a href="#">TT</a><a href="#">LI</a></div></div>
 </footer>
 </body>
 </html>
+
+

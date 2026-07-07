@@ -4,159 +4,277 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Programma — Ride the Wave</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .prog-hero { background-image: url('https://images.unsplash.com/photo-1455264745730-cb3b45de18c8?auto=format&fit=crop&w=1800&q=80'); }
-    .phases-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
-    .phase-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); margin-bottom: 2rem; }
-    .phase-row--flip .phase-img { order: 2; }
-    .phase-row--flip .phase-body { order: 1; }
-    .phase-img { min-height: 360px; overflow: hidden; }
-    .phase-img img { width:100%; height:100%; object-fit:cover; display:block; }
-    .phase-body { padding: 3rem; display: flex; flex-direction: column; justify-content: center; }
-    .phase-body--deep { background: var(--deep); }
-    .phase-body--foam { background: var(--foam); }
-    .phase-body--teal { background: var(--teal); }
-    .toggle-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 3rem; }
-    @media (max-width: 1000px) { .phases-grid { grid-template-columns: repeat(3,1fr); } }
-    @media (max-width: 760px) { .phases-grid { grid-template-columns: 1fr 1fr; } .phase-row { grid-template-columns: 1fr; } .phase-body { padding: 2rem; } }
-    @media (max-width: 480px) { .phases-grid { grid-template-columns: 1fr; } }
+    .fase-block { border-radius: 16px; overflow: hidden; margin-bottom: 1rem; }
+    .fase-head { display: flex; align-items: center; gap: 1.5rem; padding: 1.75rem 2rem; cursor: pointer; transition: background .2s; }
+    .fase-head:hover { background: rgba(255,255,255,.04); }
+    .fase-n { font-family: var(--font-d); font-weight: 900; font-size: 3rem; line-height: 1; min-width: 3rem; }
+    .fase-n--surf { color: var(--sun); }
+    .fase-n--kite { color: var(--teal-lt); }
+    .fase-meta { flex: 1; }
+    .fase-tag { font-size: .6rem; font-weight: 800; text-transform: uppercase; letter-spacing: .2em; margin-bottom: .25rem; }
+    .fase-tag--surf { color: var(--sun); }
+    .fase-tag--kite { color: var(--teal-lt); }
+    .fase-titel { font-family: var(--font-d); font-weight: 900; font-size: 1.35rem; text-transform: uppercase; color: var(--foam); line-height: 1; }
+    .fase-duur { font-size: .75rem; color: rgba(247,241,230,.4); margin-top: .2rem; font-weight: 600; }
+    .fase-body { padding: 0 2rem 2rem 6.5rem; display: none; }
+    .fase-body.open { display: block; }
+    .fase-body p { font-size: .95rem; color: rgba(247,241,230,.75); line-height: 1.75; margin-bottom: 1rem; }
+    .fase-reward { display: inline-flex; align-items: center; gap: .5rem; background: rgba(244,189,42,.12); border: 1.5px solid rgba(244,189,42,.2); color: var(--sun); font-size: .78rem; font-weight: 800; padding: .5rem 1rem; border-radius: 99px; text-transform: uppercase; letter-spacing: .08em; }
+    .fase-reward::before { content: '★'; }
+
+    .sport-tab-bar { display: flex; gap: .5rem; background: rgba(255,255,255,.05); border-radius: 99px; padding: 5px; width: fit-content; margin: 0 auto 3.5rem; }
+    .sport-tab { padding: .7rem 2rem; border-radius: 99px; font-size: .8rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: rgba(247,241,230,.5); cursor: pointer; transition: all .2s; }
+    .sport-tab.active--surf { background: var(--sun); color: var(--deep); }
+    .sport-tab.active--kite { background: var(--teal); color: var(--foam); }
+    .sport-panel { display: none; }
+    .sport-panel.active { display: block; }
   </style>
 </head>
 <body>
+
 <nav class="nav">
-  <a href="index.html" class="nav-logo"><span class="nav-logo-mark">RTW</span><div><div class="nav-logo-sub">Ride the Wave</div></div></a>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-mark">RTW</div>
+    <div class="nav-logo-sub">Ride the Wave</div>
+  </a>
   <div class="nav-links">
-    <a href="index.html">Home</a><a href="programma.html" class="active">Programma</a><a href="community.html">Community</a>
-    <a href="scholen.html">Scholen</a><a href="sponsoren.html">Sponsors</a><a href="verhalen.html">Verhalen</a>
+    <a href="index.html">Home</a>
+    <a href="programma.html" class="active">Programma</a>
+    <a href="community.html">Community</a>
+    <a href="scholen.html">Scholen</a>
+    <a href="sponsoren.html">Sponsors</a>
+    <a href="verhalen.html">Verhalen</a>
     <a href="aanmelden.html" class="nav-cta">Aanmelden</a>
   </div>
 </nav>
+
 <main>
 
-  <section class="page-hero prog-hero page-hero--short">
+  <section class="page-hero">
     <div class="page-hero__inner">
-      <span class="hero-eyebrow">5 fases · Surf &amp; Kite · Gratis</span>
-      <h1 class="hero-h1 hero-h1--lg">Van <span class="accent">beginner</span><br>tot instructeur</h1>
-      <p class="hero-sub">Elke deelnemer doorloopt hetzelfde pad. Jij bepaalt hoe ver je gaat.</p>
+      <div class="page-hero__eyebrow">5 fases surfen · 5 fases kitesurfen · Gratis</div>
+      <h1 class="page-hero__h"><span class="acc-sun">Jouw</span><br>programma.</h1>
+      <p class="page-hero__sub">Begin met een inlooples, geen verplichtingen. Wil je verder? Dan wacht fase 2, 3, 4 en uiteindelijk een internationaal certificaat. Alles op jouw tempo.</p>
     </div>
   </section>
 
-  <section class="section section--white">
+  <section class="section section--deep">
     <div class="container">
-      <div class="toggle-header">
-        <div>
-          <span class="sec-eyebrow">Kies je sport</span>
-          <h2 class="sec-h sec-h--lg sec-h--deep">Het programma</h2>
-        </div>
-        <div class="sport-toggle">
-          <button class="sport-btn active" data-sport="surf">🏄 Surfen</button>
-          <button class="sport-btn" data-sport="kite">🪁 Kitesurfen</button>
-        </div>
+
+      <div class="sport-tab-bar">
+        <div class="sport-tab active--surf" id="tab-surf" onclick="switchSport('surf')">🏄 Golfsurfen</div>
+        <div class="sport-tab" id="tab-kite" onclick="switchSport('kite')">🪁 Kitesurfen</div>
       </div>
 
+      <!-- SURFEN -->
       <div class="sport-panel active" id="panel-surf">
-        <div class="phases-grid" style="margin-bottom:3.5rem;">
-          <div class="prog-card">
-            <div class="prog-card__top"><div class="prog-card__num">1</div><div class="prog-card__tag">Fase 1</div><div class="prog-card__h">First Contact</div></div>
-            <div class="prog-card__body"><p class="prog-card__p">Kennismaking met de zee, surfcultuur en basisbeweging. Liggen, knielen, opstaan.</p><div class="prog-card__reward">Sticker &amp; groepsfoto</div><div class="prog-card__dur">4–6 weken · 1× per week</div></div>
-          </div>
-          <div class="prog-card">
-            <div class="prog-card__top"><div class="prog-card__num">2</div><div class="prog-card__tag">Fase 2</div><div class="prog-card__h">Pop-Up</div></div>
-            <div class="prog-card__body"><p class="prog-card__p">Je staat consistent op het board. Balans, voetenpositie en afpaddelen door whitewaters.</p><div class="prog-card__reward">RTW-wetsuit leenrecht</div><div class="prog-card__dur">6–8 weken · 1–2× per week</div></div>
-          </div>
-          <div class="prog-card">
-            <div class="prog-card__top"><div class="prog-card__num">3</div><div class="prog-card__tag">Fase 3</div><div class="prog-card__h">Green Waves</div></div>
-            <div class="prog-card__body"><p class="prog-card__p">Je leest golven, pikt echte groene golven en maakt je eerste bochten.</p><div class="prog-card__reward">RTW-shirt + strandbarbecue</div><div class="prog-card__dur">8–12 weken · 2× per week</div></div>
-          </div>
-          <div class="prog-card">
-            <div class="prog-card__top"><div class="prog-card__num">4</div><div class="prog-card__tag">Fase 4</div><div class="prog-card__h">Junior Crew</div></div>
-            <div class="prog-card__body"><p class="prog-card__p">Je wordt Junior Crew. Je helpt nieuwe deelnemers en bereidt je voor op je instructeurscertificaat.</p><div class="prog-card__reward">Junior Crew-jacket + surfbus</div><div class="prog-card__dur">Heel seizoen · 2–3× per week</div></div>
-          </div>
-          <div class="prog-card">
-            <div class="prog-card__top" style="background:var(--sun)"><div class="prog-card__num" style="color:rgba(14,52,63,.15)">5</div><div class="prog-card__tag" style="color:var(--teal)">Fase 5</div><div class="prog-card__h" style="color:var(--deep)">ISA Instructeur</div></div>
-            <div class="prog-card__body"><p class="prog-card__p">ISA Level 1 certificering. Geef zelfstandig les en werk internationaal als surfinstructeur.</p><div class="prog-card__reward" style="color:var(--deep)">Internationaal ISA-certificaat</div><div class="prog-card__dur">Trainingsweekend + examen</div></div>
-          </div>
-        </div>
-        <div class="phase-row">
-          <div class="phase-img"><img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=900&q=80" alt="Surf fase 1" loading="lazy"></div>
-          <div class="phase-body phase-body--deep">
-            <div style="font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--teal-mid);margin-bottom:.4rem">Fase 1 · First Contact</div>
-            <h3 class="sec-h sec-h--md sec-h--white" style="margin-bottom:1rem">Je eerste dag op het water</h3>
-            <p style="font-size:.9rem;color:rgba(247,241,230,.65);line-height:1.7;margin-bottom:1.5rem">De eerste les is altijd op het strand. Windtheorie, hoe golven bewegen en je eerste pop-up. Geen zwemervaring vereist — wel een sportieve instelling.</p>
-            <div class="pills"><span class="pill pill--light">Strandtraining</span><span class="pill pill--light">Theorie zee</span><span class="pill pill--light">Eerste pop-up</span></div>
-          </div>
-        </div>
-        <div class="phase-row phase-row--flip">
-          <div class="phase-img"><img src="https://images.unsplash.com/photo-1476610182048-b716b8518aae?auto=format&fit=crop&w=900&q=80" alt="Surf fase 3" loading="lazy"></div>
-          <div class="phase-body phase-body--foam">
-            <div style="font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--teal);margin-bottom:.4rem">Fase 3 · Green Waves</div>
-            <h3 class="sec-h sec-h--md sec-h--deep" style="margin-bottom:1rem">Echte golven pakken</h3>
-            <p style="font-size:.9rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem">In fase 3 ga je voorbij de whitewaters. Je leert golven lezen, de line-up navigeren en je eerste bochten maken. Dit is het punt waarop de meeste deelnemers zeggen: "Nu snap ik het."</p>
-            <div class="pills"><span class="pill">Golflezing</span><span class="pill">Line-up</span><span class="pill">Bochten</span></div>
-          </div>
-        </div>
-        <div class="phase-row">
-          <div class="phase-img"><img src="https://images.unsplash.com/photo-1511629091441-ee46c6b3c0b2?auto=format&fit=crop&w=900&q=80" alt="Instructeur" loading="lazy"></div>
-          <div class="phase-body phase-body--teal">
-            <div style="font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:rgba(247,241,230,.45);margin-bottom:.4rem">Fase 5 · ISA Instructeur</div>
-            <h3 class="sec-h sec-h--md sec-h--white" style="margin-bottom:1rem">Internationaal certificaat</h3>
-            <p style="font-size:.9rem;color:rgba(247,241,230,.7);line-height:1.7;margin-bottom:1.5rem">Met het ISA Level 1-certificaat kun je overal ter wereld als surfinstructeur aan de slag. Van Marokko tot Bali.</p>
-            <a href="aanmelden.html" class="btn btn--sun">Meld je aan</a>
-          </div>
-        </div>
-      </div>
 
+        <div class="fase-block" style="background:rgba(244,189,42,.06); border:1.5px solid rgba(244,189,42,.12);">
+          <div class="fase-head" onclick="toggleFase(this)">
+            <div class="fase-n fase-n--surf">1</div>
+            <div class="fase-meta">
+              <div class="fase-tag fase-tag--surf">Surfen · Fase 1 · 3 maanden</div>
+              <div class="fase-titel">Surflessen &amp; eerste golven</div>
+              <div class="fase-duur">10 lessen · Nadruk op plezier, veiligheid en samenwerken</div>
+            </div>
+            <div style="color:var(--sun); font-size:1.25rem; font-weight:900;">+</div>
+          </div>
+          <div class="fase-body">
+            <p>Kennismaking met surfen via 10 lessen praktijk én theorie. Je leert hoe je veilig de zee in gaat, hoe je op een board staat en hoe je samenwerkt met je mede-surfers. De nadruk ligt op plezier — niet op presteren.</p>
+            <p>Je krijgt een eigen wetsuit en een certificaat "zelfstandig surfen" als afsluiting van deze fase.</p>
+            <span class="fase-reward">Eigen wetsuit + certificaat "zelfstandig surfen"</span>
+          </div>
+        </div>
+
+        <div class="fase-block" style="background:rgba(244,189,42,.06); border:1.5px solid rgba(244,189,42,.12);">
+          <div class="fase-head" onclick="toggleFase(this)">
+            <div class="fase-n fase-n--surf">2</div>
+            <div class="fase-meta">
+              <div class="fase-tag fase-tag--surf">Surfen · Fase 2 · 6 maanden</div>
+              <div class="fase-titel">Zelfstandig het water in</div>
+              <div class="fase-duur">Eigen board klaarstaan · Eigen tempo</div>
+            </div>
+            <div style="color:var(--sun); font-size:1.25rem; font-weight:900;">+</div>
+          </div>
+          <div class="fase-body">
+            <p>Na fase 1 ga je zelfstandig naar de surfschool — je board ligt klaar. Je surft op jouw niveau, bouwt aan je techniek en je wordt onderdeel van de vaste groep.</p>
+            <p>Optioneel kun je Junior Crew Member worden: je helpt beginners op het strand en bent rolmodel voor nieuwe deelnemers.</p>
+            <span class="fase-reward">Eigen surfboard + optioneel Junior Crew Member</span>
+          </div>
+        </div>
+
+        <div class="fase-block" style="background:rgba(244,189,42,.06); border:1.5px solid rgba(244,189,42,.12);">
+          <div class="fase-head" onclick="toggleFase(this)">
+            <div class="fase-n fase-n--surf">3</div>
+            <div class="fase-meta">
+              <div class="fase-tag fase-tag--surf">Surfen · Fase 3 · 12 maanden</div>
+              <div class="fase-titel">Laat het rippen beginnen</div>
+              <div class="fase-duur">Gevorderd niveau · Eigen wetsuit &amp; board</div>
+            </div>
+            <div style="color:var(--sun); font-size:1.25rem; font-weight:900;">+</div>
+          </div>
+          <div class="fase-body">
+            <p>Je surft op gevorderd niveau met je eigen wetsuit en surfboard. Je techniek verbetert snel en je snapt de zee steeds beter. In fase 3 begin je ook aan de maatschappelijke projectdag: samen met de Crew organiseer je een dag voor een goed doel.</p>
+            <span class="fase-reward">Optioneel Crew Member worden</span>
+          </div>
+        </div>
+
+        <div class="fase-block" style="background:rgba(244,189,42,.08); border:1.5px solid rgba(244,189,42,.2);">
+          <div class="fase-head" onclick="toggleFase(this)">
+            <div class="fase-n fase-n--surf">4</div>
+            <div class="fase-meta">
+              <div class="fase-tag fase-tag--surf">Surfen · Fase 4 · 12 maanden · Vanaf 16 jaar</div>
+              <div class="fase-titel">RTW Surfinstructeur</div>
+              <div class="fase-duur">ISA &amp; LS gecertificeerd · Direct inzetbaar</div>
+            </div>
+            <div style="color:var(--sun); font-size:1.25rem; font-weight:900;">+</div>
+          </div>
+          <div class="fase-body">
+            <p>Via het programma word je ISA &amp; LS gecertificeerd surfinstructeur. Je bent direct inzetbaar bij aangesloten surfscholen en verdient je eigen geld als instructeur. Je begeleidt nieuwe RTW-deelnemers en bent ambassadeur van het programma.</p>
+            <span class="fase-reward">Internationaal ISA surfinstructeur certificaat</span>
+          </div>
+        </div>
+
+        <div class="fase-block" style="background:rgba(244,189,42,.08); border:1.5px solid rgba(244,189,42,.2);">
+          <div class="fase-head" onclick="toggleFase(this)">
+            <div class="fase-n fase-n--surf">5</div>
+            <div class="fase-meta">
+              <div class="fase-tag fase-tag--surf">Surfen · Fase 5 · 6 maanden · Vanaf 18 jaar</div>
+              <div class="fase-titel">Internationaal Surfinstructeur</div>
+              <div class="fase-duur">Werken bij internationale surfscholen</div>
+            </div>
+            <div style="color:var(--sun); font-size:1.25rem; font-weight:900;">+</div>
+          </div>
+          <div class="fase-body">
+            <p>Met je gecertificeerde surfskills en ervaring als instructeur ben je helemaal klaar om de golven in het buitenland te verkennen. Je werkt als surfinstructeur bij internationale surfscholen — zomers in Marokko, Portugal of Bali, of gewoon in Nederland.</p>
+            <span class="fase-reward">Ultimate RTW Ambassadeur</span>
+          </div>
+        </div>
+
+      </div><!-- /surf -->
+
+      <!-- KITESURFEN -->
       <div class="sport-panel" id="panel-kite">
-        <div class="phases-grid" style="margin-bottom:3.5rem;">
-          <div class="prog-card">
-            <div class="prog-card__top"><div class="prog-card__num">1</div><div class="prog-card__tag">Fase 1</div><div class="prog-card__h">Wind &amp; Lijnen</div></div>
-            <div class="prog-card__body"><p class="prog-card__p">Introductie kitesurfen: windtheorie, veiligheid en vliegoefeningen op het strand met een trainer-kite.</p><div class="prog-card__reward">Sticker &amp; groepsfoto</div><div class="prog-card__dur">4–6 weken · 1× per week</div></div>
+
+        <div class="fase-block" style="background:rgba(42,136,153,.08); border:1.5px solid rgba(42,136,153,.15);">
+          <div class="fase-head" onclick="toggleFase(this)">
+            <div class="fase-n fase-n--kite">1</div>
+            <div class="fase-meta">
+              <div class="fase-tag fase-tag--kite">Kitesurfen · Fase 1 · 5 lesdagen</div>
+              <div class="fase-titel">Kitesurflessen &amp; eerste vaarten</div>
+              <div class="fase-duur">5 lesdagen praktijk + theorie · Veiligheid centraal</div>
+            </div>
+            <div style="color:var(--teal-lt); font-size:1.25rem; font-weight:900;">+</div>
           </div>
-          <div class="prog-card">
-            <div class="prog-card__top"><div class="prog-card__num">2</div><div class="prog-card__tag">Fase 2</div><div class="prog-card__h">Bodydrag</div></div>
-            <div class="prog-card__body"><p class="prog-card__p">Je gaat het water in. Bodydrag — door de zee gesleept door de kite — is de basis van controle.</p><div class="prog-card__reward">RTW-neopreen leenrecht</div><div class="prog-card__dur">6–8 weken · 1–2× per week</div></div>
-          </div>
-          <div class="prog-card">
-            <div class="prog-card__top"><div class="prog-card__num">3</div><div class="prog-card__tag">Fase 3</div><div class="prog-card__h">Water Start</div></div>
-            <div class="prog-card__body"><p class="prog-card__p">Je combineert kite en board: water start en je eerste meters rijden.</p><div class="prog-card__reward">RTW-shirt + strandbarbecue</div><div class="prog-card__dur">8–12 weken · 2× per week</div></div>
-          </div>
-          <div class="prog-card">
-            <div class="prog-card__top"><div class="prog-card__num">4</div><div class="prog-card__tag">Fase 4</div><div class="prog-card__h">Upwind &amp; Crew</div></div>
-            <div class="prog-card__body"><p class="prog-card__p">Je kitet zelfstandig upwind. Je wordt Junior Crew en begeleidt nieuwe deelnemers.</p><div class="prog-card__reward">Junior Crew-jacket</div><div class="prog-card__dur">Heel seizoen · 2–3× per week</div></div>
-          </div>
-          <div class="prog-card">
-            <div class="prog-card__top" style="background:var(--sun)"><div class="prog-card__num" style="color:rgba(14,52,63,.15)">5</div><div class="prog-card__tag" style="color:var(--teal)">Fase 5</div><div class="prog-card__h" style="color:var(--deep)">IKO Instructeur</div></div>
-            <div class="prog-card__body"><p class="prog-card__p">IKO Level 1 certificering. Internationaal erkend kitesurfinstructeur.</p><div class="prog-card__reward" style="color:var(--deep)">Internationaal IKO-certificaat</div><div class="prog-card__dur">Trainingsweekend + examen</div></div>
+          <div class="fase-body">
+            <p>Kennismaking met kitesurfen in 5 lesdagen. Je leert de kite besturen, veilig op het water komen en teruggaan, en je begrijpt wind en weersomstandigheden. Plezier en veiligheid staan voorop.</p>
+            <span class="fase-reward">Certificaat fase 1 "zelfstandig varen" + eigen wetsuit</span>
           </div>
         </div>
-        <div class="phase-row">
-          <div class="phase-img"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=80" alt="Kite fase 1" loading="lazy"></div>
-          <div class="phase-body phase-body--deep">
-            <div style="font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--teal-mid);margin-bottom:.4rem">Fase 1 · Wind &amp; Lijnen</div>
-            <h3 class="sec-h sec-h--md sec-h--white" style="margin-bottom:1rem">Begin met de kite op het strand</h3>
-            <p style="font-size:.9rem;color:rgba(247,241,230,.65);line-height:1.7;margin-bottom:1.5rem">Je eerste kitelessons zijn volledig op het droge. Windtheorie, veiligheidsprotocollen en het besturen van een trainer-kite.</p>
-            <div class="pills"><span class="pill pill--light">Windtheorie</span><span class="pill pill--light">Trainer kite</span><span class="pill pill--light">Safety</span></div>
+
+        <div class="fase-block" style="background:rgba(42,136,153,.08); border:1.5px solid rgba(42,136,153,.15);">
+          <div class="fase-head" onclick="toggleFase(this)">
+            <div class="fase-n fase-n--kite">2</div>
+            <div class="fase-meta">
+              <div class="fase-tag fase-tag--kite">Kitesurfen · Fase 2 · 12 maanden</div>
+              <div class="fase-titel">Zelfstandig varen</div>
+              <div class="fase-duur">Materiaal klaar op vaste momenten</div>
+            </div>
+            <div style="color:var(--teal-lt); font-size:1.25rem; font-weight:900;">+</div>
+          </div>
+          <div class="fase-body">
+            <p>Je gaat zelfstandig naar de kitesurfschool — materiaal ligt klaar op vaste momenten. Je bouwt aan je techniek en rijdt steeds comfortabeler heen en terug. Optioneel word je Junior Crew Member.</p>
+            <span class="fase-reward">Eigen trapeze + kiteboard bruikleen + optioneel Junior Crew Member</span>
           </div>
         </div>
-        <div class="phase-row phase-row--flip">
-          <div class="phase-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80" alt="Kite water" loading="lazy"></div>
-          <div class="phase-body phase-body--foam">
-            <div style="font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--teal);margin-bottom:.4rem">Fase 3 · Water Start</div>
-            <h3 class="sec-h sec-h--md sec-h--deep" style="margin-bottom:1rem">Van bodydrag naar board</h3>
-            <p style="font-size:.9rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem">In fase 3 combineer je voor het eerst kite en board. De water start is hét moment dat kitesurfers nooit vergeten.</p>
-            <div class="pills"><span class="pill">Water start</span><span class="pill">Board control</span><span class="pill">Veiligheid</span></div>
+
+        <div class="fase-block" style="background:rgba(42,136,153,.08); border:1.5px solid rgba(42,136,153,.15);">
+          <div class="fase-head" onclick="toggleFase(this)">
+            <div class="fase-n fase-n--kite">3</div>
+            <div class="fase-meta">
+              <div class="fase-tag fase-tag--kite">Kitesurfen · Fase 3 · 12 maanden</div>
+              <div class="fase-titel">Eerste sprongen &amp; tricks</div>
+              <div class="fase-duur">Eigen wetsuit, trapeze &amp; kiteboard</div>
+            </div>
+            <div style="color:var(--teal-lt); font-size:1.25rem; font-weight:900;">+</div>
+          </div>
+          <div class="fase-body">
+            <p>Heen-en-weer surfen zit er in, nu beginnen de eerste sprongen. Je hebt je eigen wetsuit, trapeze en kiteboard. In fase 3 doe je ook mee aan de jaarlijkse maatschappelijke projectdag van de Crew.</p>
+            <span class="fase-reward">Eigen kiteboard + kite met bar bruikleen + optioneel Crew Member</span>
           </div>
         </div>
-      </div>
+
+        <div class="fase-block" style="background:rgba(42,136,153,.1); border:1.5px solid rgba(42,136,153,.25);">
+          <div class="fase-head" onclick="toggleFase(this)">
+            <div class="fase-n fase-n--kite">4</div>
+            <div class="fase-meta">
+              <div class="fase-tag fase-tag--kite">Kitesurfen · Fase 4 · 12 maanden · Vanaf 16 jaar</div>
+              <div class="fase-titel">RTW Kitesurfinstructeur</div>
+              <div class="fase-duur">IKO gecertificeerd · Direct inzetbaar</div>
+            </div>
+            <div style="color:var(--teal-lt); font-size:1.25rem; font-weight:900;">+</div>
+          </div>
+          <div class="fase-body">
+            <p>Via het programma word je IKO gecertificeerd kitesurfinstructeur. Je bent direct inzetbaar bij aangesloten kitesurfscholen en begeleidt nieuwe RTW-deelnemers als ambassadeur van het programma.</p>
+            <span class="fase-reward">Internationaal IKO kitesurfinstructeur certificaat</span>
+          </div>
+        </div>
+
+        <div class="fase-block" style="background:rgba(42,136,153,.1); border:1.5px solid rgba(42,136,153,.25);">
+          <div class="fase-head" onclick="toggleFase(this)">
+            <div class="fase-n fase-n--kite">5</div>
+            <div class="fase-meta">
+              <div class="fase-tag fase-tag--kite">Kitesurfen · Fase 5 · 6 maanden · Vanaf 18 jaar</div>
+              <div class="fase-titel">Internationaal Kitesurfinstructeur</div>
+              <div class="fase-duur">Werken bij internationale kitesurfscholen</div>
+            </div>
+            <div style="color:var(--teal-lt); font-size:1.25rem; font-weight:900;">+</div>
+          </div>
+          <div class="fase-body">
+            <p>Met je IKO-certificaat werk je bij internationale kitesurfscholen met een sterke ESG-focus. De wereld ligt voor je open — met de skills die je gratis hebt geleerd via RTW.</p>
+            <span class="fase-reward">Ultimate RTW Ambassadeur</span>
+          </div>
+        </div>
+
+      </div><!-- /kite -->
+
     </div>
   </section>
 
-  <section style="background:var(--deep);padding:5rem 2rem;text-align:center;">
-    <div class="container--sm">
-      <h2 class="sec-h sec-h--lg sec-h--sun" style="margin-bottom:1rem">Klaar voor je eerste les?</h2>
-      <p style="color:rgba(247,241,230,.6);font-size:1rem;margin-bottom:2rem">Meld je gratis aan. We bevestigen je plek en sturen je alle info.</p>
-      <a href="aanmelden.html" class="btn btn--sun btn--lg">Aanmelden</a>
+  <!-- PRAKTISCH -->
+  <section class="section section--sun">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:2rem;">
+        <div>
+          <div style="font-size:2.5rem; margin-bottom:1rem;">🚌</div>
+          <h3 style="font-family:var(--font-d); font-weight:900; font-size:1.4rem; text-transform:uppercase; color:var(--deep); margin-bottom:.5rem;">Surfbus</h3>
+          <p style="font-size:.9rem; color:rgba(14,52,63,.7); line-height:1.7;">De Surfbus haalt je op vanuit Amsterdam, Den Haag en Rotterdam. Vrijwilligers met VOG rijden je naar het strand en terug.</p>
+        </div>
+        <div>
+          <div style="font-size:2.5rem; margin-bottom:1rem;">📅</div>
+          <h3 style="font-family:var(--font-d); font-weight:900; font-size:1.4rem; text-transform:uppercase; color:var(--deep); margin-bottom:.5rem;">Seizoen</h3>
+          <p style="font-size:.9rem; color:rgba(14,52,63,.7); line-height:1.7;">April t/m oktober op het strand. November t/m maart is er een winterprogramma met sport, workshops en community-activiteiten.</p>
+        </div>
+        <div>
+          <div style="font-size:2.5rem; margin-bottom:1rem;">🤿</div>
+          <h3 style="font-family:var(--font-d); font-weight:900; font-size:1.4rem; text-transform:uppercase; color:var(--deep); margin-bottom:.5rem;">Materiaal</h3>
+          <p style="font-size:.9rem; color:rgba(14,52,63,.7); line-height:1.7;">Wetsuit, board en al het materiaal zijn aanwezig. Jij brengt alleen een handdoek, wisselkleding en een goede zin mee.</p>
+        </div>
+      </div>
+    </div>
+    <style>@media(max-width:700px){.section--sun .container>div{grid-template-columns:1fr!important}}</style>
+  </section>
+
+  <section class="section section--deep" style="text-align:center;">
+    <div class="container--xs">
+      <h2 class="sec-h sec-h--xl sec-h--sun" style="margin-bottom:1rem;">Klaar om te beginnen?</h2>
+      <p style="color:rgba(247,241,230,.65); font-size:1rem; line-height:1.75; margin-bottom:2rem; font-weight:600;">Na 3 inloopmomenten kies je zelf of je definitief meedoet of blijft inlopen. Geen verplichting.</p>
+      <a href="aanmelden.html" class="btn btn--sun btn--lg">Meld je aan</a>
     </div>
   </section>
 
@@ -164,10 +282,29 @@
 
 <footer class="footer">
   <div class="footer-top">
-    <div><div class="footer-brand-mark">RIDE THE WAVE</div><p class="footer-brand-text">Gratis surfen en kitesurfen voor jongeren van 14 tot 23 jaar.</p></div>
-    <div><div class="footer-col-title">Pagina's</div><div class="footer-links"><a href="programma.html">Programma</a><a href="community.html">Community</a><a href="scholen.html">Voor scholen</a><a href="sponsoren.html">Sponsoren</a><a href="verhalen.html">Verhalen</a><a href="aanmelden.html">Aanmelden</a></div></div>
-    <div><div class="footer-col-title">Contact</div><div class="footer-links"><a href="mailto:info@ridethewave.nl">info@ridethewave.nl</a><a href="https://wa.me/31000000000">WhatsApp</a></div></div>
-    <div><div class="footer-col-title">Locaties</div><div class="footer-links"><a href="#">Scheveningen</a><a href="#">Noordwijk</a><a href="#">Ouddorp</a></div></div>
+    <div>
+      <div class="footer-brand__mark">RIDE THE WAVE</div>
+      <p class="footer-brand__tagline">Gratis surfen en kitesurfen voor jongeren van 14 tot 23 jaar.</p>
+    </div>
+    <div>
+      <div class="footer-col__title">Pagina's</div>
+      <div class="footer-col__links">
+        <a href="index.html">Home</a><a href="programma.html">Programma</a><a href="community.html">Community</a>
+        <a href="scholen.html">Voor scholen</a><a href="sponsoren.html">Sponsoren</a><a href="verhalen.html">Verhalen</a><a href="aanmelden.html">Aanmelden</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col__title">Contact</div>
+      <div class="footer-col__links">
+        <a href="mailto:info@ridethewave.nl">info@ridethewave.nl</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col__title">Locaties</div>
+      <div class="footer-col__links">
+        <a href="#">Amsterdam</a><a href="#">Scheveningen</a><a href="#">Noordwijk</a><a href="#">Ouddorp</a>
+      </div>
+    </div>
   </div>
   <div class="footer-bottom">
     <span class="footer-meta">© 2026 Stichting Ride the Wave · ANBI · KvK 12345678</span>
@@ -176,15 +313,20 @@
 </footer>
 
 <script>
-  document.querySelectorAll('.sport-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.sport-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      document.querySelectorAll('.sport-panel').forEach(p => p.classList.remove('active'));
-      document.getElementById('panel-' + btn.dataset.sport).classList.add('active');
-    });
-  });
-  if (location.hash === '#kite') document.querySelector('[data-sport="kite"]').click();
+function switchSport(sport) {
+  document.querySelectorAll('.sport-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.sport-tab').forEach(t => t.className = 'sport-tab');
+  document.getElementById('panel-' + sport).classList.add('active');
+  document.getElementById('tab-' + sport).classList.add('active--' + sport);
+}
+function toggleFase(head) {
+  const body = head.nextElementSibling;
+  const icon = head.querySelector('div:last-child');
+  const isOpen = body.classList.contains('open');
+  head.closest('.sport-panel').querySelectorAll('.fase-body').forEach(b => b.classList.remove('open'));
+  head.closest('.sport-panel').querySelectorAll('.fase-head div:last-child').forEach(i => i.textContent = '+');
+  if (!isOpen) { body.classList.add('open'); icon.textContent = '−'; }
+}
 </script>
 </body>
 </html>
