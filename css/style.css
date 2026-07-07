@@ -119,12 +119,12 @@ ul { list-style: none; }
   text-transform: uppercase;
   letter-spacing: .01em;
 }
-.hero__word--sun  { color: var(--foam); }
+.hero__word--sun  { color: var(--sun); }
 .hero__word--outline {
   color: transparent;
   -webkit-text-stroke: 3px var(--teal-lt);
 }
-.hero__word--foam { color: var(--teal-lt); }
+.hero__word--foam { color: var(--foam); }
 
 /* "Het water wacht op jou." tagline */
 .hero__tagline {
