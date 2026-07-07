@@ -208,8 +208,8 @@ ul { list-style: none; }
   background: var(--deep);
   background-size: cover;
   background-position: center;
-  padding: clamp(4rem,8vw,8rem) clamp(1.5rem,4vw,3rem);
-  min-height: 62vh;
+  padding: clamp(2.5rem,5vw,5rem) clamp(1.5rem,4vw,3rem);
+  min-height: 40vh;
   position: relative; overflow: hidden;
 }
 /* Dark overlay so bg images don't kill readability */
@@ -277,6 +277,59 @@ ul { list-style: none; }
 .section--foam  { background: var(--foam);  color: var(--deep); }
 .section--white { background: var(--white); color: var(--deep); }
 .section--gray  { background: #f4f6f7;      color: var(--deep); }
+
+/* ── Tasteful CTA section (replaces overwhelming section--sun CTAs) ── */
+.section--cta {
+  background: var(--foam);
+  color: var(--deep);
+  border-top: 4px solid var(--teal);
+  padding: 3rem clamp(1.5rem, 4vw, 3rem);
+}
+.section--cta .sec-h--cta {
+  font-family: var(--font-d);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  text-transform: uppercase;
+  color: var(--deep);
+  line-height: .9;
+  margin-bottom: .75rem;
+}
+.section--cta .sec-h--cta span { color: var(--teal); }
+
+/* ── Stacked decorative word (fill + outline) ── */
+.stacked-word { display: inline-block; line-height: .88; }
+.stacked-word__fill {
+  display: block;
+  font-family: var(--font-d);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  text-transform: uppercase;
+  letter-spacing: .01em;
+  color: var(--sun);
+}
+.stacked-word__outline {
+  display: block;
+  font-family: var(--font-d);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  text-transform: uppercase;
+  letter-spacing: .01em;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(14,52,63,.4);
+}
+.stacked-word--teal .stacked-word__fill { color: var(--teal); }
+.stacked-word--teal .stacked-word__outline { -webkit-text-stroke: 2px rgba(28,110,126,.35); }
+
+/* ── Huisregel / principe cards ── */
+.regel-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
+.regel-card { background: var(--white); border-radius: var(--radius); border: 1.5px solid rgba(14,52,63,.1); padding: 1.75rem 1.5rem; display: flex; flex-direction: column; gap: .75rem; }
+.regel-card__icon { font-size: 2rem; line-height: 1; }
+.regel-card__h { font-family: var(--font-d); font-size: 1.1rem; text-transform: uppercase; color: var(--deep); line-height: 1; }
+.regel-card__p { font-size: .82rem; color: var(--muted); line-height: 1.65; }
+@media(max-width:860px){ .regel-grid { grid-template-columns: 1fr 1fr; } }
+@media(max-width:480px){ .regel-grid { grid-template-columns: 1fr; } }
+
+/* ── Kernprincipes row ── */
+.principe-row { display: flex; flex-wrap: wrap; gap: .75rem; }
+.principe-pill { display: flex; align-items: center; gap: .6rem; background: rgba(28,110,126,.08); border: 1.5px solid rgba(28,110,126,.18); border-radius: 99px; padding: .55rem 1.1rem; font-size: .8rem; font-weight: 700; color: var(--teal); }
+.principe-pill__dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
 
 /* ── Foam-section text overrides (dark text on light bg) ── */
 .section--foam .sec-h--foam,

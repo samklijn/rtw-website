@@ -252,35 +252,46 @@
   </section>
 
   <!-- PRAKTISCH -->
-  <section class="section section--sun">
+  <section class="section section--foam" style="border-top:4px solid var(--teal);">
     <div class="container">
-      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:2rem;">
-        <div>
-          <div style="font-size:2.5rem; margin-bottom:1rem;">🚌</div>
-          <h3 style="font-family:var(--font-d); font-weight:900; font-size:1.4rem; text-transform:uppercase; color:var(--deep); margin-bottom:.5rem;">Surfbus</h3>
-          <p style="font-size:.9rem; color:rgba(14,52,63,.7); line-height:1.7;">De Surfbus haalt je op vanuit Amsterdam, Den Haag en Rotterdam. Vrijwilligers met VOG rijden je naar het strand en terug.</p>
+      <div style="text-align:center; margin-bottom:2.5rem;">
+        <span class="eyebrow eyebrow--teal">Praktisch</span>
+        <h2 class="sec-h sec-h--lg sec-h--foam">Alles geregeld. Jij hoeft alleen te komen.</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.25rem;">
+        <div style="background:var(--white); border:1.5px solid rgba(14,52,63,.1); border-radius:14px; padding:1.75rem; display:flex; flex-direction:column; gap:.75rem;">
+          <div style="font-size:2rem;">🚌</div>
+          <div style="font-family:var(--font-d); font-size:1.2rem; text-transform:uppercase; color:var(--deep); line-height:1;">Surfbus 2026</div>
+          <p style="font-size:.85rem; color:var(--muted); line-height:1.7;">Haalt je op vanuit Amsterdam, Den Haag en Rotterdam. Vrijwilligers met VOG rijden je naar het strand en terug — gratis.</p>
+          <div style="font-size:.75rem; font-weight:700; color:var(--teal); text-transform:uppercase; letter-spacing:.08em;">Inclusief buddy-plek</div>
         </div>
-        <div>
-          <div style="font-size:2.5rem; margin-bottom:1rem;">📅</div>
-          <h3 style="font-family:var(--font-d); font-weight:900; font-size:1.4rem; text-transform:uppercase; color:var(--deep); margin-bottom:.5rem;">Seizoen</h3>
-          <p style="font-size:.9rem; color:rgba(14,52,63,.7); line-height:1.7;">April t/m oktober op het strand. November t/m maart is er een winterprogramma met sport, workshops en community-activiteiten.</p>
+        <div style="background:var(--white); border:1.5px solid rgba(14,52,63,.1); border-radius:14px; padding:1.75rem; display:flex; flex-direction:column; gap:.75rem;">
+          <div style="font-size:2rem;">📅</div>
+          <div style="font-family:var(--font-d); font-size:1.2rem; text-transform:uppercase; color:var(--deep); line-height:1;">Seizoen</div>
+          <p style="font-size:.85rem; color:var(--muted); line-height:1.7;">April t/m oktober op het strand. November t/m maart is er het winterprogramma met workshops, community-avonden en strandclean-ups.</p>
+          <div style="font-size:.75rem; font-weight:700; color:var(--teal); text-transform:uppercase; letter-spacing:.08em;">Heel het jaar actief</div>
         </div>
-        <div>
-          <div style="font-size:2.5rem; margin-bottom:1rem;">🤿</div>
-          <h3 style="font-family:var(--font-d); font-weight:900; font-size:1.4rem; text-transform:uppercase; color:var(--deep); margin-bottom:.5rem;">Materiaal</h3>
-          <p style="font-size:.9rem; color:rgba(14,52,63,.7); line-height:1.7;">Wetsuit, board en al het materiaal zijn aanwezig. Jij brengt alleen een handdoek, wisselkleding en een goede zin mee.</p>
+        <div style="background:var(--white); border:1.5px solid rgba(14,52,63,.1); border-radius:14px; padding:1.75rem; display:flex; flex-direction:column; gap:.75rem;">
+          <div style="font-size:2rem;">🏄</div>
+          <div style="font-family:var(--font-d); font-size:1.2rem; text-transform:uppercase; color:var(--deep); line-height:1;">Materiaal</div>
+          <p style="font-size:.85rem; color:var(--muted); line-height:1.7;">Wetsuit, board en al het materiaal zijn aanwezig. Jij brengt alleen een handdoek, wisselkleding en een goede zin mee.</p>
+          <div style="font-size:.75rem; font-weight:700; color:var(--teal); text-transform:uppercase; letter-spacing:.08em;">Nul extra kosten</div>
         </div>
       </div>
     </div>
     <style>
-    .programma-hero { background-image: url('https://images.unsplash.com/photo-1455264745730-cb3b45de18c8?auto=format&fit=crop&w=1800&q=80'); }@media(max-width:700px){.section--sun .container>div{grid-template-columns:1fr!important}}</style>
+    .programma-hero { background-image: url('https://images.unsplash.com/photo-1455264745730-cb3b45de18c8?auto=format&fit=crop&w=1800&q=80'); }
+    @media(max-width:700px){ .section--foam .container>div[style*="grid-template-columns:1fr 1fr 1fr"]{grid-template-columns:1fr!important} }</style>
   </section>
 
-  <section class="section section--foam" style="text-align:center;">
+  <section class="section--cta" style="text-align:center;">
     <div class="container--xs">
-      <h2 class="sec-h sec-h--xl sec-h--teal" style="margin-bottom:1rem;">Klaar om te beginnen?</h2>
-      <p style="color:rgba(14,52,63,.65); font-size:1rem; line-height:1.75; margin-bottom:2rem; font-weight:600;">Na 3 inloopmomenten kies je zelf of je definitief meedoet of blijft inlopen. Geen verplichting.</p>
-      <a href="aanmelden.html" class="btn btn--sun btn--lg">Meld je aan</a>
+      <div class="stacked-word" style="margin-bottom:1.25rem;">
+        <span class="stacked-word__fill">Klaar?</span>
+        <span class="stacked-word__outline">Spring.</span>
+      </div>
+      <p style="color:rgba(14,52,63,.7); font-size:.95rem; line-height:1.75; margin-bottom:2rem; font-weight:600;">Na 3 inloopmomenten kies je zelf of je definitief meedoet. Geen verplichting. Gewoon proberen.</p>
+      <a href="aanmelden.html" class="btn btn--teal btn--lg">Meld je gratis aan</a>
     </div>
   </section>
 
