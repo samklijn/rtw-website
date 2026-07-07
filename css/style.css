@@ -8,8 +8,8 @@
 :root {
   --deep:    #0E343F;
   --deep2:   #0a2830;
-  --teal:    #1C6E7E;
-  --teal-lt: #2A8899;
+  --teal:    #0D5E72;
+  --teal-lt: #1A7A92;
   --sun:     #F4BD2A;
   --sun-lt:  #FEF5D7;
   --foam:    #F7F1E6;
@@ -641,6 +641,7 @@ ul { list-style: none; }
 .footer-links       { display:flex; flex-direction:column; gap:.6rem; }
 .footer-links a     { font-size:.82rem; color:rgba(247,241,230,.4); transition:color .15s; }
 .footer-links a:hover { color:var(--foam); }
+
 
 
 

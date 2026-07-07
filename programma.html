@@ -7,8 +7,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=7">
+  <link rel="stylesheet" href="css/style.css?v=8">
   <style>
+    .programma-hero { background-image: url('https://images.unsplash.com/photo-1455264745730-cb3b45de18c8?auto=format&fit=crop&w=1800&q=80'); }
     .fase-block { border-radius: 16px; overflow: hidden; margin-bottom: 1rem; }
     .fase-head { display: flex; align-items: center; gap: 1.5rem; padding: 1.75rem 2rem; cursor: pointer; transition: background .2s; }
     .fase-head:hover { background: rgba(255,255,255,.04); }
@@ -55,7 +56,7 @@
 
 <main>
 
-  <section class="page-hero">
+  <section class="page-hero programma-hero">
     <div class="page-hero__inner">
       <div class="page-hero__eyebrow">5 fases surfen · 5 fases kitesurfen · Gratis</div>
       <h1 class="page-hero__h"><span class="acc-sun">Jouw</span><br>programma.</h1><p class="page-hero__tagline--inner">Het water wacht op jou.</p>
@@ -271,7 +272,8 @@
         </div>
       </div>
     </div>
-    <style>@media(max-width:700px){.section--sun .container>div{grid-template-columns:1fr!important}}</style>
+    <style>
+    .programma-hero { background-image: url('https://images.unsplash.com/photo-1455264745730-cb3b45de18c8?auto=format&fit=crop&w=1800&q=80'); }@media(max-width:700px){.section--sun .container>div{grid-template-columns:1fr!important}}</style>
   </section>
 
   <section class="section section--deep" style="text-align:center;">
@@ -334,6 +336,8 @@ function toggleFase(head) {
 </script>
 </body>
 </html>
+
+
 
 
 
