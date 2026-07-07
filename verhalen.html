@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verhalen — Ride the Wave</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .vhl-hero { background-image: url('https://images.unsplash.com/photo-1476610182048-b716b8518aae?auto=format&fit=crop&w=1800&q=80'); }
+    .featured { display: grid; grid-template-columns: 1fr 1fr; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .featured__img { min-height: 500px; overflow: hidden; }
+    .featured__img img { width:100%; height:100%; object-fit:cover; display:block; }
+    .featured__body { background: var(--deep); padding: 3.5rem; display: flex; flex-direction: column; justify-content: center; }
+    .stories-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .story-card { border-radius: var(--radius); overflow: hidden; background: var(--white); box-shadow: var(--shadow); transition: box-shadow .25s, transform .25s; }
+    .story-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .story-card__img { aspect-ratio: 3/4; overflow: hidden; }
+    .story-card__img img { width:100%; height:100%; object-fit:cover; transition: transform .4s; }
+    .story-card:hover .story-card__img img { transform: scale(1.04); }
+    .story-card__body { padding: 1.5rem; }
+    .story-card__tag { font-size: .58rem; font-weight: 700; text-transform: uppercase; letter-spacing: .18em; color: var(--teal); margin-bottom: .4rem; }
+    .story-card__name { font-family: var(--font-d); font-size: 1.5rem; text-transform: uppercase; color: var(--deep); line-height: 1; margin-bottom: .5rem; }
+    .story-card__p { font-size: .83rem; color: var(--muted); line-height: 1.6; font-style: italic; }
+    .pull-quote { background: var(--sun); padding: 5rem 2.5rem; text-align: center; }
+    .pull-quote__text { font-family: var(--font-d); font-size: clamp(1.8rem,4vw,3.5rem); text-transform: uppercase; color: var(--deep); line-height: 1.05; max-width: 20ch; margin: 0 auto; }
+    .pull-quote__attr { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .16em; color: rgba(14,52,63,.5); margin-top: 1.5rem; }
+    .video-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+    .video-card { position: relative; aspect-ratio: 16/9; overflow: hidden; background: var(--teal); border-radius: var(--radius); }
+    .video-card img { width:100%; height:100%; object-fit:cover; opacity:.55; }
+    .video-card__overlay { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+    .video-play { width:64px; height:64px; border-radius:50%; border:2px solid var(--foam); display:flex; align-items:center; justify-content:center; margin-bottom:1rem; }
+    .video-play svg { width:24px; height:24px; fill:var(--foam); margin-left:4px; }
+    .video-card__title { font-family:var(--font-d); font-size:1.2rem; text-transform:uppercase; color:var(--foam); text-align:center; }
+    @media (max-width:900px) { .featured{grid-template-columns:1fr} .featured__body{padding:2.5rem} .stories-grid{grid-template-columns:1fr 1fr} .video-grid{grid-template-columns:1fr} }
+    @media (max-width:600px) { .stories-grid{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-logo"><span class="nav-logo-mark">RTW</span><div><div class="nav-logo-sub">Ride the Wave</div></div></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a><a href="programma.html">Programma</a><a href="community.html">Community</a>
+    <a href="scholen.html">Scholen</a><a href="sponsoren.html">Sponsors</a><a href="verhalen.html" class="active">Verhalen</a>
+    <a href="aanmelden.html" class="nav-cta">Aanmelden</a>
+  </div>
+</nav>
+<main>
+
+  <section class="page-hero vhl-hero page-hero--short">
+    <div class="page-hero__inner">
+      <span class="hero-eyebrow">Ervaringen van deelnemers</span>
+      <h1 class="hero-h1 hero-h1--lg">Ze vertellen<br>het <span class="accent">zelf</span></h1>
+      <p class="hero-sub">Geen brochure-taal. Gewoon wat er echt verandert als je voor het eerst een golf pakt.</p>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="container">
+      <div class="featured">
+        <div class="featured__img"><img src="https://images.unsplash.com/photo-1511629091441-ee46c6b3c0b2?auto=format&fit=crop&w=900&q=80" alt="Younes" loading="lazy"></div>
+        <div class="featured__body">
+          <span class="badge badge--sun" style="margin-bottom:2rem;width:fit-content">Uitgelicht verhaal</span>
+          <h2 class="sec-h sec-h--lg sec-h--foam" style="margin-bottom:1.5rem">Van bangerd tot instructeur</h2>
+          <blockquote style="border-left:3px solid var(--sun);padding-left:1.25rem;margin-bottom:1.5rem">
+            <p style="font-size:1rem;color:rgba(247,241,230,.8);line-height:1.75;font-style:italic">"Ik had nog nooit gezwommen in zee. De eerste keer dat ik op dat board stond dacht ik: ik ga dood. De tweede keer dacht ik: dit is het mooiste wat ik ooit heb gedaan."</p>
+            <footer style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(247,241,230,.4);margin-top:.75rem">Younes, 19 — gecertificeerd surfinstructeur, Scheveningen</footer>
+          </blockquote>
+          <p style="font-size:.88rem;color:rgba(247,241,230,.55);line-height:1.7">Younes deed mee via zijn school. Hij had nog nooit de zee in gekund. Drie jaar later heeft hij zijn ISA-certificaat en geeft hij zelf les aan beginners. Fase 4 compleet.</p>
+          <a href="#verhalen" class="btn btn--sun" style="margin-top:2rem;width:fit-content">Meer verhalen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="pull-quote">
+    <p class="pull-quote__text">"Ik kom hier elke week. Dit is mijn plek."</p>
+    <p class="pull-quote__attr">Fatima, 17 · Deelneemster fase 3 · Noordwijk</p>
+  </div>
+
+  <section class="section section--foam" id="verhalen">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:2.5rem">
+        <span class="sec-eyebrow">Meer verhalen</span>
+        <h2 class="sec-h sec-h--xl sec-h--deep">Van het strand</h2>
+      </div>
+      <div class="stories-grid">
+        <div class="story-card">
+          <div class="story-card__img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="Jamal" loading="lazy"></div>
+          <div class="story-card__body"><div class="story-card__tag">Kitesurfen · Fase 2</div><div class="story-card__name">Jamal, 16</div><p class="story-card__p">"Ik wist niet eens wat een kite was. Nu zit ik elke zaterdag op het water. Mijn vrienden willen ook meedoen."</p></div>
+        </div>
+        <div class="story-card">
+          <div class="story-card__img"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=600&q=80" alt="Nadia" loading="lazy"></div>
+          <div class="story-card__body"><div class="story-card__tag">Surfen · Junior Crew</div><div class="story-card__name">Nadia, 20</div><p class="story-card__p">"Als Junior Crew help ik nieuwe deelnemers. Het gevoel als iemand voor het eerst rechtop staat — dat vergeet je niet."</p></div>
+        </div>
+        <div class="story-card">
+          <div class="story-card__img"><img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=600&q=80" alt="Bilal" loading="lazy"></div>
+          <div class="story-card__body"><div class="story-card__tag">Surfen · Fase 4</div><div class="story-card__name">Bilal, 22</div><p class="story-card__p">"Ik haal mijn instructeurscertificaat dit jaar. Dan ga ik de zomer in Marokko werken. Had ik nooit voor mogelijk gehouden."</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:2rem">
+        <span class="sec-eyebrow">Video</span>
+        <h2 class="sec-h sec-h--lg sec-h--deep">Zie het zelf</h2>
+      </div>
+      <div class="video-grid">
+        <div class="video-card">
+          <img src="https://images.unsplash.com/photo-1455264745730-cb3b45de18c8?auto=format&fit=crop&w=800&q=80" alt="Video lesdag" loading="lazy">
+          <div class="video-card__overlay"><div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div><span class="video-card__title">Een dag op het strand</span></div>
+        </div>
+        <div class="video-card">
+          <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80" alt="Video kitesurf" loading="lazy">
+          <div class="video-card__overlay"><div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div><span class="video-card__title">Kitesurfen van scratch</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--sun);padding:5rem 2rem;text-align:center">
+    <div class="container--sm">
+      <h2 class="sec-h sec-h--lg sec-h--deep" style="margin-bottom:1rem">Schrijf jouw verhaal</h2>
+      <p style="font-size:1rem;color:rgba(14,52,63,.65);margin-bottom:2rem">Meld je aan. De rest schrijf jij zelf.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="aanmelden.html" class="btn btn--deep btn--lg">Aanmelden</a>
+        <a href="community.html" class="btn btn--teal btn--lg">Bekijk de community</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div><div class="footer-brand-mark">RIDE THE WAVE</div><p class="footer-brand-text">Gratis surfen en kitesurfen voor jongeren van 14 tot 23 jaar.</p></div>
+    <div><div class="footer-col-title">Pagina's</div><div class="footer-links"><a href="programma.html">Programma</a><a href="community.html">Community</a><a href="scholen.html">Voor scholen</a><a href="sponsoren.html">Sponsoren</a><a href="verhalen.html">Verhalen</a><a href="aanmelden.html">Aanmelden</a></div></div>
+    <div><div class="footer-col-title">Contact</div><div class="footer-links"><a href="mailto:info@ridethewave.nl">info@ridethewave.nl</a><a href="https://wa.me/31000000000">WhatsApp</a></div></div>
+    <div><div class="footer-col-title">Locaties</div><div class="footer-links"><a href="#">Scheveningen</a><a href="#">Noordwijk</a><a href="#">Ouddorp</a></div></div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-meta">© 2026 Stichting Ride the Wave · ANBI · KvK 12345678</span>
+    <div class="footer-social"><a href="#">IG</a><a href="#">TT</a><a href="#">LI</a></div>
+  </div>
+</footer>
+</body>
+</html>

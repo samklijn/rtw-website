@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ride the Wave — Gratis surfen &amp; kitesurfen voor jongeren</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .loc-ams  { background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=80'); }
+    .loc-sche { background-image: url('https://images.unsplash.com/photo-1476610182048-b716b8518aae?auto=format&fit=crop&w=700&q=80'); }
+    .loc-nwk  { background-image: url('https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=700&q=80'); }
+    .loc-odd  { background-image: url('https://images.unsplash.com/photo-1455264745730-cb3b45de18c8?auto=format&fit=crop&w=700&q=80'); }
+
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .intro-photo { border-radius: 20px; overflow: hidden; aspect-ratio: 4/3; }
+    .intro-photo img { width:100%; height:100%; object-fit:cover; }
+    @media(max-width:860px){ .intro-grid{grid-template-columns:1fr;} }
+
+    .school-banner { background: var(--teal); border-radius: 20px; padding: 3rem clamp(2rem,4vw,4rem); display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
+    .school-banner__h { font-family: var(--font-d); font-size: clamp(1.75rem,3.5vw,2.75rem); text-transform: uppercase; color: var(--foam); line-height: .92; margin-bottom: .75rem; }
+    .school-banner__p { font-size: .9rem; color: rgba(247,241,230,.65); max-width: 42ch; line-height: 1.7; }
+    .school-banner__btns { display: flex; flex-direction: column; gap: .6rem; align-items: flex-end; }
+    @media(max-width:700px){ .school-banner{grid-template-columns:1fr;} .school-banner__btns{align-items:flex-start; flex-direction:row;} }
+
+    .dg-tag { display:inline-block; padding:.4rem 1rem; border-radius:99px; font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; }
+    .dg-tag--sun  { background:rgba(244,189,42,.12); color:var(--sun); border:1px solid rgba(244,189,42,.2); }
+    .dg-tag--teal { background:rgba(42,136,153,.12); color:var(--teal-lt); border:1px solid rgba(42,136,153,.2); }
+    .dg-tag--foam { background:rgba(247,241,230,.07); color:rgba(247,241,230,.5); border:1px solid rgba(247,241,230,.1); }
+    .dg-strip { display:flex; gap:.5rem; flex-wrap:wrap; margin-top:1.5rem; }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-mark">RTW</div>
+    <div class="nav-logo-sub">Ride the Wave</div>
+  </a>
+  <div class="nav-links">
+    <a href="programma.html">Programma</a>
+    <a href="community.html">Community</a>
+    <a href="scholen.html">Scholen</a>
+    <a href="sponsoren.html">Sponsors</a>
+    <a href="verhalen.html">Verhalen</a>
+    <a href="aanmelden.html" class="nav-cta">Aanmelden</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__locs">
+      <span class="hero__loc">Amsterdam</span><span class="hero__loc-sep">×</span>
+      <span class="hero__loc">Scheveningen</span><span class="hero__loc-sep">×</span>
+      <span class="hero__loc">Noordwijk</span><span class="hero__loc-sep">×</span>
+      <span class="hero__loc">Ouddorp</span>
+    </div>
+    <div class="hero__stack">
+      <span class="hero__word hero__word--sun">Surf.</span>
+      <span class="hero__word hero__word--outline">Kite.</span>
+      <span class="hero__word hero__word--foam">Groei.</span>
+    </div>
+    <p class="hero__sub">Gratis surfen én kitesurfen voor jongeren van 14 tot 23. Van je eerste golf tot internationaal instructeur — met een community die er echt voor je is.</p>
+    <div class="hero__btns">
+      <a href="aanmelden.html" class="btn btn--sun btn--lg">Meld je aan — gratis</a>
+      <a href="programma.html" class="btn btn--outline-foam btn--lg">Bekijk het programma</a>
+    </div>
+  </section>
+
+  <!-- TWEE SPORTEN -->
+  <div class="sport-split">
+    <div class="sport-half sport-half--teal">
+      <div class="sport-half__icon">🏄</div>
+      <div class="sport-half__n">Golf<br>surfen</div>
+      <p class="sport-half__p">Beginnerslessen tot ISA-gecertificeerd instructeur — in 5 fases op jouw tempo.</p>
+      <div class="sport-half__phases">
+        <div class="sport-half__phase"><span class="sport-half__phase-n">1</span>Surflessen &amp; eerste golven</div>
+        <div class="sport-half__phase"><span class="sport-half__phase-n">2</span>Zelfstandig het water in</div>
+        <div class="sport-half__phase"><span class="sport-half__phase-n">3</span>Laat het rippen beginnen</div>
+        <div class="sport-half__phase"><span class="sport-half__phase-n">4</span>ISA Surfinstructeur (v.a. 16)</div>
+        <div class="sport-half__phase"><span class="sport-half__phase-n">5</span>Internationaal instructeur (v.a. 18)</div>
+      </div>
+      <a href="programma.html" class="arrow-link arrow-link--sun">Alle surf-fases →</a>
+    </div>
+    <div class="sport-half sport-half--sun">
+      <div class="sport-half__icon">🪁</div>
+      <div class="sport-half__n">Kite<br>surfen</div>
+      <p class="sport-half__p">Wind, water en een kite. Van eerste vluchtles tot IKO-gecertificeerd kitesurfinstructeur.</p>
+      <div class="sport-half__phases">
+        <div class="sport-half__phase"><span class="sport-half__phase-n">1</span>Kitesurflessen &amp; eerste vaarten</div>
+        <div class="sport-half__phase"><span class="sport-half__phase-n">2</span>Zelfstandig varen</div>
+        <div class="sport-half__phase"><span class="sport-half__phase-n">3</span>Eerste sprongen</div>
+        <div class="sport-half__phase"><span class="sport-half__phase-n">4</span>IKO Kitesurfinstructeur (v.a. 16)</div>
+        <div class="sport-half__phase"><span class="sport-half__phase-n">5</span>Internationaal instructeur (v.a. 18)</div>
+      </div>
+      <a href="programma.html" class="arrow-link arrow-link--deep">Alle kite-fases →</a>
+    </div>
+  </div>
+
+  <!-- MISSIE -->
+  <section class="section section--deep">
+    <div class="container">
+      <div class="intro-grid">
+        <div>
+          <span class="eyebrow eyebrow--foam">Over Ride the Wave</span>
+          <h2 class="sec-h sec-h--xl sec-h--foam" style="margin-bottom:1.25rem;">De zee is voor iedereen.<br><span style="color:var(--sun)">Echt voor iedereen.</span></h2>
+          <p class="sec-p sec-p--foam" style="margin-bottom:1rem;">Stichting Ride the Wave biedt jongeren van 14 tot 23 jaar gratis surf- en kitesurflessen. We combineren sport, natuur en community — zodat jij zelfvertrouwen opbouwt en je plek vindt.</p>
+          <p class="sec-p sec-p--foam" style="margin-bottom:2rem;">Je bepaalt zelf hoever je gaat. Inlooples proberen, of doorgroeien tot internationaal gecertificeerd instructeur. Surfbus rijdt je op en neer.</p>
+          <div class="dg-strip">
+            <span class="dg-tag dg-tag--sun">14–23 jaar</span>
+            <span class="dg-tag dg-tag--teal">Alle niveaus</span>
+            <span class="dg-tag dg-tag--teal">Surfbus inbegrepen</span>
+            <span class="dg-tag dg-tag--foam">ANBI-stichting</span>
+            <span class="dg-tag dg-tag--foam">€0 kosten</span>
+          </div>
+        </div>
+        <div class="intro-photo">
+          <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=900&q=80" alt="Jongeren surfen" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section style="background:var(--deep2); border-top:1px solid rgba(255,255,255,.05); border-bottom:1px solid rgba(255,255,255,.05);">
+    <div class="container">
+      <div class="stats-row stats-row--dark">
+        <div class="stat-block"><div class="stat-block__n">200+</div><div class="stat-block__l">Jongeren bereikt<br>14–23 jaar</div></div>
+        <div class="stat-block"><div class="stat-block__n">10</div><div class="stat-block__l">Gecertificeerde<br>instructeurs</div></div>
+        <div class="stat-block"><div class="stat-block__n">4</div><div class="stat-block__l">Strandlocaties<br>in Nederland</div></div>
+        <div class="stat-block"><div class="stat-block__n">€0</div><div class="stat-block__l">Kosten voor<br>deelnemers</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRING A FRIEND -->
+  <section class="section section--deep">
+    <div class="container">
+      <div class="friend-banner">
+        <div>
+          <span class="eyebrow eyebrow--teal">Bring a friend</span>
+          <div class="friend-banner__h">Iemand in gedachten?<br>Neem 'm mee. 🤙</div>
+          <p class="friend-banner__p">Het beste cadeau: je vriend of vriendin aanmelden. Stuur de WhatsApp-link, geef een naam op bij je aanmelding of vraag om een buddy-uitnodiging. Hoe meer zielen, hoe meer vreugde op het strand.</p>
+        </div>
+        <div class="friend-banner__btns">
+          <a href="https://wa.me/?text=H%C3%A9%20doe%20je%20mee%3F%20Ride%20the%20Wave%20is%20gratis%20surfen%20en%20kitesurfen.%20Meld%20je%20aan%20via%20ridethewave.nl" target="_blank" class="btn btn--deep btn--lg" style="background:var(--deep2); color:var(--sun); border:2px solid rgba(255,255,255,.1);">📲 Stuur via WhatsApp</a>
+          <a href="aanmelden.html" class="btn btn--outline-deep btn--lg" style="border-color:rgba(14,52,63,.4); color:var(--deep);">Samen aanmelden</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JUNIOR CREW -->
+  <section class="section section--teal">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start;">
+        <div>
+          <span class="eyebrow eyebrow--sun">Community</span>
+          <h2 class="sec-h sec-h--xl sec-h--foam" style="margin-bottom:1.25rem;">Junior Crew:<br>jij bent<br>het voorbeeld</h2>
+          <p class="sec-p sec-p--foam" style="margin-bottom:1rem;">Vanaf fase 2 kun je Junior Crew worden. Je begeleidt beginners, bent rolmodel op het strand en krijgt exclusieve Crew-kleding. Geen baantje, maar een positie.</p>
+          <p class="sec-p sec-p--foam" style="margin-bottom:2rem;">Junior Crew organiseert ook de jaarlijkse maatschappelijke projectdag — voor een doel dat ze zelf kiezen.</p>
+          <div style="display:flex; gap:.75rem; flex-wrap:wrap;">
+            <a href="community.html" class="btn btn--foam">Bekijk de community</a>
+            <a href="aanmelden.html" class="btn btn--outline-foam">Word Junior Crew</a>
+          </div>
+        </div>
+        <div class="crew-grid">
+          <div class="crew-photo"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Crew" loading="lazy"></div>
+          <div class="crew-photo"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80" alt="Crew" loading="lazy"></div>
+          <div class="crew-photo"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80" alt="Crew" loading="lazy"></div>
+          <div class="crew-photo"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80" alt="Crew" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+    <style>@media(max-width:860px){.section--teal .container>div{grid-template-columns:1fr!important}}</style>
+  </section>
+
+  <!-- VOOR SCHOLEN -->
+  <section class="section section--deep">
+    <div class="container">
+      <div class="school-banner">
+        <div>
+          <span class="eyebrow eyebrow--foam">Voor scholen</span>
+          <div class="school-banner__h">Jij kent je leerlingen.<br>Wij kennen de zee.</div>
+          <p class="school-banner__p">Scholen zijn de beste weg naar de juiste jongeren. We werken samen met MBO, VMBO en havo/vwo — inclusief informatiemomenten, vaste groepsdagen en alles geregeld.</p>
+        </div>
+        <div class="school-banner__btns">
+          <a href="scholen.html" class="btn btn--foam btn--lg">Info voor scholen</a>
+          <a href="mailto:scholen@ridethewave.nl" class="btn btn--outline-foam btn--lg">Direct contact</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATIES -->
+  <section class="section section--deep2">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:2.5rem;">
+        <span class="eyebrow eyebrow--teal">Waar we zijn</span>
+        <h2 class="sec-h sec-h--xl sec-h--foam">Vier locaties aan zee.</h2>
+      </div>
+      <div class="locatie-tiles">
+        <div class="locatie-tile loc-ams">
+          <div class="locatie-tile__body">
+            <div class="locatie-tile__name">Amsterdam</div>
+            <div class="locatie-tile__sport">Surf · Kite</div>
+          </div>
+        </div>
+        <div class="locatie-tile loc-sche">
+          <div class="locatie-tile__body">
+            <div class="locatie-tile__name">Scheveningen</div>
+            <div class="locatie-tile__sport">Surf · Kite</div>
+          </div>
+        </div>
+        <div class="locatie-tile loc-nwk">
+          <div class="locatie-tile__body">
+            <div class="locatie-tile__name">Noordwijk</div>
+            <div class="locatie-tile__sport">Surfen</div>
+          </div>
+        </div>
+        <div class="locatie-tile loc-odd">
+          <div class="locatie-tile__body">
+            <div class="locatie-tile__name">Ouddorp</div>
+            <div class="locatie-tile__sport">Surf · Kite</div>
+          </div>
+        </div>
+      </div>
+      <p style="text-align:center; margin-top:1.5rem; font-size:.78rem; color:rgba(247,241,230,.25); text-transform:uppercase; letter-spacing:.12em;">Surfbus vanuit Amsterdam · Den Haag · Rotterdam</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section section--deep">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:3rem;">
+        <span class="eyebrow eyebrow--sun">Ze vertellen het zelf</span>
+        <h2 class="sec-h sec-h--xl sec-h--foam">Geen brochure-taal.</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi">
+          <div class="testi__head">
+            <div class="testi__avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Younes"></div>
+            <div><div class="testi__name">Younes, 19</div><div class="testi__role">ISA Instructeur · Scheveningen</div></div>
+          </div>
+          <p class="testi__quote">"Ik had nog nooit gezwommen in zee. Eerste keer dacht ik: ik ga dood. Tweede keer dacht ik: dit is het mooiste wat ik ooit heb gedaan."</p>
+        </div>
+        <div class="testi">
+          <div class="testi__head">
+            <div class="testi__avatar"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="Fatima"></div>
+            <div><div class="testi__name">Fatima, 17</div><div class="testi__role">Junior Crew · Noordwijk</div></div>
+          </div>
+          <p class="testi__quote">"Ik kom hier elke week. Dit is mijn plek. Niemand kijkt je raar aan — iedereen is gelijk als je op dat board staat."</p>
+        </div>
+        <div class="testi">
+          <div class="testi__head">
+            <div class="testi__avatar"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&q=80" alt="Jamal"></div>
+            <div><div class="testi__name">Jamal, 16</div><div class="testi__role">Kitesurfer Fase 2 · Scheveningen</div></div>
+          </div>
+          <p class="testi__quote">"Mijn vrienden willen nu ook meedoen. Ik heb er al drie meegenomen. RTW is gewoon de vettste plek om te zijn."</p>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:2.5rem;">
+        <a href="verhalen.html" class="arrow-link arrow-link--sun">Meer verhalen lezen →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--sun" style="text-align:center;">
+    <div class="container--xs">
+      <h2 class="sec-h sec-h--deep" style="font-size:clamp(3.5rem,9vw,7rem); margin-bottom:1rem;">Doe mee.</h2>
+      <p style="font-size:1.05rem; color:rgba(14,52,63,.65); max-width:38ch; margin:0 auto 2.5rem; line-height:1.75;">Gratis. Zonder ervaring. Gewoon starten. We regelen de wetsuit, het board en de rit naar het strand.</p>
+      <div style="display:flex; gap:.875rem; justify-content:center; flex-wrap:wrap;">
+        <a href="aanmelden.html" class="btn btn--deep btn--lg">Aanmelden als deelnemer</a>
+        <a href="scholen.html" class="btn btn--outline-deep btn--lg">Aanmelden via school</a>
+      </div>
+      <p style="margin-top:2rem; font-size:.7rem; color:rgba(14,52,63,.4); text-transform:uppercase; letter-spacing:.15em;">ANBI-gecertificeerd · Giften fiscaal aftrekbaar</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand__mark">RIDE THE WAVE</div>
+      <p class="footer-brand__tagline">Gratis surfen en kitesurfen voor jongeren van 14 tot 23 jaar — van eerste golf tot internationaal instructeur.</p>
+      <div class="footer-brand__social">
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">LinkedIn</a>
+        <a href="https://wa.me/31000000000">WhatsApp</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col__title">Pagina's</div>
+      <div class="footer-col__links">
+        <a href="programma.html">Programma</a>
+        <a href="community.html">Community</a>
+        <a href="scholen.html">Voor scholen</a>
+        <a href="sponsoren.html">Sponsoren</a>
+        <a href="verhalen.html">Verhalen</a>
+        <a href="aanmelden.html">Aanmelden</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col__title">Contact</div>
+      <div class="footer-col__links">
+        <a href="mailto:info@ridethewave.nl">info@ridethewave.nl</a>
+        <a href="mailto:scholen@ridethewave.nl">scholen@ridethewave.nl</a>
+        <a href="mailto:sponsors@ridethewave.nl">sponsors@ridethewave.nl</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col__title">Locaties</div>
+      <div class="footer-col__links">
+        <a href="#">Amsterdam</a>
+        <a href="#">Scheveningen</a>
+        <a href="#">Noordwijk</a>
+        <a href="#">Ouddorp</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-meta">© 2026 Stichting Ride the Wave · ANBI · KvK 12345678</span>
+    <div class="footer-social">
+      <a href="#" title="Instagram">IG</a>
+      <a href="#" title="TikTok">TT</a>
+      <a href="#" title="LinkedIn">LI</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

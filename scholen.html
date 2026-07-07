@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scholen — Ride the Wave</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .sch-hero { background-image: url('https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=80'); }
+    .why-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 4rem; align-items: center; }
+    .why-img { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4/3; }
+    .why-img img { width:100%; height:100%; object-fit:cover; }
+    .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .process-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 2rem 1.75rem; transition: box-shadow .25s, transform .25s; }
+    .process-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .process-card__n { font-family: var(--font-d); font-size: 3.5rem; color: var(--sun); line-height: 1; margin-bottom: .5rem; }
+    .process-card__h { font-weight: 700; font-size: .94rem; color: var(--deep); margin-bottom: .5rem; }
+    .process-card__p { font-size: .82rem; color: var(--muted); line-height: 1.6; }
+    @media (max-width:900px) { .why-grid{grid-template-columns:1fr} .value-grid{grid-template-columns:1fr 1fr} .process-grid{grid-template-columns:1fr 1fr} }
+    @media (max-width:540px) { .value-grid{grid-template-columns:1fr} .process-grid{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-logo"><span class="nav-logo-mark">RTW</span><div><div class="nav-logo-sub">Ride the Wave</div></div></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a><a href="programma.html">Programma</a><a href="community.html">Community</a>
+    <a href="scholen.html" class="active">Scholen</a><a href="sponsoren.html">Sponsors</a><a href="verhalen.html">Verhalen</a>
+    <a href="aanmelden.html" class="nav-cta">Aanmelden</a>
+  </div>
+</nav>
+<main>
+
+  <section class="page-hero sch-hero page-hero--short">
+    <div class="page-hero__inner">
+      <span class="hero-eyebrow">Voor MBO, VMBO &amp; havo/vwo scholen</span>
+      <h1 class="hero-h1 hero-h1--lg">Jouw school<br>op het <span class="accent">water</span></h1>
+      <p class="hero-sub">We werken samen met scholen in de regio. Aanmelding via school is snel geregeld en volledig gratis voor leerlingen.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn--sun btn--lg">Neem contact op</a>
+        <a href="programma.html" class="btn btn--outline-white">Bekijk het programma</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="container">
+      <div class="why-grid">
+        <div>
+          <span class="sec-eyebrow">Waarom RTW voor scholen</span>
+          <h2 class="sec-h sec-h--xl sec-h--deep" style="margin-bottom:1.25rem">Meer dan een uitje</h2>
+          <p class="sec-p" style="margin-bottom:1rem">RTW is geen eenmalig schooluitje. We bieden een volledig seizoensprogramma waar leerlingen wekelijks aan deelnemen. De zee leert dingen die geen klas kan leren: doorzetten als het moeilijk wordt, vertrouwen opbouwen en succeservaringen opdoen buiten de schoolmuren.</p>
+          <p class="sec-p" style="margin-bottom:2rem">Scholen kunnen leerlingen doorverwijzen via een eenvoudig aanmeldformulier. Wij regelen de rest: vervoer, wetsuits, begeleiding.</p>
+          <div class="pills">
+            <span class="pill">Geen kosten voor leerling</span>
+            <span class="pill">Wekelijks programma</span>
+            <span class="pill">Eigen mentor</span>
+          </div>
+        </div>
+        <div class="why-img">
+          <img src="https://images.unsplash.com/photo-1455264745730-cb3b45de18c8?auto=format&fit=crop&w=800&q=80" alt="Leerlingen op strand" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--foam">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:2.5rem">
+        <span class="sec-eyebrow">Wat het oplevert</span>
+        <h2 class="sec-h sec-h--xl sec-h--deep">Wat leerlingen meenemen</h2>
+      </div>
+      <div class="value-grid">
+        <div class="card"><div class="card__body"><div class="card__icon">💪</div><div class="card__h">Zelfvertrouwen</div><p class="card__p">Succeservaringen in een nieuwe omgeving bouwen vertrouwen op dat ook in de klas zichtbaar wordt.</p></div></div>
+        <div class="card"><div class="card__body"><div class="card__icon">🎯</div><div class="card__h">Doorzettingsvermogen</div><p class="card__p">Golfsurfen leer je niet in één keer. Het programma traint mentale weerbaarheid en focus.</p></div></div>
+        <div class="card"><div class="card__body"><div class="card__icon">🤝</div><div class="card__h">Verbinding</div><p class="card__p">Leerlingen maken vrienden buiten hun eigen klas of school. De groep RTW overstijgt sociale grenzen.</p></div></div>
+        <div class="card"><div class="card__body"><div class="card__icon">🌊</div><div class="card__h">Respect voor natuur</div><p class="card__p">De zee leert respect voor een omgeving die groter is dan jezelf. Duurzaamheid als ervaring, niet als les.</p></div></div>
+        <div class="card"><div class="card__body"><div class="card__icon">📜</div><div class="card__h">Certificaat</div><p class="card__p">Deelnemers die doorgroeien behalen een internationaal erkend surf- of kite-instructeurscertificaat.</p></div></div>
+        <div class="card"><div class="card__body"><div class="card__icon">🚌</div><div class="card__h">Vervoer inbegrepen</div><p class="card__p">De RTW-surfbus rijdt vanuit de regio. Leerlingen zonder auto of OV-mogelijkheden hoeven niks te regelen.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:2.5rem">
+        <span class="sec-eyebrow">Hoe het werkt</span>
+        <h2 class="sec-h sec-h--xl sec-h--deep">4 stappen, daarna is het geregeld</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-card"><div class="process-card__n">1</div><div class="process-card__h">School neemt contact op</div><p class="process-card__p">Stuur een mail of bel ons. We bespreken hoe we het programma het beste inpassen in jullie situatie.</p></div>
+        <div class="process-card"><div class="process-card__n">2</div><div class="process-card__h">Intake met school</div><p class="process-card__p">Korte intake: hoeveel leerlingen, welke groep, welke sport, vanuit welke locatie? We maken een plan op maat.</p></div>
+        <div class="process-card"><div class="process-card__n">3</div><div class="process-card__h">Aanmelding leerlingen</div><p class="process-card__p">Leerlingen melden zich aan via het schoolformulier. Ouders ontvangen een bevestiging en praktische info.</p></div>
+        <div class="process-card"><div class="process-card__n">4</div><div class="process-card__h">Seizoen van start</div><p class="process-card__p">Elke week het water op. School ontvangt een kwartaalupdate over de voortgang van de deelnemers.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--teal" id="contact">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start">
+        <div>
+          <span class="sec-eyebrow sec-eyebrow--light">Interesse?</span>
+          <h2 class="sec-h sec-h--lg sec-h--white" style="margin-bottom:1.25rem">Stuur een bericht</h2>
+          <p style="font-size:.9rem;color:rgba(247,241,230,.7);line-height:1.7;margin-bottom:2rem">We reageren altijd binnen 2 werkdagen. Maatwerk is altijd mogelijk.</p>
+          <div class="steps">
+            <div class="step step--dark"><span class="step-n">✉</span><div><div class="step-t step-t--white">scholen@ridethewave.nl</div><div class="step-d step-d--light">Directe mail voor schoolcoördinatoren</div></div></div>
+            <div class="step step--dark"><span class="step-n">📞</span><div><div class="step-t step-t--white">070 000 00 00</div><div class="step-d step-d--light">Ma–vr 9–17 uur</div></div></div>
+          </div>
+        </div>
+        <form action="mailto:scholen@ridethewave.nl" method="POST" enctype="text/plain" style="display:flex;flex-direction:column;gap:1rem">
+          <div class="form-grid-2">
+            <div class="form-group"><label class="form-label form-label--light">Naam school</label><input class="form-input form-input--dark" type="text" name="school" placeholder="School voor Voortgezet Onderwijs" required></div>
+            <div class="form-group"><label class="form-label form-label--light">Contactpersoon</label><input class="form-input form-input--dark" type="text" name="naam" placeholder="Uw naam" required></div>
+            <div class="form-group"><label class="form-label form-label--light">Telefoon</label><input class="form-input form-input--dark" type="tel" name="tel" placeholder="06 00 000 000"></div>
+            <div class="form-group"><label class="form-label form-label--light">E-mail</label><input class="form-input form-input--dark" type="email" name="email" placeholder="naam@school.nl" required></div>
+            <div class="form-group full"><label class="form-label form-label--light">Bericht</label><textarea class="form-textarea form-textarea--dark" name="bericht" placeholder="Kort omschrijven: aantal leerlingen, doelgroep, welke sport..." rows="4"></textarea></div>
+          </div>
+          <button type="submit" class="btn btn--sun">Verstuur bericht</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div><div class="footer-brand-mark">RIDE THE WAVE</div><p class="footer-brand-text">Gratis surfen en kitesurfen voor jongeren van 14 tot 23 jaar.</p></div>
+    <div><div class="footer-col-title">Pagina's</div><div class="footer-links"><a href="programma.html">Programma</a><a href="community.html">Community</a><a href="scholen.html">Voor scholen</a><a href="sponsoren.html">Sponsoren</a><a href="verhalen.html">Verhalen</a><a href="aanmelden.html">Aanmelden</a></div></div>
+    <div><div class="footer-col-title">Contact</div><div class="footer-links"><a href="mailto:info@ridethewave.nl">info@ridethewave.nl</a><a href="https://wa.me/31000000000">WhatsApp</a></div></div>
+    <div><div class="footer-col-title">Locaties</div><div class="footer-links"><a href="#">Scheveningen</a><a href="#">Noordwijk</a><a href="#">Ouddorp</a></div></div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-meta">© 2026 Stichting Ride the Wave · ANBI · KvK 12345678</span>
+    <div class="footer-social"><a href="#">IG</a><a href="#">TT</a><a href="#">LI</a></div>
+  </div>
+</footer>
+</body>
+</html>

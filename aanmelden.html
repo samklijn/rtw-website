@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aanmelden — Ride the Wave</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .aanm-hero { background-image: url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=80'); }
+    .paths-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+    .path-card { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); }
+    .path-card__header { padding: 2rem 2.25rem 1.5rem; }
+    .path-card__header--deep { background: var(--deep); }
+    .path-card__header--foam { background: var(--foam); }
+    .path-card__eyebrow { font-size: .6rem; font-weight: 700; text-transform: uppercase; letter-spacing: .2em; margin-bottom: .5rem; }
+    .path-card__eyebrow--light { color: rgba(247,241,230,.45); }
+    .path-card__eyebrow--teal { color: var(--teal); }
+    .path-card__title { font-family: var(--font-d); font-size: 1.8rem; text-transform: uppercase; line-height: 1; }
+    .path-card__title--white { color: var(--white); }
+    .path-card__title--deep { color: var(--deep); }
+    .path-card__sub { font-size: .82rem; margin-top: .5rem; line-height: 1.5; }
+    .path-card__sub--light { color: rgba(247,241,230,.5); }
+    .path-card__sub--muted { color: var(--muted); }
+    .path-card__body { padding: 2rem 2.25rem 2.25rem; background: var(--white); }
+    .faq-section { max-width: 780px; margin: 0 auto; }
+    @media (max-width:860px) { .paths-grid{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-logo"><span class="nav-logo-mark">RTW</span><div><div class="nav-logo-sub">Ride the Wave</div></div></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a><a href="programma.html">Programma</a><a href="community.html">Community</a>
+    <a href="scholen.html">Scholen</a><a href="sponsoren.html">Sponsors</a><a href="verhalen.html">Verhalen</a>
+    <a href="aanmelden.html" class="nav-cta">Aanmelden</a>
+  </div>
+</nav>
+<main>
+
+  <section class="page-hero aanm-hero page-hero--short">
+    <div class="page-hero__inner">
+      <span class="hero-eyebrow">Gratis · Geen ervaring nodig · Plek voor iedereen</span>
+      <h1 class="hero-h1 hero-h1--lg">Aanmelden</h1>
+      <p class="hero-sub">Vul het formulier in. We bevestigen je plek binnen 3 werkdagen.</p>
+    </div>
+  </section>
+
+  <section class="section section--foam">
+    <div class="container">
+      <div class="paths-grid">
+
+        <!-- Pad 1: Deelnemer -->
+        <div class="path-card">
+          <div class="path-card__header path-card__header--deep">
+            <div class="path-card__eyebrow path-card__eyebrow--light">Pad 1</div>
+            <div class="path-card__title path-card__title--white">Ik meld me zelf aan</div>
+            <div class="path-card__sub path-card__sub--light">Voor jongeren van 14–23 jaar die zelf willen deelnemen</div>
+          </div>
+          <div class="path-card__body">
+            <form action="mailto:aanmelden@ridethewave.nl" method="POST" enctype="text/plain" style="display:flex;flex-direction:column;gap:1rem">
+              <div class="form-grid-2">
+                <div class="form-group"><label class="form-label">Voornaam</label><input class="form-input" type="text" name="voornaam" placeholder="Jouw voornaam" required></div>
+                <div class="form-group"><label class="form-label">Achternaam</label><input class="form-input" type="text" name="achternaam" placeholder="Achternaam" required></div>
+                <div class="form-group"><label class="form-label">Leeftijd</label><input class="form-input" type="number" name="leeftijd" min="14" max="23" placeholder="14–23" required></div>
+                <div class="form-group"><label class="form-label">Sport</label>
+                  <select class="form-select" name="sport" required>
+                    <option value="">Kies een sport</option>
+                    <option>Surfen</option>
+                    <option>Kitesurfen</option>
+                    <option>Beide (surfen + kitesurfen)</option>
+                  </select>
+                </div>
+                <div class="form-group"><label class="form-label">Locatie voorkeur</label>
+                  <select class="form-select" name="locatie" required>
+                    <option value="">Kies een locatie</option>
+                    <option>Scheveningen</option>
+                    <option>Noordwijk</option>
+                    <option>Ouddorp</option>
+                    <option>Geen voorkeur</option>
+                  </select>
+                </div>
+                <div class="form-group"><label class="form-label">Surfbus nodig?</label>
+                  <select class="form-select" name="surfbus">
+                    <option value="">Kies...</option>
+                    <option>Ja, vanuit Rotterdam</option>
+                    <option>Ja, vanuit Den Haag</option>
+                    <option>Ja, vanuit Amsterdam</option>
+                    <option>Nee, ik kom zelf</option>
+                  </select>
+                </div>
+                <div class="form-group"><label class="form-label">Telefoonnummer</label><input class="form-input" type="tel" name="tel" placeholder="06 00 000 000"></div>
+                <div class="form-group"><label class="form-label">E-mail</label><input class="form-input" type="email" name="email" placeholder="jouw@email.nl" required></div>
+                <div class="form-group full"><label class="form-label">Opmerkingen (optioneel)</label><textarea class="form-textarea" name="opmerkingen" rows="3" placeholder="Bijv. naam van de vriend die je meebrengt, of bijzonderheden..."></textarea></div>
+              </div>
+              <button type="submit" class="btn btn--sun">Aanmelden →</button>
+              <p style="font-size:.7rem;color:var(--muted)">We reageren binnen 3 werkdagen. Deelname is volledig gratis.</p>
+            </form>
+          </div>
+        </div>
+
+        <!-- Pad 2: Via school -->
+        <div>
+          <div class="path-card">
+            <div class="path-card__header path-card__header--foam">
+              <div class="path-card__eyebrow path-card__eyebrow--teal">Pad 2</div>
+              <div class="path-card__title path-card__title--deep">Via mijn school</div>
+              <div class="path-card__sub path-card__sub--muted">Aanmelden via jouw schoolcoördinator of mentor</div>
+            </div>
+            <div class="path-card__body">
+              <p style="font-size:.88rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem">Zit je op een school die samenwerkt met RTW? Dan meldt jouw school je aan. Vraag je mentor of schoolcoördinator om contact op te nemen.</p>
+              <div class="steps">
+                <div class="step"><span class="step-n step-n--teal">1</span><div><div class="step-t">Vraag je mentor</div><div class="step-d">Vraag of jouw school al samenwerkt met RTW, of geef deze pagina door.</div></div></div>
+                <div class="step"><span class="step-n step-n--teal">2</span><div><div class="step-t">School neemt contact op</div><div class="step-d">De schoolcoördinator mailt of belt ons via de <a href="scholen.html" style="color:var(--teal);font-weight:700">scholenpagina</a>.</div></div></div>
+                <div class="step"><span class="step-n step-n--teal">3</span><div><div class="step-t">Plek bevestigd</div><div class="step-d">Je ontvangt een bevestiging met alle praktische info over je eerste les.</div></div></div>
+              </div>
+              <a href="scholen.html" class="btn btn--outline-deep" style="margin-top:1.5rem">Info voor scholen →</a>
+            </div>
+          </div>
+
+          <!-- Quick info card -->
+          <div class="card" style="margin-top:16px">
+            <div class="card__body">
+              <div class="card__tag">Praktisch</div>
+              <div class="card__h">Wat je meeneemt</div>
+              <ul style="display:flex;flex-direction:column;gap:.5rem;margin-top:.75rem">
+                <li style="font-size:.83rem;color:var(--muted);padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--sun)">✓</span>Zwemkleding of sportkleding</li>
+                <li style="font-size:.83rem;color:var(--muted);padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--sun)">✓</span>Handdoek en wisselkleding</li>
+                <li style="font-size:.83rem;color:var(--muted);padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--sun)">✓</span>Zonnebrandcrème</li>
+                <li style="font-size:.83rem;color:var(--muted);padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--sun)">✓</span>Goede zin</li>
+              </ul>
+              <p style="font-size:.75rem;color:var(--muted);margin-top:1rem;padding:1rem;background:var(--teal-lt);border-radius:var(--radius-sm)">Wetsuits, boards en al het lesmateriaal zijn aanwezig. Jij hoeft niets te kopen of te huren.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="container">
+      <div class="faq-section">
+        <div style="text-align:center;margin-bottom:2.5rem">
+          <span class="sec-eyebrow">Veelgestelde vragen</span>
+          <h2 class="sec-h sec-h--lg sec-h--deep">FAQ</h2>
+        </div>
+        <div id="faq">
+          <div class="faq-item">
+            <button class="faq-btn">Kan ik meedoen als ik niet kan zwemmen?<span class="faq-icon">+</span></button>
+            <div class="faq-body">We vragen wel om basisvaardigheid in het water (je kunt je hoofd boven water houden). Zwemlessen volgen of eerder ervaring met water is voldoende. We starten altijd dicht bij de kant en beoordelen samen wat veilig is.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn">Is het echt helemaal gratis?<span class="faq-icon">+</span></button>
+            <div class="faq-body">Ja, volledig gratis. Wetsuit, board, lessen en vervoer via de surfbus zijn inbegrepen. We vragen geen borgsom of bijdrage. Dit wordt mogelijk gemaakt door sponsors en subsidies.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn">Hoe vaak zijn de lessen?<span class="faq-icon">+</span></button>
+            <div class="faq-body">In fase 1 en 2 kom je gemiddeld 1 keer per week. In fase 3 en 4 kan dat oplopen tot 2–3 keer per week, afhankelijk van je voortgang en motivatie. Alles is flexibel en in overleg.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn">Kan ik een vriend of vriendin meenemen?<span class="faq-icon">+</span></button>
+            <div class="faq-body">Absoluut! Dat juichen we toe. Vermeld de naam van je vriend in het formulier en we proberen jullie in dezelfde groep te plaatsen. Je kunt ook een WhatsApp-aanmeldlink sturen via de community-pagina.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn">Tot welke leeftijd kan ik deelnemen?<span class="faq-icon">+</span></button>
+            <div class="faq-body">Je kunt deelnemen van je 14e tot en met je 23e verjaardag. Wie eerder is begonnen en 23 jaar wordt tijdens het lopende seizoen mag het seizoen afmaken. Na je 23e kun je als Junior Crew of vrijwilliger actief blijven.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div><div class="footer-brand-mark">RIDE THE WAVE</div><p class="footer-brand-text">Gratis surfen en kitesurfen voor jongeren van 14 tot 23 jaar.</p></div>
+    <div><div class="footer-col-title">Pagina's</div><div class="footer-links"><a href="programma.html">Programma</a><a href="community.html">Community</a><a href="scholen.html">Voor scholen</a><a href="sponsoren.html">Sponsoren</a><a href="verhalen.html">Verhalen</a><a href="aanmelden.html">Aanmelden</a></div></div>
+    <div><div class="footer-col-title">Contact</div><div class="footer-links"><a href="mailto:info@ridethewave.nl">info@ridethewave.nl</a><a href="https://wa.me/31000000000">WhatsApp</a></div></div>
+    <div><div class="footer-col-title">Locaties</div><div class="footer-links"><a href="#">Scheveningen</a><a href="#">Noordwijk</a><a href="#">Ouddorp</a></div></div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-meta">© 2026 Stichting Ride the Wave · ANBI · KvK 12345678</span>
+    <div class="footer-social"><a href="#">IG</a><a href="#">TT</a><a href="#">LI</a></div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>
