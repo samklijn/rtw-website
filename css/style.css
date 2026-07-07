@@ -297,6 +297,17 @@ ul { list-style: none; }
 .section--foam .testi__quote { color: rgba(14,52,63,.7); }
 .section--foam .testi__name  { color: var(--deep); }
 .section--foam .testi__role  { color: rgba(14,52,63,.5); }
+/* tier-cards */
+.section--foam .tier-card { background: var(--white); border-color: rgba(14,52,63,.1); }
+.section--foam .tier-card__head { border-bottom-color: rgba(14,52,63,.08); }
+.section--foam .tier-card__name { color: var(--deep); }
+.section--foam .tier-card__price { color: var(--teal); }
+.section--foam .tier-card__reach { color: rgba(14,52,63,.5); }
+.section--foam .tier-perks li { color: rgba(14,52,63,.7); }
+/* step components */
+.section--foam .step-t--foam { color: var(--deep); }
+.section--foam .step-d--muted { color: var(--muted); }
+.section--foam .step-n { color: var(--teal); }
 .container   { max-width: var(--max); margin: 0 auto; }
 .container--sm { max-width: 800px; margin: 0 auto; }
 .container--xs { max-width: 620px; margin: 0 auto; }
