@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Ride the Wave</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=16">
+  <style>
+    .stats-band { background:var(--foam); padding:4rem clamp(1.5rem,4vw,3rem); }
+    .stats-band .container { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+    .stat-card { background:#fff; border-radius:16px; padding:2.25rem 2rem; border:1.5px solid rgba(14,52,63,.08); box-shadow:0 2px 16px rgba(14,52,63,.06); text-align:center; }
+    .stat-card__n { font-family:var(--font-d); font-size:clamp(2.5rem,5vw,4rem); color:var(--teal); line-height:1; margin-bottom:.5rem; }
+    .stat-card__l { font-size:.9rem; color:rgba(14,52,63,.6); font-weight:500; line-height:1.4; }
+    @media(max-width:700px){ .stats-band .container{grid-template-columns:1fr;} }
+    .contact-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:5rem; align-items:start; }
+    @media(max-width:860px){ .contact-grid{grid-template-columns:1fr; gap:3rem;} }
+    .contact-info__item { display:flex; align-items:flex-start; gap:1rem; margin-bottom:1.75rem; }
+    .contact-info__icon { font-size:1.5rem; flex-shrink:0; margin-top:.1rem; }
+    .contact-info__label { font-size:.72rem; font-weight:800; text-transform:uppercase; letter-spacing:.1em; color:var(--teal); margin-bottom:.25rem; }
+    .contact-info__val { font-size:.95rem; color:rgba(14,52,63,.75); line-height:1.5; }
+    .contact-info__val a { color:var(--teal); }
+    .form-group { margin-bottom:1.5rem; }
+    .form-label { display:block; font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:rgba(14,52,63,.55); margin-bottom:.5rem; }
+    .form-input, .form-textarea, .form-select { width:100%; padding:.85rem 1rem; border:1.5px solid rgba(14,52,63,.15); border-radius:10px; font-family:var(--font-b); font-size:.95rem; color:var(--deep); background:#fff; transition:border-color .2s; box-sizing:border-box; }
+    .form-input:focus, .form-textarea:focus, .form-select:focus { outline:none; border-color:var(--teal); }
+    .form-textarea { min-height:140px; resize:vertical; }
+    .cta-hub { display:grid; grid-template-columns:repeat(3,1fr); gap:1.75rem; }
+    .cta-hub__card { background:#fff; border-radius:16px; padding:2.5rem 2rem; border:1.5px solid rgba(14,52,63,.08); box-shadow:0 2px 16px rgba(14,52,63,.06); display:flex; flex-direction:column; gap:1rem; transition:transform .2s, box-shadow .2s; }
+    .cta-hub__card:hover { transform:translateY(-4px); box-shadow:0 8px 32px rgba(14,52,63,.1); }
+    .cta-hub__icon { font-size:2rem; }
+    .cta-hub__h { font-family:var(--font-d); font-size:1.4rem; text-transform:uppercase; color:var(--deep); line-height:1; }
+    .cta-hub__p { font-size:.85rem; color:rgba(14,52,63,.6); line-height:1.7; flex:1; }
+    @media(max-width:860px){ .cta-hub{grid-template-columns:1fr;} }
+    .hero__actions { display:flex; gap:.75rem; flex-wrap:wrap; margin-top:.25rem; }
+    .pull-quote { background:var(--foam) !important; padding:clamp(1.75rem,3vw,2.5rem) clamp(1.5rem,4vw,3rem) !important; text-align:center; }
+    .pull-quote .pull-quote__q { font-family:var(--font-d); font-size:clamp(1.5rem,3vw,2.8rem); text-transform:uppercase; line-height:1; color:var(--deep) !important; font-style:italic; letter-spacing:-.01em; max-width:700px; margin:0 auto 1.25rem; }
+    .pull-quote .pull-quote__q em { color:var(--teal) !important; font-style:italic; }
+    .pull-quote__rule { width:60px; height:3px; background:var(--teal); margin:0 auto 1.25rem; }
+  </style>
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-stack">
+      <span class="nav-logo-r1">RIDE</span>
+      <span class="nav-logo-r2">THE</span>
+      <span class="nav-logo-r3">WAVE</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <div class="nav-drop">
+      <span class="nav-drop__t">Deelnemers</span>
+      <div class="nav-drop__m">
+        <a href="surfen.html">Golfsurfen (14–23 jr)</a>
+        <a href="kitesurfen.html">Kitesurfen (14–23 jr)</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <span class="nav-drop__t">Samenwerken</span>
+      <div class="nav-drop__m">
+        <a href="scholen.html">Scholen &amp; onderwijs</a>
+        <a href="gemeenten.html">Gemeenten &amp; overheid</a>
+        <a href="sponsoren.html">Bedrijven &amp; sponsors</a>
+      </div>
+    </div>
+    <a href="verhalen.html">Impact</a>
+    <a href="doneren.html">Doneren</a>
+    <div class="nav-drop">
+      <span class="nav-drop__t">Info</span>
+      <div class="nav-drop__m">
+        <a href="verhaal.html">Over RTW</a>
+        <a href="team.html">Ons team</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <a href="aanmelden.html" class="nav-cta">Gratis aanmelden</a>
+  </div>
+  <button class="nav-burger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-mobile" id="navMobile">
+    <a href="surfen.html">Golfsurfen</a>
+    <a href="kitesurfen.html">Kitesurfen</a>
+    <a href="verhalen.html">Impact</a>
+    <a href="scholen.html">Scholen</a>
+    <a href="gemeenten.html">Gemeenten</a>
+    <a href="sponsoren.html">Bedrijven &amp; sponsors</a>
+    <a href="doneren.html">Doneren</a>
+    <a href="verhaal.html">Over RTW</a>
+    <a href="team.html">Ons team</a>
+    <a href="contact.html">Contact</a>
+    <a href="aanmelden.html" class="nav-cta">Gratis aanmelden</a>
+  </div>
+</nav>
+
+<main>
+
+<header class="hero page-hero--short" style="background-image: url('https://images.unsplash.com/photo-1531722569936-825d4edc943e?auto=format&fit=crop&w=1800&q=85'); background-position:center 40%;">
+  <div class="hero__overlay" aria-hidden="true"></div>
+  <div class="hero__accent-bar"></div>
+  <div class="hero__content container">
+    <p class="eyebrow eyebrow--sun reveal reveal-d1">Contact · Ride the Wave</p>
+    <h1 class="hero-h1 hero-h1--lg reveal reveal-d2">Zeg<br>hallo.</h1>
+    <p class="hero-sub reveal reveal-d3">Vragen over aanmelden, samenwerken of doneren? Stuur ons een bericht — we reageren binnen één werkdag.</p>
+    <div class="hero__actions reveal reveal-d4">
+      <a href="mailto:info@ridethewave.nl" class="btn btn--sun btn--lg">Mail ons direct</a>
+    </div>
+  </div>
+</header>
+
+<section class="section section--foam" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <span class="eyebrow eyebrow--foam reveal">Bereikbaarheid</span>
+        <h2 class="sec-h sec-h--xl sec-h--foam reveal reveal-d1">We zijn er<br>voor je.</h2>
+        <div style="margin-top:2.5rem;">
+          <div class="contact-info__item reveal reveal-d2">
+            <div class="contact-info__icon">✉️</div>
+            <div>
+              <div class="contact-info__label">E-mail</div>
+              <div class="contact-info__val"><a href="mailto:info@ridethewave.nl">info@ridethewave.nl</a></div>
+            </div>
+          </div>
+          <div class="contact-info__item reveal reveal-d3">
+            <div class="contact-info__icon">📱</div>
+            <div>
+              <div class="contact-info__label">WhatsApp</div>
+              <div class="contact-info__val"><a href="https://wa.me/31612345678">+31 6 12345678</a><br><span style="font-size:.82rem;opacity:.6;">Ma–vr, 09:00–18:00</span></div>
+            </div>
+          </div>
+          <div class="contact-info__item reveal reveal-d4">
+            <div class="contact-info__icon">📍</div>
+            <div>
+              <div class="contact-info__label">Vestigingen</div>
+              <div class="contact-info__val">Amsterdam · Den Haag · Rotterdam</div>
+            </div>
+          </div>
+          <div class="contact-info__item reveal reveal-d5">
+            <div class="contact-info__icon">📸</div>
+            <div>
+              <div class="contact-info__label">Social media</div>
+              <div class="contact-info__val"><a href="#">@ridethewave.nl</a> op Instagram &amp; TikTok</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div style="background:#fff; border-radius:20px; padding:2.5rem; border:1.5px solid rgba(14,52,63,.08); box-shadow:0 2px 24px rgba(14,52,63,.07);">
+          <h3 style="font-family:var(--font-d); font-size:1.6rem; text-transform:uppercase; color:var(--deep); margin-bottom:1.75rem; line-height:1;">Stuur ons een bericht</h3>
+          <div class="form-group">
+            <label class="form-label">Naam</label>
+            <input type="text" class="form-input" placeholder="Jouw naam">
+          </div>
+          <div class="form-group">
+            <label class="form-label">E-mail</label>
+            <input type="email" class="form-input" placeholder="jouw@email.nl">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Onderwerp</label>
+            <select class="form-select">
+              <option>Aanmelden als deelnemer</option>
+              <option>Samenwerken (school/gemeente)</option>
+              <option>Doneren of sponsoren</option>
+              <option>Pers &amp; media</option>
+              <option>Anders</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Bericht</label>
+            <textarea class="form-textarea" placeholder="Jouw bericht..."></textarea>
+          </div>
+          <button class="btn btn--teal" style="width:100%; justify-content:center;">Verstuur bericht →</button>
+          <p style="font-size:.75rem; color:rgba(14,52,63,.4); margin-top:1rem; text-align:center;">We reageren binnen één werkdag.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="pull-quote">
+  <p class="pull-quote__q">Elke grote reis<br>begint met een<br><em>eerste bericht.</em></p>
+  <div class="pull-quote__rule"></div>
+</div>
+
+<section class="section section--foam" id="meer">
+  <div class="container">
+    <span class="eyebrow eyebrow--teal reveal">Of ga direct naar</span>
+    <h2 class="sec-h sec-h--xl sec-h--foam reveal reveal-d1">Andere pagina's.</h2>
+    <div class="cta-hub reveal reveal-d2">
+      <div class="cta-hub__card">
+        <div class="cta-hub__icon">🏄</div>
+        <div class="cta-hub__h">Aanmelden</div>
+        <p class="cta-hub__p">Wil je deelnemen aan golfsurfen of kitesurfen? Meld je gratis aan — wij regelen de rest.</p>
+        <a href="aanmelden.html" class="btn btn--teal">Aanmelden →</a>
+      </div>
+      <div class="cta-hub__card">
+        <div class="cta-hub__icon">🤲</div>
+        <div class="cta-hub__h">Doneren</div>
+        <p class="cta-hub__p">Steun ons werk. Elke euro gaat direct naar jongeren die gratis kunnen surfen dankzij jou.</p>
+        <a href="doneren.html" class="btn btn--outline-deep">Doneer nu →</a>
+      </div>
+      <div class="cta-hub__card">
+        <div class="cta-hub__icon">🤝</div>
+        <div class="cta-hub__h">Samenwerken</div>
+        <p class="cta-hub__p">School, gemeente of bedrijf? Ontdek hoe we samen meer jongeren kunnen bereiken.</p>
+        <a href="scholen.html" class="btn btn--outline-deep">Samenwerken →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-email-cta">
+    <div class="footer-email-cta__label">Neem contact op</div>
+    <a href="mailto:info@ridethewave.nl" class="footer-email-cta__link">info@ridethewave.nl</a>
+  </div>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand__mark">RIDE THE WAVE</div>
+      <p class="footer-brand__tagline">Gratis surfen en kitesurfen voor jongeren van 14 tot 23 jaar — van eerste golf tot internationaal instructeur.</p>
+      <div class="footer-brand__social">
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">LinkedIn</a>
+        <a href="https://wa.me/31612345678">WhatsApp</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col__title">Deelnemers</div>
+      <div class="footer-col__links">
+        <a href="surfen.html">Golfsurfen (14–23 jr)</a>
+        <a href="kitesurfen.html">Kitesurfen (14–23 jr)</a>
+        <a href="programma.html">Programma &amp; fases</a>
+        <a href="aanmelden.html">Aanmelden</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col__title">Samenwerken</div>
+      <div class="footer-col__links">
+        <a href="scholen.html">Scholen</a>
+        <a href="gemeenten.html">Gemeenten</a>
+        <a href="sponsoren.html">Bedrijven &amp; sponsors</a>
+        <a href="doneren.html">Doneren</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col__title">Info</div>
+      <div class="footer-col__links">
+        <a href="verhalen.html">Verhalen &amp; impact</a>
+        <a href="verhaal.html">Over RTW</a>
+        <a href="team.html">Ons team</a>
+        <a href="contact.html">Contact</a>
+        <a href="mailto:info@ridethewave.nl">info@ridethewave.nl</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col__title">Juridisch</div>
+      <div class="footer-col__links">
+        <a href="#">Privacyverklaring</a>
+        <a href="#">Cookieverklaring</a>
+        <a href="#">Algemene voorwaarden</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-meta">© 2026 Stichting Ride the Wave · ANBI · KvK (aanvraag)</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.querySelectorAll('.nav-drop').forEach(function(d){
+    d.querySelector('.nav-drop__t').addEventListener('click', function(e){
+      e.preventDefault(); d.classList.toggle('is-open');
+    });
+  });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.nav-drop')) document.querySelectorAll('.nav-drop').forEach(function(d){ d.classList.remove('is-open'); });
+  });
+})();
+</script>
+<script>
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-visible'); obs.unobserve(e.target); }});
+  },{threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('scrollProgress');
+  if(!bar) return;
+  window.addEventListener('scroll', function(){
+    var s = document.documentElement.scrollTop;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? (s/h)*100 : 0) + '%';
+  }, {passive:true});
+})();
+</script>
+<script>
+(function(){
+  var b = document.getElementById('burger');
+  var m = document.getElementById('navMobile');
+  if (!b || !m) return;
+  b.addEventListener('click', function(){
+    var open = m.classList.toggle('is-open');
+    b.querySelectorAll('span')[0].style.transform = open ? 'translateY(7px) rotate(45deg)' : '';
+    b.querySelectorAll('span')[1].style.opacity   = open ? '0' : '1';
+    b.querySelectorAll('span')[2].style.transform = open ? 'translateY(-7px) rotate(-45deg)' : '';
+  });
+  m.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ m.classList.remove('is-open'); }); });
+})();
+</script>
+</body>
+</html>

@@ -7,40 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=10">
+  <link rel="stylesheet" href="css/style.css?v=16">
   <style>
-    /* Surf foto's — echte actie op het water */
-    .loc-ams  { background-image: url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=700&q=80'); }
-    .loc-sche { background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=80'); }
-    .loc-nwk  { background-image: url('https://images.unsplash.com/photo-1455264745730-cb3b45de18c8?auto=format&fit=crop&w=700&q=80'); }
-    .loc-odd  { background-image: url('https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=700&q=80'); }
-
-    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-    .intro-photo { border-radius: 20px; overflow: hidden; aspect-ratio: 4/3; }
-    .intro-photo img { width:100%; height:100%; object-fit:cover; }
-    @media(max-width:860px){ .intro-grid{grid-template-columns:1fr;} }
-
-    .school-banner { background: var(--teal); border-radius: 20px; padding: 3rem clamp(2rem,4vw,4rem); display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
-    .school-banner__h { font-family: var(--font-d); font-weight: 900; font-size: clamp(1.75rem,3.5vw,2.75rem); text-transform: uppercase; color: var(--foam); line-height: .95; margin-bottom: .75rem; }
-    .school-banner__p { font-size: .95rem; color: rgba(247,241,230,.75); max-width: 42ch; line-height: 1.7; }
-    .school-banner__btns { display: flex; flex-direction: column; gap: .6rem; align-items: flex-end; }
-    @media(max-width:700px){ .school-banner{grid-template-columns:1fr;} .school-banner__btns{align-items:flex-start;flex-direction:row;flex-wrap:wrap;} }
-
-    .dg-tag { display:inline-block; padding:.4rem 1rem; border-radius:99px; font-size:.72rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
-    .dg-tag--sun  { background:rgba(244,189,42,.15); color:var(--sun); border:1.5px solid rgba(244,189,42,.25); }
-    .dg-tag--teal { background:rgba(42,136,153,.15); color:#5bc8d8; border:1.5px solid rgba(42,136,153,.25); }
-    .dg-tag--foam { background:rgba(14,52,63,.06); color:rgba(14,52,63,.5); border:1.5px solid rgba(14,52,63,.12); }
-    .dg-strip { display:flex; gap:.5rem; flex-wrap:wrap; margin-top:1.5rem; }
-
-    .friend-banner { background: var(--sun); border-radius: 20px; padding: 3.5rem clamp(2rem,4vw,4rem); display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
-    .friend-banner__h { font-family: var(--font-d); font-weight: 900; font-size: clamp(2rem,4vw,3rem); text-transform: uppercase; color: var(--deep); line-height: .92; margin-bottom: .75rem; }
-    .friend-banner__p { font-size: .95rem; color: rgba(14,52,63,.7); max-width: 44ch; line-height: 1.7; }
-    .friend-banner__btns { display: flex; flex-direction: column; gap: .75rem; align-items: flex-end; }
-    @media(max-width:700px){ .friend-banner{grid-template-columns:1fr;} .friend-banner__btns{align-items:flex-start;flex-direction:row;flex-wrap:wrap;} }
-
-    .crew-section-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; }
-    @media(max-width:860px){ .crew-section-grid{grid-template-columns:1fr;} }
-
     /* ── Hero slideshow ── */
     .hero__slides { position:absolute; inset:0; z-index:0; }
     .hero__slide {
@@ -49,92 +17,456 @@
       opacity:0; transition:opacity 1.4s ease;
     }
     .hero__slide.is-active { opacity:1; }
-    .hero__slide--1 { background-image:url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1920&q=85'); }
-    .hero__slide--2 { background-image:url('https://images.unsplash.com/photo-1455264745730-cb3b45de18c8?auto=format&fit=crop&w=1920&q=85'); }
-    .hero__slide--3 { background-image:url('https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1920&q=85'); }
+    .hero__slide--1 { background-image:url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1920&q=85'); background-position:center 35%; }
+    .hero__slide--2 { background-image:url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1920&q=85'); background-position:center 40%; }
+    .hero__slide--3 { background-image:url('https://images.unsplash.com/photo-1476673160081-cf065607f449?auto=format&fit=crop&w=1920&q=85'); background-position:center 30%; }
 
-    /* slide dots */
-    .hero__dots {
-      position:absolute; bottom:2rem; left:50%; transform:translateX(-50%);
-      display:flex; gap:.6rem; z-index:10;
+    /* ── Editorial hero v2 ── */
+    .hero--v2 {
+      min-height: 58vh;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 0 clamp(1.5rem,5vw,5rem) 0;
     }
-    .hero__dot {
-      width:8px; height:8px; border-radius:50%;
-      background:rgba(247,241,230,.35); border:none; cursor:pointer;
-      transition:background .3s, transform .3s;
+    /* Directional gradient: dark left → open right */
+    .hero__overlay--split {
+      position:absolute; inset:0; z-index:1;
+      background: linear-gradient(
+        108deg,
+        rgba(10,40,48,.94) 0%,
+        rgba(10,40,48,.78) 30%,
+        rgba(10,40,48,.38) 60%,
+        rgba(10,40,48,.08) 100%
+      );
     }
-    .hero__dot.is-active { background:var(--sun); transform:scale(1.3); }
+    /* Left yellow accent bar */
+    .hero__accent-bar {
+      position:absolute; left:0; top:0; bottom:0; width:5px; z-index:5;
+      background: linear-gradient(to bottom, transparent 0%, var(--sun) 25%, var(--sun) 75%, transparent 100%);
+    }
+    /* Content wrapper — bottom anchored */
+    .hero__content {
+      position:relative; z-index:3;
+      display:flex; flex-direction:column;
+      padding-bottom: clamp(4rem,6vw,5.5rem);
+      max-width: 860px;
+    }
+    /* Bigger words with staircase indent */
+    .hero--v2 .hero__word {
+      font-size: clamp(4.5rem,15vw,14rem);
+      display:block; line-height:.88;
+    }
+    .hero__word--1 { padding-left:0; }
+    .hero__word--2 { padding-left:clamp(.5rem,2vw,3rem); }
+    .hero__word--3 { padding-left:clamp(1rem,4vw,6rem); }
+    .hero--v2 .hero__stack { margin:.6rem 0 1.75rem; }
+    /* Sub text */
+    .hero--v2 .hero__sub { font-size:1rem; color:rgba(247,241,230,.7); max-width:44ch; line-height:1.7; margin-bottom:1.75rem; }
+    /* CTAs side by side */
+    .hero--v2 .hero__btns { display:flex; gap:1rem; flex-wrap:wrap; align-items:center; }
+    .hero--v2 .btn--outline-foam { font-weight:700; letter-spacing:.06em; }
+
+    /* Floating stats card — bottom right */
+    .hero__float-card {
+      position:absolute; right:clamp(1.5rem,4vw,5rem); bottom:clamp(4rem,6vw,5.5rem); z-index:5;
+      background:rgba(10,40,48,.68); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+      border:1px solid rgba(244,189,42,.22); border-radius:18px;
+      padding:1.5rem 2rem; display:flex; gap:2rem; align-items:center;
+    }
+    .hero__float-stat { text-align:center; }
+    .hero__float-n { font-family:var(--font-d); font-size:2.1rem; color:var(--sun); line-height:1; }
+    .hero__float-l { font-size:.6rem; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:rgba(247,241,230,.4); margin-top:.3rem; }
+    .hero__float-div { width:1px; height:38px; background:rgba(247,241,230,.1); }
+
+    /* Vertical slide counter — right edge, midpoint */
+    .hero__counter {
+      position:absolute; right:clamp(1.5rem,3vw,3rem); top:50%; transform:translateY(-50%) rotate(180deg);
+      z-index:5; writing-mode:vertical-rl; text-orientation:mixed;
+      display:flex; align-items:center; gap:.4rem;
+      font-family:var(--font-d); font-size:.7rem; letter-spacing:.2em; color:rgba(247,241,230,.25);
+    }
+    .hero__counter-cur { color:var(--sun); font-size:.95rem; }
+
+    /* Thin progress bar at very bottom */
+    .hero__prog-bar {
+      position:absolute; bottom:0; left:0; right:0; height:3px; z-index:5;
+      background:rgba(255,255,255,.08);
+    }
+    .hero__prog-fill {
+      height:100%; width:0%; background:var(--sun); transition:none;
+    }
+
+    @media(max-width:860px){
+      .hero__float-card { display:none; }
+      .hero__counter { writing-mode:horizontal-tb; transform:none; top:auto; bottom:3rem; right:clamp(1.5rem,4vw,3rem); }
+    }
+    @media(max-width:600px){
+      .hero--v2 .hero__word { font-size:clamp(3.5rem,19vw,8rem); }
+    }
+
+    /* ── Stats band ── */
+    .stats-band { background:var(--foam); padding:4rem clamp(1.5rem,4vw,3rem); }
+    .stats-band .container { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+    .stat-card {
+      background:#fff; border-radius:16px; padding:2.25rem 2rem;
+      border:1.5px solid rgba(14,52,63,.08);
+      box-shadow:0 2px 16px rgba(14,52,63,.06);
+      text-align:center;
+    }
+    .stat-card__n {
+      font-family:var(--font-d); font-size:clamp(2.5rem,5vw,4rem);
+      color:var(--teal); line-height:1; margin-bottom:.5rem;
+    }
+    .stat-card__l { font-size:.9rem; color:rgba(14,52,63,.6); font-weight:500; line-height:1.4; }
+    @media(max-width:700px){ .stats-band .container{grid-template-columns:1fr;} }
+
+    /* ── Intro 2-col ── */
+    .intro-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
+    .intro-photo { border-radius:20px; overflow:hidden; aspect-ratio:4/3;
+      clip-path:polygon(0 0,88% 0,100% 8%,100% 92%,88% 100%,0 100%); }
+    .intro-photo img { width:100%; height:100%; object-fit:cover; }
+    @media(max-width:860px){ .intro-grid{grid-template-columns:1fr;} }
+
+    /* ── Tags ── */
+    .dg-tag { display:inline-block; padding:.4rem 1rem; border-radius:99px;
+      font-size:.72rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
+    .dg-tag--sun  { background:rgba(244,189,42,.15); color:var(--sun); border:1.5px solid rgba(244,189,42,.25); }
+    .dg-tag--teal { background:rgba(42,136,153,.15); color:#5bc8d8; border:1.5px solid rgba(42,136,153,.25); }
+    .dg-tag--foam { background:rgba(14,52,63,.06); color:rgba(14,52,63,.5); border:1.5px solid rgba(14,52,63,.12); }
+    .dg-strip { display:flex; gap:.5rem; flex-wrap:wrap; margin-top:1.5rem; }
+
+    /* ── Value prop (dark) ── */
+    .value-prop {
+      background:var(--deep2); padding:clamp(4rem,8vw,7rem) clamp(1.5rem,4vw,3rem);
+      position:relative; overflow:hidden;
+    }
+    .value-prop::before {
+      content:''; position:absolute; inset:0;
+      background:url('https://images.unsplash.com/photo-1455264745730-cb3b45de18c8?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+      opacity:.07; pointer-events:none;
+    }
+    .value-prop__inner { position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; max-width:1100px; margin:0 auto; }
+    .value-prop__h {
+      font-family:var(--font-d); font-size:clamp(2.5rem,5vw,4.5rem);
+      text-transform:uppercase; line-height:.95; color:var(--foam); letter-spacing:-.01em;
+    }
+    .value-prop__h span { color:var(--sun); }
+    .value-prop__p { color:rgba(247,241,230,.72); font-size:1rem; line-height:1.8; margin-bottom:1.75rem; }
+    @media(max-width:860px){ .value-prop__inner{grid-template-columns:1fr; gap:2.5rem;} }
+
+    /* ── Sessies / project cards ── */
+    .sess-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.75rem; }
+    .sess-card {
+      background:#fff; border-radius:16px; padding:2rem;
+      border:1.5px solid rgba(14,52,63,.08);
+      box-shadow:0 2px 16px rgba(14,52,63,.06);
+      display:flex; flex-direction:column; gap:.75rem;
+    }
+    .sess-card__tag {
+      display:inline-block; font-size:.68rem; font-weight:800; text-transform:uppercase;
+      letter-spacing:.1em; color:var(--teal); background:rgba(13,94,114,.08);
+      border:1.5px solid rgba(13,94,114,.15); border-radius:99px; padding:.3rem .9rem;
+      align-self:flex-start;
+    }
+    .sess-card__title { font-family:var(--font-d); font-size:1.5rem; color:var(--deep); text-transform:uppercase; line-height:1; }
+    .sess-card__meta { font-size:.82rem; color:rgba(14,52,63,.55); line-height:1.7; }
+    .sess-card__meta strong { color:var(--deep); font-weight:600; }
+    .sess-card__contact { font-size:.78rem; color:var(--teal); font-weight:600; margin-top:auto; padding-top:.5rem; border-top:1px solid rgba(14,52,63,.08); }
+
+    /* ── Programma showcase ── */
+    .prog-grid { display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
+    .prog-card {
+      border-radius:20px; overflow:hidden; position:relative;
+      min-height:420px; display:flex; flex-direction:column; justify-content:flex-end;
+      text-decoration:none;
+    }
+    .prog-card__bg {
+      position:absolute; inset:0; background-size:cover; background-position:center;
+      transition:transform .7s ease;
+    }
+    .prog-card:hover .prog-card__bg { transform:scale(1.04); }
+    .prog-card__overlay {
+      position:absolute; inset:0;
+      background:linear-gradient(to top, rgba(14,52,63,.92) 35%, rgba(14,52,63,.2) 100%);
+    }
+    .prog-card__body { position:relative; z-index:1; padding:2.25rem; }
+    .prog-card__tag {
+      display:inline-block; font-size:.68rem; font-weight:800; text-transform:uppercase;
+      letter-spacing:.1em; color:var(--deep); background:var(--sun);
+      border-radius:99px; padding:.3rem .9rem; margin-bottom:1rem;
+    }
+    .prog-card__h { font-family:var(--font-d); font-size:clamp(2rem,3.5vw,3rem);
+      text-transform:uppercase; color:var(--foam); line-height:.95; margin-bottom:.75rem; }
+    .prog-card__p { font-size:.9rem; color:rgba(247,241,230,.75); line-height:1.65; margin-bottom:1.5rem; }
+    .prog-card__cta {
+      display:inline-flex; align-items:center; gap:.5rem;
+      font-size:.8rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em;
+      color:var(--sun); border-bottom:1.5px solid rgba(244,189,42,.4);
+      padding-bottom:.2rem;
+    }
+    .prog-card--surf .prog-card__bg { background-image:url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=900&q=85'); }
+    .prog-card--kite .prog-card__bg { background-image:url('https://images.unsplash.com/photo-1455264745730-cb3b45de18c8?auto=format&fit=crop&w=900&q=85'); }
+    @media(max-width:700px){ .prog-grid{grid-template-columns:1fr;} .prog-card{min-height:320px;} }
+
+    /* ── Impact outcome cards ── */
+    .outcome-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+    .outcome-card {
+      background:rgba(255,255,255,.07); border-radius:16px; padding:1.75rem;
+      border:1.5px solid rgba(255,255,255,.1);
+    }
+    .outcome-card__nums { display:flex; gap:1rem; margin-bottom:1rem; flex-wrap:wrap; }
+    .outcome-card__n {
+      font-family:var(--font-d); font-size:2.25rem; line-height:1;
+      color:var(--sun);
+    }
+    .outcome-card__n span { font-size:1.1rem; opacity:.7; }
+    .outcome-card__h { font-size:.82rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--foam); margin-bottom:.4rem; }
+    .outcome-card__p { font-size:.8rem; color:rgba(247,241,230,.55); line-height:1.6; }
+    @media(max-width:960px){ .outcome-grid{grid-template-columns:repeat(2,1fr);} }
+    @media(max-width:600px){ .outcome-grid{grid-template-columns:1fr;} }
+
+    /* ── Partner section ── */
+    .partner-cols { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; }
+    .partner-cats { display:flex; flex-direction:column; gap:.75rem; margin:2rem 0; }
+    .partner-cat {
+      display:flex; align-items:center; gap:1rem;
+      padding:1rem 1.25rem; border-radius:12px;
+      background:rgba(255,255,255,.06); border:1.5px solid rgba(255,255,255,.08);
+      color:var(--foam); text-decoration:none; font-size:.9rem; font-weight:600;
+      transition:background .2s, border-color .2s;
+    }
+    .partner-cat:hover { background:rgba(255,255,255,.1); border-color:rgba(255,255,255,.15); }
+    .partner-cat__icon { font-size:1.25rem; flex-shrink:0; }
+    .partner-logo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+    .partner-logo {
+      background:rgba(255,255,255,.07); border-radius:12px; padding:1.25rem;
+      display:flex; align-items:center; justify-content:center;
+      border:1.5px solid rgba(255,255,255,.08); aspect-ratio:3/2;
+      font-size:.72rem; font-weight:700; text-transform:uppercase;
+      letter-spacing:.08em; color:rgba(247,241,230,.35); text-align:center;
+    }
+    @media(max-width:860px){ .partner-cols{grid-template-columns:1fr; gap:2.5rem;} }
+    @media(max-width:500px){ .partner-logo-grid{grid-template-columns:repeat(2,1fr);} }
+
+    /* ── Pull quote ── */
+    .pull-quote {
+      background:var(--deep2) !important; padding:clamp(1.75rem,3vw,2.5rem) clamp(1.5rem,4vw,3rem) !important;
+      text-align:center;
+    }
+    /* Higher specificity to override style.css `.pull-quote p { color: var(--deep) }` */
+    .pull-quote .pull-quote__q {
+      font-family:var(--font-d); font-size:clamp(1.5rem,3vw,2.8rem);
+      text-transform:uppercase; line-height:1; color:var(--deep) !important; font-style:italic;
+      letter-spacing:-.01em; max-width:700px; margin:0 auto 1.25rem;
+    }
+    .pull-quote .pull-quote__q em { color:var(--teal) !important; font-style:italic; }
+    .pull-quote .pull-quote__q s { color:transparent !important; -webkit-text-stroke:2px rgba(255,255,255,.2);
+      text-decoration:none; font-style:italic; }
+    .pull-quote__rule { width:60px; height:3px; background:var(--sun); margin:0 auto 1.25rem; }
+    .pull-quote__credit { font-size:.72rem; font-weight:700; text-transform:uppercase;
+      letter-spacing:.22em; color:rgba(247,241,230,.35); }
+
+    /* ── CTA Hub (3 cards) ── */
+    .cta-hub { display:grid; grid-template-columns:repeat(3,1fr); gap:1.75rem; }
+    .cta-hub__card {
+      background:#fff; border-radius:16px; padding:2.5rem 2rem;
+      border:1.5px solid rgba(14,52,63,.08);
+      box-shadow:0 2px 16px rgba(14,52,63,.06);
+      display:flex; flex-direction:column; gap:1rem;
+      transition:transform .2s, box-shadow .2s;
+    }
+    .cta-hub__card:hover { transform:translateY(-4px); box-shadow:0 8px 32px rgba(14,52,63,.1); }
+    .cta-hub__icon { font-size:2rem; }
+    .cta-hub__h { font-family:var(--font-d); font-size:1.4rem; text-transform:uppercase;
+      color:var(--deep); line-height:1; }
+    .cta-hub__p { font-size:.85rem; color:rgba(14,52,63,.6); line-height:1.7; flex:1; }
+    @media(max-width:860px){ .cta-hub{grid-template-columns:1fr;} }
+
+    /* ── Teal testimonials section overrides ── */
+    .section--teal .testi { background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.1); }
+    .section--teal .testi__name { color:var(--foam); }
+    .section--teal .testi__role { color:rgba(247,241,230,.5); }
+    .section--teal .testi__quote { color:rgba(247,241,230,.85); }
+    .section--teal .arrow-link--sun { color:var(--sun); }
+    .section--teal h2.sec-h--foam { color:var(--foam); }
+    .section--teal .eyebrow--sun { color:var(--sun); }
   </style>
 </head>
 <body>
+<div class="scroll-progress" id="scrollProgress"></div>
 
 <nav class="nav">
   <a href="index.html" class="nav-logo">
-    <div class="nav-logo-mark">RTW</div>
-    <div class="nav-logo-sub">Ride the Wave</div>
+    <div class="nav-logo-stack">
+      <span class="nav-logo-r1">RIDE</span>
+      <span class="nav-logo-r2">THE</span>
+      <span class="nav-logo-r3">WAVE</span>
+    </div>
   </a>
   <div class="nav-links">
-    <a href="surfen.html">Surfen</a><a href="kitesurfen.html">Kitesurfen</a><a href="community.html">Community</a>
+    <div class="nav-drop">
+      <span class="nav-drop__t">Deelnemers</span>
+      <div class="nav-drop__m">
+        <a href="surfen.html">Golfsurfen (14–23 jr)</a>
+        <a href="kitesurfen.html">Kitesurfen (14–23 jr)</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <span class="nav-drop__t">Samenwerken</span>
+      <div class="nav-drop__m">
+        <a href="scholen.html">Scholen &amp; onderwijs</a>
+        <a href="gemeenten.html">Gemeenten &amp; overheid</a>
+        <a href="sponsoren.html">Bedrijven &amp; sponsors</a>
+      </div>
+    </div>
+    <a href="verhalen.html">Impact</a>
+    <a href="doneren.html">Doneren</a>
+    <div class="nav-drop">
+      <span class="nav-drop__t">Info</span>
+      <div class="nav-drop__m">
+        <a href="verhaal.html">Over RTW</a>
+        <a href="team.html">Ons team</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <a href="aanmelden.html" class="nav-cta">Gratis aanmelden</a>
+  </div>
+  <button class="nav-burger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-mobile" id="navMobile">
+    <a href="surfen.html">Golfsurfen</a>
+    <a href="kitesurfen.html">Kitesurfen</a>
+    <a href="verhalen.html">Impact</a>
     <a href="scholen.html">Scholen</a>
-    <a href="sponsoren.html">Sponsors</a>
-    <a href="verhalen.html">Verhalen</a>
-    <a href="aanmelden.html" class="nav-cta">Aanmelden</a>
+    <a href="gemeenten.html">Gemeenten</a>
+    <a href="sponsoren.html">Bedrijven &amp; sponsors</a>
+    <a href="doneren.html">Doneren</a>
+    <a href="verhaal.html">Over RTW</a>
+    <a href="team.html">Ons team</a>
+    <a href="contact.html">Contact</a>
+    <a href="aanmelden.html" class="nav-cta">Gratis aanmelden</a>
   </div>
 </nav>
 
 <main>
 
-  <!-- HERO -->
-  <section class="hero">
+  <!-- ① HERO — editorial split -->
+  <section class="hero hero--v2">
     <div class="hero__slides">
-      <div class="hero__slide hero__slide--1"></div>
+      <div class="hero__slide hero__slide--1 is-active"></div>
       <div class="hero__slide hero__slide--2"></div>
       <div class="hero__slide hero__slide--3"></div>
     </div>
-    <div class="hero__overlay"></div>
-    <div class="hero__locs">
-      <span class="hero__loc">Amsterdam</span><span class="hero__loc-sep">×</span>
-      <span class="hero__loc">Scheveningen</span><span class="hero__loc-sep">×</span>
-      <span class="hero__loc">Noordwijk</span><span class="hero__loc-sep">×</span>
-      <span class="hero__loc">Ouddorp</span>
+    <div class="hero__overlay hero__overlay--split"></div>
+    <div class="hero__noise"></div>
+    <div class="hero__accent-bar"></div>
+
+    <!-- Main content — bottom anchored -->
+    <div class="hero__content">
+      <div class="hero__locs">
+        <span class="hero__loc">Amsterdam</span><span class="hero__loc-sep">×</span>
+        <span class="hero__loc">Scheveningen</span><span class="hero__loc-sep">×</span>
+        <span class="hero__loc">Noordwijk</span><span class="hero__loc-sep">×</span>
+        <span class="hero__loc">Ouddorp</span>
+      </div>
+      <div class="hero__stack">
+        <span class="hero__word hero__word--sun hero__word--1">Surf.</span>
+        <span class="hero__word hero__word--outline hero__word--2">Leef.</span>
+        <span class="hero__word hero__word--foam hero__word--3">Groei.</span>
+      </div>
+      <p class="hero__sub">Gratis surfen &amp; kitesurfen voor jongeren van 14 tot 23 jaar. Geen ervaring nodig.</p>
+      <div class="hero__btns">
+        <a href="aanmelden.html" class="btn btn--sun btn--lg">Bekijk de programma's</a>
+        <a href="verhalen.html" class="btn btn--outline-foam">Ontdek succesverhalen →</a>
+      </div>
     </div>
-    <div class="hero__stack">
-      <span class="hero__word hero__word--sun">Find</span>
-      <span class="hero__word hero__word--outline">Your</span>
-      <span class="hero__word hero__word--foam">Flow.</span>
+
+    <!-- Floating stats card — bottom right -->
+    <div class="hero__float-card">
+      <div class="hero__float-stat">
+        <div class="hero__float-n">200+</div>
+        <div class="hero__float-l">Jongeren</div>
+      </div>
+      <div class="hero__float-div"></div>
+      <div class="hero__float-stat">
+        <div class="hero__float-n">€0</div>
+        <div class="hero__float-l">Altijd gratis</div>
+      </div>
+      <div class="hero__float-div"></div>
+      <div class="hero__float-stat">
+        <div class="hero__float-n">5</div>
+        <div class="hero__float-l">Fases</div>
+      </div>
     </div>
-    <p class="hero__tagline">Het water wacht op jou.</p>
-    <div class="hero__journey">
-      <span class="hero__step">Bangerd</span>
-      <span class="hero__step-arrow">→</span>
-      <span class="hero__step">Beginner</span>
-      <span class="hero__step-arrow">→</span>
-      <span class="hero__step">Gevorderd</span>
-      <span class="hero__step-arrow">→</span>
-      <span class="hero__step hero__step--lit">Instructeur</span>
+
+    <!-- Vertical slide counter -->
+    <div class="hero__counter">
+      <span class="hero__counter-cur" id="heroCounterCur">01</span>
+      <span class="hero__counter-sep">/</span>
+      <span class="hero__counter-tot">03</span>
     </div>
-    <div class="hero__btns">
-      <a href="aanmelden.html" class="btn btn--sun btn--lg">Meld je aan — gratis</a>
-      <a href="programma.html" class="btn btn--outline-foam btn--lg">Bekijk het programma</a>
-    </div>
-    <div class="hero__dots">
-      <button class="hero__dot is-active" aria-label="Slide 1"></button>
-      <button class="hero__dot" aria-label="Slide 2"></button>
-      <button class="hero__dot" aria-label="Slide 3"></button>
+
+    <!-- Thin progress bar at bottom -->
+    <div class="hero__prog-bar">
+      <div class="hero__prog-fill" id="heroProgFill"></div>
     </div>
   </section>
 
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__inner">
+      <span class="ticker__item">Surfen</span><span class="ticker__dot">·</span>
+      <span class="ticker__item">Kitesurfen</span><span class="ticker__dot">·</span>
+      <span class="ticker__item">Gratis</span><span class="ticker__dot">·</span>
+      <span class="ticker__item">Amsterdam</span><span class="ticker__dot">·</span>
+      <span class="ticker__item">Scheveningen</span><span class="ticker__dot">·</span>
+      <span class="ticker__item">Noordwijk</span><span class="ticker__dot">·</span>
+      <span class="ticker__item">Ouddorp</span><span class="ticker__dot">·</span>
+      <span class="ticker__item">14–23 Jaar</span><span class="ticker__dot">·</span>
+      <span class="ticker__item">5 Fases</span><span class="ticker__dot">·</span>
+      <span class="ticker__item">Surfbus Inbegrepen</span><span class="ticker__dot">·</span>
+      <span class="ticker__item">Surfen</span><span class="ticker__dot">·</span>
+      <span class="ticker__item">Kitesurfen</span><span class="ticker__dot">·</span>
+      <span class="ticker__item">Gratis</span><span class="ticker__dot">·</span>
+      <span class="ticker__item">Amsterdam</span><span class="ticker__dot">·</span>
+      <span class="ticker__item">Scheveningen</span><span class="ticker__dot">·</span>
+      <span class="ticker__item">Noordwijk</span><span class="ticker__dot">·</span>
+      <span class="ticker__item">Ouddorp</span><span class="ticker__dot">·</span>
+      <span class="ticker__item">14–23 Jaar</span><span class="ticker__dot">·</span>
+      <span class="ticker__item">5 Fases</span><span class="ticker__dot">·</span>
+      <span class="ticker__item">Surfbus Inbegrepen</span><span class="ticker__dot">·</span>
+    </div>
+  </div>
 
-  <!-- MISSIE -->
+  <!-- ② STATS BAND -->
+  <div class="stats-band">
+    <div class="container">
+      <div class="stat-card reveal reveal-d1">
+        <div class="stat-card__n" data-count="200" data-suffix="+">200+</div>
+        <div class="stat-card__l">Jongeren begeleid<br>seit 2018</div>
+      </div>
+      <div class="stat-card reveal reveal-d2">
+        <div class="stat-card__n" data-count="87" data-suffix="%">87%</div>
+        <div class="stat-card__l">Rondt het programma<br>af of groeit door</div>
+      </div>
+      <div class="stat-card reveal reveal-d3">
+        <div class="stat-card__n" data-count="0" data-prefix="€">€0</div>
+        <div class="stat-card__l">Altijd gratis —<br>geen verborgen kosten</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ③ INTRO BLOCK -->
   <section class="section section--foam">
     <div class="container">
       <div class="intro-grid">
         <div>
-          <span class="eyebrow eyebrow--foam">Over Ride the Wave</span>
-          <h2 class="sec-h sec-h--xl sec-h--foam" style="margin-bottom:1.25rem;">De zee is voor<br>iedereen.<br><span style="color:var(--teal)">Echt voor iedereen.</span></h2>
-          <p class="sec-p sec-p--foam" style="margin-bottom:1rem;">Stichting Ride the Wave zet surfen en kitesurfen in als middel voor persoonlijke ontwikkeling, verbinding en maatschappelijke participatie van jongeren van 14 tot 23 jaar. Geen ervaring nodig. Geen kosten.</p>
-          <p class="sec-p sec-p--foam" style="margin-bottom:1.5rem;">Je bepaalt zelf hoever je gaat. Probeer een inlooples, of groei door tot internationaal gecertificeerd instructeur. Jij bepaalt het tempo.</p>
-          <!-- Surfbus callout -->
+          <span class="eyebrow eyebrow--foam">Bij Ride the Wave helpen we jongeren</span>
+          <h2 class="sec-h sec-h--xl sec-h--foam" style="margin-bottom:1.25rem;">
+            De zee is voor<br>iedereen.<br>
+            <span style="color:var(--teal)">Echt voor iedereen.</span>
+          </h2>
+          <p class="lead" style="margin-bottom:1rem;">Ride the Wave is er voor jongeren die vastlopen of klaar zijn voor een nieuwe start. Of je je nu somber voelt, moeite hebt met aansluiting, je alleen voelt of juist een moeilijke periode achter je wil laten — bij ons vind je een veilige plek om vertrouwen op te bouwen, plezier te maken en samen met anderen nieuwe energie te krijgen.</p>
+          <p class="sec-p sec-p--foam" style="margin-bottom:1.5rem;">Je bepaalt zelf hoever je gaat. Probeer een inlooples, of groei door tot internationaal gecertificeerd instructeur. Van je eerste golf tot werken in het buitenland — jij bepaalt het tempo.</p>
           <div style="background:rgba(28,110,126,.1); border:1.5px solid rgba(28,110,126,.2); border-radius:12px; padding:1rem 1.25rem; margin-bottom:1.5rem; display:flex; align-items:center; gap:1rem;">
             <span style="font-size:1.75rem; flex-shrink:0;">🚌</span>
             <div>
@@ -157,185 +489,238 @@
     </div>
   </section>
 
-  <!-- FYF BREAK — mission statement -->
-  <div class="fyf-break">
-    <div class="fyf-break__stack">
-      <div class="fyf-stack">
-        <span class="fyf-word fyf-word--sun">Het</span>
-        <span class="fyf-word fyf-word--outline">Water</span>
-        <span class="fyf-word fyf-word--foam">Wacht.</span>
+  <!-- ④ VALUE PROP (dark) -->
+  <div class="value-prop">
+    <div class="value-prop__inner">
+      <div>
+        <h2 class="value-prop__h">Wij noemen het<br><em>jouw nieuwe start!</em></h2>
       </div>
-    </div>
-    <div class="fyf-break__body">
-      <div class="fyf-break__label">Stichting Ride the Wave · ANBI</div>
-      <div class="fyf-break__h">Gratis surfen &amp; kitesurfen<br>voor jongeren 14–23 jaar</div>
-      <p class="fyf-break__p">Geen ervaring nodig. Geen kosten. Wij regelen de wetsuit, het board, de instructeur en de Surfbus. Jij regelt de goede zin.</p>
-      <a href="aanmelden.html" class="btn btn--sun btn--lg">Meld je gratis aan →</a>
+      <div>
+        <p class="value-prop__p">Geen oordeel. Geen toelatingseisen. Je hoeft niet sportief te zijn — je hoeft niets te bewijzen. Bij Ride the Wave draait het niet om prestaties, maar om jou. In 5 fases werk je aan structuur, zelfvertrouwen en verbinding. De zee wordt jouw spiegel.</p>
+        <p class="value-prop__p" style="margin-bottom:1.75rem;">Elke fase sluit aan op waar je staat. Coaches blijven betrokken — ook als je even niet opdaagt. Want wij geloven dat iedereen een tweede kans verdient, en een derde, en een vierde.</p>
+        <a href="programma.html" class="btn btn--sun btn--lg">Welk programma past bij mij? →</a>
+      </div>
     </div>
   </div>
 
-  <!-- STATS -->
-  <section class="section section--foam" style="border-top:1px solid rgba(14,52,63,.08); border-bottom:1px solid rgba(14,52,63,.08);">
-    <div class="container">
-      <div class="stats-row">
-        <div class="stat-block"><div class="stat-block__n">200+</div><div class="stat-block__l">Jongeren bereikt<br>14–23 jaar</div></div>
-        <div class="stat-block"><div class="stat-block__n">10</div><div class="stat-block__l">Gecertificeerde<br>instructeurs</div></div>
-        <div class="stat-block"><div class="stat-block__n">4</div><div class="stat-block__l">Strandlocaties<br>in Nederland</div></div>
-        <div class="stat-block"><div class="stat-block__n">€0</div><div class="stat-block__l">Kosten voor<br>deelnemers ooit</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BRING A FRIEND -->
+  <!-- ⑤ AANKOMENDE SESSIES -->
   <section class="section section--foam">
     <div class="container">
-      <div class="friend-banner">
-        <div>
-          <span class="eyebrow eyebrow--teal">Bring a friend</span>
-          <div class="friend-banner__h">Iemand in gedachten?<br>Neem 'm mee. 🤙</div>
-          <p class="friend-banner__p">Stuur de link door via WhatsApp, geef een naam op bij je aanmelding of vraag om een buddy-uitnodiging. Hoe meer zielen, hoe meer vreugde op het strand.</p>
-        </div>
-        <div class="friend-banner__btns">
-          <a href="https://wa.me/?text=H%C3%A9%20doe%20je%20mee%3F%20Ride%20the%20Wave%20is%20gratis%20surfen%20en%20kitesurfen%20voor%20jongeren.%20Meld%20je%20aan%20via%20ridethewave.nl" target="_blank" class="btn btn--deep btn--lg">📲 Stuur via WhatsApp</a>
-          <a href="aanmelden.html" class="btn btn--outline-deep btn--lg">Samen aanmelden</a>
-        </div>
+      <div style="margin-bottom:2.5rem;">
+        <span class="eyebrow eyebrow--foam">Aankomende SESSIES</span>
+        <h2 class="sec-h sec-h--xl sec-h--foam">Start mee dit seizoen.</h2>
       </div>
-    </div>
-  </section>
-
-  <!-- JUNIOR CREW -->
-  <section class="section section--teal">
-    <div class="container">
-      <div class="crew-section-grid">
-        <div>
-          <span class="eyebrow eyebrow--sun">Community</span>
-          <h2 class="sec-h sec-h--xl sec-h--foam" style="margin-bottom:1.25rem;">Junior Crew:<br>jij bent<br>het voorbeeld</h2>
-          <p class="sec-p sec-p--foam" style="margin-bottom:1rem;">Vanaf fase 2 kun je Junior Crew worden. Je begeleidt beginners, bent rolmodel op het strand en krijgt exclusieve Crew-kleding.</p>
-          <p class="sec-p sec-p--foam" style="margin-bottom:2rem;">Junior Crew organiseert ook de jaarlijkse maatschappelijke projectdag — voor een doel dat ze zelf kiezen.</p>
-          <div style="display:flex; gap:.75rem; flex-wrap:wrap;">
-            <a href="community.html" class="btn btn--foam">Bekijk de community</a>
-            <a href="aanmelden.html" class="btn btn--outline-foam">Word Junior Crew</a>
+      <div class="sess-grid">
+        <div class="sess-card reveal reveal-d1">
+          <span class="sess-card__tag">Golfsurfen</span>
+          <div class="sess-card__title">Scheveningen 8</div>
+          <div class="sess-card__meta">
+            <strong>Startdatum:</strong> 6 september 2026<br>
+            <strong>Locatie:</strong> Surfclub Scheveningen, Den Haag<br>
+            <strong>Niveaus:</strong> Beginner t/m gevorderd<br>
+            <strong>Beschikbaar:</strong> 12 plekken
           </div>
+          <div class="sess-card__contact">info@ridethewave.nl · 06-1234 5678</div>
         </div>
-        <div class="crew-grid">
-          <div class="crew-photo"><img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=400&q=80" alt="Surfer" loading="lazy"></div>
-          <div class="crew-photo"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Surfer op golf" loading="lazy"></div>
-          <div class="crew-photo"><img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=400&q=80" alt="Golfsurfen" loading="lazy"></div>
-          <div class="crew-photo"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=400&q=80" alt="Surfer onderwater" loading="lazy"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VOOR SCHOLEN -->
-  <section class="section section--foam">
-    <div class="container">
-      <div class="school-banner">
-        <div>
-          <span class="eyebrow eyebrow--foam">Voor scholen</span>
-          <div class="school-banner__h">Jij kent je leerlingen.<br>Wij kennen de zee.</div>
-          <p class="school-banner__p">Scholen zijn de beste weg naar de juiste jongeren. We werken samen met MBO, VMBO en havo/vwo — inclusief informatiemomenten op locatie, vaste groepsdagen en alles geregeld.</p>
-        </div>
-        <div class="school-banner__btns">
-          <a href="scholen.html" class="btn btn--foam btn--lg">Info voor scholen</a>
-          <a href="mailto:scholen@ridethewave.nl" class="btn btn--outline-foam btn--lg">Direct contact</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LOCATIES -->
-  <section class="section section--foam">
-    <div class="container">
-      <div style="text-align:center; margin-bottom:2.5rem;">
-        <span class="eyebrow eyebrow--teal">Waar we zijn</span>
-        <h2 class="sec-h sec-h--xl sec-h--foam">Vier locaties aan zee.</h2>
-      </div>
-      <div class="locatie-tiles">
-        <div class="locatie-tile loc-ams">
-          <div class="locatie-tile__body">
-            <div class="locatie-tile__name">Amsterdam</div>
-            <div class="locatie-tile__sport">Surf · Kite</div>
+        <div class="sess-card reveal reveal-d2">
+          <span class="sess-card__tag">Kitesurfen</span>
+          <div class="sess-card__title">Ouddorp Kite 5</div>
+          <div class="sess-card__meta">
+            <strong>Startdatum:</strong> 13 september 2026<br>
+            <strong>Locatie:</strong> Kitestrand Ouddorp, Goeree<br>
+            <strong>Niveaus:</strong> Beginner t/m IKO-instructeur<br>
+            <strong>Beschikbaar:</strong> 8 plekken
           </div>
+          <div class="sess-card__contact">info@ridethewave.nl · 06-1234 5678</div>
         </div>
-        <div class="locatie-tile loc-sche">
-          <div class="locatie-tile__body">
-            <div class="locatie-tile__name">Scheveningen</div>
-            <div class="locatie-tile__sport">Surf · Kite</div>
+        <div class="sess-card reveal reveal-d3">
+          <span class="sess-card__tag">Golfsurfen</span>
+          <div class="sess-card__title">Noordwijk 6</div>
+          <div class="sess-card__meta">
+            <strong>Startdatum:</strong> 20 september 2026<br>
+            <strong>Locatie:</strong> Strand Noordwijk aan Zee<br>
+            <strong>Niveaus:</strong> Beginner t/m ISA-instructeur<br>
+            <strong>Beschikbaar:</strong> 10 plekken
           </div>
-        </div>
-        <div class="locatie-tile loc-nwk">
-          <div class="locatie-tile__body">
-            <div class="locatie-tile__name">Noordwijk</div>
-            <div class="locatie-tile__sport">Surfen</div>
-          </div>
-        </div>
-        <div class="locatie-tile loc-odd">
-          <div class="locatie-tile__body">
-            <div class="locatie-tile__name">Ouddorp</div>
-            <div class="locatie-tile__sport">Surf · Kite</div>
-          </div>
-        </div>
-      </div>
-      <p style="text-align:center; margin-top:1.5rem; font-size:.8rem; color:rgba(14,52,63,.35); text-transform:uppercase; letter-spacing:.12em;">Surfbus vanuit Amsterdam · Den Haag · Rotterdam</p>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="section section--foam">
-    <div class="container">
-      <div style="text-align:center; margin-bottom:3rem;">
-        <span class="eyebrow eyebrow--sun">Ze vertellen het zelf</span>
-        <h2 class="sec-h sec-h--xl sec-h--foam">Geen brochure-taal.</h2>
-      </div>
-      <div class="testi-grid">
-        <div class="testi">
-          <div class="testi__head">
-            <div class="testi__avatar"><img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=120&q=80" alt="Younes"></div>
-            <div><div class="testi__name">Younes, 19</div><div class="testi__role">ISA Surfinstructeur · Scheveningen</div></div>
-          </div>
-          <p class="testi__quote">"Ik had nog nooit gezwommen in zee. Eerste keer dacht ik: ik ga dood. Tweede keer dacht ik: dit is het mooiste wat ik ooit heb gedaan."</p>
-        </div>
-        <div class="testi">
-          <div class="testi__head">
-            <div class="testi__avatar"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=120&q=80" alt="Fatima"></div>
-            <div><div class="testi__name">Fatima, 17</div><div class="testi__role">Junior Crew · Noordwijk</div></div>
-          </div>
-          <p class="testi__quote">"Ik kom hier elke week. Dit is mijn plek. Niemand kijkt je raar aan — iedereen is gelijk als je op dat board staat."</p>
-        </div>
-        <div class="testi">
-          <div class="testi__head">
-            <div class="testi__avatar"><img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=120&q=80" alt="Jamal"></div>
-            <div><div class="testi__name">Jamal, 16</div><div class="testi__role">Kitesurfer Fase 2 · Scheveningen</div></div>
-          </div>
-          <p class="testi__quote">"Mijn vrienden willen nu ook meedoen. Ik heb er al drie meegenomen. RTW is gewoon de vettste plek om te zijn."</p>
+          <div class="sess-card__contact">info@ridethewave.nl · 06-1234 5678</div>
         </div>
       </div>
       <div style="text-align:center; margin-top:2.5rem;">
-        <a href="verhalen.html" class="arrow-link arrow-link--sun">Meer verhalen lezen →</a>
+        <a href="aanmelden.html" class="btn btn--teal btn--lg">Meld je aan als deelnemer</a>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section--cta" style="text-align:center;">
-    <div class="container--xs">
-      <div class="stacked-word" style="margin-bottom:1.25rem;">
-        <span class="stacked-word__fill">Doe</span>
-        <span class="stacked-word__outline">Mee.</span>
+  <!-- ⑥ PROGRAMMA SHOWCASE -->
+  <section class="section section--foam" style="padding-top:0;">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:2.5rem;">
+        <span class="eyebrow eyebrow--teal">Twee sporten. Één missie.</span>
+        <h2 class="sec-h sec-h--xl sec-h--foam">Ontdek onze programma's.</h2>
       </div>
-      <p style="font-size:1rem; color:rgba(14,52,63,.7); max-width:38ch; margin:0 auto 2rem; line-height:1.75; font-weight:600;">Gratis. Zonder ervaring. Gewoon starten. We regelen de wetsuit, het board en de Surfbus naar het strand.</p>
-      <div style="display:flex; gap:.875rem; justify-content:center; flex-wrap:wrap;">
-        <a href="aanmelden.html" class="btn btn--teal btn--lg">Aanmelden als deelnemer</a>
-        <a href="scholen.html" class="btn btn--outline-deep btn--lg">Aanmelden via school</a>
+      <div class="prog-grid">
+        <a href="surfen.html" class="prog-card prog-card--surf">
+          <div class="prog-card__bg"></div>
+          <div class="prog-card__overlay"></div>
+          <div class="prog-card__body">
+            <span class="prog-card__tag">Golfsurfen · 5 fases</span>
+            <div class="prog-card__h">Golf<br>Surfen</div>
+            <p class="prog-card__p">Van absolute beginner tot gecertificeerd ISA-surfinstructeur. In jouw tempo, volledig gratis. Scheveningen · Noordwijk · Ouddorp.</p>
+            <span class="prog-card__cta">Ontdek golfsurfen →</span>
+          </div>
+        </a>
+        <a href="kitesurfen.html" class="prog-card prog-card--kite">
+          <div class="prog-card__bg"></div>
+          <div class="prog-card__overlay"></div>
+          <div class="prog-card__body">
+            <span class="prog-card__tag">Kitesurfen · 5 fases</span>
+            <div class="prog-card__h">Kite<br>Surfen</div>
+            <p class="prog-card__p">Wind, kite, water. Van je eerste vluchtles tot IKO-gecertificeerd kitesurfinstructeur. Ouddorp · Costa Rica 2026.</p>
+            <span class="prog-card__cta">Ontdek kitesurfen →</span>
+          </div>
+        </a>
       </div>
-      <p style="margin-top:1.5rem; font-size:.72rem; color:rgba(14,52,63,.4); text-transform:uppercase; letter-spacing:.15em; font-weight:700;">ANBI-gecertificeerd · Giften fiscaal aftrekbaar</p>
+    </div>
+  </section>
+
+  <!-- ⑦ IMPACT OP DEELNEMERS -->
+  <section class="section section--teal">
+    <div class="container">
+      <div style="margin-bottom:3rem;">
+        <span class="eyebrow eyebrow--sun">Meetbare impact</span>
+        <h2 class="sec-h sec-h--xl sec-h--foam">Duidelijke impact op onze deelnemers.</h2>
+      </div>
+      <div class="outcome-grid">
+        <div class="outcome-card reveal reveal-d1">
+          <div class="outcome-card__nums"><div class="outcome-card__n">74<span>%</span></div></div>
+          <div class="outcome-card__h">Structuur &amp; Ritme</div>
+          <div class="outcome-card__p">Ervaart meer dagelijkse structuur en regelmaat na deelname aan het programma.</div>
+        </div>
+        <div class="outcome-card reveal reveal-d2">
+          <div class="outcome-card__nums">
+            <div class="outcome-card__n">68<span>%</span></div>
+            <div class="outcome-card__n" style="color:rgba(247,241,230,.4);">61<span>%</span></div>
+          </div>
+          <div class="outcome-card__h">Fysiek &amp; Mentaal Sterker</div>
+          <div class="outcome-card__p">Voelt zich fitter en mentaal weerbaarder. Minder last van stress en negatieve gedachten.</div>
+        </div>
+        <div class="outcome-card reveal reveal-d3">
+          <div class="outcome-card__nums"><div class="outcome-card__n">82<span>%</span></div></div>
+          <div class="outcome-card__h">Zelfvertrouwen</div>
+          <div class="outcome-card__p">Gelooft meer in zichzelf en durft nieuwe uitdagingen aan te gaan buiten het strand.</div>
+        </div>
+        <div class="outcome-card reveal reveal-d4">
+          <div class="outcome-card__nums">
+            <div class="outcome-card__n">55<span>%</span></div>
+            <div class="outcome-card__n" style="color:rgba(247,241,230,.4);">49<span>%</span></div>
+          </div>
+          <div class="outcome-card__h">Sociale Verbinding</div>
+          <div class="outcome-card__p">Voelt zich minder alleen en heeft nieuwe vriendschappen opgebouwd binnen de groep.</div>
+        </div>
+        <div class="outcome-card reveal reveal-d5">
+          <div class="outcome-card__nums"><div class="outcome-card__n">76<span>%</span></div></div>
+          <div class="outcome-card__h">School &amp; Werk</div>
+          <div class="outcome-card__p">Heeft stappen gezet richting school, stage of werk na afronding van het programma.</div>
+        </div>
+        <div class="outcome-card reveal reveal-d6">
+          <div class="outcome-card__nums"><div class="outcome-card__n">63<span>%</span></div></div>
+          <div class="outcome-card__h">Nazorg &amp; Duurzaamheid</div>
+          <div class="outcome-card__p">Blijft actief betrokken als Junior Crew of via de community — ook na het programma.</div>
+        </div>
+      </div>
+      <div style="margin-top:2.5rem;">
+        <a href="verhalen.html" class="arrow-link arrow-link--sun">Lees meer over de impact →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑧ SAMENWERKEN -->
+  <section class="section section--teal" style="background:var(--deep2);">
+    <div class="container">
+      <div class="partner-cols">
+        <div>
+          <span class="eyebrow eyebrow--sun">Samen meer verschil maken?</span>
+          <h2 class="sec-h sec-h--xl sec-h--foam" style="margin-bottom:1.25rem;">
+            Met ons nog meer<br>verschil maken?
+          </h2>
+          <p class="sec-p sec-p--foam" style="margin-bottom:1rem;">Ride the Wave werkt samen met scholen, gemeenten, jeugdzorgorganisaties en bedrijven die geloven dat sport en natuur het leven van jongeren kan veranderen. Wij regelen het programma — jullie brengen de jongeren.</p>
+          <p class="sec-p sec-p--foam" style="margin-bottom:2rem;">Meer dan <strong style="color:var(--foam);">30 organisaties</strong> werken samen met ons. Van MBO tot jeugdzorg, van gemeente tot sportvereniging.</p>
+          <div class="partner-cats">
+            <a href="scholen.html" class="partner-cat">
+              <span class="partner-cat__icon">🏫</span>
+              <span>Scholen en onderwijsinstellingen</span>
+            </a>
+            <a href="scholen.html" class="partner-cat">
+              <span class="partner-cat__icon">🏛️</span>
+              <span>Gemeenten en overheidsinstanties</span>
+            </a>
+            <a href="sponsoren.html" class="partner-cat">
+              <span class="partner-cat__icon">🤝</span>
+              <span>Bedrijven en sponsoren</span>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:rgba(247,241,230,.3); margin-bottom:1.25rem;">Onze partners</div>
+          <div class="partner-logo-grid">
+            <div class="partner-logo">CVOZ</div>
+            <div class="partner-logo">ROC Amsterdam</div>
+            <div class="partner-logo">Gemeente Amsterdam</div>
+            <div class="partner-logo">Stichting DOEN</div>
+            <div class="partner-logo">ISA Nederland</div>
+            <div class="partner-logo">IKO</div>
+            <div class="partner-logo">Surfclub Sche&shy;veningen</div>
+            <div class="partner-logo">Kitesurf Academy</div>
+            <div class="partner-logo">Fonds Sluyterman</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑨ PULL QUOTE -->
+  <div class="pull-quote">
+    <p class="pull-quote__q">
+      <em>Je staat misschien</em><br>
+      <s>aan de zijlijn</s><br>
+      maar de <em>wedstrijd<br>is nog niet voorbij.</em>
+    </p>
+    <div class="pull-quote__rule"></div>
+  </div>
+
+  <!-- ⑩ CTA HUB -->
+  <section class="section section--foam">
+    <div class="container">
+      <div class="cta-hub">
+        <div class="cta-hub__card">
+          <div class="cta-hub__icon">🏄</div>
+          <div class="cta-hub__h">Meld je aan als deelnemer</div>
+          <p class="cta-hub__p">Gratis. Zonder ervaring. Wij regelen de wetsuit, het board en de Surfbus naar het strand. Jij regelt de goede zin.</p>
+          <a href="aanmelden.html" class="btn btn--teal">Aanmelden →</a>
+        </div>
+        <div class="cta-hub__card">
+          <div class="cta-hub__icon">💬</div>
+          <div class="cta-hub__h">Vragen of samenwerken?</div>
+          <p class="cta-hub__p">School, gemeente, jeugdinstelling of sponsor? Neem contact op en we bespreken hoe we samen jongeren kunnen bereiken.</p>
+          <a href="mailto:info@ridethewave.nl" class="btn btn--outline-deep">Stuur een bericht →</a>
+        </div>
+        <div class="cta-hub__card">
+          <div class="cta-hub__icon">🎥</div>
+          <div class="cta-hub__h">Bekijk de verhalen</div>
+          <p class="cta-hub__p">Lees en bekijk hoe het programma het leven van jongeren verandert — in hun eigen woorden, op het strand en daarna.</p>
+          <a href="verhalen.html" class="btn btn--outline-deep">Meer verhalen →</a>
+        </div>
+      </div>
     </div>
   </section>
 
 </main>
 
 <footer class="footer">
+  <div class="footer-email-cta">
+    <div class="footer-email-cta__label">Neem contact op</div>
+    <a href="mailto:info@ridethewave.nl" class="footer-email-cta__link">info@ridethewave.nl</a>
+  </div>
   <div class="footer-top">
     <div>
       <div class="footer-brand__mark">RIDE THE WAVE</div>
@@ -344,74 +729,125 @@
         <a href="#">Instagram</a>
         <a href="#">TikTok</a>
         <a href="#">LinkedIn</a>
-        <a href="https://wa.me/31000000000">WhatsApp</a>
+        <a href="https://wa.me/31612345678">WhatsApp</a>
       </div>
     </div>
     <div>
-      <div class="footer-col__title">Pagina's</div>
+      <div class="footer-col__title">Deelnemers</div>
       <div class="footer-col__links">
-        <a href="surfen.html">Surfen</a><a href="kitesurfen.html">Kitesurfen</a><a href="community.html">Community</a>
-        <a href="scholen.html">Voor scholen</a>
-        <a href="sponsoren.html">Sponsoren</a>
-        <a href="verhalen.html">Verhalen</a>
+        <a href="surfen.html">Golfsurfen (14–23 jr)</a>
+        <a href="kitesurfen.html">Kitesurfen (14–23 jr)</a>
+        <a href="programma.html">Programma &amp; fases</a>
         <a href="aanmelden.html">Aanmelden</a>
       </div>
     </div>
     <div>
-      <div class="footer-col__title">Contact</div>
+      <div class="footer-col__title">Samenwerken</div>
       <div class="footer-col__links">
-        <a href="mailto:info@ridethewave.nl">info@ridethewave.nl</a>
-        <a href="mailto:scholen@ridethewave.nl">scholen@ridethewave.nl</a>
-        <a href="mailto:sponsors@ridethewave.nl">sponsors@ridethewave.nl</a>
+        <a href="scholen.html">Scholen</a>
+        <a href="scholen.html">Gemeenten</a>
+        <a href="sponsoren.html">Bedrijven &amp; sponsors</a>
+        <a href="community.html">Community</a>
       </div>
     </div>
     <div>
-      <div class="footer-col__title">Locaties</div>
+      <div class="footer-col__title">Info</div>
       <div class="footer-col__links">
-        <a href="#">Amsterdam</a>
-        <a href="#">Scheveningen</a>
-        <a href="#">Noordwijk</a>
-        <a href="#">Ouddorp</a>
+        <a href="verhalen.html">Verhalen &amp; impact</a>
+        <a href="mailto:info@ridethewave.nl">Contact</a>
+        <a href="mailto:info@ridethewave.nl">info@ridethewave.nl</a>
+        <a href="mailto:scholen@ridethewave.nl">scholen@ridethewave.nl</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col__title">Juridisch</div>
+      <div class="footer-col__links">
+        <a href="#">Privacyverklaring</a>
+        <a href="#">Cookieverklaring</a>
+        <a href="#">Algemene voorwaarden</a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <span class="footer-meta">© 2026 Stichting Ride the Wave · ANBI · KvK 12345678</span>
-    <div class="footer-social">
-      <a href="#">IG</a>
-      <a href="#">TT</a>
-      <a href="#">LI</a>
-    </div>
+    <span class="footer-meta">© 2026 Stichting Ride the Wave · ANBI · KvK (aanvraag)</span>
   </div>
 </footer>
 
 <script>
-  (function(){
-    var slides = document.querySelectorAll('.hero__slide');
-    var dots   = document.querySelectorAll('.hero__dot');
-    var cur = 0;
-    slides[0].classList.add('is-active');
-    function go(n){
-      slides[cur].classList.remove('is-active');
-      dots[cur].classList.remove('is-active');
-      cur = (n + slides.length) % slides.length;
-      slides[cur].classList.add('is-active');
-      dots[cur].classList.add('is-active');
-    }
-    dots.forEach(function(d,i){ d.addEventListener('click', function(){ go(i); }); });
-    setInterval(function(){ go(cur + 1); }, 5000);
-  })();
+(function(){
+  document.querySelectorAll('.nav-drop').forEach(function(d){
+    d.querySelector('.nav-drop__t').addEventListener('click', function(e){
+      e.preventDefault(); d.classList.toggle('is-open');
+    });
+  });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.nav-drop')) document.querySelectorAll('.nav-drop').forEach(function(d){ d.classList.remove('is-open'); });
+  });
+})();
+</script>
+<script>
+(function(){
+  var slides = document.querySelectorAll('.hero__slide');
+  var counterEl = document.getElementById('heroCounterCur');
+  var progFill  = document.getElementById('heroProgFill');
+  var nums = ['01','02','03'];
+  var cur = 0;
+  var INTERVAL = 5000;
+
+  function startProg() {
+    if (!progFill) return;
+    progFill.style.transition = 'none';
+    progFill.style.width = '0%';
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){
+      progFill.style.transition = 'width ' + INTERVAL + 'ms linear';
+      progFill.style.width = '100%';
+    }); });
+  }
+
+  function go(n) {
+    slides[cur].classList.remove('is-active');
+    cur = (n + slides.length) % slides.length;
+    slides[cur].classList.add('is-active');
+    if (counterEl) counterEl.textContent = nums[cur];
+    startProg();
+  }
+
+  startProg();
+  setInterval(function(){ go(cur + 1); }, INTERVAL);
+})();
+</script>
+<script>
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-visible'); obs.unobserve(e.target); }});
+  },{threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('scrollProgress');
+  if(!bar) return;
+  window.addEventListener('scroll', function(){
+    var s = document.documentElement.scrollTop;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? (s/h)*100 : 0) + '%';
+  }, {passive:true});
+})();
+</script>
+<script>
+(function(){
+  var b = document.getElementById('burger');
+  var m = document.getElementById('navMobile');
+  if (!b || !m) return;
+  b.addEventListener('click', function(){
+    var open = m.classList.toggle('is-open');
+    b.querySelectorAll('span')[0].style.transform = open ? 'translateY(7px) rotate(45deg)' : '';
+    b.querySelectorAll('span')[1].style.opacity   = open ? '0' : '1';
+    b.querySelectorAll('span')[2].style.transform = open ? 'translateY(-7px) rotate(-45deg)' : '';
+  });
+  m.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ m.classList.remove('is-open'); }); });
+})();
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

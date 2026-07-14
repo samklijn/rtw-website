@@ -7,258 +7,478 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=10">
+  <link rel="stylesheet" href="css/style.css?v=16">
   <style>
-    .kite-hero { background-image: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=1800&q=80'); }
+    /* ── Tags ── */
+    .dg-tag { display:inline-block; padding:.4rem 1rem; border-radius:99px; font-size:.72rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
+    .dg-tag--sun  { background:rgba(244,189,42,.15); color:var(--sun); border:1.5px solid rgba(244,189,42,.25); }
+    .dg-tag--teal { background:rgba(42,136,153,.15); color:#5bc8d8; border:1.5px solid rgba(42,136,153,.25); }
+    .dg-tag--foam { background:rgba(14,52,63,.06); color:rgba(14,52,63,.5); border:1.5px solid rgba(14,52,63,.12); }
+    .dg-strip { display:flex; gap:.5rem; flex-wrap:wrap; margin-top:1.5rem; }
 
-    .phases-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    .phase-card {
-      background: var(--white);
-      border: 1.5px solid rgba(14,52,63,.1);
-      border-radius: 16px;
-      padding: 2rem 1.75rem;
-      display: flex;
-      flex-direction: column;
-      gap: .75rem;
-      box-shadow: 0 2px 12px rgba(14,52,63,.06);
-    }
-    .phase-card__n {
-      font-family: var(--font-d);
-      font-weight: 900;
-      font-size: 3.5rem;
-      line-height: 1;
-      color: rgba(14,52,63,.15);
-    }
-    .phase-card__tag {
-      font-size: .6rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .18em;
-      color: var(--teal-lt);
-    }
-    .phase-card__h {
-      font-family: var(--font-d);
-      font-weight: 900;
-      font-size: 1.3rem;
-      text-transform: uppercase;
-      color: var(--deep);
-      line-height: 1.1;
-    }
-    .phase-card__p {
-      font-size: .9rem;
-      color: rgba(14,52,63,.65);
-      line-height: 1.75;
-      flex: 1;
-    }
-    .phase-card__reward {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      background: rgba(244,189,42,.1);
-      border: 1.5px solid rgba(244,189,42,.2);
-      color: var(--deep);
-      font-size: .75rem;
-      font-weight: 800;
-      padding: .5rem 1rem;
-      border-radius: 99px;
-      text-transform: uppercase;
-      letter-spacing: .07em;
-    }
-    .phase-card__reward::before { content: '★'; }
+    /* ── Stats band ── */
+    .stats-band { background:var(--foam); padding:4rem clamp(1.5rem,4vw,3rem); }
+    .stats-band .container { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+    .stat-card { background:#fff; border-radius:16px; padding:2.25rem 2rem; border:1.5px solid rgba(14,52,63,.08); box-shadow:0 2px 16px rgba(14,52,63,.06); text-align:center; }
+    .stat-card__n { font-family:var(--font-d); font-size:clamp(2.5rem,5vw,4rem); color:var(--teal); line-height:1; margin-bottom:.5rem; }
+    .stat-card__l { font-size:.9rem; color:rgba(14,52,63,.6); font-weight:500; line-height:1.4; }
+    @media(max-width:700px){ .stats-band .container{grid-template-columns:1fr;} }
 
-    .location-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      margin-top: 2rem;
-    }
-    .location-pill {
-      background: rgba(255,255,255,.12);
-      border: 1.5px solid rgba(255,255,255,.2);
-      color: var(--foam);
-      padding: .85rem 1.75rem;
-      border-radius: 99px;
-      font-size: .85rem;
-      font-weight: 700;
-      letter-spacing: .04em;
-    }
-    .location-pill strong {
-      color: var(--sun);
-      font-size: 1rem;
-      display: block;
-      font-family: var(--font-d);
-      text-transform: uppercase;
-      letter-spacing: .05em;
-      line-height: 1.2;
-    }
+    /* ── Intro 2-col ── */
+    .intro-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
+    .intro-photo { border-radius:20px; overflow:hidden; aspect-ratio:4/3; clip-path:polygon(0 0,88% 0,100% 8%,100% 92%,88% 100%,0 100%); }
+    .intro-photo img { width:100%; height:100%; object-fit:cover; }
+    @media(max-width:860px){ .intro-grid{grid-template-columns:1fr;} }
 
-    @media(max-width:700px) {
-      .phases-grid { grid-template-columns: 1fr; }
-    }
+    /* ── Check list ── */
+    .check-list { list-style:none; display:flex; flex-direction:column; gap:.75rem; margin:1.5rem 0 2rem; }
+    .check-list__item { display:flex; align-items:flex-start; gap:.75rem; font-size:.9rem; color:rgba(14,52,63,.75); line-height:1.55; }
+    .check-list__item::before { content:'✓'; flex-shrink:0; width:1.4rem; height:1.4rem; background:var(--teal); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.65rem; font-weight:800; margin-top:.1rem; }
+
+    /* ── Value prop (dark) ── */
+    .value-prop { background:var(--deep2); padding:clamp(4rem,8vw,7rem) clamp(1.5rem,4vw,3rem); position:relative; overflow:hidden; }
+    .value-prop::before { content:''; position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1455264745730-cb3b45de18c8?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat; opacity:.07; pointer-events:none; }
+    .value-prop__inner { position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; max-width:1100px; margin:0 auto; }
+    .value-prop__h { font-family:var(--font-d); font-size:clamp(2.5rem,5vw,4.5rem); text-transform:uppercase; line-height:.95; color:var(--foam); letter-spacing:-.01em; }
+    .value-prop__h em { color:var(--sun); font-style:normal; }
+    .value-prop__p { color:rgba(247,241,230,.72); font-size:1rem; line-height:1.8; margin-bottom:1.75rem; }
+    @media(max-width:860px){ .value-prop__inner{grid-template-columns:1fr; gap:2.5rem;} }
+
+    /* ── Fase cards ── */
+    .fase-intro { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:end; margin-bottom:3rem; }
+    @media(max-width:760px){ .fase-intro{grid-template-columns:1fr; gap:1rem;} }
+    .fase-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.5rem; }
+    .fase-card { background:rgba(255,255,255,.08); border-radius:18px; padding:2rem; border:1.5px solid rgba(255,255,255,.1); display:flex; flex-direction:column; gap:.75rem; transition:border-color .2s; }
+    .fase-card:hover { border-color:rgba(244,189,42,.3); }
+    .fase-card--accent { border-color:rgba(244,189,42,.3); background:rgba(244,189,42,.07); }
+    .fase-card__head { display:flex; align-items:center; justify-content:space-between; }
+    .fase-card__num { font-family:var(--font-d); font-size:.75rem; text-transform:uppercase; letter-spacing:.15em; color:var(--sun); background:rgba(244,189,42,.12); border:1.5px solid rgba(244,189,42,.2); border-radius:99px; padding:.3rem .9rem; }
+    .fase-card--accent .fase-card__num { background:var(--sun); color:var(--deep); border-color:var(--sun); }
+    .fase-card__dur { font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:rgba(247,241,230,.3); }
+    .fase-card__h { font-family:var(--font-d); font-size:1.4rem; text-transform:uppercase; color:var(--foam); line-height:1; }
+    .fase-card__p { font-size:.85rem; color:rgba(247,241,230,.65); line-height:1.65; }
+    .fase-card__tags { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:auto; padding-top:.75rem; border-top:1px solid rgba(255,255,255,.07); }
+    .fase-card__tag { font-size:.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:rgba(14,52,63,.35); background:rgba(255,255,255,.05); border-radius:99px; padding:.25rem .7rem; }
+
+    /* ── Testi overrides ── */
+    .section--teal .testi { background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.1); }
+    .section--teal .testi__name { color:var(--foam); }
+    .section--teal .testi__role { color:rgba(247,241,230,.5); }
+    .section--teal .testi__quote { color:rgba(247,241,230,.85); }
+    .section--teal .arrow-link--sun { color:var(--sun); }
+
+    /* ── CTA hub ── */
+    .cta-hub { display:grid; grid-template-columns:repeat(3,1fr); gap:1.75rem; }
+    .cta-hub__card { background:#fff; border-radius:16px; padding:2.5rem 2rem; border:1.5px solid rgba(14,52,63,.08); box-shadow:0 2px 16px rgba(14,52,63,.06); display:flex; flex-direction:column; gap:1rem; transition:transform .2s, box-shadow .2s; }
+    .cta-hub__card:hover { transform:translateY(-4px); box-shadow:0 8px 32px rgba(14,52,63,.1); }
+    .cta-hub__icon { font-size:2rem; }
+    .cta-hub__h { font-family:var(--font-d); font-size:1.4rem; text-transform:uppercase; color:var(--deep); line-height:1; }
+    .cta-hub__p { font-size:.85rem; color:rgba(14,52,63,.6); line-height:1.7; flex:1; }
+    @media(max-width:860px){ .cta-hub{grid-template-columns:1fr;} }
+
+    /* ── Pull quote ── */
+    .pull-quote { background:var(--foam) !important; padding:clamp(2.5rem,5vw,4rem) clamp(1.5rem,4vw,3rem) !important; text-align:center; }
+    /* Override style.css `.pull-quote p { color: var(--deep) }` with higher specificity */
+    .pull-quote .pull-quote__q { font-family:var(--font-d); font-size:clamp(1.5rem,3vw,2.8rem); text-transform:uppercase; line-height:1; color:var(--deep) !important; font-style:italic; letter-spacing:-.01em; max-width:700px; margin:0 auto 1.25rem; }
+    .pull-quote .pull-quote__q em { color:var(--teal) !important; font-style:italic; }
+    .pull-quote__rule { width:60px; height:3px; background:var(--teal); margin:0 auto 1.25rem; }
+    .pull-quote__credit { font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.22em; color:rgba(14,52,63,.35); }
   </style>
 </head>
 <body>
+<div class="scroll-progress" id="scrollProgress"></div>
 
 <nav class="nav">
   <a href="index.html" class="nav-logo">
-    <div class="nav-logo-mark">RTW</div>
-    <div class="nav-logo-sub">Ride the Wave</div>
+    <div class="nav-logo-stack">
+      <span class="nav-logo-r1">RIDE</span>
+      <span class="nav-logo-r2">THE</span>
+      <span class="nav-logo-r3">WAVE</span>
+    </div>
   </a>
   <div class="nav-links">
-    <a href="surfen.html">Surfen</a>
-    <a href="kitesurfen.html" class="active">Kitesurfen</a>
-    <a href="community.html">Community</a>
+    <div class="nav-drop">
+      <span class="nav-drop__t">Deelnemers</span>
+      <div class="nav-drop__m">
+        <a href="surfen.html">Golfsurfen (14–23 jr)</a>
+        <a href="kitesurfen.html">Kitesurfen (14–23 jr)</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <span class="nav-drop__t">Samenwerken</span>
+      <div class="nav-drop__m">
+        <a href="scholen.html">Scholen &amp; onderwijs</a>
+        <a href="gemeenten.html">Gemeenten &amp; overheid</a>
+        <a href="sponsoren.html">Bedrijven &amp; sponsors</a>
+      </div>
+    </div>
+    <a href="verhalen.html">Impact</a>
+    <a href="doneren.html">Doneren</a>
+    <div class="nav-drop">
+      <span class="nav-drop__t">Info</span>
+      <div class="nav-drop__m">
+        <a href="verhaal.html">Over RTW</a>
+        <a href="team.html">Ons team</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <a href="aanmelden.html" class="nav-cta">Gratis aanmelden</a>
+  </div>
+  <button class="nav-burger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-mobile" id="navMobile">
+    <a href="surfen.html">Golfsurfen</a>
+    <a href="kitesurfen.html">Kitesurfen</a>
+    <a href="verhalen.html">Impact</a>
     <a href="scholen.html">Scholen</a>
-    <a href="sponsoren.html">Sponsors</a>
-    <a href="verhalen.html">Verhalen</a>
-    <a href="aanmelden.html" class="nav-cta">Aanmelden</a>
+    <a href="gemeenten.html">Gemeenten</a>
+    <a href="sponsoren.html">Bedrijven &amp; sponsors</a>
+    <a href="doneren.html">Doneren</a>
+    <a href="verhaal.html">Over RTW</a>
+    <a href="team.html">Ons team</a>
+    <a href="contact.html">Contact</a>
+    <a href="aanmelden.html" class="nav-cta">Gratis aanmelden</a>
   </div>
 </nav>
 
 <main>
 
-  <section class="page-hero kite-hero page-hero--short">
-    <div class="page-hero__inner">
-      <span class="page-hero__eyebrow">Kitesurfen · Noordwijk · Ouddorp</span>
-      <h1 class="page-hero__h"><span class="acc-sun">Kite</span><br>surfen.</h1>
-      <p class="page-hero__tagline--inner">Het water wacht op jou.</p>
-      <p class="page-hero__sub">Wind, kite, water. Van je eerste vluchtles tot IKO-gecertificeerd kitesurfinstructeur. Gratis, in jouw tempo.</p>
-      <div class="page-hero__btns" style="margin-top:1.5rem">
-        <a href="aanmelden.html" class="btn btn--sun btn--lg">Meld je aan — gratis</a>
-        <a href="surfen.html" class="btn btn--outline-foam btn--lg">Liever golfsurfen?</a>
+<!-- ① HERO -->
+<header class="hero page-hero--short" style="background-image: url('https://images.unsplash.com/photo-1560272564-c83b66b1ad12?auto=format&fit=crop&w=1800&q=85'); background-position: center 30%;">
+  <div class="hero__overlay" aria-hidden="true"></div>
+  <div class="hero__accent-bar"></div>
+  <div class="hero__content container">
+    <p class="eyebrow eyebrow--sun reveal reveal-d1">Kitesurfen · 5 Fases · Gratis</p>
+    <h1 class="hero-h1 hero-h1--lg reveal reveal-d2">Kite<br>surfen.</h1>
+    <p class="hero-sub reveal reveal-d3">Van vluchtles tot gecertificeerd IKO-kitesurfinstructeur. Voor jongeren van 14 tot 23 jaar. Volledig gratis.</p>
+    <div class="hero__actions reveal reveal-d4">
+      <a href="aanmelden.html" class="btn btn--sun btn--lg">Gratis aanmelden</a>
+      <a href="#programma" class="btn btn--outline-foam">Bekijk de fases →</a>
+    </div>
+  </div>
+</header>
+
+<!-- ② STATS BAND -->
+<div class="stats-band">
+  <div class="container">
+    <div class="stat-card reveal reveal-d1">
+      <div class="stat-card__n">200+</div>
+      <div class="stat-card__l">Jongeren gingen<br>je voor</div>
+    </div>
+    <div class="stat-card reveal reveal-d2">
+      <div class="stat-card__n">5</div>
+      <div class="stat-card__l">Fases tot gecertificeerd<br>IKO-instructeur</div>
+    </div>
+    <div class="stat-card reveal reveal-d3">
+      <div class="stat-card__n">€0</div>
+      <div class="stat-card__l">Altijd gratis —<br>geen kosten ooit</div>
+    </div>
+  </div>
+</div>
+
+<!-- ③ VOOR WIE -->
+<section class="section section--foam" id="voor-wie">
+  <div class="container">
+    <div class="intro-grid">
+      <div>
+        <span class="eyebrow eyebrow--foam reveal">Voor wie is kitesurfen?</span>
+        <h2 class="sec-h sec-h--xl sec-h--foam reveal reveal-d1">Wind. Kite.<br>Water. Vrijheid.</h2>
+        <p class="sec-p sec-p--foam reveal reveal-d2">Kitesurfen is meer dan een sport — het is een vak dat je beheerst, stap voor stap. Bij Ride the Wave is het programma volledig gratis en open voor iedereen die wil. Geen ervaring nodig.</p>
+        <ul class="check-list reveal reveal-d3">
+          <li class="check-list__item">Je bent tussen de 14 en 23 jaar oud</li>
+          <li class="check-list__item">Je kunt zwemmen (zwemdiploma A minimaal)</li>
+          <li class="check-list__item">Je woont in of rond Amsterdam</li>
+          <li class="check-list__item">Je bent bereid om elke week te komen trainen</li>
+          <li class="check-list__item">Je hebt geen of weinig ervaring met kitesurfen</li>
+          <li class="check-list__item">Je bent klaar om iets compleet nieuws aan te pakken</li>
+        </ul>
+        <div class="dg-strip reveal reveal-d4">
+          <span class="dg-tag dg-tag--sun">14–23 jaar</span>
+          <span class="dg-tag dg-tag--teal">Alle niveaus</span>
+          <span class="dg-tag dg-tag--teal">IKO-certificaat mogelijk</span>
+          <span class="dg-tag dg-tag--foam">€0 kosten</span>
+        </div>
+      </div>
+      <div class="intro-photo reveal reveal-d2">
+        <img src="https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=900&q=80" alt="Jongere leert kitesurfen op het strand" loading="lazy">
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section section--foam" id="fases">
-    <div class="container">
-      <div style="text-align:center;margin-bottom:2.5rem">
-        <span class="eyebrow eyebrow--sun">5 Fases</span>
-        <h2 class="sec-h sec-h--xl sec-h--foam">Jouw pad</h2>
+<!-- ④ VALUE PROP (dark) -->
+<div class="value-prop">
+  <div class="value-prop__inner">
+    <div>
+      <h2 class="value-prop__h">We bouwen<br>meer dan<br><em>kitesurfers.</em></h2>
+    </div>
+    <div>
+      <p class="value-prop__p">We bouwen zelfvertrouwen, discipline en een community op. Wie fase 4 haalt, staat zelf voor de klas als gecertificeerd IKO-instructeur — en geeft anderen precies mee wat hij of zij zelf heeft gekregen. Dat is de cyclus die wij in stand houden.</p>
+      <p class="value-prop__p">In 2026 reizen geselecteerde instructeurs af naar Costa Rica voor een internationaal instructeursprogramma. Van Amsterdam-Noord naar de Pacific — dat is de weg.</p>
+      <a href="aanmelden.html" class="btn btn--sun btn--lg">Meld je gratis aan →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ⑤ FASES (teal bg) -->
+<section class="section section--teal" id="programma">
+  <div class="container">
+    <div class="fase-intro">
+      <div>
+        <span class="eyebrow eyebrow--sun reveal">Het programma</span>
+        <h2 class="sec-h sec-h--xl sec-h--foam reveal reveal-d1">5 fases.<br>Jouw weg omhoog.</h2>
       </div>
-      <div class="phases-grid">
-
-        <div class="phase-card">
-          <div class="phase-card__n">01</div>
-          <div class="phase-card__tag">5 LESDAGEN</div>
-          <div class="phase-card__h">Kitesurflessen</div>
-          <p class="phase-card__p">Maak kennis met de kitesurfsport. Binnen 5 lesdagen leer je praktijk én theorie. Plezier, veiligheid en samenwerken staan centraal.</p>
-          <div class="phase-card__reward">Certificaat fase 1 + eigen wetsuit</div>
-        </div>
-
-        <div class="phase-card">
-          <div class="phase-card__n">02</div>
-          <div class="phase-card__tag">12 MAANDEN</div>
-          <div class="phase-card__h">Niets houdt je nog tegen!</div>
-          <p class="phase-card__p">Na fase 1 ga je zelfstandig naar het water. Spullen liggen klaar op vaste momenten. Jij bepaalt wanneer je gaat.</p>
-          <div class="phase-card__reward">Trapeze en kiteboard (bruikleen) + optioneel Junior Crew Member</div>
-        </div>
-
-        <div class="phase-card">
-          <div class="phase-card__n">03</div>
-          <div class="phase-card__tag">12 MAANDEN</div>
-          <div class="phase-card__h">Laat het rippen beginnen</div>
-          <p class="phase-card__p">Heen-en-weer zit erin — nu beginnen de sprongen. Met je eigen wetsuit, trapeze en board geniet je volop. Als een pro.</p>
-          <div class="phase-card__reward">Eigen kiteboard en kite met bar (bruikleen) + optioneel Crew Member</div>
-        </div>
-
-        <div class="phase-card">
-          <div class="phase-card__n">04</div>
-          <div class="phase-card__tag">12 MAANDEN · MIN. 16 JAAR</div>
-          <div class="phase-card__h">RTW Kitesurfinstructeur</div>
-          <p class="phase-card__p">Jij leert anderen hoe het moet. IKO gecertificeerd en direct inzetbaar bij verbonden kitesurfscholen. Je verdient je eigen geld.</p>
-          <div class="phase-card__reward">Internationaal IKO kitesurfinstructeur certificaat</div>
-        </div>
-
-        <div class="phase-card">
-          <div class="phase-card__n">05</div>
-          <div class="phase-card__tag">6 MAANDEN · MIN. 18 JAAR</div>
-          <div class="phase-card__h">Internationaal Kitesurfinstructeur</div>
-          <p class="phase-card__p">Je bent klaar om de golven in het buitenland te verkennen. Costa Rica, Kaapverdië, Sri Lanka — de wereld ligt open voor jou.</p>
-          <div class="phase-card__reward">Ultimate Ride the Wave ambassadeur</div>
-        </div>
-
+      <div>
+        <p class="sec-p reveal reveal-d2" style="color:rgba(247,241,230,.7);">Van het eerste vliegerkite op het strand tot een officieel IKO-instructeurscertificaat. Elke fase heeft zijn eigen tempo — jij bepaalt hoe snel je groeit.</p>
       </div>
     </div>
-  </section>
-
-  <section class="section section--teal" id="locaties">
-    <div class="container">
-      <div style="text-align:center;margin-bottom:.5rem">
-        <span class="eyebrow eyebrow--sun">Waar je kitet</span>
-        <h2 class="sec-h sec-h--xl sec-h--foam">Locaties</h2>
+    <div class="fase-grid">
+      <div class="fase-card reveal reveal-d1">
+        <div class="fase-card__head">
+          <span class="fase-card__num">Fase 0</span>
+          <span class="fase-card__dur">4 weken</span>
+        </div>
+        <div class="fase-card__h">Kennismaken</div>
+        <p class="fase-card__p">Je eerste stappen op het strand. We leren je hoe een kite werkt, hoe de wind zich gedraagt en hoe je veilig omgaat met materiaal. Vliegerkite op het strand — zonder water, zonder haast.</p>
+        <div class="fase-card__tags">
+          <span class="fase-card__tag">Vluchtlessen</span>
+          <span class="fase-card__tag">Veiligheid</span>
+          <span class="fase-card__tag">Strandtraining</span>
+        </div>
       </div>
-      <div class="location-pills">
-        <div class="location-pill">
-          <strong>Noordwijk</strong>
-          Beach Break
+      <div class="fase-card reveal reveal-d2">
+        <div class="fase-card__head">
+          <span class="fase-card__num">Fase 1</span>
+          <span class="fase-card__dur">5 weken</span>
         </div>
-        <div class="location-pill">
-          <strong>Ouddorp</strong>
-          Natural High
+        <div class="fase-card__h">Eerste vluchten</div>
+        <p class="fase-card__p">Het water in. Bodydragging is de kunst: je laat je door de kite door het water trekken zonder board. Je leert de kite te sturen, power op te bouwen en te ontspannen in het water.</p>
+        <div class="fase-card__tags">
+          <span class="fase-card__tag">Bodydragging</span>
+          <span class="fase-card__tag">Kitesturing</span>
+          <span class="fase-card__tag">Watergevoel</span>
         </div>
-        <div class="location-pill">
-          <strong>Costa Rica</strong>
-          2026
+      </div>
+      <div class="fase-card reveal reveal-d3">
+        <div class="fase-card__head">
+          <span class="fase-card__num">Fase 2</span>
+          <span class="fase-card__dur">5 weken</span>
+        </div>
+        <div class="fase-card__h">Op het board</div>
+        <p class="fase-card__p">Het board komt erbij. Eerste ritten, balans op het water, het gevoel van opstaan en rijden. Techniek staat centraal — van waterstart tot je eerste echte kitesurf-rit langs de kust.</p>
+        <div class="fase-card__tags">
+          <span class="fase-card__tag">Waterstart</span>
+          <span class="fase-card__tag">Boardtechniek</span>
+          <span class="fase-card__tag">Balans</span>
+        </div>
+      </div>
+      <div class="fase-card reveal reveal-d4">
+        <div class="fase-card__head">
+          <span class="fase-card__num">Fase 3</span>
+          <span class="fase-card__dur">10 weken</span>
+        </div>
+        <div class="fase-card__h">Zelfstandig surfen</div>
+        <p class="fase-card__p">Je gaat zelfstandig. Wind lezen, rijtechniek verbeteren, veiligheidsprotocollen kennen. Je bent onderdeel van de RTW-community en helpt nieuwere deelnemers al mee op het strand.</p>
+        <div class="fase-card__tags">
+          <span class="fase-card__tag">Wind lezen</span>
+          <span class="fase-card__tag">Veiligheidsprotocol</span>
+          <span class="fase-card__tag">Community</span>
+        </div>
+      </div>
+      <div class="fase-card fase-card--accent reveal reveal-d5">
+        <div class="fase-card__head">
+          <span class="fase-card__num">Fase 4</span>
+          <span class="fase-card__dur">Doorlopend</span>
+        </div>
+        <div class="fase-card__h">IKO-instructeur</div>
+        <p class="fase-card__p">Je haalt je officiële IKO-instructeurscertificaat en geeft les aan de volgende generatie. Het hoogtepunt: in 2026 reizen geselecteerde instructeurs af naar Costa Rica voor een internationaal instructeursprogramma.</p>
+        <div class="fase-card__tags">
+          <span class="fase-card__tag">IKO-certificaat</span>
+          <span class="fase-card__tag">Les geven</span>
+          <span class="fase-card__tag">Costa Rica 2026</span>
         </div>
       </div>
     </div>
-  </section>
+    <div style="text-align:center; margin-top:2.5rem;">
+      <a href="aanmelden.html" class="btn btn--sun btn--lg">Start met Fase 0 →</a>
+    </div>
+  </div>
+</section>
 
-  <section class="section--cta" style="text-align:center;">
-    <div class="container--xs">
-      <div class="stacked-word" style="margin-bottom:1.25rem;">
-        <span class="stacked-word__fill">Klaar?</span>
-        <span class="stacked-word__outline">Spring.</span>
+<!-- ⑥ TESTIMONIALS -->
+<section class="section section--teal" id="verhalen" style="background:var(--deep2);">
+  <div class="container">
+    <span class="eyebrow eyebrow--sun reveal">Deelnemers aan het woord</span>
+    <h2 class="sec-h sec-h--xl sec-h--foam reveal reveal-d1">Wat zeggen ze?</h2>
+    <div class="testi-grid reveal reveal-d2">
+      <article class="testi">
+        <blockquote class="testi__quote">"Ik dacht dat kitesurfen voor rijke mensen was. RTW heeft me bewezen dat dat onzin is. Ik heb nu mijn IKO-certificaat en geef zelf les op het strand van IJmuiden."</blockquote>
+        <footer class="testi__footer">
+          <span class="testi__name">Yassin, 21</span>
+          <span class="testi__detail">Fase 4 afgerond · Amsterdam-Noord</span>
+        </footer>
+      </article>
+      <article class="testi">
+        <blockquote class="testi__quote">"In fase 1 vond ik het doodeng. Nu, een jaar later, ga ik elke vrije zaterdag de zee op. Het is mijn manier geworden om de week los te laten."</blockquote>
+        <footer class="testi__footer">
+          <span class="testi__name">Nadia, 18</span>
+          <span class="testi__detail">Fase 3 · Bijlmer</span>
+        </footer>
+      </article>
+      <article class="testi">
+        <blockquote class="testi__quote">"De coaches zijn keihard maar ook heel eerlijk. Ze geloven in je ook als je zelf even niet meer gelooft. Dat maakt het verschil."</blockquote>
+        <footer class="testi__footer">
+          <span class="testi__name">Damian, 17</span>
+          <span class="testi__detail">Fase 2 · Oost</span>
+        </footer>
+      </article>
+    </div>
+    <div style="margin-top:2rem;">
+      <a href="verhalen.html" class="arrow-link arrow-link--sun reveal reveal-d3">Meer verhalen →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ⑦ PULL QUOTE -->
+<div class="pull-quote">
+  <p class="pull-quote__q">De wind trekt<br>aan je. Laat hem<br><em>niet los.</em></p>
+  <div class="pull-quote__rule"></div>
+  <p class="pull-quote__credit">Kitesurfen · Ride the Wave</p>
+</div>
+
+<!-- ⑧ CTA HUB -->
+<section class="section section--foam" id="aanmelden">
+  <div class="container">
+    <span class="eyebrow eyebrow--teal reveal">Klaar om te vliegen?</span>
+    <h2 class="sec-h sec-h--xl sec-h--foam reveal reveal-d1">Hoe wil jij beginnen?</h2>
+    <div class="cta-hub reveal reveal-d2">
+      <div class="cta-hub__card">
+        <div class="cta-hub__icon">🪁</div>
+        <div class="cta-hub__h">Direct aanmelden</div>
+        <p class="cta-hub__p">Schrijf je in voor het kitesurfprogramma. We nemen binnen 3 werkdagen contact op. Gratis, geen ervaring nodig.</p>
+        <a href="aanmelden.html" class="btn btn--teal">Aanmelden →</a>
       </div>
-      <p style="color:rgba(14,52,63,.7); font-size:.95rem; line-height:1.75; margin-bottom:2rem; font-weight:600;">Kom langs voor een inlooples. Geen verplichtingen. Gewoon doen.</p>
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href="aanmelden.html" class="btn btn--teal btn--lg">Meld je gratis aan</a>
-        <a href="surfen.html" class="btn btn--outline-deep btn--lg">Liever golfsurfen?</a>
+      <div class="cta-hub__card">
+        <div class="cta-hub__icon">🏫</div>
+        <div class="cta-hub__h">Via je school</div>
+        <p class="cta-hub__p">RTW werkt samen met scholen in Amsterdam. Vraag je docent of coach om je door te verwijzen.</p>
+        <a href="scholen.html" class="btn btn--outline-deep">Voor scholen →</a>
+      </div>
+      <div class="cta-hub__card">
+        <div class="cta-hub__icon">💬</div>
+        <div class="cta-hub__h">Vragen?</div>
+        <p class="cta-hub__p">Niet zeker of kitesurfen iets voor jou is? Stuur ons een berichtje — we helpen je verder.</p>
+        <a href="mailto:info@ridethewave.nl" class="btn btn--outline-deep">Mail ons →</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 </main>
 
 <footer class="footer">
+  <div class="footer-email-cta">
+    <div class="footer-email-cta__label">Neem contact op</div>
+    <a href="mailto:info@ridethewave.nl" class="footer-email-cta__link">info@ridethewave.nl</a>
+  </div>
   <div class="footer-top">
     <div>
       <div class="footer-brand__mark">RIDE THE WAVE</div>
-      <p class="footer-brand__tagline">Gratis surfen en kitesurfen voor jongeren van 14 tot 23 jaar.</p>
-    </div>
-    <div>
-      <div class="footer-col__title">Pagina's</div>
-      <div class="footer-col__links">
-        <a href="index.html">Home</a><a href="surfen.html">Surfen</a><a href="kitesurfen.html">Kitesurfen</a><a href="community.html">Community</a>
-        <a href="scholen.html">Voor scholen</a><a href="sponsoren.html">Sponsoren</a><a href="verhalen.html">Verhalen</a><a href="aanmelden.html">Aanmelden</a>
+      <p class="footer-brand__tagline">Gratis surfen en kitesurfen voor jongeren van 14 tot 23 jaar — van eerste golf tot internationaal instructeur.</p>
+      <div class="footer-brand__social">
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">LinkedIn</a>
+        <a href="https://wa.me/31612345678">WhatsApp</a>
       </div>
     </div>
     <div>
-      <div class="footer-col__title">Contact</div>
+      <div class="footer-col__title">Deelnemers</div>
       <div class="footer-col__links">
+        <a href="surfen.html">Golfsurfen (14–23 jr)</a>
+        <a href="kitesurfen.html">Kitesurfen (14–23 jr)</a>
+        <a href="programma.html">Programma &amp; fases</a>
+        <a href="aanmelden.html">Aanmelden</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col__title">Samenwerken</div>
+      <div class="footer-col__links">
+        <a href="scholen.html">Scholen</a>
+        <a href="gemeenten.html">Gemeenten</a>
+        <a href="sponsoren.html">Bedrijven &amp; sponsors</a>
+        <a href="doneren.html">Doneren</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col__title">Info</div>
+      <div class="footer-col__links">
+        <a href="verhalen.html">Verhalen &amp; impact</a>
+        <a href="verhaal.html">Over RTW</a>
+        <a href="team.html">Ons team</a>
+        <a href="contact.html">Contact</a>
         <a href="mailto:info@ridethewave.nl">info@ridethewave.nl</a>
       </div>
     </div>
     <div>
-      <div class="footer-col__title">Locaties</div>
+      <div class="footer-col__title">Juridisch</div>
       <div class="footer-col__links">
-        <a href="#">Amsterdam</a><a href="#">Scheveningen</a><a href="#">Noordwijk</a><a href="#">Ouddorp</a>
+        <a href="#">Privacyverklaring</a>
+        <a href="#">Cookieverklaring</a>
+        <a href="#">Algemene voorwaarden</a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <span class="footer-meta">© 2026 Stichting Ride the Wave · ANBI · KvK 12345678</span>
-    <div class="footer-social"><a href="#">IG</a><a href="#">TT</a><a href="#">LI</a></div>
+    <span class="footer-meta">© 2026 Stichting Ride the Wave · ANBI · KvK (aanvraag)</span>
   </div>
 </footer>
 
+<script>
+(function(){
+  document.querySelectorAll('.nav-drop').forEach(function(d){
+    d.querySelector('.nav-drop__t').addEventListener('click', function(e){
+      e.preventDefault(); d.classList.toggle('is-open');
+    });
+  });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.nav-drop')) document.querySelectorAll('.nav-drop').forEach(function(d){ d.classList.remove('is-open'); });
+  });
+})();
+</script>
+<script>
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-visible'); obs.unobserve(e.target); }});
+  },{threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('scrollProgress');
+  if(!bar) return;
+  window.addEventListener('scroll', function(){
+    var s = document.documentElement.scrollTop;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? (s/h)*100 : 0) + '%';
+  }, {passive:true});
+})();
+</script>
+<script>
+(function(){
+  var b = document.getElementById('burger');
+  var m = document.getElementById('navMobile');
+  if (!b || !m) return;
+  b.addEventListener('click', function(){
+    var open = m.classList.toggle('is-open');
+    b.querySelectorAll('span')[0].style.transform = open ? 'translateY(7px) rotate(45deg)' : '';
+    b.querySelectorAll('span')[1].style.opacity   = open ? '0' : '1';
+    b.querySelectorAll('span')[2].style.transform = open ? 'translateY(-7px) rotate(-45deg)' : '';
+  });
+  m.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ m.classList.remove('is-open'); }); });
+})();
+</script>
 </body>
 </html>
-
-
