@@ -4,209 +4,1309 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aanmelden — Ride the Wave</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=10">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=16">
   <style>
-    .aanmelden-hero { background-image: url('https://images.unsplash.com/photo-1471922694854-ff1b63b20054?auto=format&fit=crop&w=1800&q=80'); }
-    .aanm-hero { background-image: url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=80'); }
-    .paths-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
-    .path-card { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); }
-    .path-card__header { padding: 2rem 2.25rem 1.5rem; }
-    .path-card__header--deep { background: var(--deep); }
-    .path-card__header--foam { background: var(--foam); }
-    .path-card__eyebrow { font-size: .6rem; font-weight: 700; text-transform: uppercase; letter-spacing: .2em; margin-bottom: .5rem; }
-    .path-card__eyebrow--light { color: rgba(247,241,230,.45); }
-    .path-card__eyebrow--teal { color: var(--teal); }
-    .path-card__title { font-family: var(--font-d); font-size: 1.8rem; text-transform: uppercase; line-height: 1; }
-    .path-card__title--white { color: var(--white); }
-    .path-card__title--deep { color: var(--deep); }
-    .path-card__sub { font-size: .82rem; margin-top: .5rem; line-height: 1.5; }
-    .path-card__sub--light { color: rgba(247,241,230,.5); }
-    .path-card__sub--muted { color: var(--muted); }
-    .path-card__body { padding: 2rem 2.25rem 2.25rem; background: var(--white); }
-    .faq-section { max-width: 780px; margin: 0 auto; }
-    @media (max-width:860px) { .paths-grid{grid-template-columns:1fr} }
+    /* Tags */
+    .dg-tag { display:inline-block; padding:.4rem 1rem; border-radius:99px; font-size:.72rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
+    .dg-tag--sun  { background:rgba(244,189,42,.15); color:var(--sun); border:1.5px solid rgba(244,189,42,.25); }
+    .dg-tag--teal { background:rgba(42,136,153,.15); color:#5bc8d8; border:1.5px solid rgba(42,136,153,.25); }
+    .dg-tag--foam { background:rgba(14,52,63,.06); color:rgba(14,52,63,.5); border:1.5px solid rgba(14,52,63,.12); }
+    .dg-strip { display:flex; gap:.5rem; flex-wrap:wrap; margin-top:1.5rem; }
+    /* Stats band */
+    .stats-band { background:var(--foam); padding:4rem clamp(1.5rem,4vw,3rem); }
+    .stats-band .container { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+    .stat-card { background:#fff; border-radius:16px; padding:2.25rem 2rem; border:1.5px solid rgba(14,52,63,.08); box-shadow:0 2px 16px rgba(14,52,63,.06); text-align:center; }
+    .stat-card__n { font-family:var(--font-d); font-size:clamp(2.5rem,5vw,4rem); color:var(--teal); line-height:1; margin-bottom:.5rem; }
+    .stat-card__l { font-size:.9rem; color:rgba(14,52,63,.6); font-weight:500; line-height:1.4; }
+    @media(max-width:700px){ .stats-band .container{grid-template-columns:1fr;} }
+    /* CTA hub */
+    .cta-hub { display:grid; grid-template-columns:repeat(3,1fr); gap:1.75rem; }
+    .cta-hub__card { background:#fff; border-radius:16px; padding:2.5rem 2rem; border:1.5px solid rgba(14,52,63,.08); box-shadow:0 2px 16px rgba(14,52,63,.06); display:flex; flex-direction:column; gap:1rem; transition:transform .2s, box-shadow .2s; }
+    .cta-hub__card:hover { transform:translateY(-4px); box-shadow:0 8px 32px rgba(14,52,63,.1); }
+    .cta-hub__icon { font-size:2rem; }
+    .cta-hub__h { font-family:var(--font-d); font-size:1.4rem; text-transform:uppercase; color:var(--deep); line-height:1; }
+    .cta-hub__p { font-size:.85rem; color:rgba(14,52,63,.6); line-height:1.7; flex:1; }
+    @media(max-width:860px){ .cta-hub{grid-template-columns:1fr;} }
+    /* Teal section overrides */
+    .section--teal .testi { background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.1); }
+    .section--teal .testi__name { color:var(--foam); }
+    .section--teal .testi__role { color:rgba(247,241,230,.5); }
+    .section--teal .testi__quote { color:rgba(247,241,230,.85); }
+    .section--teal .arrow-link--sun { color:var(--sun); }
+
+    /* ─── Token system ─────────────────────────────────────── */
+    :root {
+      --navy:    #0E343F;
+      --navy-2:  #0A2630;
+      --teal:    #1C6E7E;
+      --teal-lt: #EEF6F8;
+      --yellow:  #F4BD2A;
+      --cream:   #F7F1E6;
+      --ink:     #0A1F26;
+      --mist:    #C8DCE1;
+      --sand:    #C4B89A;
+
+      --bg:      var(--cream);
+      --fg:      var(--ink);
+      --card-bg: #ffffff;
+      --input-bg:#ffffff;
+      --input-border: #C8DCE1;
+      --input-focus:  var(--teal);
+      --shadow:  0 2px 16px rgba(14,52,63,.10);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:     #0A1F26;
+        --fg:     #E8F4F7;
+        --card-bg:#112730;
+        --input-bg:#0E2D37;
+        --input-border:#1C6E7E;
+        --mist:   #1A3D48;
+        --sand:   #8FA8B0;
+        --shadow: 0 2px 20px rgba(0,0,0,.4);
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg:     #0A1F26;
+      --fg:     #E8F4F7;
+      --card-bg:#112730;
+      --input-bg:#0E2D37;
+      --input-border:#1C6E7E;
+      --mist:   #1A3D48;
+      --sand:   #8FA8B0;
+      --shadow: 0 2px 20px rgba(0,0,0,.4);
+    }
+    :root[data-theme="light"] {
+      --bg:      var(--cream);
+      --fg:      var(--ink);
+      --card-bg: #ffffff;
+      --input-bg:#ffffff;
+      --input-border: #C8DCE1;
+      --mist:    #C8DCE1;
+      --sand:    #C4B89A;
+      --shadow:  0 2px 16px rgba(14,52,63,.10);
+    }
+
+    /* ─── Reset & base ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      font-size: 1rem;
+      -webkit-font-smoothing: antialiased;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
+
+    /* ─── Nav ──────────────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(1.25rem, 5vw, 3rem);
+      height: 64px;
+      border-bottom: 2px solid var(--teal);
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      text-decoration: none;
+    }
+    .nav-logo-badge {
+      width: 36px;
+      height: 36px;
+      background: var(--yellow);
+      display: grid;
+      place-items: center;
+      font-family: 'Anton', Impact, sans-serif;
+      font-size: .85rem;
+      color: var(--navy);
+      letter-spacing: .04em;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      flex-shrink: 0;
+    }
+    .nav-logo-text {
+      font-family: 'Anton', Impact, sans-serif;
+      font-size: 1.05rem;
+      color: #fff;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+    .nav-logo-text span {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: .62rem;
+      font-weight: 600;
+      letter-spacing: .2em;
+      color: var(--yellow);
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--mist);
+      text-decoration: none;
+      font-size: .82rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--yellow); }
+    .nav-cta {
+      background: var(--yellow);
+      color: var(--navy) !important;
+      padding: .45rem 1.1rem;
+      font-weight: 700 !important;
+      letter-spacing: .06em !important;
+    }
+    .nav-cta:hover { background: #f5c940 !important; color: var(--navy) !important; }
+    @media (max-width: 720px) {
+      .nav-links { display: none; }
+    }
+
+    /* ─── Hero ─────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 72vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      padding-top: 64px;
+    }
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85');
+      background-size: cover;
+      background-position: center 30%;
+    }
+    .hero-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(10,31,38,.72) 0%,
+        rgba(14,52,63,.55) 50%,
+        rgba(10,31,38,.85) 100%
+      );
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: clamp(3rem, 8vw, 6rem) clamp(1.25rem, 6vw, 5rem);
+      max-width: 800px;
+    }
+    .eyebrow {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 1.1rem;
+    }
+    .hero-content .eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 22px;
+      height: 2px;
+      background: var(--yellow);
+      vertical-align: middle;
+      margin-right: .6rem;
+    }
+    .hero h1 {
+      font-family: 'Anton', Impact, sans-serif;
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 400;
+      line-height: .95;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+      text-wrap: balance;
+      margin-bottom: 1.75rem;
+    }
+    .hero h1 .accent-word {
+      position: relative;
+      display: inline-block;
+      color: var(--yellow);
+    }
+    .hero h1 .accent-word::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 6px;
+      background: var(--yellow);
+      border-radius: 0 0 3px 3px;
+      opacity: .85;
+    }
+    .hero-sub {
+      font-size: clamp(.95rem, 2.2vw, 1.2rem);
+      color: rgba(255,255,255,.82);
+      max-width: 520px;
+      line-height: 1.65;
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: .88rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .9rem 2rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background .2s, transform .15s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+    .btn-primary {
+      background: var(--yellow);
+      color: var(--navy);
+    }
+    .btn-primary:hover { background: #f5c940; }
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,.4);
+    }
+    .btn-outline:hover { border-color: var(--yellow); color: var(--yellow); }
+
+    /* ─── Stats band ────────────────────────────────────────── */
+    .stats-band {
+      background: var(--navy);
+      padding: 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 2px solid rgba(28,110,126,.5);
+    }
+    .stat-card {
+      padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1.5rem, 4vw, 3rem);
+      border-right: 1px solid rgba(28,110,126,.3);
+      text-align: left;
+    }
+    .stat-card:last-child { border-right: none; }
+    .stat-number {
+      font-family: 'Anton', Impact, sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1;
+      color: var(--yellow);
+      letter-spacing: .01em;
+      font-variant-numeric: tabular-nums;
+    }
+    .stat-label {
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--mist);
+      margin-top: .4rem;
+    }
+    @media (max-width: 600px) {
+      .stats-grid { grid-template-columns: 1fr; }
+      .stat-card { border-right: none; border-bottom: 1px solid rgba(28,110,126,.3); }
+      .stat-card:last-child { border-bottom: none; }
+    }
+
+    /* ─── Section utilities ─────────────────────────────────── */
+    .section {
+      padding: clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 5rem);
+    }
+    .section--foam {
+      background: var(--teal-lt);
+    }
+    .section--navy {
+      background: var(--navy);
+    }
+    .section--teal {
+      background: var(--teal);
+    }
+    .section--white {
+      background: var(--card-bg);
+    }
+    @media (prefers-color-scheme: dark) {
+      .section--foam { background: var(--navy-2); }
+      .section--white { background: #0E2D37; }
+    }
+    :root[data-theme="dark"] .section--foam { background: var(--navy-2); }
+    :root[data-theme="dark"] .section--white { background: #0E2D37; }
+    :root[data-theme="light"] .section--foam { background: var(--teal-lt); }
+    :root[data-theme="light"] .section--white { background: #ffffff; }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section-header {
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+    .section-header .eyebrow {
+      color: var(--teal);
+    }
+    .section--teal .section-header .eyebrow,
+    .section--navy .section-header .eyebrow {
+      color: var(--yellow);
+    }
+    .section-h2 {
+      font-family: 'Anton', Impact, sans-serif;
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      font-weight: 400;
+      text-transform: uppercase;
+      line-height: 1.05;
+      text-wrap: balance;
+      color: var(--fg);
+      letter-spacing: .02em;
+    }
+    .section--teal .section-h2,
+    .section--navy .section-h2 {
+      color: #fff;
+    }
+
+    /* ─── Eligibility section ───────────────────────────────── */
+    .eligibility-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .eligibility-grid { grid-template-columns: 1fr; }
+    }
+    .checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .9rem;
+    }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: .85rem;
+      font-size: .97rem;
+      line-height: 1.5;
+      color: var(--fg);
+    }
+    .check-icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      background: var(--teal);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin-top: .15em;
+    }
+    .check-icon svg { width: 12px; height: 12px; }
+    .get-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+      margin-bottom: 2rem;
+    }
+    .get-list li {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      font-size: .95rem;
+      color: var(--fg);
+    }
+    .get-list li::before {
+      content: '→';
+      color: var(--teal);
+      font-weight: 700;
+      font-size: .9rem;
+      flex-shrink: 0;
+    }
+    .col-label {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-bottom: 1.25rem;
+    }
+
+    /* ─── Form section ──────────────────────────────────────── */
+    .form-card {
+      background: var(--card-bg);
+      box-shadow: var(--shadow);
+      padding: clamp(2rem, 5vw, 3.5rem);
+      max-width: 860px;
+      margin: 0 auto;
+      border-top: 4px solid var(--yellow);
+    }
+    .form-intro {
+      margin-bottom: 2.5rem;
+    }
+    .form-intro p {
+      font-size: .95rem;
+      color: var(--sand);
+      margin-top: .5rem;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem 1.5rem;
+    }
+    @media (max-width: 600px) {
+      .form-grid { grid-template-columns: 1fr; }
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: .45rem;
+    }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--sand);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--input-bg);
+      border: 1.5px solid var(--input-border);
+      color: var(--fg);
+      font-family: 'Inter', sans-serif;
+      font-size: .95rem;
+      padding: .75rem 1rem;
+      width: 100%;
+      appearance: none;
+      -webkit-appearance: none;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      border-radius: 0;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--input-focus);
+      box-shadow: 0 0 0 3px rgba(28,110,126,.15);
+    }
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231C6E7E' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-optional {
+      font-size: .7rem;
+      font-weight: 400;
+      letter-spacing: .05em;
+      text-transform: none;
+      color: var(--sand);
+      opacity: .8;
+      margin-left: .35rem;
+    }
+    .form-submit-row {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .form-privacy {
+      font-size: .75rem;
+      color: var(--sand);
+      max-width: 320px;
+      line-height: 1.5;
+    }
+    .btn-submit {
+      background: var(--navy);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: .9rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 1rem 2.25rem;
+      border: none;
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+      border-left: 4px solid var(--yellow);
+    }
+    .btn-submit:hover { background: var(--teal); transform: translateY(-2px); }
+    .btn-submit:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+
+    /* ─── Steps section ─────────────────────────────────────── */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 900px) {
+      .steps-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 500px) {
+      .steps-grid { grid-template-columns: 1fr; }
+    }
+    .step-card {
+      background: rgba(255,255,255,.08);
+      padding: 2rem 1.5rem;
+      border-top: 3px solid rgba(244,189,42,.6);
+      transition: background .2s;
+    }
+    .step-card:hover { background: rgba(255,255,255,.13); }
+    .step-num {
+      font-family: 'Anton', Impact, sans-serif;
+      font-size: 3.2rem;
+      line-height: 1;
+      color: var(--yellow);
+      opacity: .55;
+      margin-bottom: .75rem;
+      font-variant-numeric: tabular-nums;
+    }
+    .step-text {
+      font-size: .95rem;
+      color: rgba(255,255,255,.88);
+      line-height: 1.6;
+    }
+
+    /* ─── Session cards ─────────────────────────────────────── */
+    .sessions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .sessions-grid { grid-template-columns: 1fr; }
+    }
+    .sess-card {
+      background: var(--card-bg);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform .2s, box-shadow .2s;
+      border-bottom: 3px solid var(--teal);
+    }
+    .sess-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(14,52,63,.18); }
+    .sess-card-img {
+      height: 180px;
+      background-color: var(--teal);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .sess-card-tag {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: var(--yellow);
+      color: var(--navy);
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: .3rem .7rem;
+    }
+    .sess-card-body {
+      padding: 1.5rem;
+    }
+    .sess-card-title {
+      font-family: 'Anton', Impact, sans-serif;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: var(--fg);
+      line-height: 1.1;
+      margin-bottom: .5rem;
+    }
+    .sess-card-meta {
+      display: flex;
+      gap: 1rem;
+      margin-top: .75rem;
+      flex-wrap: wrap;
+    }
+    .meta-pill {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      display: flex;
+      align-items: center;
+      gap: .3rem;
+    }
+    @media (prefers-color-scheme: dark) {
+      .meta-pill { color: #5DBECC; }
+    }
+    :root[data-theme="dark"] .meta-pill { color: #5DBECC; }
+    :root[data-theme="light"] .meta-pill { color: var(--teal); }
+    .sess-card-spots {
+      font-size: .8rem;
+      color: var(--sand);
+      margin-top: .5rem;
+    }
+
+    /* ─── CTA hub ───────────────────────────────────────────── */
+    .cta-hub {
+      background: var(--navy);
+      padding: clamp(3rem, 6vw, 5rem) clamp(1.25rem, 6vw, 5rem);
+    }
+    .cta-hub-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .cta-hub {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid rgba(28,110,126,.4);
+    }
+    @media (max-width: 720px) {
+      .cta-hub { grid-template-columns: 1fr; }
+    }
+    .cta-hub__card {
+      padding: 2.5rem 2rem;
+      border-right: 1px solid rgba(28,110,126,.4);
+      text-align: center;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      transition: background .2s;
+      cursor: pointer;
+    }
+    .cta-hub__card:last-child { border-right: none; }
+    .cta-hub__card:hover { background: rgba(28,110,126,.15); }
+    @media (max-width: 720px) {
+      .cta-hub__card { border-right: none; border-bottom: 1px solid rgba(28,110,126,.4); }
+      .cta-hub__card:last-child { border-bottom: none; }
+    }
+    .cta-icon {
+      font-size: 2.4rem;
+      line-height: 1;
+    }
+    .cta-card-title {
+      font-family: 'Anton', Impact, sans-serif;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: #fff;
+    }
+    .cta-card-sub {
+      font-size: .82rem;
+      color: var(--mist);
+      line-height: 1.5;
+      max-width: 200px;
+    }
+    .cta-arrow {
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      color: var(--yellow);
+      text-transform: uppercase;
+      margin-top: .25rem;
+    }
+
+    /* ─── Footer strip ──────────────────────────────────────── */
+    .footer-strip {
+      background: var(--navy-2);
+      padding: 1.5rem clamp(1.25rem, 6vw, 5rem);
+      border-top: 1px solid rgba(28,110,126,.3);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .footer-copy {
+      font-size: .75rem;
+      color: rgba(200,220,225,.45);
+      letter-spacing: .06em;
+    }
+    .footer-tagline {
+      font-family: 'Anton', Impact, sans-serif;
+      font-size: .9rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      opacity: .7;
+    }
+    .pull-quote { background:var(--foam) !important; padding:clamp(1.75rem,3vw,2.5rem) clamp(1.5rem,4vw,3rem) !important; text-align:center; }
+    .pull-quote .pull-quote__q { font-family:var(--font-d); font-size:clamp(1.5rem,3vw,2.8rem); text-transform:uppercase; line-height:1; color:var(--deep) !important; font-style:italic; letter-spacing:-.01em; max-width:700px; margin:0 auto 1.25rem; }
+    .pull-quote .pull-quote__q em { color:var(--teal) !important; font-style:italic; }
+    .pull-quote__rule { width:60px; height:3px; background:var(--teal); margin:0 auto 1.25rem; }
+    .pull-quote__credit { font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.22em; color:rgba(14,52,63,.35); }
   </style>
 </head>
 <body>
+<div class="scroll-progress" id="scrollProgress"></div>
+
 <nav class="nav">
-  <a href="index.html" class="nav-logo"><span class="nav-logo-mark">RTW</span><div><div class="nav-logo-sub">Ride the Wave</div></div></a>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-stack">
+      <span class="nav-logo-r1">RIDE</span>
+      <span class="nav-logo-r2">THE</span>
+      <span class="nav-logo-r3">WAVE</span>
+    </div>
+  </a>
   <div class="nav-links">
-    <a href="index.html">Home</a><a href="surfen.html">Surfen</a><a href="kitesurfen.html">Kitesurfen</a><a href="community.html">Community</a>
-    <a href="scholen.html">Scholen</a><a href="sponsoren.html">Sponsors</a><a href="verhalen.html">Verhalen</a>
-    <a href="aanmelden.html" class="nav-cta">Aanmelden</a>
+    <div class="nav-drop">
+      <span class="nav-drop__t">Deelnemers</span>
+      <div class="nav-drop__m">
+        <a href="surfen.html">Golfsurfen (14–23 jr)</a>
+        <a href="kitesurfen.html">Kitesurfen (14–23 jr)</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <span class="nav-drop__t">Samenwerken</span>
+      <div class="nav-drop__m">
+        <a href="scholen.html">Scholen &amp; onderwijs</a>
+        <a href="scholen.html">Gemeenten &amp; overheid</a>
+        <a href="sponsoren.html">Bedrijven &amp; sponsors</a>
+      </div>
+    </div>
+    <a href="aanmelden.html">Aanmelden</a>
+    <a href="verhalen.html">Impact</a>
+    <a href="sponsoren.html">Steun ons</a>
+    <div class="nav-drop">
+      <span class="nav-drop__t">Info</span>
+      <div class="nav-drop__m">
+        <a href="community.html">Over RTW</a>
+        <a href="community.html">Ons team</a>
+        <a href="mailto:info@ridethewave.nl">Contact</a>
+      </div>
+    </div>
+    <a href="aanmelden.html" class="nav-cta">Gratis aanmelden</a>
+  </div>
+  <button class="nav-burger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-mobile" id="navMobile">
+    <a href="surfen.html">Golfsurfen</a>
+    <a href="kitesurfen.html">Kitesurfen</a>
+    <a href="verhalen.html">Impact</a>
+    <a href="scholen.html">Scholen</a>
+    <a href="gemeenten.html">Gemeenten</a>
+    <a href="sponsoren.html">Bedrijven &amp; sponsors</a>
+    <a href="doneren.html">Doneren</a>
+    <a href="verhaal.html">Over RTW</a>
+    <a href="team.html">Ons team</a>
+    <a href="contact.html">Contact</a>
+    <a href="aanmelden.html" class="nav-cta">Gratis aanmelden</a>
   </div>
 </nav>
+
 <main>
 
-  <section class="page-hero aanmelden-hero">
-    <div class="page-hero__inner">
-      <span class="page-hero__eyebrow">Gratis · Geen ervaring nodig · Plek voor iedereen</span>
-      <h1 class="page-hero__h">Aanmelden</h1>
-      <p class="page-hero__tagline--inner">Het water wacht op jou.</p>
-      <p class="page-hero__sub">Vul het formulier in. We bevestigen je plek binnen 3 werkdagen.</p>
+<!-- ─── Hero ─────────────────────────────────────────────────── -->
+<section class="hero page-hero--short" aria-label="Aanmelden hero">
+  <div class="hero__overlay" aria-hidden="true"></div>
+  <div class="hero__accent-bar"></div>
+  <div class="hero-img" role="img" aria-label="Surfer op golven bij zonsopgang"></div>
+  <div class="hero-content">
+    <p class="eyebrow">Aanmelden · Gratis</p>
+    <h1>
+      Meld je aan<br>
+      als <span class="accent-word">deelnemer.</span>
+    </h1>
+    <p class="hero-sub">
+      Gratis. Geen ervaring nodig. Wij regelen wetsuit, board en Surfbus.<br>
+      Jij regelt de goede zin.
+    </p>
+    <a href="#aanmelden-formulier" class="btn btn-primary">
+      Aanmelden →
+    </a>
+  </div>
+</section>
+
+<!-- ─── Stats band ────────────────────────────────────────────── -->
+<div class="stats-band" aria-label="Kerncijfers">
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-card__n">200+</div>
+      <div class="stat-card__l">jongeren gingen je voor</div>
     </div>
-  </section>
+    <div class="stat-card">
+      <div class="stat-card__n">€0</div>
+      <div class="stat-card__l">kosten voor jou</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card__n">5</div>
+      <div class="stat-card__l">fases van beginner tot instructeur</div>
+    </div>
+  </div>
+</div>
 
-  <section class="section section--foam">
-    <div class="container">
-      <div class="paths-grid">
-
-        <!-- Pad 1: Deelnemer -->
-        <div class="path-card">
-          <div class="path-card__header path-card__header--deep">
-            <div class="path-card__eyebrow path-card__eyebrow--light">Pad 1</div>
-            <div class="path-card__title path-card__title--white">Ik meld me zelf aan</div>
-            <div class="path-card__sub path-card__sub--light">Voor jongeren van 14–23 jaar die zelf willen deelnemen</div>
-          </div>
-          <div class="path-card__body">
-            <form action="mailto:aanmelden@ridethewave.nl" method="POST" enctype="text/plain" style="display:flex;flex-direction:column;gap:1rem">
-              <div class="form-grid-2">
-                <div class="form-group"><label class="form-label form-label--dark">Voornaam</label><input class="form-input form-input--light" type="text" name="voornaam" placeholder="Jouw voornaam" required></div>
-                <div class="form-group"><label class="form-label form-label--dark">Achternaam</label><input class="form-input form-input--light" type="text" name="achternaam" placeholder="Achternaam" required></div>
-                <div class="form-group"><label class="form-label form-label--dark">Leeftijd</label><input class="form-input form-input--light" type="number" name="leeftijd" min="14" max="23" placeholder="14–23" required></div>
-                <div class="form-group"><label class="form-label form-label--dark">Sport</label>
-                  <select class="form-select form-select--light" name="sport" required>
-                    <option value="">Kies een sport</option>
-                    <option>Surfen</option>
-                    <option>Kitesurfen</option>
-                    <option>Beide (surfen + kitesurfen)</option>
-                  </select>
-                </div>
-                <div class="form-group"><label class="form-label form-label--dark">Locatie voorkeur</label>
-                  <select class="form-select form-select--light" name="locatie" required>
-                    <option value="">Kies een locatie</option>
-                    <option>Scheveningen</option>
-                    <option>Noordwijk</option>
-                    <option>Ouddorp</option>
-                    <option>Geen voorkeur</option>
-                  </select>
-                </div>
-                <div class="form-group"><label class="form-label form-label--dark">Surfbus nodig?</label>
-                  <select class="form-select form-select--light" name="surfbus">
-                    <option value="">Kies...</option>
-                    <option>Ja, vanuit Rotterdam</option>
-                    <option>Ja, vanuit Den Haag</option>
-                    <option>Ja, vanuit Amsterdam</option>
-                    <option>Nee, ik kom zelf</option>
-                  </select>
-                </div>
-                <div class="form-group"><label class="form-label form-label--dark">Telefoonnummer</label><input class="form-input form-input--light" type="tel" name="tel" placeholder="06 00 000 000"></div>
-                <div class="form-group"><label class="form-label form-label--dark">E-mail</label><input class="form-input form-input--light" type="email" name="email" placeholder="jouw@email.nl" required></div>
-                <div class="form-group full"><label class="form-label form-label--dark">Opmerkingen (optioneel)</label><textarea class="form-textarea form-textarea--light" name="opmerkingen" rows="3" placeholder="Bijv. naam van de vriend die je meebrengt, of bijzonderheden..."></textarea></div>
-              </div>
-              <button type="submit" class="btn btn--sun">Aanmelden →</button>
-              <p style="font-size:.7rem;color:var(--muted)">We reageren binnen 3 werkdagen. Deelname is volledig gratis.</p>
-            </form>
-          </div>
-        </div>
-
-        <!-- Pad 2: Via school -->
-        <div>
-          <div class="path-card">
-            <div class="path-card__header path-card__header--foam">
-              <div class="path-card__eyebrow path-card__eyebrow--teal">Pad 2</div>
-              <div class="path-card__title path-card__title--deep">Via mijn school</div>
-              <div class="path-card__sub path-card__sub--muted">Aanmelden via jouw schoolcoördinator of mentor</div>
-            </div>
-            <div class="path-card__body">
-              <p style="font-size:.88rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem">Zit je op een school die samenwerkt met RTW? Dan meldt jouw school je aan. Vraag je mentor of schoolcoördinator om contact op te nemen.</p>
-              <div class="steps">
-                <div class="step"><span class="step-n step-n--teal">1</span><div><div class="step-t">Vraag je mentor</div><div class="step-d">Vraag of jouw school al samenwerkt met RTW, of geef deze pagina door.</div></div></div>
-                <div class="step"><span class="step-n step-n--teal">2</span><div><div class="step-t">School neemt contact op</div><div class="step-d">De schoolcoördinator mailt of belt ons via de <a href="scholen.html" style="color:var(--teal);font-weight:700">scholenpagina</a>.</div></div></div>
-                <div class="step"><span class="step-n step-n--teal">3</span><div><div class="step-t">Plek bevestigd</div><div class="step-d">Je ontvangt een bevestiging met alle praktische info over je eerste les.</div></div></div>
-              </div>
-              <a href="scholen.html" class="btn btn--outline-deep" style="margin-top:1.5rem">Info voor scholen →</a>
-            </div>
-          </div>
-
-          <!-- Quick info card -->
-          <div class="card" style="margin-top:16px">
-            <div class="card__body">
-              <div class="card__tag">Praktisch</div>
-              <div class="card__h">Wat je meeneemt</div>
-              <ul style="display:flex;flex-direction:column;gap:.5rem;margin-top:.75rem">
-                <li style="font-size:.83rem;color:var(--muted);padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--sun)">✓</span>Zwemkleding of sportkleding</li>
-                <li style="font-size:.83rem;color:var(--muted);padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--sun)">✓</span>Handdoek en wisselkleding</li>
-                <li style="font-size:.83rem;color:var(--muted);padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--sun)">✓</span>Zonnebrandcrème</li>
-                <li style="font-size:.83rem;color:var(--muted);padding-left:1rem;position:relative"><span style="position:absolute;left:0;color:var(--sun)">✓</span>Goede zin</li>
-              </ul>
-              <p style="font-size:.75rem;color:var(--muted);margin-top:1rem;padding:1rem;background:var(--teal-lt);border-radius:var(--radius-sm)">Wetsuits, boards en al het lesmateriaal zijn aanwezig. Jij hoeft niets te kopen of te huren.</p>
-            </div>
-          </div>
-        </div>
+<!-- ─── Eligibility ───────────────────────────────────────────── -->
+<section class="section section--foam" aria-labelledby="eligibility-heading">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="eyebrow">Ben jij er klaar voor?</p>
+      <h2 class="section-h2" id="eligibility-heading">Voor wie is het programma?</h2>
+    </div>
+    <div class="eligibility-grid">
+      <div>
+        <p class="col-label">Criteria</p>
+        <ul class="checklist">
+          <li>
+            <span class="check-icon" aria-hidden="true">
+              <svg viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 4.5L4.5 8L11 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            Je bent tussen de 14 en 23 jaar oud.
+          </li>
+          <li>
+            <span class="check-icon" aria-hidden="true">
+              <svg viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 4.5L4.5 8L11 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            Je woont of verblijft in Nederland.
+          </li>
+          <li>
+            <span class="check-icon" aria-hidden="true">
+              <svg viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 4.5L4.5 8L11 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            Je hebt geen of weinig surfervaring — beginners welkom.
+          </li>
+          <li>
+            <span class="check-icon" aria-hidden="true">
+              <svg viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 4.5L4.5 8L11 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            Je bent bereid je in te zetten voor de volle programmaperiode.
+          </li>
+          <li>
+            <span class="check-icon" aria-hidden="true">
+              <svg viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 4.5L4.5 8L11 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            Je kunt zwemmen (zwemdiploma A of vergelijkbaar).
+          </li>
+          <li>
+            <span class="check-icon" aria-hidden="true">
+              <svg viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 4.5L4.5 8L11 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            Je bent klaar om onderdeel te worden van de RTW crew.
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p class="col-label">Wat je krijgt</p>
+        <ul class="get-list">
+          <li>Professionele wetsuit</li>
+          <li>Surfboard voor elke sessie</li>
+          <li>Surfbus vervoer van en naar de locatie</li>
+          <li>Persoonlijke begeleiding door een vaste coach</li>
+          <li>Community van gelijkgestemde jongeren</li>
+          <li>Officieel RTW-certificaat na afronding</li>
+        </ul>
+        <a href="#aanmelden-formulier" class="btn btn-primary">Meld je nu gratis aan →</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section section--white">
-    <div class="container">
-      <div class="faq-section">
-        <div style="text-align:center;margin-bottom:2.5rem">
-          <span class="eyebrow eyebrow--sun">Veelgestelde vragen</span>
-          <h2 class="sec-h sec-h--lg sec-h--deep">FAQ</h2>
+<!-- ─── Registration form ─────────────────────────────────────── -->
+<section class="section section--foam" id="aanmelden-formulier" aria-labelledby="form-heading">
+  <div class="section-inner">
+    <div class="form-card">
+      <div class="form-intro">
+        <p class="eyebrow" style="color: var(--teal);">Aanmeldformulier</p>
+        <h2 class="section-h2" id="form-heading" style="color: var(--fg);">Pak je plek.</h2>
+        <p>Vul het formulier in — wij nemen binnen 48 uur contact op.</p>
+      </div>
+      <form action="#" method="post" novalidate>
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="voornaam">Voornaam</label>
+            <input type="text" id="voornaam" name="voornaam" autocomplete="given-name" required placeholder="Jouw voornaam">
+          </div>
+
+          <div class="form-group">
+            <label for="achternaam">Achternaam</label>
+            <input type="text" id="achternaam" name="achternaam" autocomplete="family-name" required placeholder="Jouw achternaam">
+          </div>
+
+          <div class="form-group">
+            <label for="leeftijd">Leeftijd</label>
+            <select id="leeftijd" name="leeftijd" required>
+              <option value="" disabled selected>Kies je leeftijd</option>
+              <option value="14">14 jaar</option>
+              <option value="15">15 jaar</option>
+              <option value="16">16 jaar</option>
+              <option value="17">17 jaar</option>
+              <option value="18">18 jaar</option>
+              <option value="19">19 jaar</option>
+              <option value="20">20 jaar</option>
+              <option value="21">21 jaar</option>
+              <option value="22">22 jaar</option>
+              <option value="23">23 jaar</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mailadres</label>
+            <input type="email" id="email" name="email" autocomplete="email" required placeholder="jouw@email.nl">
+          </div>
+
+          <div class="form-group">
+            <label for="telefoon">Telefoonnummer</label>
+            <input type="tel" id="telefoon" name="telefoon" autocomplete="tel" placeholder="06 1234 5678">
+          </div>
+
+          <div class="form-group">
+            <label for="sport">Sport voorkeur</label>
+            <select id="sport" name="sport" required>
+              <option value="" disabled selected>Kies een sport</option>
+              <option value="golfsurfen">Golfsurfen</option>
+              <option value="kitesurfen">Kitesurfen</option>
+              <option value="beide">Beide</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="locatie">Locatie voorkeur</label>
+            <select id="locatie" name="locatie" required>
+              <option value="" disabled selected>Kies een locatie</option>
+              <option value="scheveningen">Scheveningen</option>
+              <option value="noordwijk">Noordwijk</option>
+              <option value="ouddorp">Ouddorp</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="gevonden">Hoe heb je ons gevonden?</label>
+            <select id="gevonden" name="gevonden">
+              <option value="" disabled selected>Selecteer een optie</option>
+              <option value="instagram">Instagram</option>
+              <option value="google">Google</option>
+              <option value="school">Via mijn school</option>
+              <option value="vriend">Via een vriend of vriendin</option>
+              <option value="anders">Anders</option>
+            </select>
+          </div>
+
+          <div class="form-group full">
+            <label for="friend">Bring-a-friend naam <span class="form-optional">(optioneel)</span></label>
+            <input type="text" id="friend" name="friend" placeholder="Naam van de vriend of vriendin die je meeneemt">
+          </div>
+
+          <div class="form-group full">
+            <label for="opmerkingen">Opmerkingen <span class="form-optional">(optioneel)</span></label>
+            <textarea id="opmerkingen" name="opmerkingen" placeholder="Heb je nog iets dat we moeten weten? Schrijf het hier."></textarea>
+          </div>
+
         </div>
-        <div id="faq">
-          <div class="faq-item">
-            <button class="faq-btn">Kan ik meedoen als ik niet kan zwemmen?<span class="faq-icon">+</span></button>
-            <div class="faq-body">We vragen wel om basisvaardigheid in het water (je kunt je hoofd boven water houden). Zwemlessen volgen of eerder ervaring met water is voldoende. We starten altijd dicht bij de kant en beoordelen samen wat veilig is.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-btn">Is het echt helemaal gratis?<span class="faq-icon">+</span></button>
-            <div class="faq-body">Ja, volledig gratis. Wetsuit, board, lessen en vervoer via de surfbus zijn inbegrepen. We vragen geen borgsom of bijdrage. Dit wordt mogelijk gemaakt door sponsors en subsidies.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-btn">Hoe vaak zijn de lessen?<span class="faq-icon">+</span></button>
-            <div class="faq-body">In fase 1 en 2 kom je gemiddeld 1 keer per week. In fase 3 en 4 kan dat oplopen tot 2–3 keer per week, afhankelijk van je voortgang en motivatie. Alles is flexibel en in overleg.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-btn">Kan ik een vriend of vriendin meenemen?<span class="faq-icon">+</span></button>
-            <div class="faq-body">Absoluut! Dat juichen we toe. Vermeld de naam van je vriend in het formulier en we proberen jullie in dezelfde groep te plaatsen. Je kunt ook een WhatsApp-aanmeldlink sturen via de community-pagina.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-btn">Tot welke leeftijd kan ik deelnemen?<span class="faq-icon">+</span></button>
-            <div class="faq-body">Je kunt deelnemen van je 14e tot en met je 23e verjaardag. Wie eerder is begonnen en 23 jaar wordt tijdens het lopende seizoen mag het seizoen afmaken. Na je 23e kun je als Junior Crew of vrijwilliger actief blijven.</div>
-          </div>
+
+        <div class="form-submit-row">
+          <button type="submit" class="btn-submit">Meld je gratis aan →</button>
+          <p class="form-privacy">
+            Je gegevens worden alleen gebruikt voor de aanmelding bij RTW. Geen spam. Nooit doorverkoop.
+          </p>
         </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ─── What to expect ───────────────────────────────────────── -->
+<section class="section section--teal" aria-labelledby="steps-heading">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="eyebrow">Wat gebeurt er na aanmelding?</p>
+      <h2 class="section-h2" id="steps-heading">Wat kun je verwachten?</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num" aria-hidden="true">1</div>
+        <p class="step-text">Bevestiging binnen 48 uur per e-mail. Geen spam, gewoon duidelijkheid.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num" aria-hidden="true">2</div>
+        <p class="step-text">Intakegesprek met een coach — kort, persoonlijk, en op jouw tempo.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num" aria-hidden="true">3</div>
+        <p class="step-text">Welkomstpakket met alle info over Fase 0 en wat je kunt verwachten.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num" aria-hidden="true">4</div>
+        <p class="step-text">Eerste sessiedag! Board onder je arm, crew om je heen. Time to go.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- ─── Upcoming sessions ─────────────────────────────────────── -->
+<section class="section section--foam" aria-labelledby="sessions-heading">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="eyebrow">Aankomende sessies</p>
+      <h2 class="section-h2" id="sessions-heading">Start mee dit seizoen.</h2>
+    </div>
+    <div class="sessions-grid">
+
+      <article class="sess-card">
+        <div class="sess-card-img"
+             style="background-image: url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=800&q=75');">
+          <span class="sess-card-tag">Golfsurfen</span>
+        </div>
+        <div class="sess-card-body">
+          <h3 class="sess-card-title">Scheveningen</h3>
+          <p class="sess-card-spots">8 plekken beschikbaar</p>
+          <div class="sess-card-meta">
+            <span class="meta-pill">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="1" y="2" width="9" height="8" rx="1" stroke="currentColor" stroke-width="1.3"/>
+                <path d="M3.5 1V3M7.5 1V3M1 5h9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+              6 sep 2026
+            </span>
+            <span class="meta-pill">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="5.5" cy="4.5" r="2" stroke="currentColor" stroke-width="1.3"/>
+                <path d="M2 10c0-2 1.6-3.5 3.5-3.5S9 8 9 10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+              8 deelnemers
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <article class="sess-card">
+        <div class="sess-card-img"
+             style="background-image: url('https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=800&q=75');">
+          <span class="sess-card-tag">Kitesurfen</span>
+        </div>
+        <div class="sess-card-body">
+          <h3 class="sess-card-title">Ouddorp Kite</h3>
+          <p class="sess-card-spots">5 plekken beschikbaar</p>
+          <div class="sess-card-meta">
+            <span class="meta-pill">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="1" y="2" width="9" height="8" rx="1" stroke="currentColor" stroke-width="1.3"/>
+                <path d="M3.5 1V3M7.5 1V3M1 5h9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+              13 sep 2026
+            </span>
+            <span class="meta-pill">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="5.5" cy="4.5" r="2" stroke="currentColor" stroke-width="1.3"/>
+                <path d="M2 10c0-2 1.6-3.5 3.5-3.5S9 8 9 10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+              5 deelnemers
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <article class="sess-card">
+        <div class="sess-card-img"
+             style="background-image: url('https://images.unsplash.com/photo-1455264745730-cb3b76250ae8?auto=format&fit=crop&w=800&q=75');">
+          <span class="sess-card-tag">Golfsurfen</span>
+        </div>
+        <div class="sess-card-body">
+          <h3 class="sess-card-title">Noordwijk</h3>
+          <p class="sess-card-spots">6 plekken beschikbaar</p>
+          <div class="sess-card-meta">
+            <span class="meta-pill">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="1" y="2" width="9" height="8" rx="1" stroke="currentColor" stroke-width="1.3"/>
+                <path d="M3.5 1V3M7.5 1V3M1 5h9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+              20 sep 2026
+            </span>
+            <span class="meta-pill">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="5.5" cy="4.5" r="2" stroke="currentColor" stroke-width="1.3"/>
+                <path d="M2 10c0-2 1.6-3.5 3.5-3.5S9 8 9 10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+              6 deelnemers
+            </span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<div class="pull-quote">
+  <p class="pull-quote__q">Stap één is<br>de moeilijkste.<br><em>Wij zijn er.</em></p>
+  <div class="pull-quote__rule"></div>
+  <p class="pull-quote__credit">Aanmelden · Ride the Wave</p>
+</div>
+
+<!-- ─── CTA hub ────────────────────────────────────────────────── -->
+<div class="cta-hub" aria-label="Acties">
+  <div class="cta-hub-inner">
+    <div class="cta-hub">
+
+      <a href="#aanmelden-formulier" class="cta-hub__card" aria-label="Aanmelden nu">
+        <div class="cta-icon" aria-hidden="true">🏄</div>
+        <div class="cta-card-title">Aanmelden nu</div>
+        <p class="cta-card-sub">Scroll terug naar het formulier en pak je plek.</p>
+        <span class="cta-arrow">Naar formulier →</span>
+      </a>
+
+      <a href="https://wa.me/31612345678" class="cta-hub__card" target="_blank" rel="noopener" aria-label="WhatsApp ons">
+        <div class="cta-icon" aria-hidden="true">📲</div>
+        <div class="cta-card-title">WhatsApp ons</div>
+        <p class="cta-card-sub">Snel een vraag? Stuur ons een berichtje via WhatsApp.</p>
+        <span class="cta-arrow">Direct chatten →</span>
+      </a>
+
+      <a href="scholen.html" class="cta-hub__card" aria-label="Via school aanmelden">
+        <div class="cta-icon" aria-hidden="true">🏫</div>
+        <div class="cta-card-title">Via school</div>
+        <p class="cta-card-sub">Jouw docent of schoolcoördinator kan je aanmelden als groep.</p>
+        <span class="cta-arrow">Info voor scholen →</span>
+      </a>
+
+    </div>
+  </div>
+</div>
 
 </main>
 
 <footer class="footer">
+  <div class="footer-email-cta">
+    <div class="footer-email-cta__label">Neem contact op</div>
+    <a href="mailto:info@ridethewave.nl" class="footer-email-cta__link">info@ridethewave.nl</a>
+  </div>
   <div class="footer-top">
-    <div><div class="footer-brand__mark">RIDE THE WAVE</div><p class="footer-brand__tagline">Gratis surfen en kitesurfen voor jongeren van 14 tot 23 jaar.</p></div>
-    <div><div class="footer-col__title">Pagina's</div><div class="footer-col__links"><a href="surfen.html">Surfen</a><a href="kitesurfen.html">Kitesurfen</a><a href="community.html">Community</a><a href="scholen.html">Voor scholen</a><a href="sponsoren.html">Sponsoren</a><a href="verhalen.html">Verhalen</a><a href="aanmelden.html">Aanmelden</a></div></div>
-    <div><div class="footer-col__title">Contact</div><div class="footer-col__links"><a href="mailto:info@ridethewave.nl">info@ridethewave.nl</a><a href="https://wa.me/31000000000">WhatsApp</a></div></div>
-    <div><div class="footer-col__title">Locaties</div><div class="footer-col__links"><a href="#">Scheveningen</a><a href="#">Noordwijk</a><a href="#">Ouddorp</a></div></div>
+    <div>
+      <div class="footer-brand__mark">RIDE THE WAVE</div>
+      <p class="footer-brand__tagline">Gratis surfen en kitesurfen voor jongeren van 14 tot 23 jaar — van eerste golf tot internationaal instructeur.</p>
+      <div class="footer-brand__social">
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">LinkedIn</a>
+        <a href="https://wa.me/31612345678">WhatsApp</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col__title">Deelnemers</div>
+      <div class="footer-col__links">
+        <a href="surfen.html">Golfsurfen (14–23 jr)</a>
+        <a href="kitesurfen.html">Kitesurfen (14–23 jr)</a>
+        <a href="programma.html">Programma &amp; fases</a>
+        <a href="aanmelden.html">Aanmelden</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col__title">Samenwerken</div>
+      <div class="footer-col__links">
+        <a href="scholen.html">Scholen</a>
+        <a href="gemeenten.html">Gemeenten</a>
+        <a href="sponsoren.html">Bedrijven &amp; sponsors</a>
+        <a href="doneren.html">Doneren</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col__title">Info</div>
+      <div class="footer-col__links">
+        <a href="verhalen.html">Verhalen &amp; impact</a>
+        <a href="verhaal.html">Over RTW</a>
+        <a href="team.html">Ons team</a>
+        <a href="contact.html">Contact</a>
+        <a href="mailto:info@ridethewave.nl">info@ridethewave.nl</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col__title">Juridisch</div>
+      <div class="footer-col__links">
+        <a href="#">Privacyverklaring</a>
+        <a href="#">Cookieverklaring</a>
+        <a href="#">Algemene voorwaarden</a>
+      </div>
+    </div>
   </div>
   <div class="footer-bottom">
-    <span class="footer-meta">© 2026 Stichting Ride the Wave · ANBI · KvK 12345678</span>
-    <div class="footer-social"><a href="#">IG</a><a href="#">TT</a><a href="#">LI</a></div>
+    <span class="footer-meta">© 2026 Stichting Ride the Wave · ANBI · KvK (aanvraag)</span>
   </div>
 </footer>
 
 <script>
-  document.querySelectorAll('.faq-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
+(function(){
+  document.querySelectorAll('.nav-drop').forEach(function(d){
+    d.querySelector('.nav-drop__t').addEventListener('click', function(e){
+      e.preventDefault(); d.classList.toggle('is-open');
     });
   });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.nav-drop')) document.querySelectorAll('.nav-drop').forEach(function(d){ d.classList.remove('is-open'); });
+  });
+})();
+</script>
+<script>
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-visible'); obs.unobserve(e.target); }});
+  },{threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+<script>
+(function(){
+  var bar = document.getElementById('scrollProgress');
+  if(!bar) return;
+  window.addEventListener('scroll', function(){
+    var s = document.documentElement.scrollTop;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? (s/h)*100 : 0) + '%';
+  }, {passive:true});
+})();
+</script>
+<script>
+(function(){
+  var b = document.getElementById('burger');
+  var m = document.getElementById('navMobile');
+  if (!b || !m) return;
+  b.addEventListener('click', function(){
+    var open = m.classList.toggle('is-open');
+    b.querySelectorAll('span')[0].style.transform = open ? 'translateY(7px) rotate(45deg)' : '';
+    b.querySelectorAll('span')[1].style.opacity   = open ? '0' : '1';
+    b.querySelectorAll('span')[2].style.transform = open ? 'translateY(-7px) rotate(-45deg)' : '';
+  });
+  m.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ m.classList.remove('is-open'); }); });
+})();
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
