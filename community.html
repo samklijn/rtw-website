@@ -1,877 +1,62 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Over RTW — Ride the Wave</title>
+  <title>Community — Ride the Wave</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=16">
   <style>
-    /* Tags */
     .dg-tag { display:inline-block; padding:.4rem 1rem; border-radius:99px; font-size:.72rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
     .dg-tag--sun  { background:rgba(244,189,42,.15); color:var(--sun); border:1.5px solid rgba(244,189,42,.25); }
     .dg-tag--teal { background:rgba(42,136,153,.15); color:#5bc8d8; border:1.5px solid rgba(42,136,153,.25); }
     .dg-tag--foam { background:rgba(14,52,63,.06); color:rgba(14,52,63,.5); border:1.5px solid rgba(14,52,63,.12); }
     .dg-strip { display:flex; gap:.5rem; flex-wrap:wrap; margin-top:1.5rem; }
-    /* Stats band */
     .stats-band { background:var(--foam); padding:4rem clamp(1.5rem,4vw,3rem); }
     .stats-band .container { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
     .stat-card { background:#fff; border-radius:16px; padding:2.25rem 2rem; border:1.5px solid rgba(14,52,63,.08); box-shadow:0 2px 16px rgba(14,52,63,.06); text-align:center; }
     .stat-card__n { font-family:var(--font-d); font-size:clamp(2.5rem,5vw,4rem); color:var(--teal); line-height:1; margin-bottom:.5rem; }
     .stat-card__l { font-size:.9rem; color:rgba(14,52,63,.6); font-weight:500; line-height:1.4; }
     @media(max-width:700px){ .stats-band .container{grid-template-columns:1fr;} }
-    /* CTA hub */
+    .intro-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
+    .intro-photo { border-radius:20px; overflow:hidden; aspect-ratio:4/3; clip-path:polygon(0 0,88% 0,100% 8%,100% 92%,88% 100%,0 100%); }
+    .intro-photo img { width:100%; height:100%; object-fit:cover; }
+    @media(max-width:860px){ .intro-grid{grid-template-columns:1fr;} }
+    .check-list { list-style:none; display:flex; flex-direction:column; gap:.75rem; margin:1.5rem 0 2rem; }
+    .check-list__item { display:flex; align-items:flex-start; gap:.75rem; font-size:.9rem; color:rgba(14,52,63,.75); line-height:1.55; }
+    .check-list__item::before { content:'✓'; flex-shrink:0; width:1.4rem; height:1.4rem; background:var(--teal); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.65rem; font-weight:800; margin-top:.1rem; }
+    .value-prop { background:var(--deep2); padding:clamp(4rem,8vw,7rem) clamp(1.5rem,4vw,3rem); position:relative; overflow:hidden; }
+    .value-prop::before { content:''; position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat; opacity:.07; pointer-events:none; }
+    .value-prop__inner { position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; max-width:1100px; margin:0 auto; }
+    .value-prop__h { font-family:var(--font-d); font-size:clamp(2.5rem,5vw,4.5rem); text-transform:uppercase; line-height:.95; color:var(--foam); letter-spacing:-.01em; }
+    .value-prop__h em { color:var(--sun); font-style:normal; }
+    .value-prop__p { color:rgba(247,241,230,.72); font-size:1rem; line-height:1.8; margin-bottom:1.75rem; }
+    @media(max-width:860px){ .value-prop__inner{grid-template-columns:1fr; gap:2.5rem;} }
+    .fase-intro { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:end; margin-bottom:3rem; }
+    @media(max-width:760px){ .fase-intro{grid-template-columns:1fr; gap:1rem;} }
+    .fase-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.5rem; }
+    .fase-card { background:rgba(255,255,255,.08); border-radius:18px; padding:2rem; border:1.5px solid rgba(255,255,255,.1); display:flex; flex-direction:column; gap:.75rem; transition:border-color .2s; }
+    .fase-card:hover { border-color:rgba(244,189,42,.3); }
+    .fase-card--accent { border-color:rgba(244,189,42,.3); background:rgba(244,189,42,.07); }
+    .fase-card__num { font-family:var(--font-d); font-size:.75rem; text-transform:uppercase; letter-spacing:.15em; color:var(--sun); background:rgba(244,189,42,.12); border:1.5px solid rgba(244,189,42,.2); border-radius:99px; padding:.3rem .9rem; display:inline-block; margin-bottom:.5rem; }
+    .fase-card--accent .fase-card__num { background:var(--sun); color:var(--deep); border-color:var(--sun); }
+    .fase-card__h { font-family:var(--font-d); font-size:1.4rem; text-transform:uppercase; color:var(--foam); line-height:1; }
+    .fase-card__p { font-size:.85rem; color:rgba(247,241,230,.65); line-height:1.65; }
+    .section--teal .testi { background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.1); }
+    .section--teal .testi__name { color:var(--foam); }
+    .section--teal .testi__role { color:rgba(247,241,230,.5); }
+    .section--teal .testi__quote { color:rgba(247,241,230,.85); }
+    .cta-hub { display:grid; grid-template-columns:repeat(3,1fr); gap:1.75rem; }
     .cta-hub__card { background:#fff; border-radius:16px; padding:2.5rem 2rem; border:1.5px solid rgba(14,52,63,.08); box-shadow:0 2px 16px rgba(14,52,63,.06); display:flex; flex-direction:column; gap:1rem; transition:transform .2s, box-shadow .2s; }
     .cta-hub__card:hover { transform:translateY(-4px); box-shadow:0 8px 32px rgba(14,52,63,.1); }
     .cta-hub__icon { font-size:2rem; }
     .cta-hub__h { font-family:var(--font-d); font-size:1.4rem; text-transform:uppercase; color:var(--deep); line-height:1; }
     .cta-hub__p { font-size:.85rem; color:rgba(14,52,63,.6); line-height:1.7; flex:1; }
     @media(max-width:860px){ .cta-hub{grid-template-columns:1fr;} }
-    /* Teal section overrides */
-    .section--teal .testi { background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.1); }
-    .section--teal .testi__name { color:var(--foam); }
-    .section--teal .testi__role { color:rgba(247,241,230,.5); }
-    .section--teal .testi__quote { color:rgba(247,241,230,.85); }
-    .section--teal .arrow-link--sun { color:var(--sun); }
-
-    /* =============================================
-       RTW DESIGN TOKENS
-    ============================================= */
-    :root {
-      --navy:    #0E343F;
-      --teal:    #1C6E7E;
-      --teal-mid:#155969;
-      --yellow:  #F4BD2A;
-      --cream:   #F7F1E6;
-      --sand:    #EDE7D6;
-      --dark:    #0A2830;
-      --white:   #FFFFFF;
-
-      /* semantic */
-      --bg-foam:    var(--cream);
-      --bg-teal:    var(--teal);
-      --bg-nav:     var(--navy);
-      --text-main:  var(--dark);
-      --text-muted: #3D6672;
-      --text-light: var(--cream);
-      --text-eyebrow: var(--teal);
-      --accent:     var(--yellow);
-
-      --radius-card: 4px;
-      --radius-pill: 100px;
-
-      --max-w: 1120px;
-      --section-pad: clamp(4rem, 8vw, 7rem) clamp(1.25rem, 5vw, 3rem);
-      --font-display: 'Anton', Impact, 'Arial Narrow', sans-serif;
-      --font-body:    system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg-foam:    #0D2D38;
-        --bg-teal:    #0A2830;
-        --bg-nav:     #071E26;
-        --text-main:  #E8E0D0;
-        --text-muted: #8BB5BE;
-        --text-light: #E8E0D0;
-        --text-eyebrow: #48A8BC;
-        --sand:        #0F3340;
-      }
-    }
-
-    :root[data-theme="light"] {
-      --bg-foam:    var(--cream);
-      --bg-teal:    var(--teal);
-      --bg-nav:     var(--navy);
-      --text-main:  var(--dark);
-      --text-muted: #3D6672;
-      --text-light: var(--cream);
-      --text-eyebrow: var(--teal);
-      --sand:       #EDE7D6;
-    }
-
-    :root[data-theme="dark"] {
-      --bg-foam:    #0D2D38;
-      --bg-teal:    #0A2830;
-      --bg-nav:     #071E26;
-      --text-main:  #E8E0D0;
-      --text-muted: #8BB5BE;
-      --text-light: #E8E0D0;
-      --text-eyebrow: #48A8BC;
-      --sand:        #0F3340;
-    }
-
-    /* =============================================
-       RESET / BASE
-    ============================================= */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--font-body);
-      background: var(--bg-foam);
-      color: var(--text-main);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    img { max-width: 100%; display: block; }
-
-    a { color: inherit; text-decoration: none; }
-
-    /* =============================================
-       TYPOGRAPHY SCALE
-    ============================================= */
-    .eyebrow {
-      font-family: var(--font-body);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-eyebrow);
-      display: block;
-      margin-bottom: 0.75rem;
-    }
-
-    .display-xl {
-      font-family: var(--font-display);
-      font-size: clamp(3rem, 7vw, 6rem);
-      line-height: 0.95;
-      letter-spacing: -0.01em;
-      color: inherit;
-      text-wrap: balance;
-    }
-
-    .display-lg {
-      font-family: var(--font-display);
-      font-size: clamp(2.25rem, 5vw, 4rem);
-      line-height: 1;
-      letter-spacing: -0.01em;
-      color: inherit;
-      text-wrap: balance;
-    }
-
-    .display-md {
-      font-family: var(--font-display);
-      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-      line-height: 1.05;
-      letter-spacing: -0.01em;
-      color: inherit;
-      text-wrap: balance;
-    }
-
-    .body-lead {
-      font-size: clamp(1rem, 1.8vw, 1.15rem);
-      line-height: 1.7;
-      color: var(--text-muted);
-      max-width: 56ch;
-    }
-
-    .body-text {
-      font-size: 0.975rem;
-      line-height: 1.75;
-      color: var(--text-muted);
-    }
-
-    .body-text + .body-text { margin-top: 1rem; }
-
-    /* =============================================
-       LAYOUT HELPERS
-    ============================================= */
-    .container {
-      width: 100%;
-      max-width: var(--max-w);
-      margin-inline: auto;
-      padding-inline: clamp(1.25rem, 5vw, 3rem);
-    }
-
-    /* =============================================
-       NAV
-    ============================================= */
-    .nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: var(--bg-nav);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      padding: 0 clamp(1.25rem, 5vw, 3rem);
-      height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav__logo {
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      letter-spacing: 0.04em;
-      color: var(--white);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .nav__logo-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--yellow);
-      display: inline-block;
-      margin-bottom: 2px;
-    }
-
-    .nav__links {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav__links a {
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      color: rgba(255,255,255,0.7);
-      transition: color 0.2s;
-    }
-
-    .nav__links a:hover, .nav__links a[aria-current] {
-      color: var(--white);
-    }
-
-    .nav__links a[aria-current] {
-      color: var(--yellow);
-    }
-
-    .nav__cta {
-      background: var(--yellow);
-      color: var(--navy) !important;
-      padding: 0.5rem 1.25rem;
-      border-radius: var(--radius-pill);
-      font-weight: 700 !important;
-      font-size: 0.82rem !important;
-      letter-spacing: 0.05em;
-      transition: background 0.2s, transform 0.15s !important;
-    }
-
-    .nav__cta:hover { background: #fdd04e !important; transform: translateY(-1px); }
-
-    .nav__burger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-      background: none;
-      border: none;
-    }
-
-    .nav__burger span {
-      display: block;
-      width: 24px; height: 2px;
-      background: var(--white);
-      border-radius: 2px;
-      transition: transform 0.2s;
-    }
-
-    @media (max-width: 720px) {
-      .nav__links { display: none; }
-      .nav__burger { display: flex; }
-    }
-
-    /* =============================================
-       HERO
-    ============================================= */
-    .hero {
-      position: relative;
-      min-height: 70vh;
-      display: flex;
-      align-items: flex-end;
-      padding-top: 64px;
-      overflow: hidden;
-    }
-
-    .page-hero--short { min-height: 65vh; }
-
-    .hero__bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1800&q=85');
-      background-size: cover;
-      background-position: center 40%;
-      transform: scale(1.04);
-      transition: transform 8s ease-out;
-    }
-
-    .hero__bg.loaded { transform: scale(1); }
-
-    .hero__overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to top,
-        rgba(10, 40, 48, 0.95) 0%,
-        rgba(10, 40, 48, 0.55) 45%,
-        rgba(10, 40, 48, 0.25) 100%
-      );
-    }
-
-    .hero__content {
-      position: relative;
-      z-index: 2;
-      padding: var(--section-pad);
-      max-width: var(--max-w);
-      margin-inline: auto;
-      width: 100%;
-      padding-bottom: clamp(3.5rem, 6vw, 5rem);
-    }
-
-    .hero__eyebrow {
-      font-family: var(--font-body);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--yellow);
-      display: block;
-      margin-bottom: 1.25rem;
-    }
-
-    .hero__title {
-      font-family: var(--font-display);
-      font-size: clamp(3.5rem, 8vw, 6.5rem);
-      line-height: 0.93;
-      color: var(--white);
-      text-wrap: balance;
-      max-width: 14ch;
-      margin-bottom: 1.5rem;
-      white-space: pre-line;
-    }
-
-    .hero__sub {
-      font-size: clamp(1rem, 1.6vw, 1.1rem);
-      line-height: 1.65;
-      color: rgba(247, 241, 230, 0.8);
-      max-width: 52ch;
-    }
-
-    /* =============================================
-       STATS BAND
-    ============================================= */
-    .stats-band {
-      background: var(--yellow);
-      padding: clamp(1.75rem, 3vw, 2.5rem) clamp(1.25rem, 5vw, 3rem);
-    }
-
-    .stats-band__inner {
-      max-width: var(--max-w);
-      margin-inline: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-    }
-
-    .stat-card {
-      padding: clamp(1rem, 2vw, 1.5rem) clamp(1.5rem, 3vw, 2.5rem);
-      border-right: 2px solid rgba(14,52,63,0.15);
-    }
-
-    .stat-card:last-child { border-right: none; }
-
-    .stat-card__value {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      line-height: 1;
-      color: var(--navy);
-      display: block;
-    }
-
-    .stat-card__label {
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(14,52,63,0.65);
-      margin-top: 0.35rem;
-      display: block;
-    }
-
-    @media (max-width: 560px) {
-      .stats-band__inner { grid-template-columns: 1fr; }
-      .stat-card { border-right: none; border-bottom: 2px solid rgba(14,52,63,0.15); }
-      .stat-card:last-child { border-bottom: none; }
-    }
-
-    /* =============================================
-       SECTION BASE
-    ============================================= */
-    .section {
-      padding: var(--section-pad);
-    }
-
-    .section--foam {
-      background: var(--bg-foam);
-    }
-
-    .section--sand {
-      background: var(--sand);
-    }
-
-    .section--teal {
-      background: var(--bg-teal);
-      color: var(--text-light);
-    }
-
-    .section--teal .eyebrow {
-      color: var(--yellow);
-    }
-
-    .section--teal .display-lg,
-    .section--teal .display-md {
-      color: var(--white);
-    }
-
-    .section--teal .body-lead,
-    .section--teal .body-text {
-      color: rgba(247,241,230,0.72);
-    }
-
-    /* =============================================
-       2-COL LAYOUT
-    ============================================= */
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(2.5rem, 5vw, 5rem);
-      align-items: center;
-      max-width: var(--max-w);
-      margin-inline: auto;
-    }
-
-    .two-col--reverse .two-col__media { order: -1; }
-
-    @media (max-width: 768px) {
-      .two-col { grid-template-columns: 1fr; }
-      .two-col--reverse .two-col__media { order: 0; }
-    }
-
-    .two-col__media {
-      position: relative;
-      border-radius: 2px;
-      overflow: hidden;
-    }
-
-    .two-col__media img {
-      width: 100%;
-      height: 420px;
-      object-fit: cover;
-      border-radius: 2px;
-      display: block;
-    }
-
-    .two-col__media::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 2px;
-      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
-      pointer-events: none;
-    }
-
-    /* =============================================
-       VERHAAL SECTION
-    ============================================= */
-    .verhaal-tag {
-      display: inline-block;
-      background: var(--yellow);
-      color: var(--navy);
-      font-size: 0.7rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.75rem;
-      border-radius: var(--radius-pill);
-      margin-bottom: 1.25rem;
-    }
-
-    .verhaal-body {
-      display: flex;
-      flex-direction: column;
-      gap: 1.1rem;
-    }
-
-    /* =============================================
-       AANPAK / PRINCIPLE CARDS
-    ============================================= */
-    .section-header {
-      max-width: var(--max-w);
-      margin-inline: auto;
-      margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
-    }
-
-    .cards-grid {
-      max-width: var(--max-w);
-      margin-inline: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-    }
-
-    .cards-grid--4 {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    @media (max-width: 900px) {
-      .cards-grid { grid-template-columns: 1fr 1fr; }
-      .cards-grid--4 { grid-template-columns: 1fr 1fr; }
-    }
-
-    @media (max-width: 560px) {
-      .cards-grid { grid-template-columns: 1fr; }
-      .cards-grid--4 { grid-template-columns: 1fr; }
-    }
-
-    /* Glass cards (on dark bg) */
-    .glass-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius-card);
-      padding: clamp(1.5rem, 2.5vw, 2rem);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      transition: background 0.2s, transform 0.2s;
-    }
-
-    .glass-card:hover {
-      background: rgba(255,255,255,0.1);
-      transform: translateY(-3px);
-    }
-
-    .glass-card__icon {
-      font-size: 2rem;
-      display: block;
-      margin-bottom: 1rem;
-      line-height: 1;
-    }
-
-    .glass-card__title {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      color: var(--white);
-      margin-bottom: 0.6rem;
-      line-height: 1.1;
-    }
-
-    .glass-card__body {
-      font-size: 0.9rem;
-      line-height: 1.7;
-      color: rgba(247,241,230,0.7);
-    }
-
-    /* =============================================
-       JUNIOR CREW / PHOTO GRID
-    ============================================= */
-    .photo-grid-2x2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 0.5rem;
-      height: 420px;
-    }
-
-    .photo-grid-2x2 img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 2px;
-      display: block;
-    }
-
-    .photo-grid-2x2 .photo-tall {
-      grid-row: span 2;
-    }
-
-    /* =============================================
-       TEAM CARDS
-    ============================================= */
-    .team-cards {
-      max-width: var(--max-w);
-      margin-inline: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-    }
-
-    @media (max-width: 768px) {
-      .team-cards { grid-template-columns: 1fr 1fr; }
-    }
-
-    @media (max-width: 480px) {
-      .team-cards { grid-template-columns: 1fr; }
-    }
-
-    .team-card {
-      background: var(--sand);
-      border-radius: var(--radius-card);
-      overflow: hidden;
-      border: 1px solid rgba(0,0,0,0.05);
-      transition: transform 0.2s;
-    }
-
-    :root[data-theme="dark"] .team-card {
-      background: rgba(255,255,255,0.05);
-      border-color: rgba(255,255,255,0.08);
-    }
-
-    .team-card:hover { transform: translateY(-3px); }
-
-    .team-card__photo {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-    }
-
-    .team-card__body {
-      padding: 1.25rem 1.5rem 1.5rem;
-    }
-
-    .team-card__name {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      color: var(--text-main);
-      margin-bottom: 0.15rem;
-      line-height: 1.1;
-    }
-
-    .team-card__role {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-eyebrow);
-      margin-bottom: 0.75rem;
-      display: block;
-    }
-
-    .team-card__bio {
-      font-size: 0.875rem;
-      line-height: 1.7;
-      color: var(--text-muted);
-    }
-
-    /* =============================================
-       VALUE CARDS
-    ============================================= */
-    .value-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-top: 3px solid var(--yellow);
-      border-radius: var(--radius-card);
-      padding: clamp(1.5rem, 2.5vw, 2rem);
-    }
-
-    .value-card__title {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      color: var(--white);
-      margin-bottom: 0.6rem;
-    }
-
-    .value-card__body {
-      font-size: 0.9rem;
-      line-height: 1.7;
-      color: rgba(247,241,230,0.7);
-    }
-
-    /* =============================================
-       CTA HUB
-    ============================================= */
-    .cta-hub {
-      background: var(--navy);
-      padding: var(--section-pad);
-    }
-
-    .cta-hub__inner {
-      max-width: var(--max-w);
-      margin-inline: auto;
-    }
-
-    .cta-hub__header {
-      text-align: center;
-      margin-bottom: clamp(2rem, 4vw, 3rem);
-    }
-
-    .cta-hub__header .eyebrow {
-      color: var(--yellow);
-      justify-content: center;
-      display: block;
-      text-align: center;
-    }
-
-    .cta-hub__header .display-md {
-      color: var(--white);
-    }
-
-    .cta-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-    }
-
-    @media (max-width: 768px) {
-      .cta-cards { grid-template-columns: 1fr; }
-    }
-
-    .cta-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius-card);
-      padding: clamp(1.75rem, 3vw, 2.5rem);
-      display: flex;
-      flex-direction: column;
-      transition: background 0.2s, transform 0.2s;
-      text-decoration: none;
-    }
-
-    .cta-card:hover {
-      background: rgba(255,255,255,0.09);
-      transform: translateY(-3px);
-    }
-
-    .cta-card__icon {
-      font-size: 2.25rem;
-      margin-bottom: 1.25rem;
-      display: block;
-    }
-
-    .cta-card__title {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      color: var(--white);
-      margin-bottom: 0.5rem;
-    }
-
-    .cta-card__desc {
-      font-size: 0.88rem;
-      line-height: 1.7;
-      color: rgba(247,241,230,0.6);
-      flex: 1;
-      margin-bottom: 1.5rem;
-    }
-
-    .cta-card__link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--yellow);
-    }
-
-    .cta-card__link svg {
-      width: 14px; height: 14px;
-      transition: transform 0.15s;
-    }
-
-    .cta-card:hover .cta-card__link svg { transform: translateX(3px); }
-
-    .cta-card--primary {
-      background: var(--yellow);
-      border-color: var(--yellow);
-    }
-
-    .cta-card--primary:hover { background: #fdd04e; }
-
-    .cta-card--primary .cta-card__title,
-    .cta-card--primary .cta-card__desc { color: var(--navy); }
-
-    .cta-card--primary .cta-card__desc { color: rgba(14,52,63,0.7); }
-
-    .cta-card--primary .cta-card__link { color: var(--navy); }
-
-    /* =============================================
-       FOOTER
-    ============================================= */
-    .footer {
-      background: var(--dark);
-      padding: 2.5rem clamp(1.25rem, 5vw, 3rem);
-    }
-
-    .footer__inner {
-      max-width: var(--max-w);
-      margin-inline: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .footer__logo {
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      color: var(--white);
-      letter-spacing: 0.04em;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .footer__copy {
-      font-size: 0.78rem;
-      color: rgba(247,241,230,0.4);
-    }
-
-    .footer__links {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-    }
-
-    .footer__links a {
-      font-size: 0.8rem;
-      color: rgba(247,241,230,0.5);
-      transition: color 0.2s;
-    }
-
-    .footer__links a:hover { color: var(--white); }
-
-    /* =============================================
-       SCROLL REVEAL
-    ============================================= */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .reveal { opacity: 1; transform: none; transition: none; }
-    }
-
-    /* =============================================
-       DIVIDER
-    ============================================= */
-    .section-divider {
-      width: 48px;
-      height: 3px;
-      background: var(--yellow);
-      border: none;
-      border-radius: 2px;
-      margin: 1.5rem 0 2rem;
-    }
-    .pull-quote { background:var(--foam) !important; padding:clamp(1.75rem,3vw,2.5rem) clamp(1.5rem,4vw,3rem) !important; text-align:center; }
+    .hero__actions { display:flex; gap:.75rem; flex-wrap:wrap; margin-top:.25rem; }
+    .pull-quote { background:var(--foam) !important; padding:clamp(2.5rem,5vw,4rem) clamp(1.5rem,4vw,3rem) !important; text-align:center; }
     .pull-quote .pull-quote__q { font-family:var(--font-d); font-size:clamp(1.5rem,3vw,2.8rem); text-transform:uppercase; line-height:1; color:var(--deep) !important; font-style:italic; letter-spacing:-.01em; max-width:700px; margin:0 auto 1.25rem; }
     .pull-quote .pull-quote__q em { color:var(--teal) !important; font-style:italic; }
     .pull-quote__rule { width:60px; height:3px; background:var(--teal); margin:0 auto 1.25rem; }
@@ -901,19 +86,18 @@
       <span class="nav-drop__t">Samenwerken</span>
       <div class="nav-drop__m">
         <a href="scholen.html">Scholen &amp; onderwijs</a>
-        <a href="scholen.html">Gemeenten &amp; overheid</a>
+        <a href="gemeenten.html">Gemeenten &amp; overheid</a>
         <a href="sponsoren.html">Bedrijven &amp; sponsors</a>
       </div>
     </div>
-    <a href="aanmelden.html">Aanmelden</a>
     <a href="verhalen.html">Impact</a>
-    <a href="sponsoren.html">Steun ons</a>
+    <a href="doneren.html">Doneren</a>
     <div class="nav-drop">
       <span class="nav-drop__t">Info</span>
       <div class="nav-drop__m">
-        <a href="community.html">Over RTW</a>
-        <a href="community.html">Ons team</a>
-        <a href="mailto:info@ridethewave.nl">Contact</a>
+        <a href="verhaal.html">Over RTW</a>
+        <a href="team.html">Ons team</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <a href="aanmelden.html" class="nav-cta">Gratis aanmelden</a>
@@ -938,239 +122,168 @@
 
 <main>
 
-<!-- HERO -->
-<section class="hero page-hero--short" aria-label="Over Ride the Wave">
-  <div class="hero__bg" id="heroBg"></div>
+<header class="hero page-hero--short" style="background-image: url('https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85');">
   <div class="hero__overlay" aria-hidden="true"></div>
   <div class="hero__accent-bar"></div>
-  <div class="hero__content">
-    <span class="hero__eyebrow">Over Ride the Wave</span>
-    <h1 class="hero__title">Hard op de golven.&#10;Zacht in contact.</h1>
-    <p class="hero__sub">Wij zijn hard in aanpak, maar zacht in contact. Ride the Wave is geen sportclub — het is een gedragsveranderingsprogramma met de zee als middel.</p>
+  <div class="hero__content container">
+    <p class="eyebrow eyebrow--sun reveal reveal-d1">De RTW Community</p>
+    <h1 class="hero-h1 hero-h1--lg reveal reveal-d2">Meer dan<br>surfen.</h1>
+    <p class="hero-sub reveal reveal-d3">RTW is geen surfclub. Het is een community van jongeren die iets gemeen hebben: ze begonnen bij nul, ze bleven komen, en ze hielpen de volgende.</p>
+    <div class="hero__actions reveal reveal-d4">
+      <a href="aanmelden.html" class="btn btn--sun btn--lg">Word onderdeel</a>
+      <a href="verhalen.html" class="btn btn--outline-foam">Lees de verhalen →</a>
+    </div>
   </div>
-</section>
+</header>
 
-<!-- STATS BAND -->
-<div class="stats-band" role="region" aria-label="Kerncijfers">
-  <div class="stats-band__inner">
-    <div class="stat-card">
-      <span class="stat-card__n">2018</span>
-      <span class="stat-card__l">Opgericht</span>
+<div class="stats-band">
+  <div class="container">
+    <div class="stat-card reveal reveal-d1">
+      <div class="stat-card__n">200+</div>
+      <div class="stat-card__l">Actieve en voormalige<br>deelnemers in de community</div>
     </div>
-    <div class="stat-card">
-      <span class="stat-card__n">200<span style="font-size:0.65em">+</span></span>
-      <span class="stat-card__l">Jongeren begeleid</span>
+    <div class="stat-card reveal reveal-d2">
+      <div class="stat-card__n">12</div>
+      <div class="stat-card__l">Coaches — allemaal<br>voormalige deelnemers</div>
     </div>
-    <div class="stat-card">
-      <span class="stat-card__n">4</span>
-      <span class="stat-card__l">Strandlocaties</span>
+    <div class="stat-card reveal reveal-d3">
+      <div class="stat-card__n">3</div>
+      <div class="stat-card__l">Steden met actieve<br>RTW-groepen</div>
     </div>
   </div>
 </div>
 
-<!-- ONS VERHAAL -->
-<section class="section section--foam" aria-labelledby="verhaal-heading">
-  <div class="two-col">
-    <div class="two-col__content reveal">
-      <span class="eyebrow">Ons verhaal</span>
-      <h2 class="display-lg" id="verhaal-heading">Hoe het begon.</h2>
-      <hr class="section-divider">
-      <div class="verhaal-body">
-        <p class="body-text">In 2018 gaf Stef van der Berg surfles op het strand van Scheveningen. Tussen de enthousiaste beginners zag hij steeds vaker jongeren die vastliepen — thuis, op school, in de wijk. Talentvolle kids die nergens grip kregen op hun eigen leven.</p>
-        <p class="body-text">Stef geloofde in de zee als spiegel. Het water liegt niet: het confronteert je, het dwingt je te focussen, en het beloont alleen wie doorzet. Hij besloot een programma op te zetten waar sport niet het doel was, maar het middel.</p>
-        <p class="body-text">Het begon klein — een groepje van acht jongeren, één surfboard, en een tweedehands wetsuit die altijd te groot was. Die acht jongens en meiden liepen na dat seizoen het programma opnieuw, maar nu als begeleider voor de nieuwe groep.</p>
-        <p class="body-text">Dat patroon werd de kern van alles. Vandaag werkt RTW op vier locaties langs de Nederlandse kust, en begeleidt het meer dan tweehonderd jongeren per jaar. Niet als sportclub. Als programma dat gedrag verandert — op het water en ver daarbuiten.</p>
+<section class="section section--foam">
+  <div class="container">
+    <div class="intro-grid">
+      <div>
+        <span class="eyebrow eyebrow--foam reveal">Wie zijn wij?</span>
+        <h2 class="sec-h sec-h--xl sec-h--foam reveal reveal-d1">Jongeren die<br>opstonden.</h2>
+        <p class="sec-p sec-p--foam reveal reveal-d2">De RTW-community bestaat uit jongeren die via het programma begonnen zijn — en nooit zijn weggegaan. Sommigen surfen nog. Anderen coachen nu zelf. Weer anderen zijn doorgestroomd naar werk of opleiding. Maar ze zijn allemaal verbonden door het strand.</p>
+        <ul class="check-list reveal reveal-d3">
+          <li class="check-list__item">Wekelijkse surfsessies in Amsterdam, Den Haag en Rotterdam</li>
+          <li class="check-list__item">Maandelijkse community-events en bbq's op het strand</li>
+          <li class="check-list__item">Junior Crew: oud-deelnemers die nieuwe coaches begeleiden</li>
+          <li class="check-list__item">Jaarlijkse trip — in 2026 naar Costa Rica</li>
+          <li class="check-list__item">RTW Alumni-netwerk voor werk en opleiding</li>
+        </ul>
+        <div class="dg-strip reveal reveal-d4">
+          <span class="dg-tag dg-tag--sun">Junior Crew</span>
+          <span class="dg-tag dg-tag--teal">Alumni</span>
+          <span class="dg-tag dg-tag--teal">Events</span>
+          <span class="dg-tag dg-tag--foam">3 steden</span>
+        </div>
       </div>
-    </div>
-    <div class="two-col__media reveal" style="transition-delay:0.15s">
-      <img
-        src="https://images.unsplash.com/photo-1516592673884-4a382d1124c2?auto=format&fit=crop&w=900&q=80"
-        alt="Jongere leert surfen in de branding bij Scheveningen"
-        loading="lazy"
-      >
-    </div>
-  </div>
-</section>
-
-<!-- ONZE AANPAK -->
-<section class="section section--teal" aria-labelledby="aanpak-heading">
-  <div class="section-header reveal">
-    <span class="eyebrow">Onze aanpak</span>
-    <h2 class="display-lg" id="aanpak-heading">Sport als middel,<br>niet als doel.</h2>
-    <p class="body-lead" style="margin-top:1rem; color:rgba(247,241,230,0.65); max-width:58ch;">Elke keuze in ons programma is doelbewust. Drie principes vormen de basis van alles wat we doen — op het water en op de wal.</p>
-  </div>
-  <div class="cards-grid">
-    <article class="glass-card reveal">
-      <span class="glass-card__icon" aria-hidden="true">🌊</span>
-      <h3 class="glass-card__title">Het water als spiegel</h3>
-      <p class="glass-card__body">De zee confronteert je met jezelf. Er is geen excuus, geen scherm om achter te schuilen. In het water leer je wie je bent als het tegenzit — en wat je kunt als je het loslaat.</p>
-    </article>
-    <article class="glass-card reveal" style="transition-delay:0.1s">
-      <span class="glass-card__icon" aria-hidden="true">🤝</span>
-      <h3 class="glass-card__title">Groepskracht</h3>
-      <p class="glass-card__body">Samen sta je sterker, ook buiten het water. Jongeren leren op elkaar te vertrouwen, elkaar te coachen, en te begrijpen dat niemand het alleen hoeft te doen. Die verbinding blijft, lang na het laatste lesuur.</p>
-    </article>
-    <article class="glass-card reveal" style="transition-delay:0.2s">
-      <span class="glass-card__icon" aria-hidden="true">🎯</span>
-      <h3 class="glass-card__title">Structuur &amp; ritme</h3>
-      <p class="glass-card__body">Vaste lesdagen geven houvast. Voor veel deelnemers is RTW de meest stabiele plek in hun week. Terugkomen, iedere week, op hetzelfde strand — dat is het simpele begin van verandering.</p>
-    </article>
-  </div>
-</section>
-
-<!-- JUNIOR CREW -->
-<section class="section section--foam" aria-labelledby="jc-heading">
-  <div class="two-col two-col--reverse">
-    <div class="two-col__content reveal">
-      <span class="eyebrow">Junior Crew</span>
-      <h2 class="display-lg" id="jc-heading">Jij bent het voorbeeld.</h2>
-      <hr class="section-divider">
-      <div class="verhaal-body">
-        <p class="body-text">Wie fase twee afrondt, wordt uitgenodigd voor de Junior Crew. Geen promotie op papier — een echte verantwoordelijkheid. Junior Crew-leden begeleiden beginners, zijn aanwezig bij elke les, en laten met hun houding zien hoe het hoort.</p>
-        <p class="body-text">Het rolmodeleffect is bewust. Jongeren die iemand van hun eigen leeftijdsgroep zien slagen, geloven dat zij het ook kunnen. Junior Crew-leden zijn dat bewijs — niet als uitzondering, maar als norm.</p>
-        <p class="body-text">Wie bij de Junior Crew hoort, draagt de exclusive RTW crew kleding. Niet als statussymbool, maar als zichtbaar teken van commitment. Eén keer per jaar is er de jaarlijkse projectdag: een dag buiten het water, gericht op persoonlijke ontwikkeling, richting geven en toekomstplannen.</p>
-      </div>
-    </div>
-    <div class="two-col__media reveal" style="transition-delay:0.12s">
-      <div class="photo-grid-2x2">
-        <img
-          src="https://images.unsplash.com/photo-1455729552865-3658a5d39692?auto=format&fit=crop&w=600&q=75"
-          alt="Junior Crew op het strand"
-          loading="lazy"
-          class="photo-tall"
-        >
-        <img
-          src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=75"
-          alt="Junior Crew helpt een beginner"
-          loading="lazy"
-        >
-        <img
-          src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=600&q=75"
-          alt="Projectdag Junior Crew"
-          loading="lazy"
-        >
+      <div class="intro-photo reveal reveal-d2">
+        <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=900&q=80" alt="Surfers op het strand" loading="lazy">
       </div>
     </div>
   </div>
 </section>
 
-<!-- TEAM -->
-<section class="section section--sand" id="team" aria-labelledby="team-heading">
-  <div class="section-header reveal" style="max-width:var(--max-w); margin-inline:auto; margin-bottom:clamp(2.5rem,4vw,3.5rem)">
-    <span class="eyebrow">Ons team</span>
-    <h2 class="display-lg" id="team-heading">De mensen achter RTW.</h2>
+<div class="value-prop">
+  <div class="value-prop__inner">
+    <div>
+      <h2 class="value-prop__h">Deelnemer<br>vandaag.<br><em>Coach</em><br>morgen.</h2>
+    </div>
+    <div>
+      <p class="value-prop__p">Wat RTW uniek maakt: de coaches zijn voormalige deelnemers. Ze hebben dezelfde route gevolgd. Ze weten precies hoe het voelt om voor het eerst in het water te staan — en hoe het voelt als je voor het eerst opstaat op een golf.</p>
+      <p class="value-prop__p">Die continuïteit is niet toevallig. Het is de kern van RTW. Elke generatie deelnemers bouwt op de vorige. De community is het programma.</p>
+      <a href="aanmelden.html" class="btn btn--sun btn--lg">Word onderdeel →</a>
+    </div>
   </div>
-  <div class="team-cards">
-    <article class="team-card reveal">
-      <img
-        class="team-card__photo"
-        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=75"
-        alt="Portretfoto Stef van der Berg"
-        loading="lazy"
-      >
-      <div class="team-card__body">
-        <h3 class="team-card__name">Stef van der Berg</h3>
-        <span class="team-card__role">Oprichter &amp; hoofdcoach</span>
-        <p class="team-card__bio">Stef surft sinds zijn veertiende en werkte tien jaar als jongerenwerker in Den Haag voordat hij RTW oprichtte. Zijn kracht: hij ziet het potentieel in mensen voordat ze dat zelf zien.</p>
+</div>
+
+<section class="section section--teal">
+  <div class="container">
+    <div class="fase-intro">
+      <div>
+        <span class="eyebrow eyebrow--sun reveal">Hoe de community werkt</span>
+        <h2 class="sec-h sec-h--xl sec-h--foam reveal reveal-d1">Van deelnemer<br>naar leider.</h2>
       </div>
-    </article>
-    <article class="team-card reveal" style="transition-delay:0.1s">
-      <img
-        class="team-card__photo"
-        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=75"
-        alt="Portretfoto Lisa Jansen"
-        loading="lazy"
-      >
-      <div class="team-card__body">
-        <h3 class="team-card__name">Lisa Jansen</h3>
-        <span class="team-card__role">Programmacoördinator</span>
-        <p class="team-card__bio">Lisa houdt RTW draaiend. Met een achtergrond in orthopedagogiek zorgt ze dat elk onderdeel van het programma gedragsmatig onderbouwd is. Ze spreekt wekelijks met jongeren, ouders en scholen.</p>
+      <div>
+        <p class="sec-p reveal reveal-d2" style="color:rgba(247,241,230,.7);">De community heeft een eigen opbouw — parallel aan het programma, maar met eigen rollen en verantwoordelijkheden.</p>
       </div>
-    </article>
-    <article class="team-card reveal" style="transition-delay:0.2s">
-      <img
-        class="team-card__photo"
-        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=75"
-        alt="Portretfoto Daan Koopman"
-        loading="lazy"
-      >
-      <div class="team-card__body">
-        <h3 class="team-card__name">Daan Koopman</h3>
-        <span class="team-card__role">Kitesurf instructeur</span>
-        <p class="team-card__bio">Daan brengt kitesurf en windsurf naar het programma. Hij is onverslaanbaar op het water en even sterk als coach op de wal. Oud-deelnemer — nu vast gezicht op de locatie in Zandvoort.</p>
+    </div>
+    <div class="fase-grid">
+      <div class="fase-card reveal reveal-d1">
+        <span class="fase-card__num">Fase 0–2</span>
+        <div class="fase-card__h">Deelnemer</div>
+        <p class="fase-card__p">Je bent deel van een vaste groep. Je surft samen, leert samen en groeit samen. De groep is klein en de coaches kennen je bij naam.</p>
       </div>
-    </article>
+      <div class="fase-card reveal reveal-d2">
+        <span class="fase-card__num">Fase 3</span>
+        <div class="fase-card__h">Junior Crew</div>
+        <p class="fase-card__p">Je wordt rolmodel voor nieuwe deelnemers. Je begeleidt Fase 0-sessies, organiseert community-events en vertegenwoordigt RTW bij presentaties aan scholen en gemeenten.</p>
+      </div>
+      <div class="fase-card fase-card--accent reveal reveal-d3">
+        <span class="fase-card__num">Fase 4</span>
+        <div class="fase-card__h">Coach &amp; Instructeur</div>
+        <p class="fase-card__p">Met een ISA Level 1-certificering geef je officieel les. Je maakt deel uit van het vaste coachteam en begeleidt de volgende generatie RTW-deelnemers.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- WAARDEN / HUISREGELS -->
-<section class="section section--teal" aria-labelledby="waarden-heading">
-  <div class="section-header reveal">
-    <span class="eyebrow">Onze waarden</span>
-    <h2 class="display-lg" id="waarden-heading">De regels van het strand.</h2>
-    <p class="body-lead" style="margin-top:1rem; color:rgba(247,241,230,0.65); max-width:52ch;">Vier woorden. Op het water gelden ze zonder uitzondering — maar ze beginnen op de wal.</p>
-  </div>
-  <div class="cards-grid cards-grid--4">
-    <article class="value-card reveal">
-      <h3 class="value-card__title">Respect</h3>
-      <p class="value-card__body">Je respecteert je mede-deelnemers, de instructeurs, en het water. Geen uitzonderingen. Op het strand zijn we gelijk.</p>
-    </article>
-    <article class="value-card reveal" style="transition-delay:0.08s">
-      <h3 class="value-card__title">Veiligheid</h3>
-      <p class="value-card__body">Veiligheid gaat boven snelheid. We gaan pas het water in als het veilig is. Die discipline leer je hier — en neem je overal mee naartoe.</p>
-    </article>
-    <article class="value-card reveal" style="transition-delay:0.16s">
-      <h3 class="value-card__title">Doorzetten</h3>
-      <p class="value-card__body">Golven mislukken. Elke keer. Doorzetten is geen talent — het is een gewoonte die je hier traint, les na les, golf na golf.</p>
-    </article>
-    <article class="value-card reveal" style="transition-delay:0.24s">
-      <h3 class="value-card__title">Plezier</h3>
-      <p class="value-card__body">Harde aanpak, maar altijd met plezier. Als het niet leuk is, haken mensen af. We bouwen een plek waar jongeren willen zijn.</p>
-    </article>
+<section class="section section--teal" style="background:var(--deep2);">
+  <div class="container">
+    <span class="eyebrow eyebrow--sun reveal">Uit de community</span>
+    <h2 class="sec-h sec-h--xl sec-h--foam reveal reveal-d1">Ze vertellen het zelf.</h2>
+    <div class="testi-grid reveal reveal-d2">
+      <article class="testi">
+        <blockquote class="testi__quote">"Ik ben via RTW begonnen als deelnemer. Nu geef ik zelf les. Dat klinkt simpel, maar voor mij is het alles. Ik wist niet dat ik dat kon."</blockquote>
+        <footer class="testi__footer">
+          <span class="testi__name">Mehdi, 22</span>
+          <span class="testi__detail">Coach RTW Amsterdam</span>
+        </footer>
+      </article>
+      <article class="testi">
+        <blockquote class="testi__quote">"De community is wat je erin steekt. Ik heb vrienden gemaakt bij RTW die ik nooit had ontmoet zonder het strand. Dat klinkt cliché — maar het is gewoon waar."</blockquote>
+        <footer class="testi__footer">
+          <span class="testi__name">Salma, 20</span>
+          <span class="testi__detail">Junior Crew · Rotterdam</span>
+        </footer>
+      </article>
+      <article class="testi">
+        <blockquote class="testi__quote">"Als oud-deelnemer kom ik nog steeds op de strand-bbq's. Die verbinding verdwijnt niet. RTW is een plek die je bijhoudt."</blockquote>
+        <footer class="testi__footer">
+          <span class="testi__name">Kevin, 23</span>
+          <span class="testi__detail">Alumni · Nu werkend</span>
+        </footer>
+      </article>
+    </div>
   </div>
 </section>
 
 <div class="pull-quote">
-  <p class="pull-quote__q">Niemand surft<br><em>alleen.</em> Dat is<br>de regel.</p>
+  <p class="pull-quote__q">De community<br>is het<br><em>programma.</em></p>
   <div class="pull-quote__rule"></div>
   <p class="pull-quote__credit">Community · Ride the Wave</p>
 </div>
 
-<!-- CTA HUB -->
-<section class="cta-hub" aria-labelledby="cta-heading">
-  <div class="cta-hub__inner">
-    <div class="cta-hub__header reveal">
-      <span class="eyebrow">Doe mee</span>
-      <h2 class="display-md" id="cta-heading">Wat wil je doen?</h2>
-    </div>
-    <div class="cta-hub__cards">
-      <a href="aanmelden.html" class="cta-hub__card cta-card--primary reveal" aria-label="Aanmelden voor Ride the Wave">
-        <span class="cta-hub__card__icon" aria-hidden="true">🏄</span>
-        <h3 class="cta-hub__card__title">Aanmelden</h3>
-        <p class="cta-hub__card__desc">Klaar voor het water? Meld je aan voor het programma. We nemen contact op voor een kennismakingsgesprek.</p>
-        <span class="cta-hub__card__link">
-          Direct aanmelden
-          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-      </a>
-      <a href="scholen.html" class="cta-hub__card reveal" style="transition-delay:0.1s" aria-label="Samenwerken met Ride the Wave">
-        <span class="cta-hub__card__icon" aria-hidden="true">🤝</span>
-        <h3 class="cta-hub__card__title">Samenwerken</h3>
-        <p class="cta-hub__card__desc">School, gemeente, of zorginstelling? We werken graag samen. Laten we kijken wat RTW voor jouw doelgroep kan betekenen.</p>
-        <span class="cta-hub__card__link">
-          Gesprek inplannen
-          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-      </a>
-      <a href="mailto:info@ridethewave.nl" class="cta-hub__card reveal" style="transition-delay:0.2s" aria-label="Contact opnemen met Ride the Wave">
-        <span class="cta-hub__card__icon" aria-hidden="true">📧</span>
-        <h3 class="cta-hub__card__title">Contact</h3>
-        <p class="cta-hub__card__desc">Vragen over het programma, een locatie, of de aanpak? Stuur ons een bericht — we reageren binnen één werkdag.</p>
-        <span class="cta-hub__card__link">
-          Stuur een bericht
-          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-      </a>
+<section class="section section--foam">
+  <div class="container">
+    <span class="eyebrow eyebrow--teal reveal">Word onderdeel</span>
+    <h2 class="sec-h sec-h--xl sec-h--foam reveal reveal-d1">Hoe doe je mee?</h2>
+    <div class="cta-hub reveal reveal-d2">
+      <div class="cta-hub__card">
+        <div class="cta-hub__icon">🏄</div>
+        <div class="cta-hub__h">Als deelnemer</div>
+        <p class="cta-hub__p">Meld je aan voor golfsurfen of kitesurfen. Gratis, voor jongeren van 14 tot 23 jaar. De community begint bij je eerste les.</p>
+        <a href="aanmelden.html" class="btn btn--teal">Aanmelden →</a>
+      </div>
+      <div class="cta-hub__card">
+        <div class="cta-hub__icon">📸</div>
+        <div class="cta-hub__h">Volg ons online</div>
+        <p class="cta-hub__p">Bekijk het leven van de RTW-community via Instagram en TikTok — surfsessies, events en verhalen van deelnemers.</p>
+        <a href="#" class="btn btn--outline-deep">Instagram →</a>
+      </div>
+      <div class="cta-hub__card">
+        <div class="cta-hub__icon">💬</div>
+        <div class="cta-hub__h">Neem contact op</div>
+        <p class="cta-hub__p">Vragen over de community of de Junior Crew? Stuur ons een berichtje — we reageren snel.</p>
+        <a href="contact.html" class="btn btn--outline-deep">Contact →</a>
+      </div>
     </div>
   </div>
 </section>

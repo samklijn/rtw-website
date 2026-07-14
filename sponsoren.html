@@ -1,28 +1,53 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sponsoren &amp; Donateurs — Ride the Wave</title>
+  <title>Bedrijven & Sponsors — Ride the Wave</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=16">
   <style>
-    /* Tags */
     .dg-tag { display:inline-block; padding:.4rem 1rem; border-radius:99px; font-size:.72rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
     .dg-tag--sun  { background:rgba(244,189,42,.15); color:var(--sun); border:1.5px solid rgba(244,189,42,.25); }
     .dg-tag--teal { background:rgba(42,136,153,.15); color:#5bc8d8; border:1.5px solid rgba(42,136,153,.25); }
     .dg-tag--foam { background:rgba(14,52,63,.06); color:rgba(14,52,63,.5); border:1.5px solid rgba(14,52,63,.12); }
     .dg-strip { display:flex; gap:.5rem; flex-wrap:wrap; margin-top:1.5rem; }
-    /* Stats band */
     .stats-band { background:var(--foam); padding:4rem clamp(1.5rem,4vw,3rem); }
     .stats-band .container { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
     .stat-card { background:#fff; border-radius:16px; padding:2.25rem 2rem; border:1.5px solid rgba(14,52,63,.08); box-shadow:0 2px 16px rgba(14,52,63,.06); text-align:center; }
     .stat-card__n { font-family:var(--font-d); font-size:clamp(2.5rem,5vw,4rem); color:var(--teal); line-height:1; margin-bottom:.5rem; }
     .stat-card__l { font-size:.9rem; color:rgba(14,52,63,.6); font-weight:500; line-height:1.4; }
     @media(max-width:700px){ .stats-band .container{grid-template-columns:1fr;} }
-    /* CTA hub */
+    .intro-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
+    .intro-photo { border-radius:20px; overflow:hidden; aspect-ratio:4/3; clip-path:polygon(0 0,88% 0,100% 8%,100% 92%,88% 100%,0 100%); }
+    .intro-photo img { width:100%; height:100%; object-fit:cover; }
+    @media(max-width:860px){ .intro-grid{grid-template-columns:1fr;} }
+    .check-list { list-style:none; display:flex; flex-direction:column; gap:.75rem; margin:1.5rem 0 2rem; }
+    .check-list__item { display:flex; align-items:flex-start; gap:.75rem; font-size:.9rem; color:rgba(14,52,63,.75); line-height:1.55; }
+    .check-list__item::before { content:'✓'; flex-shrink:0; width:1.4rem; height:1.4rem; background:var(--teal); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.65rem; font-weight:800; margin-top:.1rem; }
+    .value-prop { background:var(--deep2); padding:clamp(4rem,8vw,7rem) clamp(1.5rem,4vw,3rem); position:relative; overflow:hidden; }
+    .value-prop::before { content:''; position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1476673160081-cf065607f449?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat; opacity:.07; pointer-events:none; }
+    .value-prop__inner { position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; max-width:1100px; margin:0 auto; }
+    .value-prop__h { font-family:var(--font-d); font-size:clamp(2.5rem,5vw,4.5rem); text-transform:uppercase; line-height:.95; color:var(--foam); letter-spacing:-.01em; }
+    .value-prop__h em { color:var(--sun); font-style:normal; }
+    .value-prop__p { color:rgba(247,241,230,.72); font-size:1rem; line-height:1.8; margin-bottom:1.75rem; }
+    @media(max-width:860px){ .value-prop__inner{grid-template-columns:1fr; gap:2.5rem;} }
+    .fase-intro { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:end; margin-bottom:3rem; }
+    @media(max-width:760px){ .fase-intro{grid-template-columns:1fr; gap:1rem;} }
+    .fase-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.5rem; }
+    .fase-card { background:rgba(255,255,255,.08); border-radius:18px; padding:2rem; border:1.5px solid rgba(255,255,255,.1); display:flex; flex-direction:column; gap:.75rem; transition:border-color .2s; }
+    .fase-card:hover { border-color:rgba(244,189,42,.3); }
+    .fase-card--accent { border-color:rgba(244,189,42,.3); background:rgba(244,189,42,.07); }
+    .fase-card__num { font-family:var(--font-d); font-size:.75rem; text-transform:uppercase; letter-spacing:.15em; color:var(--sun); background:rgba(244,189,42,.12); border:1.5px solid rgba(244,189,42,.2); border-radius:99px; padding:.3rem .9rem; display:inline-block; margin-bottom:.5rem; }
+    .fase-card--accent .fase-card__num { background:var(--sun); color:var(--deep); border-color:var(--sun); }
+    .fase-card__h { font-family:var(--font-d); font-size:1.4rem; text-transform:uppercase; color:var(--foam); line-height:1; }
+    .fase-card__p { font-size:.85rem; color:rgba(247,241,230,.65); line-height:1.65; }
+    .section--teal .testi { background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.1); }
+    .section--teal .testi__name { color:var(--foam); }
+    .section--teal .testi__role { color:rgba(247,241,230,.5); }
+    .section--teal .testi__quote { color:rgba(247,241,230,.85); }
     .cta-hub { display:grid; grid-template-columns:repeat(3,1fr); gap:1.75rem; }
     .cta-hub__card { background:#fff; border-radius:16px; padding:2.5rem 2rem; border:1.5px solid rgba(14,52,63,.08); box-shadow:0 2px 16px rgba(14,52,63,.06); display:flex; flex-direction:column; gap:1rem; transition:transform .2s, box-shadow .2s; }
     .cta-hub__card:hover { transform:translateY(-4px); box-shadow:0 8px 32px rgba(14,52,63,.1); }
@@ -30,1032 +55,19 @@
     .cta-hub__h { font-family:var(--font-d); font-size:1.4rem; text-transform:uppercase; color:var(--deep); line-height:1; }
     .cta-hub__p { font-size:.85rem; color:rgba(14,52,63,.6); line-height:1.7; flex:1; }
     @media(max-width:860px){ .cta-hub{grid-template-columns:1fr;} }
-    /* Teal section overrides */
-    .section--teal .testi { background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.1); }
-    .section--teal .testi__name { color:var(--foam); }
-    .section--teal .testi__role { color:rgba(247,241,230,.5); }
-    .section--teal .testi__quote { color:rgba(247,241,230,.85); }
-    .section--teal .arrow-link--sun { color:var(--sun); }
-  </style>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
-
-    /* ─── Tokens ──────────────────────────────────────────── */
-    :root {
-      --navy:        #0E343F;
-      --navy-deep:   #071F26;
-      --teal:        #1C6E7E;
-      --teal-light:  #2A8A9D;
-      --yellow:      #F4BD2A;
-      --yellow-deep: #D9A41E;
-      --cream:       #F7F1E6;
-      --cream-dark:  #EDE6D5;
-      --white:       #FFFFFF;
-
-      --bg:          var(--cream);
-      --bg-alt:      var(--cream-dark);
-      --surface:     var(--white);
-      --text-1:      var(--navy-deep);
-      --text-2:      #2C5560;
-      --text-3:      #4A7A87;
-      --border:      rgba(14,52,63,.12);
-
-      --font-display: 'Anton', Impact, 'Arial Narrow', sans-serif;
-      --font-body:    'Inter', system-ui, -apple-system, sans-serif;
-
-      --r-sm:  6px;
-      --r-md: 12px;
-      --r-lg: 20px;
-
-      --shadow-card: 0 2px 16px rgba(14,52,63,.10), 0 1px 4px rgba(14,52,63,.06);
-      --shadow-featured: 0 8px 40px rgba(14,52,63,.22), 0 2px 8px rgba(14,52,63,.12);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg:       var(--navy-deep);
-        --bg-alt:   #0C2830;
-        --surface:  #0E343F;
-        --text-1:   var(--cream);
-        --text-2:   #A8CDD4;
-        --text-3:   #6EA8B4;
-        --border:   rgba(247,241,230,.10);
-        --shadow-card: 0 2px 16px rgba(0,0,0,.35);
-      }
-    }
-
-    :root[data-theme="dark"] {
-      --bg:       var(--navy-deep);
-      --bg-alt:   #0C2830;
-      --surface:  #0E343F;
-      --text-1:   var(--cream);
-      --text-2:   #A8CDD4;
-      --text-3:   #6EA8B4;
-      --border:   rgba(247,241,230,.10);
-      --shadow-card: 0 2px 16px rgba(0,0,0,.35);
-    }
-
-    :root[data-theme="light"] {
-      --bg:       var(--cream);
-      --bg-alt:   var(--cream-dark);
-      --surface:  var(--white);
-      --text-1:   var(--navy-deep);
-      --text-2:   #2C5560;
-      --text-3:   #4A7A87;
-      --border:   rgba(14,52,63,.12);
-    }
-
-    /* ─── Reset & Base ───────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--font-body);
-      background: var(--bg);
-      color: var(--text-1);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    img { max-width: 100%; display: block; }
-
-    a { color: inherit; text-decoration: none; }
-
-    /* ─── Nav ─────────────────────────────────────────────── */
-    .site-nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 clamp(1.25rem, 5vw, 3rem);
-      height: 68px;
-      background: rgba(7,31,38,.85);
-      backdrop-filter: blur(12px) saturate(150%);
-      border-bottom: 1px solid rgba(247,241,230,.08);
-    }
-
-    .nav-logo {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      color: var(--cream);
-      letter-spacing: .04em;
-      display: flex;
-      align-items: center;
-      gap: .5rem;
-    }
-
-    .nav-logo span { color: var(--yellow); }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: .875rem;
-      font-weight: 500;
-      color: rgba(247,241,230,.75);
-      transition: color .2s;
-      letter-spacing: .02em;
-    }
-
-    .nav-links a:hover { color: var(--cream); }
-
-    .nav-cta {
-      background: var(--yellow);
-      color: var(--navy-deep) !important;
-      padding: .5rem 1.125rem;
-      border-radius: var(--r-sm);
-      font-weight: 700 !important;
-      font-size: .875rem;
-      transition: background .2s, transform .15s !important;
-    }
-
-    .nav-cta:hover {
-      background: var(--yellow-deep) !important;
-      transform: translateY(-1px);
-    }
-
-    @media (max-width: 700px) {
-      .nav-links { display: none; }
-    }
-
-    /* ─── Hero ────────────────────────────────────────────── */
-    .hero.page-hero--short {
-      position: relative;
-      min-height: 620px;
-      display: flex;
-      align-items: flex-end;
-      padding: 0 clamp(1.25rem, 6vw, 5rem) clamp(3rem, 6vw, 5rem);
-      overflow: hidden;
-      margin-top: 68px;
-    }
-
-    .hero__bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85');
-      background-size: cover;
-      background-position: center 40%;
-      transform: scale(1.03);
-      transition: transform 6s ease-out;
-    }
-
-    .hero__bg::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to top,
-        rgba(7,31,38,.90) 0%,
-        rgba(7,31,38,.55) 50%,
-        rgba(7,31,38,.20) 100%
-      );
-    }
-
-    .hero.page-hero--short:hover .hero__bg {
-      transform: scale(1.00);
-    }
-
-    .hero__content {
-      position: relative;
-      z-index: 2;
-      max-width: 780px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--yellow);
-      margin-bottom: .875rem;
-    }
-
-    .hero__content .eyebrow {
-      color: var(--yellow);
-    }
-
-    .hero__title {
-      font-family: var(--font-display);
-      font-size: clamp(2.75rem, 6.5vw, 5.25rem);
-      line-height: 1.0;
-      color: var(--cream);
-      text-wrap: balance;
-      margin-bottom: 1.25rem;
-      letter-spacing: .01em;
-    }
-
-    .hero__sub {
-      font-size: clamp(1rem, 1.8vw, 1.2rem);
-      color: rgba(247,241,230,.80);
-      max-width: 560px;
-      line-height: 1.65;
-      margin-bottom: 2rem;
-    }
-
-    .hero__actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .875rem;
-    }
-
-    /* ─── Buttons ─────────────────────────────────────────── */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      font-family: var(--font-body);
-      font-size: .9375rem;
-      font-weight: 700;
-      border-radius: var(--r-sm);
-      padding: .75rem 1.625rem;
-      border: 2px solid transparent;
-      cursor: pointer;
-      transition: transform .15s, background .2s, color .2s, border-color .2s;
-      text-decoration: none;
-      letter-spacing: .01em;
-    }
-
-    .btn:hover { transform: translateY(-2px); }
-    .btn:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
-
-    .btn--primary {
-      background: var(--yellow);
-      color: var(--navy-deep);
-    }
-    .btn--primary:hover { background: var(--yellow-deep); }
-
-    .btn--ghost {
-      background: transparent;
-      color: var(--cream);
-      border-color: rgba(247,241,230,.45);
-    }
-    .btn--ghost:hover {
-      background: rgba(247,241,230,.10);
-      border-color: rgba(247,241,230,.75);
-    }
-
-    .btn--teal {
-      background: var(--teal);
-      color: var(--cream);
-    }
-    .btn--teal:hover { background: var(--teal-light); }
-
-    .btn--outline-navy {
-      background: transparent;
-      color: var(--navy);
-      border-color: var(--navy);
-    }
-    .btn--outline-navy:hover {
-      background: var(--navy);
-      color: var(--cream);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .btn--outline-navy {
-        color: var(--cream);
-        border-color: rgba(247,241,230,.45);
-      }
-      .btn--outline-navy:hover {
-        background: rgba(247,241,230,.1);
-      }
-    }
-
-    /* ─── Stats Band ─────────────────────────────────────── */
-    .stats-band {
-      background: var(--navy);
-      padding: clamp(2rem, 4vw, 3rem) clamp(1.25rem, 6vw, 5rem);
-    }
-
-    .stats-band__inner {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: rgba(247,241,230,.12);
-      border: 1px solid rgba(247,241,230,.12);
-      border-radius: var(--r-md);
-      overflow: hidden;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .stat-card {
-      background: rgba(14,52,63,.6);
-      padding: clamp(1.5rem, 3vw, 2.25rem) clamp(1.25rem, 3vw, 2rem);
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: .5rem;
-    }
-
-    .stat-card__n {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 5vw, 3.75rem);
-      color: var(--yellow);
-      line-height: 1;
-      letter-spacing: .02em;
-    }
-
-    .stat-card__l {
-      font-size: .9rem;
-      color: rgba(247,241,230,.70);
-      font-weight: 500;
-      line-height: 1.4;
-      max-width: 180px;
-      text-wrap: balance;
-    }
-
-    @media (max-width: 600px) {
-      .stats-band__inner { grid-template-columns: 1fr; }
-    }
-
-    /* ─── Sections ────────────────────────────────────────── */
-    .section {
-      padding: clamp(3.5rem, 7vw, 6rem) clamp(1.25rem, 6vw, 5rem);
-    }
-
-    .section--foam {
-      background: var(--bg);
-    }
-
-    .section--foam-alt {
-      background: var(--bg-alt);
-    }
-
-    .section--teal {
-      background: var(--teal);
-    }
-
-    .section--dark {
-      background: var(--navy-deep);
-    }
-
-    .section__header {
-      margin-bottom: clamp(2rem, 4vw, 3.5rem);
-    }
-
-    .section__header--center {
-      text-align: center;
-      max-width: 640px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: clamp(2rem, 4vw, 3.5rem);
-    }
-
-    .section__eyebrow {
-      display: inline-block;
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: .75rem;
-    }
-
-    .section--teal .section__eyebrow,
-    .section--dark .section__eyebrow {
-      color: var(--yellow);
-    }
-
-    .section__title {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4.5vw, 3.25rem);
-      line-height: 1.05;
-      color: var(--text-1);
-      text-wrap: balance;
-      letter-spacing: .01em;
-      margin-bottom: .875rem;
-    }
-
-    .section--teal .section__title,
-    .section--dark .section__title {
-      color: var(--cream);
-    }
-
-    .section__lead {
-      font-size: 1.0625rem;
-      color: var(--text-2);
-      line-height: 1.7;
-      max-width: 540px;
-    }
-
-    .section--teal .section__lead {
-      color: rgba(247,241,230,.80);
-    }
-
-    /* ─── Value Prop (2-col) ─────────────────────────────── */
-    .value-prop {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(2.5rem, 5vw, 5rem);
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    @media (max-width: 860px) {
-      .value-prop { grid-template-columns: 1fr; }
-      .value-prop__image { order: -1; }
-    }
-
-    .value-prop__text {}
-
-    .value-prop__body {
-      font-size: 1rem;
-      color: var(--text-2);
-      line-height: 1.75;
-      margin-bottom: 1rem;
-    }
-
-    .value-prop__body:last-of-type { margin-bottom: 1.75rem; }
-
-    .value-prop__subheading {
-      font-size: .8125rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: .875rem;
-    }
-
-    .value-prop__list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: .625rem;
-    }
-
-    .value-prop__list li {
-      display: flex;
-      align-items: flex-start;
-      gap: .75rem;
-      font-size: .9375rem;
-      color: var(--text-1);
-      line-height: 1.5;
-    }
-
-    .value-prop__list li::before {
-      content: '';
-      flex-shrink: 0;
-      width: 20px;
-      height: 20px;
-      margin-top: 2px;
-      border-radius: 50%;
-      background: var(--yellow);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10' viewBox='0 0 12 10'%3E%3Cpath d='M1 5l3 3 7-7' stroke='%230E343F' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-
-    .value-prop__image {
-      border-radius: var(--r-lg);
-      overflow: hidden;
-      aspect-ratio: 4/3;
-    }
-
-    .value-prop__image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .5s ease;
-    }
-
-    .value-prop__image:hover img { transform: scale(1.03); }
-
-    /* ─── Donor Tier Cards ───────────────────────────────── */
-    .section--teal .section__header--center { max-width: 640px; }
-
-    .section--teal .section__lead { max-width: 500px; margin: 0 auto; }
-
-    .tier-model__intro {
-      text-align: center;
-      font-size: 1rem;
-      color: rgba(247,241,230,.75);
-      max-width: 540px;
-      margin: 0 auto 3rem;
-      line-height: 1.7;
-    }
-
-    .tier-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      max-width: 1080px;
-      margin: 0 auto;
-      align-items: start;
-    }
-
-    @media (max-width: 860px) {
-      .tier-cards {
-        grid-template-columns: 1fr;
-        max-width: 420px;
-      }
-    }
-
-    .tier-card {
-      background: rgba(7,31,38,.45);
-      border: 1px solid rgba(247,241,230,.15);
-      border-radius: var(--r-lg);
-      padding: 2rem 1.75rem 1.75rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      position: relative;
-      transition: transform .2s, box-shadow .2s;
-    }
-
-    .tier-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,.3);
-    }
-
-    .tier-card--featured {
-      background: var(--yellow);
-      border-color: var(--yellow);
-      box-shadow: var(--shadow-featured);
-      transform: scale(1.04);
-      z-index: 2;
-    }
-
-    .tier-card--featured:hover { transform: scale(1.04) translateY(-4px); }
-
-    .tier-badge {
-      position: absolute;
-      top: -13px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--navy-deep);
-      color: var(--yellow);
-      font-size: .7rem;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      padding: .25rem .875rem;
-      border-radius: 20px;
-      white-space: nowrap;
-    }
-
-    .tier-card--featured .tier-badge {
-      background: var(--navy);
-      color: var(--yellow);
-    }
-
-    .tier-emoji {
-      font-size: 2rem;
-      margin-bottom: .875rem;
-      display: block;
-      line-height: 1;
-    }
-
-    .tier-name {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      color: var(--cream);
-      letter-spacing: .03em;
-      margin-bottom: .25rem;
-    }
-
-    .tier-card--featured .tier-name { color: var(--navy-deep); }
-
-    .tier-price {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--yellow);
-      line-height: 1;
-      margin-bottom: .125rem;
-    }
-
-    .tier-card--featured .tier-price { color: var(--navy-deep); }
-
-    .tier-freq {
-      font-size: .8125rem;
-      color: rgba(247,241,230,.55);
-      margin-bottom: 1.5rem;
-    }
-
-    .tier-card--featured .tier-freq { color: rgba(7,31,38,.60); }
-
-    .tier-divider {
-      height: 1px;
-      background: rgba(247,241,230,.15);
-      margin-bottom: 1.25rem;
-    }
-
-    .tier-card--featured .tier-divider { background: rgba(14,52,63,.20); }
-
-    .tier-benefits {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: .625rem;
-      margin-bottom: 1.75rem;
-      flex-grow: 1;
-    }
-
-    .tier-benefits li {
-      display: flex;
-      align-items: flex-start;
-      gap: .625rem;
-      font-size: .875rem;
-      color: rgba(247,241,230,.85);
-      line-height: 1.45;
-    }
-
-    .tier-card--featured .tier-benefits li { color: rgba(7,31,38,.85); }
-
-    .tier-benefits li::before {
-      content: '✓';
-      flex-shrink: 0;
-      font-size: .8rem;
-      font-weight: 700;
-      color: var(--yellow);
-      margin-top: 1px;
-    }
-
-    .tier-card--featured .tier-benefits li::before { color: var(--teal); }
-
-    .tier-card .btn {
-      width: 100%;
-      justify-content: center;
-    }
-
-    .tier-card:not(.tier-card--featured) .btn--tier {
-      background: rgba(247,241,230,.12);
-      color: var(--cream);
-      border: 1px solid rgba(247,241,230,.25);
-    }
-
-    .tier-card:not(.tier-card--featured) .btn--tier:hover {
-      background: rgba(247,241,230,.20);
-      border-color: rgba(247,241,230,.45);
-    }
-
-    .tier-card--featured .btn--tier {
-      background: var(--navy);
-      color: var(--cream);
-      border: none;
-    }
-
-    .tier-card--featured .btn--tier:hover { background: var(--navy-deep); }
-
-    /* ─── Impact Cards ───────────────────────────────────── */
-    .impact-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      max-width: 1080px;
-      margin: 0 auto;
-    }
-
-    @media (max-width: 760px) {
-      .impact-cards { grid-template-columns: 1fr; }
-    }
-
-    .impact-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--r-lg);
-      padding: 2rem 1.75rem;
-      box-shadow: var(--shadow-card);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .impact-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 4px;
-      background: var(--yellow);
-    }
-
-    .impact-card__amount {
-      font-family: var(--font-display);
-      font-size: 1.875rem;
-      color: var(--teal);
-      letter-spacing: .02em;
-      margin-bottom: .25rem;
-      line-height: 1;
-    }
-
-    .impact-card__freq {
-      font-size: .8rem;
-      color: var(--text-3);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      margin-bottom: 1.25rem;
-    }
-
-    .impact-card__icon {
-      font-size: 2.25rem;
-      margin-bottom: 1rem;
-      display: block;
-      line-height: 1;
-    }
-
-    .impact-card__title {
-      font-size: 1.0625rem;
-      font-weight: 700;
-      color: var(--text-1);
-      margin-bottom: .5rem;
-      line-height: 1.35;
-    }
-
-    .impact-card__desc {
-      font-size: .9rem;
-      color: var(--text-2);
-      line-height: 1.65;
-    }
-
-    /* ─── Testimonial ─────────────────────────────────────── */
-    .testimonial {
-      background: var(--navy-deep);
-      padding: clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 5rem);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .testimonial::before {
-      content: '';
-      position: absolute;
-      top: -100px; right: -100px;
-      width: 400px; height: 400px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(28,110,126,.25) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .testimonial::after {
-      content: '';
-      position: absolute;
-      bottom: -80px; left: -80px;
-      width: 300px; height: 300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(244,189,42,.10) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .testimonial__inner {
-      position: relative;
-      z-index: 2;
-      max-width: 820px;
-      margin: 0 auto;
-    }
-
-    .testimonial__quote-mark {
-      font-family: var(--font-display);
-      font-size: 8rem;
-      color: var(--yellow);
-      opacity: .25;
-      line-height: .6;
-      display: block;
-      margin-bottom: 1rem;
-      pointer-events: none;
-    }
-
-    .testimonial__text {
-      font-family: var(--font-display);
-      font-size: clamp(1.5rem, 3.5vw, 2.5rem);
-      line-height: 1.15;
-      color: var(--cream);
-      text-wrap: balance;
-      letter-spacing: .01em;
-      margin-bottom: 2rem;
-    }
-
-    .testimonial__text em {
-      font-style: normal;
-      color: var(--yellow);
-    }
-
-    .testimonial__attribution {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: .25rem;
-    }
-
-    .testimonial__name {
-      font-size: .9375rem;
-      font-weight: 700;
-      color: var(--cream);
-    }
-
-    .testimonial__role {
-      font-size: .8125rem;
-      color: rgba(247,241,230,.50);
-      letter-spacing: .05em;
-      text-transform: uppercase;
-    }
-
-    /* ─── CTA Hub ─────────────────────────────────────────── */
-    .cta-hub {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    @media (max-width: 700px) {
-      .cta-hub { grid-template-columns: 1fr; }
-    }
-
-    .cta-hub__card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--r-lg);
-      padding: 2.25rem 1.75rem;
-      box-shadow: var(--shadow-card);
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0;
-      transition: transform .2s, box-shadow .2s;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .cta-hub__card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 32px rgba(14,52,63,.14);
-    }
-
-    .cta-card__icon {
-      font-size: 2.25rem;
-      margin-bottom: 1rem;
-      display: block;
-      line-height: 1;
-    }
-
-    .cta-hub__h {
-      font-family: var(--font-display);
-      font-size: 1.375rem;
-      color: var(--text-1);
-      letter-spacing: .02em;
-      margin-bottom: .5rem;
-    }
-
-    .cta-hub__p {
-      font-size: .9rem;
-      color: var(--text-2);
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-      flex-grow: 1;
-    }
-
-    .cta-card__link {
-      display: inline-flex;
-      align-items: center;
-      gap: .375rem;
-      font-size: .875rem;
-      font-weight: 700;
-      color: var(--teal);
-      letter-spacing: .02em;
-      transition: gap .2s;
-    }
-
-    .cta-hub__card:hover .cta-card__link { gap: .625rem; }
-
-    /* ─── Footer ──────────────────────────────────────────── */
-    .site-footer {
-      background: var(--navy-deep);
-      padding: clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 6vw, 5rem) clamp(1.5rem, 3vw, 2.5rem);
-      border-top: 1px solid rgba(247,241,230,.08);
-    }
-
-    .footer__inner {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 3rem;
-      max-width: 1080px;
-      margin: 0 auto;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid rgba(247,241,230,.08);
-    }
-
-    @media (max-width: 700px) {
-      .footer__inner { grid-template-columns: 1fr; gap: 1.75rem; }
-    }
-
-    .footer__brand-name {
-      font-family: var(--font-display);
-      font-size: 1.625rem;
-      color: var(--cream);
-      letter-spacing: .04em;
-      margin-bottom: .625rem;
-    }
-
-    .footer__brand-name span { color: var(--yellow); }
-
-    .footer__tagline {
-      font-size: .875rem;
-      color: rgba(247,241,230,.50);
-      line-height: 1.65;
-      max-width: 280px;
-      margin-bottom: 1.25rem;
-    }
-
-    .footer__anbi {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      background: rgba(247,241,230,.07);
-      border: 1px solid rgba(247,241,230,.12);
-      border-radius: var(--r-sm);
-      padding: .375rem .75rem;
-      font-size: .75rem;
-      color: rgba(247,241,230,.55);
-      letter-spacing: .04em;
-      font-weight: 600;
-    }
-
-    .footer__col-title {
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--yellow);
-      margin-bottom: 1rem;
-    }
-
-    .footer__links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: .625rem;
-    }
-
-    .footer__links a {
-      font-size: .875rem;
-      color: rgba(247,241,230,.55);
-      transition: color .2s;
-    }
-
-    .footer__links a:hover { color: var(--cream); }
-
-    .footer__bottom {
-      max-width: 1080px;
-      margin: 1.5rem auto 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: .75rem;
-    }
-
-    .footer__copy {
-      font-size: .8rem;
-      color: rgba(247,241,230,.30);
-    }
-
-    .footer__legal {
-      display: flex;
-      gap: 1.25rem;
-    }
-
-    .footer__legal a {
-      font-size: .8rem;
-      color: rgba(247,241,230,.35);
-      transition: color .2s;
-    }
-
-    .footer__legal a:hover { color: rgba(247,241,230,.65); }
-
-    /* ─── Motion ──────────────────────────────────────────── */
-    @media (prefers-reduced-motion: no-preference) {
-      .fade-up {
-        opacity: 0;
-        transform: translateY(24px);
-        transition: opacity .5s ease, transform .5s ease;
-      }
-      .fade-up.visible {
-        opacity: 1;
-        transform: none;
-      }
-    }
-    .pull-quote { background:var(--foam) !important; padding:clamp(1.75rem,3vw,2.5rem) clamp(1.5rem,4vw,3rem) !important; text-align:center; }
+    .hero__actions { display:flex; gap:.75rem; flex-wrap:wrap; margin-top:.25rem; }
+    .pull-quote { background:var(--foam) !important; padding:clamp(2.5rem,5vw,4rem) clamp(1.5rem,4vw,3rem) !important; text-align:center; }
     .pull-quote .pull-quote__q { font-family:var(--font-d); font-size:clamp(1.5rem,3vw,2.8rem); text-transform:uppercase; line-height:1; color:var(--deep) !important; font-style:italic; letter-spacing:-.01em; max-width:700px; margin:0 auto 1.25rem; }
     .pull-quote .pull-quote__q em { color:var(--teal) !important; font-style:italic; }
     .pull-quote__rule { width:60px; height:3px; background:var(--teal); margin:0 auto 1.25rem; }
     .pull-quote__credit { font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.22em; color:rgba(14,52,63,.35); }
+    .partner-logo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:2rem; }
+    .partner-logo { background:rgba(255,255,255,.07); border-radius:12px; padding:1.25rem; display:flex; align-items:center; justify-content:center; border:1.5px solid rgba(255,255,255,.08); aspect-ratio:3/2; font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:rgba(247,241,230,.4); text-align:center; }
   </style>
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress"></div>
+
 <nav class="nav">
   <a href="index.html" class="nav-logo">
     <div class="nav-logo-stack">
@@ -1076,19 +88,18 @@
       <span class="nav-drop__t">Samenwerken</span>
       <div class="nav-drop__m">
         <a href="scholen.html">Scholen &amp; onderwijs</a>
-        <a href="scholen.html">Gemeenten &amp; overheid</a>
+        <a href="gemeenten.html">Gemeenten &amp; overheid</a>
         <a href="sponsoren.html">Bedrijven &amp; sponsors</a>
       </div>
     </div>
-    <a href="aanmelden.html">Aanmelden</a>
     <a href="verhalen.html">Impact</a>
-    <a href="sponsoren.html">Steun ons</a>
+    <a href="doneren.html">Doneren</a>
     <div class="nav-drop">
       <span class="nav-drop__t">Info</span>
       <div class="nav-drop__m">
-        <a href="community.html">Over RTW</a>
-        <a href="community.html">Ons team</a>
-        <a href="mailto:info@ridethewave.nl">Contact</a>
+        <a href="verhaal.html">Over RTW</a>
+        <a href="team.html">Ons team</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <a href="aanmelden.html" class="nav-cta">Gratis aanmelden</a>
@@ -1113,217 +124,171 @@
 
 <main>
 
-<!-- 1. HERO -->
-<section class="hero page-hero--short" aria-label="Pagina intro">
+<header class="hero page-hero--short" style="background-image: url('https://images.unsplash.com/photo-1476673160081-cf065607f449?auto=format&fit=crop&w=1800&q=85');">
   <div class="hero__overlay" aria-hidden="true"></div>
   <div class="hero__accent-bar"></div>
-  <div class="hero__bg" role="img" aria-label="Surfer op golven bij zonsondergang"></div>
-  <div class="hero__content">
-    <span class="eyebrow">Steun ons</span>
-    <h1 class="hero__title">Help ons verder<br>als donor of sponsor.</h1>
-    <p class="hero__sub">Sluit je aan bij de vrienden van Ride the Wave en maak vrij surfen voor jongeren mogelijk.</p>
-    <div class="hero__actions">
-      <a href="#doneren" class="btn btn--primary">Word donor</a>
-      <a href="#sponsor" class="btn btn--ghost">Word sponsor</a>
+  <div class="hero__content container">
+    <p class="eyebrow eyebrow--sun reveal reveal-d1">Bedrijven &amp; Sponsors</p>
+    <h1 class="hero-h1 hero-h1--lg reveal reveal-d2">Steun de<br>volgende<br>golf.</h1>
+    <p class="hero-sub reveal reveal-d3">Als sponsor of partner maak je het mogelijk dat jongeren gratis kunnen surfen en kitesurf. Concreet, zichtbaar en met bewezen impact.</p>
+    <div class="hero__actions reveal reveal-d4">
+      <a href="mailto:info@ridethewave.nl" class="btn btn--sun btn--lg">Neem contact op</a>
+      <a href="#mogelijkheden" class="btn btn--outline-foam">Sponsormogelijkheden →</a>
     </div>
   </div>
-</section>
+</header>
 
-<!-- 2. STATS BAND -->
-<div class="stats-band" role="region" aria-label="Kerncijfers">
-  <div class="stats-band__inner">
-    <div class="stat-card fade-up">
-      <span class="stat-card__n">200+</span>
-      <span class="stat-card__l">jongeren geholpen via ons programma</span>
+<div class="stats-band">
+  <div class="container">
+    <div class="stat-card reveal reveal-d1">
+      <div class="stat-card__n">200+</div>
+      <div class="stat-card__l">Jongeren bereikt<br>dankzij onze partners</div>
     </div>
-    <div class="stat-card fade-up">
-      <span class="stat-card__n">€0</span>
-      <span class="stat-card__l">eigen bijdrage voor deelnemers</span>
+    <div class="stat-card reveal reveal-d2">
+      <div class="stat-card__n">ANBI</div>
+      <div class="stat-card__l">Donaties fiscaal<br>aftrekbaar</div>
     </div>
-    <div class="stat-card fade-up">
-      <span class="stat-card__n">100%</span>
-      <span class="stat-card__l">ANBI — giften volledig aftrekbaar</span>
+    <div class="stat-card reveal reveal-d3">
+      <div class="stat-card__n">100%</div>
+      <div class="stat-card__l">Van je bijdrage gaat<br>direct naar deelnemers</div>
     </div>
   </div>
 </div>
 
-<!-- 3. VALUE PROP -->
-<section class="section section--foam" aria-labelledby="valueprop-heading">
-  <div class="value-prop">
-    <div class="value-prop__text fade-up">
-      <span class="section__eyebrow">Iedereen verdient een kans</span>
-      <h2 class="section__title" id="valueprop-heading">Kansen ontstaan<br>niet vanzelf.</h2>
-      <p class="value-prop__body">Surfen is meer dan een sport. Het leert jongeren geduld, doorzettingsvermogen en zelfvertrouwen — precies de vaardigheden die ze nodig hebben buiten het water. Maar die kansen ontstaan niet vanzelf, en zeker niet gratis.</p>
-      <p class="value-prop__body">Wetsuits, surfboards, vervoer met de surfbus en professionele instructeurs: elk onderdeel van ons programma kost geld. Zonder structurele steun kunnen we geen gratis plekken blijven aanbieden aan jongeren die het anders nooit zouden kunnen betalen.</p>
-      <p class="value-prop__subheading">Met jouw steun maken wij dit mogelijk:</p>
-      <ul class="value-prop__list">
-        <li>Gratis surfplekken voor jongeren zonder middelen</li>
-        <li>Eigen materiaal — boards en wetsuits voor elke maat</li>
-        <li>De surfbus die groepen naar zee rijdt</li>
-        <li>Gecertificeerde instructeurs en begeleiding op het strand</li>
-      </ul>
-    </div>
-    <div class="value-prop__image fade-up">
-      <img
-        src="https://images.unsplash.com/photo-1531722569936-825d4eea2573?auto=format&fit=crop&w=900&q=80"
-        alt="Jongeren leren surfen aan de kust"
-        loading="lazy"
-        width="900"
-        height="675"
-      >
-    </div>
-  </div>
-</section>
-
-<!-- 4. DONOR MODEL -->
-<section class="section section--teal" id="sponsor" aria-labelledby="tier-heading">
-  <div class="section__header--center fade-up">
-    <span class="section__eyebrow">Hoe werkt het?</span>
-    <h2 class="section__title" id="tier-heading">Jaarlijks partnerschap.</h2>
-    <p class="tier-model__intro">
-      Wij werken met vaste partners — geen eenmalige actie maar een doorlopende bijdrage die ons in staat stelt te plannen, te groeien en te bouwen aan iets duurzaams. Kies het niveau dat bij jou past.
-    </p>
-  </div>
-
-  <div class="tier-cards" id="doneren">
-    <!-- Tier 1: Vriend -->
-    <div class="tier-card fade-up" role="article" aria-label="Vriend donorpakket">
-      <span class="tier-emoji" aria-hidden="true">🏄</span>
-      <div class="tier-name">Vriend</div>
-      <div class="tier-price">€5</div>
-      <div class="tier-freq">per maand</div>
-      <div class="tier-divider"></div>
-      <ul class="tier-benefits">
-        <li>Welkomstbericht van ons team</li>
-        <li>Kwartaal nieuwsbrief met updates uit het programma</li>
-        <li>Jaarlijks impactrapport</li>
-        <li>Naam in ons jaarlijkse donateursoverzicht</li>
-      </ul>
-      <a href="aanmelden.html" class="btn btn--tier">Word vriend</a>
-    </div>
-
-    <!-- Tier 2: Partner (featured) -->
-    <div class="tier-card tier-card--featured fade-up" role="article" aria-label="Partner donorpakket, meest gekozen">
-      <span class="tier-badge">Meest gekozen</span>
-      <span class="tier-emoji" aria-hidden="true">🌊</span>
-      <div class="tier-name">Partner</div>
-      <div class="tier-price">€25</div>
-      <div class="tier-freq">per maand</div>
-      <div class="tier-divider"></div>
-      <ul class="tier-benefits">
-        <li>Alles uit Vriend</li>
-        <li>Persoonlijke bedankbrief van een deelnemer</li>
-        <li>Uitnodiging voor onze jaarlijkse Open Surf Day</li>
-        <li>Logo en naam op onze website</li>
-        <li>Bedankpost op onze social media kanalen</li>
-      </ul>
-      <a href="mailto:info@ridethewave.nl" class="btn btn--tier">Word partner</a>
-    </div>
-
-    <!-- Tier 3: Hoofdsponsor -->
-    <div class="tier-card fade-up" role="article" aria-label="Hoofdsponsor donorpakket">
-      <span class="tier-emoji" aria-hidden="true">⭐</span>
-      <div class="tier-name">Hoofdsponsor</div>
-      <div class="tier-price">€100</div>
-      <div class="tier-freq">per maand</div>
-      <div class="tier-divider"></div>
-      <ul class="tier-benefits">
-        <li>Alles uit Partner</li>
-        <li>Prominent logo op website en communicatie</li>
-        <li>Naamrecht op een surfboard in ons vloot</li>
-        <li>Jaarlijks sponsorgesprek met onze directeur</li>
-        <li>Vermeld als Hoofdsponsor op al onze materialen</li>
-        <li>Gepersonaliseerde impactrapportage per kwartaal</li>
-      </ul>
-      <a href="mailto:info@ridethewave.nl" class="btn btn--tier">Word hoofdsponsor</a>
+<section class="section section--foam">
+  <div class="container">
+    <div class="intro-grid">
+      <div>
+        <span class="eyebrow eyebrow--foam reveal">Waarom partner worden?</span>
+        <h2 class="sec-h sec-h--xl sec-h--foam reveal reveal-d1">Jouw steun maakt<br>de volgende<br>surfer mogelijk.</h2>
+        <p class="sec-p sec-p--foam reveal reveal-d2">RTW werkt volledig gratis voor deelnemers. Dat lukt alleen dankzij bedrijven en donateurs die geloven in wat sport kan doen voor jongeren. Jij maakt het verschil — en je ziet precies waar jouw bijdrage naartoe gaat.</p>
+        <ul class="check-list reveal reveal-d3">
+          <li class="check-list__item">ANBI-erkend: donaties zijn fiscaal aftrekbaar</li>
+          <li class="check-list__item">Jaarlijkse impactrapportage voor partners</li>
+          <li class="check-list__item">Logo-vermelding op website en materialen</li>
+          <li class="check-list__item">Uitnodiging voor jaarlijkse partnerdag op het strand</li>
+          <li class="check-list__item">Direct contact met RTW-ambassadeurs</li>
+          <li class="check-list__item">Zichtbaar bij presentaties aan gemeenten en fondsen</li>
+        </ul>
+        <div class="dg-strip reveal reveal-d4">
+          <span class="dg-tag dg-tag--sun">ANBI</span>
+          <span class="dg-tag dg-tag--teal">Fiscaal aftrekbaar</span>
+          <span class="dg-tag dg-tag--teal">Impactpartner</span>
+          <span class="dg-tag dg-tag--foam">Transparant</span>
+        </div>
+      </div>
+      <div class="intro-photo reveal reveal-d2">
+        <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=900&q=80" alt="Surfer op golf bij zonsondergang" loading="lazy">
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 5. IMPACT -->
-<section class="section section--foam" aria-labelledby="impact-heading">
-  <div class="section__header--center fade-up">
-    <span class="section__eyebrow">Jouw impact</span>
-    <h2 class="section__title" id="impact-heading">Wat jouw bijdrage mogelijk maakt.</h2>
+<div class="value-prop">
+  <div class="value-prop__inner">
+    <div>
+      <h2 class="value-prop__h">Jij geeft<br>een golf —<br>zij pakken<br><em>de rest.</em></h2>
+    </div>
+    <div>
+      <p class="value-prop__p">Een sponsorbijdrage bij RTW is geen reclame. Het is een directe investering in een jongere die de kans krijgt die hij anders niet zou krijgen. Geen bureaukosten, geen overhead — het geld gaat rechtstreeks naar surfessen, begeleiding en materiaal.</p>
+      <p class="value-prop__p">We laten jou zien wie je helpt. Niet in abstracte statistieken, maar in echte verhalen van echte mensen die door jouw steun opnieuw beginnen.</p>
+      <a href="mailto:info@ridethewave.nl" class="btn btn--sun btn--lg">Stuur ons een mail →</a>
+    </div>
   </div>
+</div>
 
-  <div class="impact-cards">
-    <div class="impact-card fade-up" role="article">
-      <span class="impact-card__amount">€5</span>
-      <span class="impact-card__freq">per maand</span>
-      <span class="impact-card__icon" aria-hidden="true">🏄‍♂️</span>
-      <div class="impact-card__title">1 surfles voor 1 jongere</div>
-      <p class="impact-card__desc">Met vijf euro per maand financier je elke maand een volledige surfles voor één jongere — inclusief instructeur, materiaal en toegang tot het strand.</p>
+<section class="section section--teal" id="mogelijkheden">
+  <div class="container">
+    <div class="fase-intro">
+      <div>
+        <span class="eyebrow eyebrow--sun reveal">Sponsormogelijkheden</span>
+        <h2 class="sec-h sec-h--xl sec-h--foam reveal reveal-d1">Kies jouw<br>niveau van impact.</h2>
+      </div>
+      <div>
+        <p class="sec-p reveal reveal-d2" style="color:rgba(247,241,230,.7);">Van eenmalige donatie tot strategisch partnerschap — er is een manier om bij te dragen die past bij jouw bedrijf of stichting.</p>
+      </div>
     </div>
-
-    <div class="impact-card fade-up" role="article">
-      <span class="impact-card__amount">€25</span>
-      <span class="impact-card__freq">per maand</span>
-      <span class="impact-card__icon" aria-hidden="true">🧥</span>
-      <div class="impact-card__title">Complete uitrusting voor 1 seizoen</div>
-      <p class="impact-card__desc">Vijfentwintig euro per maand dekt in één jaar een volledige wetsuit én surfboard voor een jongere die anders zonder zou moeten — voor een heel seizoen lang.</p>
-    </div>
-
-    <div class="impact-card fade-up" role="article">
-      <span class="impact-card__amount">€100</span>
-      <span class="impact-card__freq">per maand</span>
-      <span class="impact-card__icon" aria-hidden="true">🚌</span>
-      <div class="impact-card__title">Surfbus transport voor een groep</div>
-      <p class="impact-card__desc">De surfbus rijdt elke sessie een hele groep van Amsterdam naar zee. Jouw bijdrage van honderd euro per maand houdt die bus rijdend voor iedereen die anders niet bij het water kan komen.</p>
+    <div class="fase-grid">
+      <div class="fase-card reveal reveal-d1">
+        <span class="fase-card__num">Golfsurfer</span>
+        <div class="fase-card__h">€1.000 per jaar</div>
+        <p class="fase-card__p">Je maakt het surfseizoen van één deelnemer mogelijk. Logo-vermelding op de website en een jaarlijkse impactupdate per mail.</p>
+      </div>
+      <div class="fase-card reveal reveal-d2">
+        <span class="fase-card__num">Crew Partner</span>
+        <div class="fase-card__h">€5.000 per jaar</div>
+        <p class="fase-card__p">Je ondersteunt een hele groep voor één seizoen. Naam op de surfbussen, uitnodiging voor de jaarlijkse strand-dag en een persoonlijk gesprek met de directeur.</p>
+      </div>
+      <div class="fase-card fase-card--accent reveal reveal-d3">
+        <span class="fase-card__num">Wave Maker</span>
+        <div class="fase-card__h">€15.000+ per jaar</div>
+        <p class="fase-card__p">Strategisch partnerschap: co-branded communicatie, aanwezig bij fondspresentaties, directe stem in impactdoelstellingen en een meerjarig partnership op maat.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 6. TESTIMONIAL -->
-<section class="testimonial" aria-label="Donateur testimonial">
-  <div class="testimonial__inner fade-up">
-    <span class="testimonial__quote-mark" aria-hidden="true">"</span>
-    <blockquote>
-      <p class="testimonial__text">
-        "Ik doneer omdat ik weet dat vijfentwintig euro voor mij weinig is —<br>maar voor een kind uit de Bijlmer kan het <em>alles</em> zijn."
-      </p>
-      <footer class="testimonial__attribution">
-        <cite class="testimonial__name">Marieke van den Berg</cite>
-        <span class="testimonial__role">Partner-donor sinds 2022</span>
-      </footer>
-    </blockquote>
+<section class="section section--teal" style="background:var(--deep2);">
+  <div class="container">
+    <span class="eyebrow eyebrow--sun reveal">Onze partners</span>
+    <h2 class="sec-h sec-h--xl sec-h--foam reveal reveal-d1">In goed gezelschap.</h2>
+    <div class="partner-logo-grid">
+      <div class="partner-logo">Stichting DOEN</div>
+      <div class="partner-logo">ISA Nederland</div>
+      <div class="partner-logo">Fonds Sluyterman</div>
+      <div class="partner-logo">ROC Amsterdam</div>
+      <div class="partner-logo">Gemeente Amsterdam</div>
+      <div class="partner-logo">CVOZ</div>
+    </div>
+    <div class="testi-grid reveal reveal-d2" style="margin-top:3rem;">
+      <article class="testi">
+        <blockquote class="testi__quote">"We zochten een partner waarbij we konden zien dat het geld écht werkt. RTW laat je dat zien — niet in een PowerPoint, maar op het strand."</blockquote>
+        <footer class="testi__footer">
+          <span class="testi__name">Directeur, Fonds Sluyterman</span>
+          <span class="testi__detail">Partner sinds 2021</span>
+        </footer>
+      </article>
+      <article class="testi">
+        <blockquote class="testi__quote">"De jongeren die RTW bereikt zijn precies de groep die we als gemeente willen ondersteunen maar moeilijk bereiken. RTW doet wat wij niet kunnen."</blockquote>
+        <footer class="testi__footer">
+          <span class="testi__name">Beleidsadviseur, Gemeente Amsterdam</span>
+          <span class="testi__detail">Subsidierelatie sinds 2020</span>
+        </footer>
+      </article>
+    </div>
   </div>
 </section>
 
 <div class="pull-quote">
-  <p class="pull-quote__q">Investeer in<br><em>potentieel,</em><br>niet in papier.</p>
+  <p class="pull-quote__q">Elke golf begint<br>met iemand<br><em>die duwt.</em></p>
   <div class="pull-quote__rule"></div>
-  <p class="pull-quote__credit">Sponsors · Ride the Wave</p>
+  <p class="pull-quote__credit">Bedrijven &amp; Sponsors · Ride the Wave</p>
 </div>
 
-<!-- 7. CTA HUB -->
-<section class="section section--foam" aria-labelledby="cta-heading">
-  <div class="section__header--center fade-up">
-    <span class="section__eyebrow">Doe mee</span>
-    <h2 class="section__title" id="cta-heading">Klaar om te beginnen?</h2>
-  </div>
-
-  <div class="cta-hub">
-    <a href="mailto:info@ridethewave.nl" class="cta-hub__card fade-up" aria-label="Doneren — Eenmalige of maandelijkse gift">
-      <span class="cta-card__icon" aria-hidden="true">💛</span>
-      <div class="cta-hub__h">Doneren</div>
-      <p class="cta-hub__p">Steun ons met een eenmalige of doorlopende bijdrage. Elke euro gaat direct naar gratis surflessen voor jongeren.</p>
-      <span class="cta-card__link">Start je donatie <span aria-hidden="true">→</span></span>
-    </a>
-
-    <a href="mailto:info@ridethewave.nl" class="cta-hub__card fade-up" aria-label="Sponsor worden — Zakelijk partnerschap">
-      <span class="cta-card__icon" aria-hidden="true">🤝</span>
-      <div class="cta-hub__h">Sponsor worden</div>
-      <p class="cta-hub__p">Wil je als bedrijf of organisatie langdurig verbonden zijn aan RTW? Bekijk onze zakelijke sponsorpakketten.</p>
-      <span class="cta-card__link">Bekijk pakketten <span aria-hidden="true">→</span></span>
-    </a>
-
-    <a href="mailto:info@ridethewave.nl" class="cta-hub__card fade-up" aria-label="Contact — Neem contact op">
-      <span class="cta-card__icon" aria-hidden="true">📧</span>
-      <div class="cta-hub__h">Contact</div>
-      <p class="cta-hub__p">Heb je vragen, een ander idee of wil je gewoon even bellen? We denken graag met je mee over de beste manier om te helpen.</p>
-      <span class="cta-card__link">Neem contact op <span aria-hidden="true">→</span></span>
-    </a>
+<section class="section section--foam" id="contact">
+  <div class="container">
+    <span class="eyebrow eyebrow--teal reveal">Klaar om bij te dragen?</span>
+    <h2 class="sec-h sec-h--xl sec-h--foam reveal reveal-d1">Hoe wil jij<br>het verschil maken?</h2>
+    <div class="cta-hub reveal reveal-d2">
+      <div class="cta-hub__card">
+        <div class="cta-hub__icon">🤝</div>
+        <div class="cta-hub__h">Bedrijfspartner</div>
+        <p class="cta-hub__p">We gaan graag in gesprek over een samenwerking op maat. Stuur een mail naar info@ridethewave.nl en we plannen een kennismaking.</p>
+        <a href="mailto:info@ridethewave.nl" class="btn btn--teal">Contact opnemen →</a>
+      </div>
+      <div class="cta-hub__card">
+        <div class="cta-hub__icon">💛</div>
+        <div class="cta-hub__h">Direct doneren</div>
+        <p class="cta-hub__p">Wil je direct een bijdrage doen? Via onze donateurspagina kun je eenmalig of maandelijks doneren. Fiscaal aftrekbaar via ANBI.</p>
+        <a href="doneren.html" class="btn btn--outline-deep">Doneren →</a>
+      </div>
+      <div class="cta-hub__card">
+        <div class="cta-hub__icon">🏛️</div>
+        <div class="cta-hub__h">Subsidie &amp; fondsen</div>
+        <p class="cta-hub__p">Ben je een fonds of overheidsinstantie? We hebben een impactrapport en ANBI-documentatie beschikbaar voor subsidieaanvragen.</p>
+        <a href="mailto:info@ridethewave.nl" class="btn btn--outline-deep">Impactrapport aanvragen →</a>
+      </div>
+    </div>
   </div>
 </section>
 
