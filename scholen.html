@@ -56,6 +56,10 @@
     .cta-hub__p { font-size:.85rem; color:rgba(14,52,63,.6); line-height:1.7; flex:1; }
     @media(max-width:860px){ .cta-hub{grid-template-columns:1fr;} }
     .hero__actions { display:flex; gap:.75rem; flex-wrap:wrap; margin-top:.25rem; }
+    /* compact hero for B2B pages */
+    .page-hero--short { min-height:52vh; padding-top:clamp(1.5rem,3vw,2.5rem); padding-bottom:clamp(2.5rem,5vw,4.5rem); }
+    .page-hero--short .hero-h1--lg { font-size:clamp(2.8rem,7vw,6rem); }
+    .page-hero--short .hero-sub { font-size:.9rem; }
     .pull-quote { background:var(--foam) !important; padding:clamp(2.5rem,5vw,4rem) clamp(1.5rem,4vw,3rem) !important; text-align:center; }
     .pull-quote .pull-quote__q { font-family:var(--font-d); font-size:clamp(1.5rem,3vw,2.8rem); text-transform:uppercase; line-height:1; color:var(--deep) !important; font-style:italic; letter-spacing:-.01em; max-width:700px; margin:0 auto 1.25rem; }
     .pull-quote .pull-quote__q em { color:var(--teal) !important; font-style:italic; }
@@ -132,7 +136,7 @@
   <div class="hero__accent-bar"></div>
   <div class="hero__content container">
     <p class="eyebrow eyebrow--sun reveal reveal-d1">Scholen &amp; Onderwijs</p>
-    <h1 class="hero-h1 hero-h1--lg reveal reveal-d2">Jongeren<br>bereiken<br>die afhaken.</h1>
+    <h1 class="hero-h1 hero-h1--lg reveal reveal-d2">Scholen &amp;<br>onderwijs.</h1>
     <p class="hero-sub reveal reveal-d3">RTW werkt samen met scholen en onderwijsinstellingen. Jullie kennen de jongere — wij bieden het programma dat ze terugbrengt.</p>
     <div class="hero__actions reveal reveal-d4">
       <a href="mailto:scholen@ridethewave.nl" class="btn btn--sun btn--lg">Plan een gesprek</a>
