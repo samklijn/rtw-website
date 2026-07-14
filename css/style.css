@@ -372,6 +372,7 @@ ul { list-style: none; }
 .section--foam .sec-p--foam { color: rgba(14,52,63,.65); }
 .section--foam .eyebrow--foam { color: var(--teal); border-left-color: var(--teal); }
 .section--foam .eyebrow--teal { color: var(--teal); border-left-color: var(--teal); }
+.section--foam .eyebrow--sun  { color: var(--teal); border-left-color: var(--teal); }
 .section--foam .dg-tag--foam  { background: rgba(14,52,63,.06); color: rgba(14,52,63,.45); border-color: rgba(14,52,63,.1); }
 .section--foam .dg-tag--teal  { background: rgba(28,110,126,.1); }
 .section--foam .btn--outline-foam { color: var(--deep); border-color: rgba(14,52,63,.3); }
