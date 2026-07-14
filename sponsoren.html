@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bedrijven & Sponsors — Ride the Wave</title>
+  <title>Bedrijven &amp; Sponsors — Ride the Wave</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -34,20 +34,16 @@
     .value-prop__h em { color:var(--sun); font-style:normal; }
     .value-prop__p { color:rgba(247,241,230,.72); font-size:1rem; line-height:1.8; margin-bottom:1.75rem; }
     @media(max-width:860px){ .value-prop__inner{grid-template-columns:1fr; gap:2.5rem;} }
-    .fase-intro { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:end; margin-bottom:3rem; }
-    @media(max-width:760px){ .fase-intro{grid-template-columns:1fr; gap:1rem;} }
-    .fase-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.5rem; }
-    .fase-card { background:rgba(255,255,255,.08); border-radius:18px; padding:2rem; border:1.5px solid rgba(255,255,255,.1); display:flex; flex-direction:column; gap:.75rem; transition:border-color .2s; }
-    .fase-card:hover { border-color:rgba(244,189,42,.3); }
-    .fase-card--accent { border-color:rgba(244,189,42,.3); background:rgba(244,189,42,.07); }
-    .fase-card__num { font-family:var(--font-d); font-size:.75rem; text-transform:uppercase; letter-spacing:.15em; color:var(--sun); background:rgba(244,189,42,.12); border:1.5px solid rgba(244,189,42,.2); border-radius:99px; padding:.3rem .9rem; display:inline-block; margin-bottom:.5rem; }
-    .fase-card--accent .fase-card__num { background:var(--sun); color:var(--deep); border-color:var(--sun); }
-    .fase-card__h { font-family:var(--font-d); font-size:1.4rem; text-transform:uppercase; color:var(--foam); line-height:1; }
-    .fase-card__p { font-size:.85rem; color:rgba(247,241,230,.65); line-height:1.65; }
-    .section--teal .testi { background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.1); }
-    .section--teal .testi__name { color:var(--foam); }
-    .section--teal .testi__role { color:rgba(247,241,230,.5); }
-    .section--teal .testi__quote { color:rgba(247,241,230,.85); }
+    .hero__actions { display:flex; gap:.75rem; flex-wrap:wrap; margin-top:.25rem; }
+    .page-hero--short { min-height:56vh; padding-top:clamp(1.5rem,3vw,2.5rem); padding-bottom:clamp(2.5rem,5vw,4.5rem); }
+    .page-hero--short .hero-h1--lg { font-size:clamp(3rem,8vw,6.5rem); }
+    .page-hero--short .hero-sub { font-size:.9rem; }
+    .pull-quote { background:var(--foam) !important; padding:clamp(2.5rem,5vw,4rem) clamp(1.5rem,4vw,3rem) !important; text-align:center; }
+    .pull-quote p { font-size:inherit !important; color:inherit !important; }
+    .pull-quote .pull-quote__q { font-family:var(--font-d); font-size:clamp(1.5rem,3vw,2.8rem) !important; text-transform:uppercase; line-height:1; color:var(--deep) !important; font-style:italic; letter-spacing:-.01em; max-width:700px; margin:0 auto 1.25rem; }
+    .pull-quote .pull-quote__q em { color:var(--teal) !important; font-style:italic; }
+    .pull-quote__rule { width:60px; height:3px; background:var(--teal); margin:0 auto 1.25rem; }
+    .pull-quote .pull-quote__credit { font-size:.72rem !important; font-weight:700; text-transform:uppercase; letter-spacing:.22em; color:rgba(14,52,63,.35) !important; margin:0; }
     .cta-hub { display:grid; grid-template-columns:repeat(3,1fr); gap:1.75rem; }
     .cta-hub__card { background:#fff; border-radius:16px; padding:2.5rem 2rem; border:1.5px solid rgba(14,52,63,.08); box-shadow:0 2px 16px rgba(14,52,63,.06); display:flex; flex-direction:column; gap:1rem; transition:transform .2s, box-shadow .2s; }
     .cta-hub__card:hover { transform:translateY(-4px); box-shadow:0 8px 32px rgba(14,52,63,.1); }
@@ -55,14 +51,40 @@
     .cta-hub__h { font-family:var(--font-d); font-size:1.4rem; text-transform:uppercase; color:var(--deep); line-height:1; }
     .cta-hub__p { font-size:.85rem; color:rgba(14,52,63,.6); line-height:1.7; flex:1; }
     @media(max-width:860px){ .cta-hub{grid-template-columns:1fr;} }
-    .hero__actions { display:flex; gap:.75rem; flex-wrap:wrap; margin-top:.25rem; }
-    .pull-quote { background:var(--foam) !important; padding:clamp(2.5rem,5vw,4rem) clamp(1.5rem,4vw,3rem) !important; text-align:center; }
-    .pull-quote .pull-quote__q { font-family:var(--font-d); font-size:clamp(1.5rem,3vw,2.8rem); text-transform:uppercase; line-height:1; color:var(--deep) !important; font-style:italic; letter-spacing:-.01em; max-width:700px; margin:0 auto 1.25rem; }
-    .pull-quote .pull-quote__q em { color:var(--teal) !important; font-style:italic; }
-    .pull-quote__rule { width:60px; height:3px; background:var(--teal); margin:0 auto 1.25rem; }
-    .pull-quote__credit { font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.22em; color:rgba(14,52,63,.35); }
+    /* impact per euro */
+    .impact-band { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:rgba(255,255,255,.06); border-radius:20px; overflow:hidden; border:1.5px solid rgba(255,255,255,.08); margin-top:2.5rem; }
+    @media(max-width:700px){ .impact-band{grid-template-columns:1fr;} }
+    .impact-cell { padding:2.25rem 2rem; background:rgba(14,52,63,.4); text-align:center; }
+    .impact-cell:nth-child(2) { background:rgba(28,110,126,.25); }
+    .impact-cell__euro { font-family:var(--font-d); font-size:clamp(1.5rem,3vw,2.25rem); text-transform:uppercase; color:var(--sun); line-height:1; margin-bottom:.5rem; }
+    .impact-cell__eq { font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:rgba(247,241,230,.35); margin-bottom:.75rem; }
+    .impact-cell__what { font-family:var(--font-d); font-size:1.1rem; text-transform:uppercase; color:var(--foam); line-height:1.1; margin-bottom:.4rem; }
+    .impact-cell__detail { font-size:.8rem; color:rgba(247,241,230,.5); line-height:1.6; }
+    /* tier cards */
+    .tier-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2.5rem; }
+    @media(max-width:840px){ .tier-grid{grid-template-columns:1fr;} }
+    .tier-card { border-radius:20px; padding:2.5rem 2rem; border:1.5px solid rgba(255,255,255,.1); display:flex; flex-direction:column; gap:.75rem; background:rgba(255,255,255,.06); position:relative; overflow:hidden; transition:transform .2s, border-color .2s; }
+    .tier-card:hover { transform:translateY(-4px); }
+    .tier-card--wave { border-color:rgba(244,189,42,.4); background:linear-gradient(135deg, rgba(244,189,42,.1) 0%, rgba(28,110,126,.15) 100%); }
+    .tier-card--wave::before { content:'MEEST GEKOZEN'; position:absolute; top:1.25rem; right:-2.25rem; background:var(--sun); color:var(--deep); font-size:.6rem; font-weight:900; letter-spacing:.12em; padding:.3rem 3rem; transform:rotate(45deg); }
+    .tier-card__price-wrap { display:flex; align-items:baseline; gap:.4rem; margin-bottom:.25rem; }
+    .tier-card__price { font-family:var(--font-d); font-size:clamp(2.25rem,4.5vw,3.5rem); color:var(--sun); line-height:1; }
+    .tier-card__period { font-size:.8rem; color:rgba(247,241,230,.45); font-weight:500; }
+    .tier-card__name { font-family:var(--font-d); font-size:1.5rem; text-transform:uppercase; color:var(--foam); line-height:1; }
+    .tier-card__tagline { font-size:.85rem; color:rgba(247,241,230,.6); line-height:1.6; margin-bottom:.5rem; }
+    .tier-card__divider { width:100%; height:1px; background:rgba(255,255,255,.1); margin:.25rem 0; }
+    .tier-card__perks { list-style:none; display:flex; flex-direction:column; gap:.55rem; flex:1; }
+    .tier-card__perks li { font-size:.82rem; color:rgba(247,241,230,.7); display:flex; gap:.6rem; align-items:flex-start; line-height:1.5; }
+    .tier-card__perks li::before { content:'✓'; flex-shrink:0; color:var(--sun); font-weight:800; margin-top:.05rem; }
+    .tier-card__cta { margin-top:auto; padding-top:1rem; }
+    .btn--ghost-foam { display:inline-block; padding:.65rem 1.4rem; border:1.5px solid rgba(247,241,230,.25); border-radius:99px; color:var(--foam); font-size:.82rem; font-weight:700; text-decoration:none; text-transform:uppercase; letter-spacing:.06em; transition:background .2s, border-color .2s; }
+    .btn--ghost-foam:hover { background:rgba(247,241,230,.1); border-color:rgba(247,241,230,.4); }
+    .btn--sun-solid { display:inline-block; padding:.65rem 1.4rem; background:var(--sun); border-radius:99px; color:var(--deep); font-size:.82rem; font-weight:800; text-decoration:none; text-transform:uppercase; letter-spacing:.06em; transition:opacity .2s; }
+    .btn--sun-solid:hover { opacity:.9; }
+    /* partner logos */
     .partner-logo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:2rem; }
-    .partner-logo { background:rgba(255,255,255,.07); border-radius:12px; padding:1.25rem; display:flex; align-items:center; justify-content:center; border:1.5px solid rgba(255,255,255,.08); aspect-ratio:3/2; font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:rgba(247,241,230,.4); text-align:center; }
+    .partner-logo { background:rgba(255,255,255,.07); border-radius:12px; padding:1.25rem; display:flex; align-items:center; justify-content:center; border:1.5px solid rgba(255,255,255,.08); aspect-ratio:3/2; font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:rgba(247,241,230,.4); text-align:center; transition:border-color .2s; }
+    .partner-logo:hover { border-color:rgba(247,241,230,.15); }
   </style>
 </head>
 <body>
@@ -124,13 +146,13 @@
 
 <main>
 
-<header class="hero page-hero--short" style="background-image: url('https://images.unsplash.com/photo-1535182463927-440364075d9c?auto=format&fit=crop&w=1800&q=85');">
+<header class="hero page-hero--short" style="background-image: url('https://images.unsplash.com/photo-1535182463927-440364075d9c?auto=format&fit=crop&w=1800&q=85'); background-position:center 35%;">
   <div class="hero__overlay" aria-hidden="true"></div>
   <div class="hero__accent-bar"></div>
   <div class="hero__content container">
     <p class="eyebrow eyebrow--sun reveal reveal-d1">Bedrijven &amp; Sponsors</p>
-    <h1 class="hero-h1 hero-h1--lg reveal reveal-d2">Steun de<br>volgende golf.</h1>
-    <p class="hero-sub reveal reveal-d3">Als sponsor of partner maak je het mogelijk dat jongeren gratis kunnen surfen en kitesurf. Concreet, zichtbaar en met bewezen impact.</p>
+    <h1 class="hero-h1 hero-h1--lg reveal reveal-d2">Jij geeft<br>de golf.</h1>
+    <p class="hero-sub reveal reveal-d3">Als partner maak je het mogelijk dat jongeren gratis kunnen surfen en kitesurfen. Concreet, zichtbaar en met bewezen impact — geen reclame, maar een echte investering in de volgende generatie.</p>
     <div class="hero__actions reveal reveal-d4">
       <a href="mailto:info@ridethewave.nl" class="btn btn--sun btn--lg">Neem contact op</a>
       <a href="#mogelijkheden" class="btn btn--outline-foam">Sponsormogelijkheden →</a>
@@ -161,11 +183,11 @@
       <div>
         <span class="eyebrow eyebrow--foam reveal">Waarom partner worden?</span>
         <h2 class="sec-h sec-h--xl sec-h--foam reveal reveal-d1">Jouw steun maakt<br>de volgende<br>surfer mogelijk.</h2>
-        <p class="sec-p sec-p--foam reveal reveal-d2">RTW werkt volledig gratis voor deelnemers. Dat lukt alleen dankzij bedrijven en donateurs die geloven in wat sport kan doen voor jongeren. Jij maakt het verschil — en je ziet precies waar jouw bijdrage naartoe gaat.</p>
+        <p class="sec-p sec-p--foam reveal reveal-d2">RTW werkt volledig gratis voor deelnemers. Dat lukt alleen dankzij bedrijven en fondsen die geloven in wat sport kan doen voor jongeren. Jij maakt het verschil — en je ziet precies waar jouw bijdrage naartoe gaat.</p>
         <ul class="check-list reveal reveal-d3">
           <li class="check-list__item">ANBI-erkend: donaties zijn fiscaal aftrekbaar</li>
-          <li class="check-list__item">Jaarlijkse impactrapportage voor partners</li>
-          <li class="check-list__item">Logo-vermelding op website en materialen</li>
+          <li class="check-list__item">Jaarlijkse impactrapportage met deelnemersverhalen</li>
+          <li class="check-list__item">Logo-vermelding op website, surfbussen en materialen</li>
           <li class="check-list__item">Uitnodiging voor jaarlijkse partnerdag op het strand</li>
           <li class="check-list__item">Direct contact met RTW-ambassadeurs</li>
           <li class="check-list__item">Zichtbaar bij presentaties aan gemeenten en fondsen</li>
@@ -197,42 +219,106 @@
   </div>
 </div>
 
-<section class="section section--teal" id="mogelijkheden">
+<section class="section" style="background:var(--deep2);">
   <div class="container">
-    <div class="fase-intro">
-      <div>
-        <span class="eyebrow eyebrow--sun reveal">Sponsormogelijkheden</span>
-        <h2 class="sec-h sec-h--xl sec-h--foam reveal reveal-d1">Kies jouw<br>niveau van impact.</h2>
+    <span class="eyebrow eyebrow--sun reveal">Impact per euro</span>
+    <h2 class="sec-h sec-h--xl sec-h--foam reveal reveal-d1">Wat jouw bijdrage<br>concreet doet.</h2>
+    <p class="sec-p reveal reveal-d2" style="color:rgba(247,241,230,.6); max-width:560px;">Geen overhead, geen management fee. Elke euro gaat naar materiaal, transport of begeleiding. Zo vertaalt jouw bijdrage zich direct naar impact op het strand.</p>
+    <div class="impact-band reveal reveal-d2">
+      <div class="impact-cell">
+        <div class="impact-cell__euro">€250</div>
+        <div class="impact-cell__eq">dekt</div>
+        <div class="impact-cell__what">1 volledig seizoen materiaal</div>
+        <p class="impact-cell__detail">Wetsuit, board en leash voor één deelnemer voor een heel jaar</p>
       </div>
-      <div>
-        <p class="sec-p reveal reveal-d2" style="color:rgba(247,241,230,.7);">Van eenmalige donatie tot strategisch partnerschap — er is een manier om bij te dragen die past bij jouw bedrijf of stichting.</p>
+      <div class="impact-cell">
+        <div class="impact-cell__euro">€500</div>
+        <div class="impact-cell__eq">dekt</div>
+        <div class="impact-cell__what">20 surfbus-ritten</div>
+        <p class="impact-cell__detail">Transport voor één groep van huis naar het strand en terug — 20 sessies lang</p>
       </div>
-    </div>
-    <div class="fase-grid">
-      <div class="fase-card reveal reveal-d1">
-        <span class="fase-card__num">Golfsurfer</span>
-        <div class="fase-card__h">€1.000 per jaar</div>
-        <p class="fase-card__p">Je maakt het surfseizoen van één deelnemer mogelijk. Logo-vermelding op de website en een jaarlijkse impactupdate per mail.</p>
-      </div>
-      <div class="fase-card reveal reveal-d2">
-        <span class="fase-card__num">Crew Partner</span>
-        <div class="fase-card__h">€5.000 per jaar</div>
-        <p class="fase-card__p">Je ondersteunt een hele groep voor één seizoen. Naam op de surfbussen, uitnodiging voor de jaarlijkse strand-dag en een persoonlijk gesprek met de directeur.</p>
-      </div>
-      <div class="fase-card fase-card--accent reveal reveal-d3">
-        <span class="fase-card__num">Wave Maker</span>
-        <div class="fase-card__h">€15.000+ per jaar</div>
-        <p class="fase-card__p">Strategisch partnerschap: co-branded communicatie, aanwezig bij fondspresentaties, directe stem in impactdoelstellingen en een meerjarig partnership op maat.</p>
+      <div class="impact-cell">
+        <div class="impact-cell__euro">€1.000</div>
+        <div class="impact-cell__eq">dekt</div>
+        <div class="impact-cell__what">1 volledig deelnemersjaar</div>
+        <p class="impact-cell__detail">Alles voor één jongere: materiaal, transport, coaching en begeleiding voor een vol jaar</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--teal" style="background:var(--deep2);">
+<section class="section section--teal" id="mogelijkheden">
+  <div class="container">
+    <span class="eyebrow eyebrow--sun reveal">Sponsormogelijkheden</span>
+    <h2 class="sec-h sec-h--xl sec-h--foam reveal reveal-d1">Kies jouw<br>niveau van impact.</h2>
+    <p class="sec-p reveal reveal-d2" style="color:rgba(247,241,230,.65); max-width:560px; margin-bottom:0;">Van eenmalige steun tot strategisch partnerschap — er is een manier die past bij jouw bedrijf of stichting.</p>
+    <div class="tier-grid">
+      <div class="tier-card reveal reveal-d1">
+        <div class="tier-card__price-wrap">
+          <div class="tier-card__price">€1K</div>
+          <div class="tier-card__period">/ jaar</div>
+        </div>
+        <div class="tier-card__name">Golfsurfer</div>
+        <p class="tier-card__tagline">Je maakt het surfseizoen van één deelnemer volledig mogelijk.</p>
+        <div class="tier-card__divider"></div>
+        <ul class="tier-card__perks">
+          <li>1 volledig deelnemersjaar gefinancierd</li>
+          <li>Logo-vermelding op de website</li>
+          <li>Jaarlijkse impactupdate per mail</li>
+          <li>Persoonlijk bedankbericht van de deelnemer</li>
+        </ul>
+        <div class="tier-card__cta">
+          <a href="mailto:info@ridethewave.nl" class="btn--ghost-foam">Contact opnemen →</a>
+        </div>
+      </div>
+      <div class="tier-card tier-card--wave reveal reveal-d2">
+        <div class="tier-card__price-wrap">
+          <div class="tier-card__price">€5K</div>
+          <div class="tier-card__period">/ jaar</div>
+        </div>
+        <div class="tier-card__name">Crew Partner</div>
+        <p class="tier-card__tagline">Je ondersteunt een hele groep — zichtbaar aanwezig in alles wat RTW doet.</p>
+        <div class="tier-card__divider"></div>
+        <ul class="tier-card__perks">
+          <li>Naam op de RTW-surfbussen</li>
+          <li>Logo op website en socialmedia</li>
+          <li>Uitnodiging voor de jaarlijkse stranddag</li>
+          <li>Persoonlijk gesprek met de directeur</li>
+          <li>Kwartaalupdate met deelnemersverhalen</li>
+        </ul>
+        <div class="tier-card__cta">
+          <a href="mailto:info@ridethewave.nl" class="btn--sun-solid">Interesse melden →</a>
+        </div>
+      </div>
+      <div class="tier-card reveal reveal-d3">
+        <div class="tier-card__price-wrap">
+          <div class="tier-card__price">€15K+</div>
+          <div class="tier-card__period">/ jaar</div>
+        </div>
+        <div class="tier-card__name">Wave Maker</div>
+        <p class="tier-card__tagline">Strategisch partnerschap: jij co-creëert de impact van RTW.</p>
+        <div class="tier-card__divider"></div>
+        <ul class="tier-card__perks">
+          <li>Co-branded communicatie &amp; campagnes</li>
+          <li>Aanwezig bij gemeente- en fondspresentaties</li>
+          <li>Directe stem in impactdoelstellingen</li>
+          <li>Meerjarig partnercontract op maat</li>
+          <li>Exclusieve toegang tot RTW-events</li>
+          <li>Named sponsorship op materialen</li>
+        </ul>
+        <div class="tier-card__cta">
+          <a href="mailto:info@ridethewave.nl" class="btn--ghost-foam">Neem contact op →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--deep2);">
   <div class="container">
     <span class="eyebrow eyebrow--sun reveal">Onze partners</span>
     <h2 class="sec-h sec-h--xl sec-h--foam reveal reveal-d1">In goed gezelschap.</h2>
-    <div class="partner-logo-grid">
+    <div class="partner-logo-grid reveal reveal-d2">
       <div class="partner-logo">Stichting DOEN</div>
       <div class="partner-logo">ISA Nederland</div>
       <div class="partner-logo">Fonds Sluyterman</div>
@@ -240,7 +326,7 @@
       <div class="partner-logo">Gemeente Amsterdam</div>
       <div class="partner-logo">CVOZ</div>
     </div>
-    <div class="testi-grid reveal reveal-d2" style="margin-top:3rem;">
+    <div class="testi-grid reveal reveal-d3" style="margin-top:3rem;">
       <article class="testi">
         <blockquote class="testi__quote">"We zochten een partner waarbij we konden zien dat het geld écht werkt. RTW laat je dat zien — niet in een PowerPoint, maar op het strand."</blockquote>
         <footer class="testi__footer">
@@ -253,6 +339,13 @@
         <footer class="testi__footer">
           <span class="testi__name">Beleidsadviseur, Gemeente Amsterdam</span>
           <span class="testi__detail">Subsidierelatie sinds 2020</span>
+        </footer>
+      </article>
+      <article class="testi">
+        <blockquote class="testi__quote">"Onze medewerkers wilden iets bijdragen dat ze konden zien. RTW's stranddag was het meest impactvolle teammoment van het jaar. We verlengen altijd."</blockquote>
+        <footer class="testi__footer">
+          <span class="testi__name">CSR Manager</span>
+          <span class="testi__detail">Crew Partner sinds 2023</span>
         </footer>
       </article>
     </div>
@@ -273,7 +366,7 @@
       <div class="cta-hub__card">
         <div class="cta-hub__icon">🤝</div>
         <div class="cta-hub__h">Bedrijfspartner</div>
-        <p class="cta-hub__p">We gaan graag in gesprek over een samenwerking op maat. Stuur een mail naar info@ridethewave.nl en we plannen een kennismaking.</p>
+        <p class="cta-hub__p">We gaan graag in gesprek over een samenwerking op maat. Mail info@ridethewave.nl en we plannen een kennismaking op kantoor of op het strand.</p>
         <a href="mailto:info@ridethewave.nl" class="btn btn--teal">Contact opnemen →</a>
       </div>
       <div class="cta-hub__card">
@@ -284,7 +377,7 @@
       </div>
       <div class="cta-hub__card">
         <div class="cta-hub__icon">🏛️</div>
-        <div class="cta-hub__h">Subsidie &amp; fondsen</div>
+        <div class="cta-hub__h">Fonds of subsidie</div>
         <p class="cta-hub__p">Ben je een fonds of overheidsinstantie? We hebben een impactrapport en ANBI-documentatie beschikbaar voor subsidieaanvragen.</p>
         <a href="mailto:info@ridethewave.nl" class="btn btn--outline-deep">Impactrapport aanvragen →</a>
       </div>
