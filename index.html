@@ -249,19 +249,16 @@
 
     /* ── Pull quote ── */
     .pull-quote {
-      background:var(--deep2) !important; padding:clamp(1.75rem,3vw,2.5rem) clamp(1.5rem,4vw,3rem) !important;
+      background:var(--foam) !important; padding:clamp(2.5rem,5vw,4rem) clamp(1.5rem,4vw,3rem) !important;
       text-align:center;
     }
-    /* Higher specificity to override style.css `.pull-quote p { color: var(--deep) }` */
+    .pull-quote p { font-size:inherit !important; color:inherit !important; }
     .pull-quote .pull-quote__q {
-      font-family:var(--font-d); font-size:clamp(1.5rem,3vw,2.8rem);
+      font-family:var(--font-d); font-size:clamp(1.5rem,3vw,2.8rem) !important;
       text-transform:uppercase; line-height:1; color:var(--deep) !important; font-style:italic;
-      letter-spacing:-.01em; max-width:700px; margin:0 auto 1.25rem;
+      letter-spacing:-.01em; max-width:700px; margin:0 auto;
     }
     .pull-quote .pull-quote__q em { color:var(--teal) !important; font-style:italic; }
-    .pull-quote .pull-quote__q s { color:transparent !important; -webkit-text-stroke:2px rgba(255,255,255,.2);
-      text-decoration:none; font-style:italic; }
-      letter-spacing:.22em; color:rgba(247,241,230,.35); }
 
     /* ── CTA Hub (3 cards) ── */
     .cta-hub { display:grid; grid-template-columns:repeat(3,1fr); gap:1.75rem; }
