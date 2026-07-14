@@ -39,6 +39,22 @@
     .cta-hub__p { font-size:.85rem; color:rgba(14,52,63,.6); line-height:1.7; flex:1; }
     @media(max-width:860px){ .cta-hub{grid-template-columns:1fr;} }
     .hero__actions { display:flex; gap:.75rem; flex-wrap:wrap; margin-top:.25rem; }
+    .intro-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
+    .intro-photo { border-radius:20px; overflow:hidden; aspect-ratio:4/3; clip-path:polygon(0 0,88% 0,100% 8%,100% 92%,88% 100%,0 100%); }
+    .intro-photo img { width:100%; height:100%; object-fit:cover; }
+    @media(max-width:860px){ .intro-grid{grid-template-columns:1fr;} }
+    .check-list { list-style:none; display:flex; flex-direction:column; gap:.75rem; margin:1.5rem 0 2rem; }
+    .check-list__item { display:flex; align-items:flex-start; gap:.75rem; font-size:.9rem; color:rgba(14,52,63,.75); line-height:1.55; }
+    .check-list__item::before { content:'✓'; flex-shrink:0; width:1.4rem; height:1.4rem; background:var(--teal); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.65rem; font-weight:800; margin-top:.1rem; }
+    .fase-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.5rem; }
+    .fase-card { background:rgba(255,255,255,.08); border-radius:18px; padding:2rem; border:1.5px solid rgba(255,255,255,.1); display:flex; flex-direction:column; gap:.75rem; transition:border-color .2s; }
+    .fase-card:hover { border-color:rgba(244,189,42,.3); }
+    .fase-card__num { font-family:var(--font-d); font-size:.75rem; text-transform:uppercase; letter-spacing:.15em; color:var(--sun); background:rgba(244,189,42,.12); border:1.5px solid rgba(244,189,42,.2); border-radius:99px; padding:.3rem .9rem; display:inline-block; margin-bottom:.5rem; }
+    .fase-card__h { font-family:var(--font-d); font-size:1.4rem; text-transform:uppercase; color:var(--foam); line-height:1; }
+    .fase-card__p { font-size:.85rem; color:rgba(247,241,230,.65); line-height:1.65; }
+    .section--teal .testi { background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.1); }
+    .section--teal .testi__name { color:var(--foam); }
+    .section--teal .testi__quote { color:rgba(247,241,230,.85); }
     .pull-quote { background:var(--foam) !important; padding:clamp(1.75rem,3vw,2.5rem) clamp(1.5rem,4vw,3rem) !important; text-align:center; }
     .pull-quote .pull-quote__q { font-family:var(--font-d); font-size:clamp(1.5rem,3vw,2.8rem); text-transform:uppercase; line-height:1; color:var(--deep) !important; font-style:italic; letter-spacing:-.01em; max-width:700px; margin:0 auto 1.25rem; }
     .pull-quote .pull-quote__q em { color:var(--teal) !important; font-style:italic; }
@@ -136,6 +152,27 @@
   </div>
 </div>
 
+<section class="section section--foam">
+  <div class="container">
+    <div class="intro-grid">
+      <div>
+        <span class="eyebrow eyebrow--foam reveal">Wie zijn we</span>
+        <h2 class="sec-h sec-h--xl sec-h--foam reveal reveal-d1">Coaches die het<br>zelf meegemaakt<br>hebben.</h2>
+        <p class="sec-p sec-p--foam reveal reveal-d2">Bij RTW zijn de meeste coaches oud-deelnemers. Ze weten hoe het voelt om vast te zitten — en ze begrijpen precies wat het kost om opnieuw te beginnen.</p>
+        <ul class="check-list reveal reveal-d3">
+          <li class="check-list__item">12 actieve coaches in 2026</li>
+          <li class="check-list__item">8 coaches zijn zelf oud-deelnemer van RTW</li>
+          <li class="check-list__item">ISA-gecertificeerd of volop in opleiding</li>
+          <li class="check-list__item">Actief in Amsterdam, Den Haag en Rotterdam</li>
+        </ul>
+      </div>
+      <div class="intro-photo reveal reveal-d2">
+        <img src="https://images.unsplash.com/photo-1526342122811-2a9c8512023d?auto=format&fit=crop&w=900&q=80" alt="Surfer op de golf" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section section--foam" id="team">
   <div class="container">
     <span class="eyebrow eyebrow--foam reveal">Het team</span>
@@ -197,6 +234,60 @@
     </div>
   </div>
 </div>
+
+<section class="section section--teal">
+  <div class="container">
+    <span class="eyebrow eyebrow--sun reveal">Hoe word je coach?</span>
+    <h2 class="sec-h sec-h--xl sec-h--foam reveal reveal-d1">Drie stappen<br>naar coach worden.</h2>
+    <div class="fase-grid" style="margin-top:2.5rem;">
+      <div class="fase-card reveal reveal-d1">
+        <span class="fase-card__num">01</span>
+        <div class="fase-card__h">Deelnemen</div>
+        <p class="fase-card__p">Elke coach begint als deelnemer. Je gaat de zee op, doorloopt de fases en ontdekt wat surfen doet voor je zelfvertrouwen en aanpak.</p>
+      </div>
+      <div class="fase-card reveal reveal-d2">
+        <span class="fase-card__num">02</span>
+        <div class="fase-card__h">ISA-certificaat halen</div>
+        <p class="fase-card__p">Na fase 3 kun je door voor je ISA Level 1-instructeurscertificaat. RTW betaalt de opleiding — jij levert het doorzettingsvermogen.</p>
+      </div>
+      <div class="fase-card reveal reveal-d3">
+        <span class="fase-card__num">03</span>
+        <div class="fase-card__h">Coach worden</div>
+        <p class="fase-card__p">Gecertificeerde oud-deelnemers kunnen instromen als betaald coach. Je begeleidt nieuwe deelnemers — en betaalt het terug aan de volgende generatie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--teal" style="background:var(--deep2);">
+  <div class="container">
+    <span class="eyebrow eyebrow--sun reveal">Het team vertelt</span>
+    <h2 class="sec-h sec-h--xl sec-h--foam reveal reveal-d1">Waarom we dit doen.</h2>
+    <div class="testi-grid reveal reveal-d2">
+      <article class="testi">
+        <blockquote class="testi__quote">"Ik was deelnemer. Nu ben ik coach. Dat was nooit mijn plan — maar het is het beste wat me ooit overkomen is."</blockquote>
+        <footer class="testi__footer">
+          <span class="testi__name">Nour El-Amin</span>
+          <span class="testi__detail">Coach &amp; oud-deelnemer · Amsterdam</span>
+        </footer>
+      </article>
+      <article class="testi">
+        <blockquote class="testi__quote">"Coaching bij RTW voelt niet als werk. Het is terugbetalen aan iets wat je zelf gekregen hebt. Dat maakt het anders."</blockquote>
+        <footer class="testi__footer">
+          <span class="testi__name">Jaylen Martis</span>
+          <span class="testi__detail">Head Coach Amsterdam-Noord</span>
+        </footer>
+      </article>
+      <article class="testi">
+        <blockquote class="testi__quote">"We starten elke dag met de vraag: wat heeft deze jongere nodig? Niet: wat heeft het programma nodig. Dat is het verschil."</blockquote>
+        <footer class="testi__footer">
+          <span class="testi__name">Kai van den Berg</span>
+          <span class="testi__detail">Oprichter &amp; directeur RTW</span>
+        </footer>
+      </article>
+    </div>
+  </div>
+</section>
 
 <div class="pull-quote">
   <p class="pull-quote__q">Wij doen dit<br>omdat we weten<br>hoe het <em>voelt.</em></p>

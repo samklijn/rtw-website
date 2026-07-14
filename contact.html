@@ -35,6 +35,15 @@
     .cta-hub__p { font-size:.85rem; color:rgba(14,52,63,.6); line-height:1.7; flex:1; }
     @media(max-width:860px){ .cta-hub{grid-template-columns:1fr;} }
     .hero__actions { display:flex; gap:.75rem; flex-wrap:wrap; margin-top:.25rem; }
+    .fase-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.5rem; }
+    .fase-card { background:rgba(255,255,255,.08); border-radius:18px; padding:2rem; border:1.5px solid rgba(255,255,255,.1); display:flex; flex-direction:column; gap:.75rem; transition:border-color .2s; }
+    .fase-card:hover { border-color:rgba(244,189,42,.3); }
+    .fase-card__num { font-family:var(--font-d); font-size:.75rem; text-transform:uppercase; letter-spacing:.15em; color:var(--sun); background:rgba(244,189,42,.12); border:1.5px solid rgba(244,189,42,.2); border-radius:99px; padding:.3rem .9rem; display:inline-block; margin-bottom:.5rem; }
+    .fase-card__h { font-family:var(--font-d); font-size:1.4rem; text-transform:uppercase; color:var(--foam); line-height:1; }
+    .fase-card__p { font-size:.85rem; color:rgba(247,241,230,.65); line-height:1.65; }
+    .section--teal .testi { background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.1); }
+    .section--teal .testi__name { color:var(--foam); }
+    .section--teal .testi__quote { color:rgba(247,241,230,.85); }
     .pull-quote { background:var(--foam) !important; padding:clamp(1.75rem,3vw,2.5rem) clamp(1.5rem,4vw,3rem) !important; text-align:center; }
     .pull-quote .pull-quote__q { font-family:var(--font-d); font-size:clamp(1.5rem,3vw,2.8rem); text-transform:uppercase; line-height:1; color:var(--deep) !important; font-style:italic; letter-spacing:-.01em; max-width:700px; margin:0 auto 1.25rem; }
     .pull-quote .pull-quote__q em { color:var(--teal) !important; font-style:italic; }
@@ -220,6 +229,60 @@
     </div>
   </div>
 </div>
+
+<section class="section section--teal">
+  <div class="container">
+    <span class="eyebrow eyebrow--sun reveal">Drie redenen om te schrijven</span>
+    <h2 class="sec-h sec-h--xl sec-h--foam reveal reveal-d1">We helpen je<br>snel verder.</h2>
+    <div class="fase-grid" style="margin-top:2.5rem;">
+      <div class="fase-card reveal reveal-d1">
+        <span class="fase-card__num">Deelnemen</span>
+        <div class="fase-card__h">Aanmelden als deelnemer</div>
+        <p class="fase-card__p">Ben je tussen de 14 en 23 jaar? Vul het contactformulier in — we reageren binnen één werkdag en begeleiden je door het aanmeldproces.</p>
+      </div>
+      <div class="fase-card reveal reveal-d2">
+        <span class="fase-card__num">Samenwerken</span>
+        <div class="fase-card__h">Samenwerking aanvragen</div>
+        <p class="fase-card__p">School, gemeente of bedrijf? We plannen graag een vrijblijvend kennismakingsgesprek om te kijken wat bij jouw organisatie past.</p>
+      </div>
+      <div class="fase-card reveal reveal-d3">
+        <span class="fase-card__num">Doneren</span>
+        <div class="fase-card__h">Donatie of sponsoring</div>
+        <p class="fase-card__p">Wil je RTW financieel steunen? We beantwoorden vragen over ANBI, periodieke giften en fiscale aftrekbaarheid — altijd persoonlijk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--teal" style="background:var(--deep2);">
+  <div class="container">
+    <span class="eyebrow eyebrow--sun reveal">Ervaring van anderen</span>
+    <h2 class="sec-h sec-h--xl sec-h--foam reveal reveal-d1">Wat mensen zeggen<br>over contact met RTW.</h2>
+    <div class="testi-grid reveal reveal-d2">
+      <article class="testi">
+        <blockquote class="testi__quote">"Ik stuurde een berichtje zonder te weten wat ik kon verwachten. Dezelfde dag had ik antwoord — en twee weken later stond ik op het strand."</blockquote>
+        <footer class="testi__footer">
+          <span class="testi__name">Yasmine, 19</span>
+          <span class="testi__detail">Deelnemer · Rotterdam</span>
+        </footer>
+      </article>
+      <article class="testi">
+        <blockquote class="testi__quote">"We vroegen om een kennismaking. Binnen twee dagen was er iemand van RTW bij ons op school. Zo snel werkt dat hier."</blockquote>
+        <footer class="testi__footer">
+          <span class="testi__name">Decaan VMBO-T</span>
+          <span class="testi__detail">Partnerschool Amsterdam-Noord</span>
+        </footer>
+      </article>
+      <article class="testi">
+        <blockquote class="testi__quote">"Ik belde met een vraag over doneren. Ze namen de tijd en legden alles uit — nooit het gevoel dat het alleen om het geld ging."</blockquote>
+        <footer class="testi__footer">
+          <span class="testi__name">Particuliere donor</span>
+          <span class="testi__detail">Donateur vanaf 2023</span>
+        </footer>
+      </article>
+    </div>
+  </div>
+</section>
 
 <div class="pull-quote">
   <p class="pull-quote__q">Elke grote reis<br>begint met een<br><em>eerste bericht.</em></p>

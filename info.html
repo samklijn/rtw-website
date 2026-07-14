@@ -49,6 +49,15 @@
     .cta-hub__p { font-size:.85rem; color:rgba(14,52,63,.6); line-height:1.7; flex:1; }
     @media(max-width:860px){ .cta-hub{grid-template-columns:1fr;} }
     .hero__actions { display:flex; gap:.75rem; flex-wrap:wrap; margin-top:.25rem; }
+    .fase-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.5rem; }
+    .fase-card { background:rgba(255,255,255,.08); border-radius:18px; padding:2rem; border:1.5px solid rgba(255,255,255,.1); display:flex; flex-direction:column; gap:.75rem; transition:border-color .2s; }
+    .fase-card:hover { border-color:rgba(244,189,42,.3); }
+    .fase-card__num { font-family:var(--font-d); font-size:.75rem; text-transform:uppercase; letter-spacing:.15em; color:var(--sun); background:rgba(244,189,42,.12); border:1.5px solid rgba(244,189,42,.2); border-radius:99px; padding:.3rem .9rem; display:inline-block; margin-bottom:.5rem; }
+    .fase-card__h { font-family:var(--font-d); font-size:1.4rem; text-transform:uppercase; color:var(--foam); line-height:1; }
+    .fase-card__p { font-size:.85rem; color:rgba(247,241,230,.65); line-height:1.65; }
+    .section--teal .testi { background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.1); }
+    .section--teal .testi__name { color:var(--foam); }
+    .section--teal .testi__quote { color:rgba(247,241,230,.85); }
     /* Timeline */
     .timeline { display:flex; flex-direction:column; gap:0; margin-top:2.5rem; max-width:700px; }
     .tl-item { display:grid; grid-template-columns:80px 1fr; gap:2rem; padding-bottom:2.5rem; position:relative; }
@@ -124,7 +133,7 @@
   <div class="hero__accent-bar"></div>
   <div class="hero__content container">
     <p class="eyebrow eyebrow--sun reveal reveal-d1">Over RTW · Team · Contact</p>
-    <h1 class="hero-h1 hero-h1--lg reveal reveal-d2">Dit is<br>Ride the<br>Wave.</h1>
+    <h1 class="hero-h1 hero-h1--lg reveal reveal-d2">Ride the<br>Wave.</h1>
     <p class="hero-sub reveal reveal-d3">Een stichting opgericht vanuit één overtuiging: elk talent verdient een kans — ongeacht postcode, schoolresultaten of thuissituatie.</p>
     <div class="hero__actions reveal reveal-d4">
       <a href="verhaal.html" class="btn btn--sun btn--lg">Ons verhaal</a>
@@ -264,6 +273,36 @@
           <p class="tl-body__p">Utrechtse samenwerking in voorbereiding. 12 vaste coaches. En nog altijd: geen deelnemer betaalt ooit iets.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--teal" style="background:var(--deep2);">
+  <div class="container">
+    <span class="eyebrow eyebrow--sun reveal">Wat mensen zeggen</span>
+    <h2 class="sec-h sec-h--xl sec-h--foam reveal reveal-d1">Waarom mensen<br>geloven in RTW.</h2>
+    <div class="testi-grid reveal reveal-d2">
+      <article class="testi">
+        <blockquote class="testi__quote">"RTW laat zien dat sport meer is dan bewegen. Het is een plek waar jongeren zichzelf opnieuw uitvinden — en dat is precies wat we als samenleving nodig hebben."</blockquote>
+        <footer class="testi__footer">
+          <span class="testi__name">Wethouder Onderwijs &amp; Jeugd</span>
+          <span class="testi__detail">Gemeente Amsterdam</span>
+        </footer>
+      </article>
+      <article class="testi">
+        <blockquote class="testi__quote">"Ik begon als deelnemer en dacht: dit is voor mij. Nu run ik mee aan het programma en zie ik elke week hoe jongeren groeien. Dat stopt niet."</blockquote>
+        <footer class="testi__footer">
+          <span class="testi__name">Nour El-Amin</span>
+          <span class="testi__detail">Oud-deelnemer &amp; coach RTW</span>
+        </footer>
+      </article>
+      <article class="testi">
+        <blockquote class="testi__quote">"We steunden RTW omdat we het probleem herkennen. De impact die ze laten zien gaat verder dan we verwacht hadden — in cijfers én in verhalen."</blockquote>
+        <footer class="testi__footer">
+          <span class="testi__name">Directeur, Fonds Sluyterman</span>
+          <span class="testi__detail">Partner van RTW</span>
+        </footer>
+      </article>
     </div>
   </div>
 </section>
