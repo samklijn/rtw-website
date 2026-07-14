@@ -20,7 +20,7 @@
     .intro-photo img { width:100%; height:100%; object-fit:cover; }
     @media(max-width:860px){ .intro-grid{grid-template-columns:1fr;} }
     .value-prop { background:var(--deep2); padding:clamp(4rem,8vw,7rem) clamp(1.5rem,4vw,3rem); position:relative; overflow:hidden; }
-    .value-prop::before { content:''; position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat; opacity:.07; pointer-events:none; }
+    .value-prop::before { content:''; position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1531722569936-825d4edc943e?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat; opacity:.07; pointer-events:none; }
     .value-prop__inner { position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; max-width:1100px; margin:0 auto; }
     .value-prop__h { font-family:var(--font-d); font-size:clamp(2.5rem,5vw,4.5rem); text-transform:uppercase; line-height:.95; color:var(--foam); letter-spacing:-.01em; }
     .value-prop__h em { color:var(--sun); font-style:normal; }
@@ -49,6 +49,7 @@
     .pull-quote .pull-quote__q { font-family:var(--font-d); font-size:clamp(1.5rem,3vw,2.8rem); text-transform:uppercase; line-height:1; color:var(--deep) !important; font-style:italic; letter-spacing:-.01em; max-width:700px; margin:0 auto 1.25rem; }
     .pull-quote .pull-quote__q em { color:var(--teal) !important; font-style:italic; }
     .pull-quote__rule { width:60px; height:3px; background:var(--teal); margin:0 auto 1.25rem; }
+    .pull-quote__credit { font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.22em; color:rgba(14,52,63,.35); }
   </style>
 </head>
 <body>
@@ -110,7 +111,7 @@
 
 <main>
 
-<header class="hero page-hero--short" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1800&q=85'); background-position:center 40%;">
+<header class="hero page-hero--short" style="background-image: url('https://images.unsplash.com/photo-1531722569936-825d4edc943e?auto=format&fit=crop&w=1800&q=85'); background-position:center 40%;">
   <div class="hero__overlay" aria-hidden="true"></div>
   <div class="hero__accent-bar"></div>
   <div class="hero__content container">
@@ -243,6 +244,7 @@
 <div class="pull-quote">
   <p class="pull-quote__q">Eén golf<br>veranderde alles.<br><em>Jij bent volgende.</em></p>
   <div class="pull-quote__rule"></div>
+  <p class="pull-quote__credit">Ons verhaal · Ride the Wave</p>
 </div>
 
 <section class="section section--foam" id="meedoen">

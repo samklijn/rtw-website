@@ -122,7 +122,7 @@
 
 <main>
 
-<header class="hero page-hero--short" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1800&q=85');">
+<header class="hero page-hero--short" style="background-image: url('https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85');">
   <div class="hero__overlay" aria-hidden="true"></div>
   <div class="hero__accent-bar"></div>
   <div class="hero__content container">
@@ -326,12 +326,9 @@
 <script>
 (function(){
   document.querySelectorAll('.nav-drop').forEach(function(d){
-    var t = d.querySelector('.nav-drop__t');
-    if (t.tagName === 'A') {
-      t.addEventListener('click', function(e){ e.stopPropagation(); });
-    }
-    d.addEventListener('mouseenter', function(){ d.classList.add('is-open'); });
-    d.addEventListener('mouseleave', function(){ d.classList.remove('is-open'); });
+    d.querySelector('.nav-drop__t').addEventListener('click', function(e){
+      e.preventDefault(); d.classList.toggle('is-open');
+    });
   });
   document.addEventListener('click', function(e){
     if(!e.target.closest('.nav-drop')) document.querySelectorAll('.nav-drop').forEach(function(d){ d.classList.remove('is-open'); });

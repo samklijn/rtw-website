@@ -39,6 +39,14 @@
     .pull-quote .pull-quote__q { font-family:var(--font-d); font-size:clamp(1.5rem,3vw,2.8rem); text-transform:uppercase; line-height:1; color:var(--deep) !important; font-style:italic; letter-spacing:-.01em; max-width:700px; margin:0 auto 1.25rem; }
     .pull-quote .pull-quote__q em { color:var(--teal) !important; font-style:italic; }
     .pull-quote__rule { width:60px; height:3px; background:var(--teal); margin:0 auto 1.25rem; }
+    .pull-quote__credit { font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.22em; color:rgba(14,52,63,.35); }
+    .value-prop { background:var(--deep2); padding:clamp(4rem,8vw,7rem) clamp(1.5rem,4vw,3rem); position:relative; overflow:hidden; }
+    .value-prop::before { content:''; position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1531722569936-825d4edc943e?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat; opacity:.07; pointer-events:none; }
+    .value-prop__inner { position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; max-width:1100px; margin:0 auto; }
+    .value-prop__h { font-family:var(--font-d); font-size:clamp(2.5rem,5vw,4.5rem); text-transform:uppercase; line-height:.95; color:var(--foam); letter-spacing:-.01em; }
+    .value-prop__h em { color:var(--sun); font-style:normal; }
+    .value-prop__p { color:rgba(247,241,230,.72); font-size:1rem; line-height:1.8; margin-bottom:1.75rem; }
+    @media(max-width:860px){ .value-prop__inner{grid-template-columns:1fr; gap:2.5rem;} }
   </style>
 </head>
 <body>
@@ -113,6 +121,23 @@
   </div>
 </header>
 
+<div class="stats-band">
+  <div class="container">
+    <div class="stat-card reveal reveal-d1">
+      <div class="stat-card__n">&lt; 1 dag</div>
+      <div class="stat-card__l">Gemiddelde reactietijd<br>op je bericht</div>
+    </div>
+    <div class="stat-card reveal reveal-d2">
+      <div class="stat-card__n">3</div>
+      <div class="stat-card__l">Steden: Amsterdam,<br>Den Haag &amp; Rotterdam</div>
+    </div>
+    <div class="stat-card reveal reveal-d3">
+      <div class="stat-card__n">2</div>
+      <div class="stat-card__l">Programma's: golfsurfen<br>en kitesurfen</div>
+    </div>
+  </div>
+</div>
+
 <section class="section section--foam" id="contact">
   <div class="container">
     <div class="contact-grid">
@@ -183,9 +208,23 @@
   </div>
 </section>
 
+<div class="value-prop">
+  <div class="value-prop__inner">
+    <div>
+      <h2 class="value-prop__h">We reageren<br>altijd <em>persoonlijk.</em></h2>
+    </div>
+    <div>
+      <p class="value-prop__p">Geen automatische e-mails, geen wachtrijen. Als je ons schrijft, antwoordt een echte persoon — iemand die het programma kent en jouw vraag serieus neemt.</p>
+      <p class="value-prop__p">Voor vragen over aanmelden, samenwerken of doneren zijn we bereikbaar via e-mail en WhatsApp. We reageren gemiddeld binnen één werkdag.</p>
+      <a href="mailto:info@ridethewave.nl" class="btn btn--sun btn--lg">Mail ons direct →</a>
+    </div>
+  </div>
+</div>
+
 <div class="pull-quote">
   <p class="pull-quote__q">Elke grote reis<br>begint met een<br><em>eerste bericht.</em></p>
   <div class="pull-quote__rule"></div>
+  <p class="pull-quote__credit">Contact · Ride the Wave</p>
 </div>
 
 <section class="section section--foam" id="meer">
