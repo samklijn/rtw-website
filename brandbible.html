@@ -1,0 +1,1032 @@
+<title>Ride the Wave — Brand Bible 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0E343F;
+  --deep:#081f27;
+  --teal:#1C6E7E;
+  --teal-lt:#2a8899;
+  --sun:#F4BD2A;
+  --foam:#F7F1E6;
+  --d:Anton,sans-serif;
+  --b:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--b);background:#fff;color:var(--navy);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* ── STACKED LOGO: RIDE / THE / WAVE ── */
+.logo{display:inline-flex;flex-direction:column;line-height:1;gap:0;user-select:none}
+.logo__r{font-family:var(--d);text-transform:uppercase;letter-spacing:.04em;display:block;line-height:.88}
+.logo__tagline{font-family:var(--b);font-weight:700;letter-spacing:.28em;text-transform:uppercase;opacity:.4;margin-top:.2em}
+/* sizes */
+.logo--xl .logo__r{font-size:clamp(4rem,11vw,9rem)}
+.logo--xl .logo__tagline{font-size:.32em}
+.logo--lg .logo__r{font-size:clamp(2.5rem,6vw,5rem)}
+.logo--lg .logo__tagline{font-size:.32em}
+.logo--md .logo__r{font-size:clamp(1.6rem,3.5vw,2.5rem)}
+.logo--md .logo__tagline{font-size:.35em}
+.logo--sm .logo__r{font-size:1rem}
+.logo--sm .logo__tagline{font-size:.55em}
+/* colour variants */
+.logo--light .logo__r{color:var(--foam)}
+.logo--light .logo__tagline{color:var(--foam)}
+.logo--dark .logo__r{color:var(--navy)}
+.logo--dark .logo__tagline{color:var(--navy)}
+/* wave accent */
+.logo .logo__r--wave{color:var(--sun)}
+.logo--dark .logo__r--wave{color:var(--teal)}
+
+/* ── LAYOUT ── */
+.page{position:relative;overflow:hidden}
+.pad{padding:clamp(4rem,8vw,7rem) clamp(2rem,7vw,7rem)}
+.pad--lg{padding:clamp(6rem,10vw,9rem) clamp(2rem,7vw,7rem)}
+.pad--sm{padding:clamp(2.5rem,5vw,4rem) clamp(2rem,7vw,7rem)}
+.inner{max-width:1200px;margin:0 auto}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,5vw,6rem)}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+
+/* ── TYPE ── */
+.d1{font-family:var(--d);font-size:clamp(3.5rem,9vw,8rem);text-transform:uppercase;line-height:.88;letter-spacing:-.02em}
+.d2{font-family:var(--d);font-size:clamp(2.5rem,5.5vw,5rem);text-transform:uppercase;line-height:.9;letter-spacing:-.01em}
+.d3{font-family:var(--d);font-size:clamp(1.8rem,3.5vw,3rem);text-transform:uppercase;line-height:.92}
+.d4{font-family:var(--d);font-size:clamp(1.1rem,2vw,1.6rem);text-transform:uppercase;line-height:1}
+.t-foam{color:var(--foam)}.t-navy{color:var(--navy)}.t-sun{color:var(--sun)}.t-teal{color:var(--teal-lt)}
+em.a{font-style:italic;color:var(--sun)}
+em.at{font-style:italic;color:var(--teal-lt)}
+.body{font-size:clamp(.88rem,1.5vw,1rem);line-height:1.85;font-weight:400;max-width:56ch}
+.body--light{color:rgba(247,241,230,.82)}
+.body--dark{color:rgba(14,52,63,.72)}
+.rule{width:48px;height:3px;background:var(--sun);margin:2rem 0;flex-shrink:0}
+.ch__label{font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.35em;color:var(--sun);display:block;margin-bottom:2.5rem}
+
+/* ── CHAPTER STRIP ── */
+.strip{background:var(--navy);padding:.85rem clamp(2rem,7vw,7rem);display:flex;align-items:center;gap:2rem;border-top:1px solid rgba(247,241,230,.06);border-bottom:1px solid rgba(247,241,230,.06)}
+.strip__num{font-family:var(--d);font-size:.95rem;color:rgba(244,189,42,.8);letter-spacing:.08em}
+.strip__title{font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.3em;color:rgba(247,241,230,.6)}
+.strip__line{flex:1;height:1px;background:rgba(247,241,230,.15)}
+
+/* ── COVER ── */
+.cover{min-height:100vh;background:var(--deep);display:flex;flex-direction:column}
+.cover__img{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 40%,rgba(28,110,126,.35) 0%,transparent 65%),radial-gradient(ellipse at 30% 80%,rgba(244,189,42,.08) 0%,transparent 50%);opacity:1}
+.cover__bar{position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(to bottom,transparent,var(--sun) 25%,var(--sun) 75%,transparent)}
+.cover__top{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start;padding:clamp(2rem,4vw,3rem) clamp(2rem,7vw,7rem)}
+.cover__meta{font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.32em;color:rgba(247,241,230,.82);text-align:right;line-height:2.2}
+.cover__body{flex:1;position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding:0 clamp(2rem,7vw,7rem) clamp(3rem,6vw,5rem)}
+.cover__kicker{font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.35em;color:rgba(247,241,230,.82);margin-bottom:2.5rem}
+.cover__sub{font-size:1rem;color:rgba(247,241,230,.7);max-width:44ch;line-height:1.8;font-weight:300;margin-top:2rem}
+.cover__foot{display:flex;gap:4rem;flex-wrap:wrap;padding-top:2.5rem;border-top:1px solid rgba(247,241,230,.07);margin-top:3rem}
+.cover__fi{font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:rgba(247,241,230,.55)}
+.cover__fi span{display:block;font-size:.78rem;font-weight:400;letter-spacing:0;text-transform:none;color:rgba(247,241,230,.75);margin-top:.3rem}
+
+/* ── SURF LEEF GROEI HERO WORDS ── */
+.slg{display:flex;flex-direction:column;line-height:.88;margin-bottom:1.5rem}
+.slg__w{font-family:var(--d);font-size:clamp(4rem,12vw,10rem);text-transform:uppercase;display:block;line-height:.88}
+.slg__w--1{color:var(--sun);padding-left:0}
+.slg__w--2{color:transparent;-webkit-text-stroke:3px var(--teal-lt);padding-left:clamp(.5rem,2vw,3rem)}
+.slg__w--3{color:var(--foam);padding-left:clamp(1rem,4vw,6rem)}
+
+/* ── COLOUR SWATCHES ── */
+.swatch{border-radius:2px;overflow:hidden;border:1px solid rgba(0,0,0,.06)}
+.swatch__b{height:130px;width:100%}
+.swatch__info{background:#fff;padding:1.5rem 1.5rem 2rem}
+.swatch__name{font-family:var(--d);font-size:1.2rem;text-transform:uppercase;color:var(--navy);letter-spacing:.04em}
+.swatch__hex{font-family:monospace;font-size:.7rem;color:rgba(14,52,63,.35);letter-spacing:.1em;margin-top:.35rem}
+.swatch__role{font-size:.72rem;color:rgba(14,52,63,.45);margin-top:.75rem;line-height:1.7}
+.tag{display:inline-block;padding:.2rem .65rem;background:rgba(14,52,63,.05);border-radius:2px;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(14,52,63,.4);margin:.2rem .2rem 0 0}
+
+/* ── TYPE ROWS ── */
+.trow{padding:2.25rem 3rem;background:#fff;border:1px solid rgba(14,52,63,.07);border-radius:2px;display:grid;grid-template-columns:180px 1fr;gap:3rem;align-items:center;margin-bottom:.75rem}
+.trow__meta{font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:rgba(14,52,63,.55);line-height:2.2}
+
+/* ── LOGO BOXES ── */
+.lbox{border-radius:2px;padding:3rem 2.5rem;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;min-height:280px;gap:2rem}
+.lbox--deep{background:var(--deep)}
+.lbox--navy{background:var(--navy)}
+.lbox--teal{background:var(--teal)}
+.lbox--foam{background:var(--foam);border:1px solid rgba(14,52,63,.1)}
+.lbox__label{font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.28em;color:rgba(247,241,230,.82);align-self:flex-end}
+.lbox--foam .lbox__label{color:rgba(14,52,63,.45)}
+.lbox__desc{font-size:.78rem;color:rgba(247,241,230,.72);line-height:1.65}
+.lbox--foam .lbox__desc{color:rgba(14,52,63,.65)}
+
+/* ── VOICE ── */
+.vcol{padding:2.5rem 3rem;border-radius:2px}
+.vcol--do{background:var(--navy)}
+.vcol--no{background:#fff;border:1px solid rgba(14,52,63,.08)}
+.vlabel{font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.3em;padding-bottom:1.25rem;margin-bottom:1.75rem}
+.vcol--do .vlabel{color:var(--sun);border-bottom:1px solid rgba(244,189,42,.18)}
+.vcol--no .vlabel{color:#c94040;border-bottom:1px solid rgba(201,64,64,.12)}
+.vi{display:flex;gap:.875rem;align-items:baseline;padding:.7rem 0;border-bottom:.5px solid rgba(247,241,230,.12);font-size:.85rem;line-height:1.6;color:rgba(247,241,230,.85)}
+.vi:last-child{border-bottom:none}
+.vcol--no .vi{color:rgba(14,52,63,.72);border-bottom-color:rgba(14,52,63,.1)}
+.vi::before{content:'—';font-weight:700;flex-shrink:0;opacity:.5}
+.vcol--do .vi::before{color:var(--sun)}
+.vcol--no .vi::before{color:#c94040}
+
+/* ── TAGLINES ── */
+.tl{font-family:var(--d);font-size:clamp(1.4rem,3vw,2.4rem);text-transform:uppercase;line-height:.95;color:var(--foam);padding:1.5rem 2.5rem;border-left:4px solid var(--sun);margin-bottom:.75rem;letter-spacing:-.01em}
+.tl em{color:var(--sun);font-style:normal}
+
+/* ── STATS ── */
+.stats{display:flex;border-top:1px solid rgba(247,241,230,.08);border-bottom:1px solid rgba(247,241,230,.08);margin:3.5rem 0}
+.stat{flex:1;padding:2rem 0;text-align:center;border-right:1px solid rgba(247,241,230,.08)}
+.stat:last-child{border-right:none}
+.stat__n{font-family:var(--d);font-size:clamp(2rem,5vw,4rem);color:var(--sun);line-height:1}
+.stat__l{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:rgba(247,241,230,.65);margin-top:.5rem}
+
+/* ── FASE CARDS ── */
+.fcard{background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.1);border-radius:2px;padding:2rem;display:flex;flex-direction:column;gap:.75rem;transition:border-color .2s}
+.fcard:hover{border-color:rgba(244,189,42,.3)}
+.fcard--hi{border-color:rgba(244,189,42,.3);background:rgba(244,189,42,.06)}
+.fcard__num{font-family:var(--d);font-size:.72rem;text-transform:uppercase;letter-spacing:.15em;color:var(--sun);background:rgba(244,189,42,.12);border:1.5px solid rgba(244,189,42,.2);border-radius:99px;padding:.3rem .9rem;display:inline-block;width:fit-content}
+.fcard--hi .fcard__num{background:var(--sun);color:var(--deep);border-color:var(--sun)}
+.fcard__h{font-family:var(--d);font-size:1.3rem;text-transform:uppercase;color:var(--foam);line-height:1}
+.fcard__p{font-size:.83rem;color:rgba(247,241,230,.82);line-height:1.65}
+
+/* ── PERSONALITY ── */
+.pcard{padding:2.5rem 2.5rem 3rem;border-radius:2px}
+.pcard--a{background:var(--navy)}.pcard--b{background:var(--teal)}.pcard--c{background:var(--deep)}.pcard--d{background:#0d4a57}
+.pcard__n{font-family:var(--d);font-size:clamp(1.8rem,4vw,3rem);text-transform:uppercase;color:var(--sun);line-height:1;letter-spacing:-.01em;margin-bottom:1rem}
+.pcard__b{font-size:.85rem;color:rgba(247,241,230,.82);line-height:1.75}
+
+/* ── PHOTO GRID ── */
+.photo{border-radius:2px;overflow:hidden;position:relative;aspect-ratio:4/3}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo__cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(8,31,39,.8));padding:1.25rem 1.5rem}
+.photo__cap-t{font-size:.63rem;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:rgba(247,241,230,.7)}
+
+/* ── CLOSING ── */
+.closing{background:var(--sun);padding:clamp(4rem,8vw,7rem) clamp(2rem,7vw,7rem);display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap}
+
+/* ── SPEC CARDS ── */
+.spec{background:#fff;border:1px solid rgba(14,52,63,.07);border-radius:2px;padding:1.75rem 1.75rem 1.5rem;display:flex;flex-direction:column;gap:1rem}
+.spec__pl{font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.28em;color:var(--teal);padding-bottom:.75rem;border-bottom:1px solid rgba(14,52,63,.07)}
+.spec__sz{font-family:var(--d);font-size:1.3rem;text-transform:uppercase;color:var(--navy);line-height:1;letter-spacing:.02em}
+.spec__d{font-size:.8rem;line-height:1.65;color:rgba(14,52,63,.5)}
+
+/* ── WORD TAGS ── */
+.wtag{display:inline-flex;align-items:center;padding:.35rem 1rem;border-radius:2px;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:.25rem}
+.wtag--y{background:rgba(244,189,42,.18);color:var(--sun);border:1.5px solid rgba(244,189,42,.5)}
+.wtag--n{background:transparent;color:rgba(247,241,230,.5);border:1.5px solid rgba(247,241,230,.25);text-decoration:line-through}
+
+/* ── NAV ── */
+.nav{position:sticky;top:0;z-index:200;background:rgba(8,31,39,.97);backdrop-filter:blur(20px);padding:.8rem clamp(2rem,7vw,7rem);display:flex;align-items:center;border-bottom:1px solid rgba(247,241,230,.07)}
+.nav__logo{font-family:var(--d);font-size:.85rem;text-transform:uppercase;color:var(--foam);letter-spacing:.08em;margin-right:3rem;line-height:1}
+.nav__logo span{color:var(--sun)}
+.nav__links{display:flex;gap:2rem;margin-left:auto}
+.nav a{font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:rgba(247,241,230,.28);text-decoration:none;transition:color .2s}
+.nav a:hover{color:var(--sun)}
+
+/* ── VISUAL TECHNIQUE BOX ── */
+.tech-box{background:var(--deep);border-radius:2px;padding:3rem 3rem 3.5rem;position:relative;overflow:hidden}
+.tech-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 50%,rgba(28,110,126,.2) 0%,transparent 70%);opacity:1}
+.tech-box__inner{position:relative;z-index:1}
+
+@media(max-width:900px){.g2,.g3,.g4{grid-template-columns:1fr 1fr}.trow{grid-template-columns:1fr}}
+@media(max-width:600px){.g2,.g3,.g4{grid-template-columns:1fr}.nav__links{display:none}.stats{flex-wrap:wrap}.stat{flex:1 1 50%}.cover__foot{flex-wrap:wrap;gap:2rem}}
+</style>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__logo">Ride the <span>Wave</span></div>
+  <div class="nav__links">
+    <a href="#merk">Merk</a>
+    <a href="#kleur">Kleur</a>
+    <a href="#type">Type</a>
+    <a href="#logo">Logo</a>
+    <a href="#stem">Stem</a>
+    <a href="#visueel">Visueel</a>
+    <a href="#beeld">Beeld</a>
+    <a href="#digitaal">Digitaal</a>
+  </div>
+</nav>
+
+<!-- ═══ COVER ═══ -->
+<section class="cover page">
+  <div class="cover__img" aria-hidden="true"></div>
+  <div class="cover__bar" aria-hidden="true"></div>
+
+  <div class="cover__top">
+    <div class="logo logo--sm logo--light">
+      <span class="logo__r">Ride</span>
+      <span class="logo__r">the</span>
+      <span class="logo__r logo__r--wave">Wave</span>
+      <span class="logo__tagline">Find your flow</span>
+    </div>
+    <div class="cover__meta">Brand Bible<br>2026</div>
+  </div>
+
+  <div class="cover__body">
+    <p class="cover__kicker">Officieel merkhandboek · Vertrouwelijk</p>
+    <div class="logo logo--xl logo--light">
+      <span class="logo__r">Ride</span>
+      <span class="logo__r">the</span>
+      <span class="logo__r logo__r--wave">Wave</span>
+    </div>
+    <div class="rule" style="margin:2.5rem 0 1.5rem"></div>
+    <p class="cover__sub">Alles wat je nodig hebt om het merk consistent, krachtig en authentiek te communiceren — van kleur tot woord, van pixel tot strand.</p>
+
+    <div class="cover__foot">
+      <div class="cover__fi">Opgesteld door<span>Spring Marketing Agency</span></div>
+      <div class="cover__fi">Versie<span>6.0 — 2026</span></div>
+      <div class="cover__fi">Website<span>ridethewave.nl</span></div>
+      <div class="cover__fi">Contact<span>info@ridethewave.nl</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 01 MERKIDENTITEIT ═══ -->
+<div class="strip" id="merk">
+  <span class="strip__num">01</span><span class="strip__line"></span><span class="strip__title">Merkidentiteit & Verhaal</span>
+</div>
+<section class="page pad--lg" style="background:var(--navy)">
+  <div class="inner">
+    <span class="ch__label">01 — Merkidentiteit & Verhaal</span>
+    <div class="g2" style="align-items:end">
+      <div>
+        <div class="d1 t-foam">De eerste<br>golf <em class="a">verandert</em><br>alles.</div>
+        <div class="rule" style="margin:2.5rem 0"></div>
+        <p class="body body--light">Ride the Wave biedt gratis surfen en kitesurfen aan jongeren van 14 tot 23 jaar, ongeacht achtergrond, budget of ervaring. Je pakt een board, stapt in het water en ontdekt wat je kan.</p>
+        <p class="body body--light" style="margin-top:1.25rem">Deelnemers worden coaches. Coaches worden rolmodellen. De golf rolt verder.</p>
+        <p class="body body--light" style="margin-top:1.25rem;font-style:italic;opacity:.7">"Geen oordeel. Geen toelatingseisen. Je hoeft niets te bewijzen — de zee wacht gewoon op jou."</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1.5rem">
+        <div style="padding:2.5rem;background:rgba(247,241,230,.04);border:1px solid rgba(247,241,230,.07);border-radius:2px">
+          <div class="d4 t-sun" style="margin-bottom:.75rem">Kernzin</div>
+          <div class="d3 t-foam">"De zee is voor<br>iedereen. <em class="at">Echt<br>voor iedereen.</em>"</div>
+        </div>
+        <div style="padding:2rem;background:rgba(247,241,230,.04);border:1px solid rgba(247,241,230,.07);border-radius:2px">
+          <div class="d4 t-sun" style="margin-bottom:.75rem">Missie</div>
+          <p class="body body--light">Sport als middel voor verbinding, groei en erbij horen. Niet alleen voor wie het zich kan veroorloven — voor <strong style="color:var(--foam)">iedereen.</strong></p>
+          <p class="body body--light" style="margin-top:.75rem">Van eerste golf tot ISA-gecertificeerd instructeur. Jij bepaalt het tempo.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="stat__n">200+</div><div class="stat__l">Jongeren begeleid</div></div>
+      <div class="stat"><div class="stat__n">87%</div><div class="stat__l">Rondt af of groeit door</div></div>
+      <div class="stat"><div class="stat__n">5</div><div class="stat__l">Programma-fases</div></div>
+      <div class="stat"><div class="stat__n">€0</div><div class="stat__l">Altijd gratis</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONALITY -->
+<section class="page pad" style="background:#fff;min-height:auto">
+  <div class="inner">
+    <span class="ch__label" style="color:var(--teal)">01 — Merkpersoonlijkheid</span>
+    <div class="g4">
+      <div class="pcard pcard--a">
+        <div class="pcard__n">Dapper<br>& direct</div>
+        <div class="pcard__b">Geen omwegen. Altijd eerlijk over wie we zijn en wat we doen.</div>
+      </div>
+      <div class="pcard pcard--b">
+        <div class="pcard__n">Warm<br>& inclusief</div>
+        <div class="pcard__b">Iedereen welkom, altijd. Geen toelatingseisen — geen oordeel.</div>
+      </div>
+      <div class="pcard pcard--c">
+        <div class="pcard__n">Energiek<br>& sportief</div>
+        <div class="pcard__b">Altijd actief. De golf wacht niet — wij ook niet. Elke communicatie heeft drive.</div>
+      </div>
+      <div class="pcard pcard--d">
+        <div class="pcard__n">Groei-<br>gericht</div>
+        <div class="pcard__b">Jouw tempo. Van inlooples tot werken in het buitenland als ISA-instructeur.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 FASES -->
+<section class="page pad" style="background:var(--deep);min-height:auto">
+  <div class="inner">
+    <span class="ch__label">01 — Het programma: 5 Fases</span>
+    <div style="margin-bottom:3rem">
+      <div class="d2 t-foam" style="max-width:600px">Van eerste golf<br>tot <em class="a">ISA-instructeur.</em></div>
+      <div class="rule" style="margin:2rem 0 1rem"></div>
+      <p class="body body--light">Elke fase sluit aan op waar je staat. Coaches blijven betrokken — ook als je even niet opdaagt. Want wij geloven dat iedereen een tweede kans verdient, en een derde, en een vierde.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.25rem">
+      <div class="fcard">
+        <span class="fcard__num">Fase 01</span>
+        <div class="fcard__h">Kennismaking</div>
+        <div class="fcard__p">Inlooples. Geen verplichtingen, geen drempel. Gewoon komen kijken en proberen.</div>
+      </div>
+      <div class="fcard fcard--hi">
+        <span class="fcard__num">Fase 02</span>
+        <div class="fcard__h">Basics</div>
+        <div class="fcard__p">Eerste technieken, vaste groep, vaste coach. Structuur en vertrouwen opbouwen.</div>
+      </div>
+      <div class="fcard">
+        <span class="fcard__num">Fase 03</span>
+        <div class="fcard__h">Progressie</div>
+        <div class="fcard__p">Zelfstandig rijden, eigen stijl ontwikkelen. Bijbaantje als Jr. Crew beschikbaar.</div>
+      </div>
+      <div class="fcard">
+        <span class="fcard__num">Fase 04</span>
+        <div class="fcard__h">Instructeur</div>
+        <div class="fcard__p">ISA Level 1 opleiding. Betaalde stageplek. Eigen groep beginners begeleiden.</div>
+      </div>
+      <div class="fcard">
+        <span class="fcard__num">Fase 05</span>
+        <div class="fcard__h">International</div>
+        <div class="fcard__p">ISA Level 2. Werken bij internationale partners. Van Amsterdam naar de wereld.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 02 KLEUR ═══ -->
+<div class="strip" id="kleur">
+  <span class="strip__num">02</span><span class="strip__line"></span><span class="strip__title">Kleurenpalet</span>
+</div>
+<section class="page pad" style="background:var(--foam);min-height:auto">
+  <div class="inner">
+    <span class="ch__label" style="color:var(--teal)">02 — Kleurenpalet</span>
+    <div class="g2" style="align-items:end;margin-bottom:3.5rem">
+      <div class="d2 t-navy">Vier kleuren.<br>Één <em class="a">gevoel.</em></div>
+      <p class="body body--dark">Het RTW-palet is opgebouwd rond de natuur van de zee — donker, diep en warm tegelijk. Gebruik de kleuren altijd in de juiste verhouding.</p>
+    </div>
+    <div class="g4" style="margin-bottom:3rem">
+      <div class="swatch">
+        <div class="swatch__b" style="background:#0E343F"></div>
+        <div class="swatch__info">
+          <div class="swatch__name">Zeeblauw</div>
+          <div class="swatch__hex">#0E343F</div>
+          <div class="swatch__role">Primaire kleur. Achtergronden, tekst, logo. Draagt het zwaarste gewicht.</div>
+          <div style="margin-top:.75rem"><span class="tag">Primair</span><span class="tag">Achtergrond</span><span class="tag">Tekst</span></div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__b" style="background:#1C6E7E"></div>
+        <div class="swatch__info">
+          <div class="swatch__name">Teal</div>
+          <div class="swatch__hex">#1C6E7E</div>
+          <div class="swatch__role">Accent. Links, knoppen, text-stroke op het "Leef." woord.</div>
+          <div style="margin-top:.75rem"><span class="tag">Accent</span><span class="tag">Links</span><span class="tag">Text-stroke</span></div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__b" style="background:#F4BD2A"></div>
+        <div class="swatch__info">
+          <div class="swatch__name">Zon-geel</div>
+          <div class="swatch__hex">#F4BD2A</div>
+          <div class="swatch__role">Energie. CTA-knoppen, "Wave" in logo, het "Surf." woord. Nooit als achtergrond voor donkere tekst.</div>
+          <div style="margin-top:.75rem"><span class="tag">Energie</span><span class="tag">CTA</span><span class="tag">Logo wave</span></div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__b" style="background:#F7F1E6;border-bottom:1px solid rgba(14,52,63,.08)"></div>
+        <div class="swatch__info">
+          <div class="swatch__name">Crème</div>
+          <div class="swatch__hex">#F7F1E6</div>
+          <div class="swatch__role">Lichte achtergrond, hero-tekst "Groei.", secties met testimonials en partners.</div>
+          <div style="margin-top:.75rem"><span class="tag">Licht bg</span><span class="tag">Groei. tekst</span><span class="tag">Kaarten</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Usage matrix -->
+    <div style="background:var(--navy);border-radius:2px;padding:2.5rem 3rem">
+      <div style="font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.3em;color:rgba(244,189,42,.5);margin-bottom:1.75rem">Kleur op kleur — wat mag?</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem">
+        <div style="padding:1.25rem 1.5rem;background:rgba(247,241,230,.04);border:1px solid rgba(247,241,230,.07);border-radius:2px">
+          <div style="font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:var(--sun);margin-bottom:.6rem">✓ Zon-geel op zeeblauw</div>
+          <p style="font-size:.82rem;color:rgba(247,241,230,.82);line-height:1.6">Standaard combinatie. Logo, hero-woord "Surf.", CTA-knoppen op donkere secties.</p>
+        </div>
+        <div style="padding:1.25rem 1.5rem;background:rgba(247,241,230,.04);border:1px solid rgba(247,241,230,.07);border-radius:2px">
+          <div style="font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:var(--sun);margin-bottom:.6rem">✓ Crème op zeeblauw</div>
+          <p style="font-size:.82rem;color:rgba(247,241,230,.82);line-height:1.6">Body-tekst en hero-woord "Groei." op donkere achtergrond. Hoog contrast.</p>
+        </div>
+        <div style="padding:1.25rem 1.5rem;background:rgba(247,241,230,.04);border:1px solid rgba(247,241,230,.07);border-radius:2px">
+          <div style="font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:#e05050;margin-bottom:.6rem">✕ Zon-geel op crème</div>
+          <p style="font-size:.82rem;color:rgba(247,241,230,.82);line-height:1.6">Te laag contrast. Geel verdwijnt op de crème achtergrond. Gebruik teal als alternatief.</p>
+        </div>
+        <div style="padding:1.25rem 1.5rem;background:rgba(247,241,230,.04);border:1px solid rgba(247,241,230,.07);border-radius:2px">
+          <div style="font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:#e05050;margin-bottom:.6rem">✕ Logo op witte bg</div>
+          <p style="font-size:.82rem;color:rgba(247,241,230,.82);line-height:1.6">Nooit het logo op een witte of lichte achtergrond. Altijd donker als ondergrond.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 03 TYPOGRAFIE ═══ -->
+<div class="strip" id="type">
+  <span class="strip__num">03</span><span class="strip__line"></span><span class="strip__title">Typografie</span>
+</div>
+<section class="page pad" style="background:#fff;min-height:auto">
+  <div class="inner">
+    <span class="ch__label" style="color:var(--teal)">03 — Typografie</span>
+    <div class="g2" style="margin-bottom:3.5rem;align-items:end">
+      <div class="d2 t-navy">Twee fonts.<br>Eén <em class="a">stem.</em></div>
+      <p class="body body--dark">Anton draagt de kracht en urgentie. Inter zorgt voor helderheid. Elk heeft een vaste rol — nooit door elkaar gebruiken.</p>
+    </div>
+    <div>
+      <div class="trow">
+        <div class="trow__meta">Anton<br>Hero kop<br>60–100pt</div>
+        <div style="font-family:Anton,sans-serif;font-size:clamp(3.5rem,9vw,7rem);text-transform:uppercase;line-height:.88;letter-spacing:-.02em;color:var(--navy)">Vind je golf.</div>
+      </div>
+      <div class="trow">
+        <div class="trow__meta">Anton<br>Sectiekop<br>28–44pt</div>
+        <div style="font-family:Anton,sans-serif;font-size:clamp(1.8rem,4.5vw,3.2rem);text-transform:uppercase;line-height:.9;color:var(--navy)">De zee is voor iedereen. Echt voor iedereen.</div>
+      </div>
+      <div class="trow">
+        <div class="trow__meta">Anton<br>Kaart / label<br>14–22pt</div>
+        <div style="font-family:Anton,sans-serif;font-size:clamp(1.2rem,2.5vw,1.7rem);text-transform:uppercase;color:var(--navy)">Van eerste golf tot ISA-instructeur.</div>
+      </div>
+      <div class="trow">
+        <div class="trow__meta">Inter 400<br>Body tekst<br>11–14pt</div>
+        <div style="font-size:1rem;line-height:1.85;color:rgba(14,52,63,.68)">Pak je board. Stap in het water. Ride the Wave geeft jou gratis toegang tot surfen en kitesurfen — van je eerste les tot ISA-gecertificeerd instructeur. Geen ervaring nodig. Geen kosten. Jij bepaalt hoe ver je gaat.</div>
+      </div>
+      <div class="trow">
+        <div class="trow__meta">Inter 800<br>Label / eyebrow<br>7–10pt CAPS</div>
+        <div style="font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.3em;color:var(--teal)">Scholen & Onderwijs · Ride the Wave · Amsterdam · 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 04 LOGO ═══ -->
+<div class="strip" id="logo">
+  <span class="strip__num">04</span><span class="strip__line"></span><span class="strip__title">Logo & Merk</span>
+</div>
+<section class="page pad" style="background:var(--navy);min-height:auto">
+  <div class="inner">
+    <span class="ch__label">04 — Logo & Merk</span>
+    <div class="g2" style="margin-bottom:4rem;align-items:end">
+      <div>
+        <div class="d2 t-foam">Het gestapeld<br>logo — <em class="a">altijd.</em></div>
+        <div class="rule" style="margin:2rem 0"></div>
+        <p class="body body--light">Het RTW-logo is gestapeld in drie regels: "RIDE" / "THE" / "WAVE" — in Anton, uppercase. De onderste regel "WAVE" is altijd in zon-geel op donkere achtergrond. Tagline "FIND YOUR FLOW" in Inter Bold, small caps, eronder.</p>
+        <div style="margin-top:2rem;padding:1.5rem 2rem;background:rgba(247,241,230,.04);border:1px solid rgba(247,241,230,.07);border-radius:2px">
+          <div style="font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.28em;color:rgba(244,189,42,.5);margin-bottom:1rem">Structuur</div>
+          <pre style="font-family:var(--d);font-size:1.5rem;text-transform:uppercase;color:var(--foam);line-height:1;letter-spacing:.04em">RIDE
+THE
+<span style="color:var(--sun)">WAVE</span></pre>
+          <div style="font-size:.65rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:rgba(247,241,230,.65);margin-top:.75rem">Find your flow</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap">
+        <div class="lbox lbox--deep" style="flex:1;min-width:200px">
+          <div class="logo logo--md logo--light">
+            <span class="logo__r">Ride</span>
+            <span class="logo__r">the</span>
+            <span class="logo__r logo__r--wave">Wave</span>
+            <span class="logo__tagline">Find your flow</span>
+          </div>
+          <div>
+            <div style="font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:var(--sun);margin-bottom:.35rem">Primair — Deep Navy</div>
+            <div class="lbox__desc">Website, campagnes, posters, merchandise.</div>
+          </div>
+        </div>
+        <div class="lbox lbox--teal" style="flex:1;min-width:200px">
+          <div class="logo logo--md logo--light">
+            <span class="logo__r">Ride</span>
+            <span class="logo__r">the</span>
+            <span class="logo__r logo__r--wave">Wave</span>
+            <span class="logo__tagline">Find your flow</span>
+          </div>
+          <div>
+            <div style="font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:rgba(247,241,230,.65);margin-bottom:.35rem">Secundair — Teal</div>
+            <div class="lbox__desc">Social media, presentaties.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="g3">
+      <div class="lbox lbox--foam">
+        <div class="logo logo--md logo--dark">
+          <span class="logo__r">Ride</span>
+          <span class="logo__r">the</span>
+          <span class="logo__r logo__r--wave">Wave</span>
+          <span class="logo__tagline">Find your flow</span>
+        </div>
+        <div>
+          <div style="font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:rgba(14,52,63,.35);margin-bottom:.35rem">Alternatief — Crème bg</div>
+          <div class="lbox__desc">Factsheets, brieven, print. "Wave" wordt teal.</div>
+        </div>
+      </div>
+      <div style="border-radius:2px;padding:3rem 2.5rem;display:flex;flex-direction:column;justify-content:space-between;min-height:280px;background:#fff;border:2px solid #e05050;position:relative">
+        <div class="logo logo--md logo--dark"><span class="logo__r">Ride</span><span class="logo__r">the</span><span class="logo__r logo__r--wave">Wave</span></div>
+        <div style="position:absolute;inset:0;border-radius:2px;display:flex;align-items:center;justify-content:center;background:rgba(224,80,80,.07)">
+          <span style="font-size:4rem;color:#e05050;opacity:.45;font-weight:900">✕</span>
+        </div>
+        <div style="font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:#c94040;margin-top:auto">Nooit op witte achtergrond</div>
+      </div>
+      <div style="padding:2rem;background:rgba(247,241,230,.04);border:1px solid rgba(247,241,230,.07);border-radius:2px">
+        <div style="font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.28em;color:rgba(244,189,42,.5);margin-bottom:1.5rem">Spelregels</div>
+        <div style="display:flex;flex-direction:column;gap:.85rem">
+          <div style="font-size:.83rem;color:rgba(247,241,230,.82);line-height:1.6;border-bottom:1px solid rgba(247,241,230,.07);padding-bottom:.85rem">Digitaal: min. 120px breed</div>
+          <div style="font-size:.83rem;color:rgba(247,241,230,.82);line-height:1.6;border-bottom:1px solid rgba(247,241,230,.07);padding-bottom:.85rem">Print: min. 35mm breed</div>
+          <div style="font-size:.83rem;color:rgba(247,241,230,.82);line-height:1.6;border-bottom:1px solid rgba(247,241,230,.07);padding-bottom:.85rem">Vrije ruimte rondom = hoogte van de "R"</div>
+          <div style="font-size:.83rem;color:rgba(247,241,230,.82);line-height:1.6">Nooit uitrekken, vervormen of roteren</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 05 STEM & TOON ═══ -->
+<div class="strip" id="stem">
+  <span class="strip__num">05</span><span class="strip__line"></span><span class="strip__title">Stem & Toon</span>
+</div>
+<section class="page pad" style="background:var(--deep);min-height:auto">
+  <div class="inner">
+    <span class="ch__label">05 — Stem & Toon</span>
+    <div class="g2" style="margin-bottom:4rem;align-items:end">
+      <div class="d2 t-foam">Direct. Warm.<br><em class="a">Zonder omwegen.</em></div>
+      <p class="body body--light">RTW communiceert altijd in jij/je — nooit 'u'. Korte actieve zinnen. De toon is die van een coach die naast je staat, niet boven je. Taglines eindigen met een punt.</p>
+    </div>
+
+    <!-- Echte copy van de website -->
+    <div style="padding:2.5rem 3rem;background:rgba(247,241,230,.04);border:1px solid rgba(247,241,230,.07);border-radius:2px;margin-bottom:2.5rem">
+      <div style="font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.3em;color:rgba(244,189,42,.5);margin-bottom:1.75rem">Echte teksten van de website — dit is de toon</div>
+      <div style="display:flex;flex-direction:column;gap:1.25rem">
+        <div style="border-left:3px solid var(--sun);padding-left:1.5rem">
+          <div style="font-family:var(--d);font-size:1.1rem;text-transform:uppercase;color:var(--foam);line-height:1;margin-bottom:.4rem">"Pak je board. Stap in het water."</div>
+          <div style="font-size:.72rem;color:rgba(247,241,230,.75);letter-spacing:.1em;text-transform:uppercase">CTA — altijd actief, direct aanspreken</div>
+        </div>
+        <div style="border-left:3px solid var(--teal-lt);padding-left:1.5rem">
+          <div style="font-family:var(--d);font-size:1.1rem;text-transform:uppercase;color:var(--foam);line-height:1;margin-bottom:.4rem">"De zee is voor iedereen. Echt voor iedereen."</div>
+          <div style="font-size:.72rem;color:rgba(247,241,230,.75);letter-spacing:.1em;text-transform:uppercase">Sectiekop — inclusiviteit zonder problematiseren</div>
+        </div>
+        <div style="border-left:3px solid rgba(247,241,230,.4);padding-left:1.5rem">
+          <div style="font-family:var(--d);font-size:1.1rem;text-transform:uppercase;color:var(--foam);line-height:1;margin-bottom:.4rem">"Geen ervaring nodig. Geen kosten. Jij bepaalt."</div>
+          <div style="font-size:.72rem;color:rgba(247,241,230,.75);letter-spacing:.1em;text-transform:uppercase">Drempelverlagend — zonder te benoemen waarom</div>
+        </div>
+        <div style="border-left:3px solid rgba(247,241,230,.4);padding-left:1.5rem">
+          <div style="font-family:var(--d);font-size:1.1rem;text-transform:uppercase;color:var(--foam);line-height:1;margin-bottom:.4rem">"Van je eerste golf tot werken in het buitenland."</div>
+          <div style="font-size:.72rem;color:rgba(247,241,230,.75);letter-spacing:.1em;text-transform:uppercase">Perspectief — groei tonen, niet probleem benoemen</div>
+        </div>
+        <div style="border-left:3px solid rgba(247,241,230,.4);padding-left:1.5rem">
+          <div style="font-family:var(--d);font-size:1.1rem;text-transform:uppercase;color:var(--foam);line-height:1;margin-bottom:.4rem">"Deelnemers worden coaches. Coaches worden rolmodellen."</div>
+          <div style="font-size:.72rem;color:rgba(247,241,230,.75);letter-spacing:.1em;text-transform:uppercase">Community — actief, positief, toekomstgericht</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="g2" style="margin-bottom:3rem">
+      <div class="vcol vcol--do">
+        <div class="vlabel">Schrijf zo</div>
+        <div class="vi">Altijd "jij / je" — nooit "u / uw"</div>
+        <div class="vi">Korte actieve zinnen, punt erna</div>
+        <div class="vi">Taglines eindigen met een punt</div>
+        <div class="vi">Concreet: "200+ jongeren" i.p.v. "veel jongeren"</div>
+        <div class="vi">Herhaling als kracht: "...een derde, en een vierde."</div>
+        <div class="vi">Woordkeus: golf, flow, crew, board, starten, water, strand, progressie, drive</div>
+      </div>
+      <div class="vcol vcol--no">
+        <div class="vlabel">Schrijf nooit zo</div>
+        <div class="vi">"U kunt het board pakken bij de instructeur."</div>
+        <div class="vi">Lange passieve zinnen met hulpwerkwoorden</div>
+        <div class="vi">Bureaucratisch: cursist, doelgroep, sportbeoefenaar</div>
+        <div class="vi">Verontschuldigingen of excuses</div>
+        <div class="vi">Taglines zonder punt</div>
+        <div class="vi">Woorden: exclusief, te duur, u/uw, moeilijk</div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:2.5rem">
+      <div style="font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.3em;color:rgba(244,189,42,.5);margin-bottom:1.5rem">Tagline-formule — getal + menselijke zin + punt</div>
+      <div class="tl"><em>Board erin.</em> Angst eruit.</div>
+      <div class="tl">1 les. En je wilt er nooit meer uit.</div>
+      <div class="tl">Geen ervaring. Geen excuses. <em>Alleen golven.</em></div>
+      <div class="tl">87% groeit door. <em>En jij?</em></div>
+      <div class="tl">Gratis. Altijd. <em>Punt.</em></div>
+    </div>
+
+    <div>
+      <div style="font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.3em;color:rgba(244,189,42,.5);margin-bottom:1.5rem">Woordenschat</div>
+      <div class="g2">
+        <div>
+          <div style="font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:rgba(247,241,230,.65);margin-bottom:.8rem;padding-bottom:.6rem;border-bottom:1px solid rgba(247,241,230,.07)">Gebruik</div>
+          <div>
+            <span class="wtag wtag--y">flow</span><span class="wtag wtag--y">golf</span><span class="wtag wtag--y">crew</span><span class="wtag wtag--y">groeien</span><span class="wtag wtag--y">starten</span><span class="wtag wtag--y">samen</span><span class="wtag wtag--y">board</span><span class="wtag wtag--y">water</span><span class="wtag wtag--y">verbinding</span><span class="wtag wtag--y">progressie</span><span class="wtag wtag--y">drive</span><span class="wtag wtag--y">spiegel</span><span class="wtag wtag--y">golf</span><span class="wtag wtag--y">ISA</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:rgba(247,241,230,.65);margin-bottom:.8rem;padding-bottom:.6rem;border-bottom:1px solid rgba(247,241,230,.07)">Vermijd</div>
+          <div>
+            <span class="wtag wtag--n">excuses</span><span class="wtag wtag--n">te duur</span><span class="wtag wtag--n">exclusief</span><span class="wtag wtag--n">u/uw</span><span class="wtag wtag--n">cursist</span><span class="wtag wtag--n">doelgroep</span><span class="wtag wtag--n">sportbeoefenaar</span><span class="wtag wtag--n">moeilijk</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 06 VISUELE STIJL ═══ -->
+<div class="strip" id="visueel">
+  <span class="strip__num">06</span><span class="strip__line"></span><span class="strip__title">Visuele Stijl</span>
+</div>
+<section class="page pad" style="background:var(--navy);min-height:auto">
+  <div class="inner">
+    <span class="ch__label">06 — Visuele Stijl: SURF. LEEF. GROEI.</span>
+    <div class="g2" style="margin-bottom:4rem;align-items:end">
+      <div class="d2 t-foam">Het kern-<br>visueel <em class="a">van RTW.</em></div>
+      <p class="body body--light">De drie woorden "Find. Your. Flow." zijn de visuele ziel van het merk. Elk woord heeft een eigen typografische behandeling die samen een hiërarchie van energie, richting en groei vormt.</p>
+    </div>
+
+    <!-- De drie woorden live -->
+    <div class="tech-box" style="margin-bottom:3rem">
+      <div class="tech-box__inner">
+        <div style="font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.3em;color:rgba(244,189,42,.4);margin-bottom:2.5rem">Live voorbeeld — zoals het op de website staat</div>
+        <div class="slg">
+          <span class="slg__w slg__w--1">Find.</span>
+          <span class="slg__w slg__w--2">Your.</span>
+          <span class="slg__w slg__w--3">Flow.</span>
+        </div>
+        <p style="font-size:.9rem;color:rgba(247,241,230,.82);margin-top:1.5rem;max-width:44ch;line-height:1.7">Gratis surfen & kitesurfen voor jongeren van 14 tot 23 jaar. Geen ervaring nodig.</p>
+      </div>
+    </div>
+
+    <!-- Uitleg per woord -->
+    <div class="g3" style="margin-bottom:3rem">
+      <div style="padding:2rem 2rem 2.5rem;background:rgba(244,189,42,.08);border:1.5px solid rgba(244,189,42,.2);border-radius:2px">
+        <div style="font-family:var(--d);font-size:3rem;text-transform:uppercase;color:var(--sun);line-height:.9;margin-bottom:1.25rem">Find.</div>
+        <div style="font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:rgba(244,189,42,.8);margin-bottom:.6rem">Gevuld — Zon-geel</div>
+        <p style="font-size:.82rem;color:rgba(247,241,230,.82);line-height:1.65">Energie en richting. Geen indent. De uitnodiging — stap in het water.</p>
+        <div style="margin-top:1rem;font-family:monospace;font-size:.7rem;color:rgba(247,241,230,.3)">color: var(--sun)</div>
+      </div>
+      <div style="padding:2rem 2rem 2.5rem;background:rgba(42,136,153,.07);border:1.5px solid rgba(42,136,153,.2);border-radius:2px">
+        <div style="font-family:var(--d);font-size:3rem;text-transform:uppercase;color:transparent;-webkit-text-stroke:3px var(--teal-lt);line-height:.9;margin-bottom:1.25rem">Your.</div>
+        <div style="font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:rgba(42,136,153,.9);margin-bottom:.6rem">Outline — Teal stroke</div>
+        <p style="font-size:.82rem;color:rgba(247,241,230,.82);line-height:1.65">Jouw weg, jouw tempo. Klein indent. De belofte — dit is voor jou persoonlijk.</p>
+        <div style="margin-top:1rem;font-family:monospace;font-size:.7rem;color:rgba(247,241,230,.3)">color: transparent;<br>-webkit-text-stroke: 3px #2a8899</div>
+      </div>
+      <div style="padding:2rem 2rem 2.5rem;background:rgba(247,241,230,.04);border:1.5px solid rgba(247,241,230,.1);border-radius:2px">
+        <div style="font-family:var(--d);font-size:3rem;text-transform:uppercase;color:var(--foam);line-height:.9;margin-bottom:1.25rem">Flow.</div>
+        <div style="font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:rgba(247,241,230,.7);margin-bottom:.6rem">Gevuld — Crème</div>
+        <p style="font-size:.82rem;color:rgba(247,241,230,.82);line-height:1.65">Resultaat en bestemming. Grootste indent. Warmte — de staat die je bereikt als alles klopt.</p>
+        <div style="margin-top:1rem;font-family:monospace;font-size:.7rem;color:rgba(247,241,230,.3)">color: var(--foam)</div>
+      </div>
+    </div>
+
+    <!-- Traptreden -->
+    <div style="padding:2.5rem 3rem;background:rgba(247,241,230,.04);border:1px solid rgba(247,241,230,.07);border-radius:2px">
+      <div style="font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.3em;color:rgba(244,189,42,.5);margin-bottom:1.5rem">Traptreden-effect — de indent</div>
+      <div class="g2" style="gap:3rem;align-items:center">
+        <div>
+          <p class="body body--light">De drie woorden hebben een progressief inspringen. Elk woord staat iets verder naar rechts dan het vorige — als een treeplank die omhooggaat. Dit visuele ritme communiceert voortgang zonder één woord tekst.</p>
+          <p class="body body--light" style="margin-top:1rem">Gebruik dit effect alleen voor de drie kernwoorden. Nooit voor andere koppen of lijsten toepassen.</p>
+        </div>
+        <div>
+          <div style="font-family:var(--d);font-size:1.8rem;text-transform:uppercase;line-height:.9">
+            <div style="color:var(--sun);padding-left:0">Find.</div>
+            <div style="color:transparent;-webkit-text-stroke:2px var(--teal-lt);padding-left:1.5rem">Your.</div>
+            <div style="color:var(--foam);padding-left:3rem">Flow.</div>
+          </div>
+          <div style="margin-top:1rem;display:flex;gap:.5rem;align-items:center">
+            <div style="height:2px;width:2rem;background:var(--sun)"></div>
+            <div style="font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.2em;color:rgba(247,241,230,.3)">0 indent</div>
+          </div>
+          <div style="margin-top:.4rem;display:flex;gap:.5rem;align-items:center">
+            <div style="height:2px;width:3.5rem;background:var(--teal-lt)"></div>
+            <div style="font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.2em;color:rgba(247,241,230,.3)">~2vw indent</div>
+          </div>
+          <div style="margin-top:.4rem;display:flex;gap:.5rem;align-items:center">
+            <div style="height:2px;width:5rem;background:var(--foam)"></div>
+            <div style="font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.2em;color:rgba(247,241,230,.3)">~4vw indent</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 07 FOTOGRAFIE ═══ -->
+<div class="strip" id="beeld">
+  <span class="strip__num">07</span><span class="strip__line"></span><span class="strip__title">Fotografie & Beeld</span>
+</div>
+<section class="page pad" style="background:var(--deep);min-height:auto">
+  <div class="inner">
+    <span class="ch__label">07 — Fotografie & Beeld</span>
+    <div class="g2" style="margin-bottom:4rem;align-items:end">
+      <div class="d2 t-foam">Echte mensen.<br><em class="a">Echte golven.</em></div>
+      <p class="body body--light">Authenticiteit is het merk. Altijd echte deelnemers — nooit modellen of stockbeelden. Altijd golden hour of daglicht. De foto vertelt het verhaal — het logo hoeft er niet overheen.</p>
+    </div>
+    <div class="g3" style="margin-bottom:2.5rem">
+      <!-- FOTO 1: SURFER OP GOLF -->
+      <div class="photo">
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+          <defs>
+            <linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#081f27"/><stop offset="60%" stop-color="#0E343F"/><stop offset="100%" stop-color="#1C6E7E"/></linearGradient>
+            <linearGradient id="wave1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2a8899"/><stop offset="100%" stop-color="#081f27"/></linearGradient>
+            <linearGradient id="foam1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="rgba(247,241,230,0)"/><stop offset="40%" stop-color="rgba(247,241,230,.6)"/><stop offset="100%" stop-color="rgba(247,241,230,0)"/></linearGradient>
+          </defs>
+          <!-- sky -->
+          <rect width="400" height="300" fill="url(#sky1)"/>
+          <!-- horizon glow -->
+          <ellipse cx="200" cy="155" rx="180" ry="30" fill="rgba(28,110,126,.3)"/>
+          <!-- back wave -->
+          <path d="M0 200 Q60 170 120 185 Q180 200 240 175 Q300 150 360 165 Q380 170 400 160 L400 300 L0 300Z" fill="rgba(14,52,63,.8)"/>
+          <!-- main wave curl -->
+          <path d="M20 220 Q80 180 140 195 Q180 205 210 185 Q240 165 260 145 Q280 125 320 140 Q350 150 380 135 Q390 130 400 125 L400 175 Q370 165 340 178 Q300 195 270 210 Q240 225 210 215 Q170 202 140 215 Q80 235 20 250Z" fill="url(#wave1)"/>
+          <!-- wave crest spray -->
+          <path d="M260 145 Q275 130 290 118 Q295 112 300 120 Q295 128 285 135 Q272 142 260 145Z" fill="rgba(247,241,230,.35)"/>
+          <path d="M280 130 Q292 118 305 108 Q308 105 306 112 Q298 120 285 128Z" fill="rgba(247,241,230,.2)"/>
+          <!-- foam lines -->
+          <path d="M0 230 Q80 220 160 228 Q240 236 320 224 Q360 218 400 222" stroke="rgba(247,241,230,.25)" stroke-width="2" fill="none"/>
+          <path d="M0 245 Q100 238 200 243 Q300 248 400 240" stroke="rgba(247,241,230,.15)" stroke-width="1.5" fill="none"/>
+          <!-- foam crest on wave -->
+          <path d="M140 195 Q180 188 220 180 Q255 173 280 158" stroke="rgba(247,241,230,.5)" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <!-- SURFER silhouette -->
+          <g transform="translate(178,160)">
+            <!-- board -->
+            <ellipse cx="12" cy="28" rx="22" ry="4" fill="rgba(244,189,42,.9)" transform="rotate(-12,12,28)"/>
+            <!-- body -->
+            <rect x="6" y="10" width="7" height="14" rx="3" fill="rgba(8,31,39,.9)"/>
+            <!-- head -->
+            <circle cx="9" cy="7" r="5" fill="rgba(8,31,39,.9)"/>
+            <!-- front arm -->
+            <path d="M13 15 Q20 10 24 12" stroke="rgba(8,31,39,.9)" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <!-- back arm -->
+            <path d="M6 15 Q0 12 -2 15" stroke="rgba(8,31,39,.9)" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <!-- legs bent -->
+            <path d="M7 24 Q4 30 2 33" stroke="rgba(8,31,39,.9)" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M13 24 Q16 30 20 32" stroke="rgba(8,31,39,.9)" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </g>
+          <!-- spray droplets -->
+          <circle cx="270" cy="138" r="2" fill="rgba(247,241,230,.5)"/>
+          <circle cx="278" cy="132" r="1.5" fill="rgba(247,241,230,.4)"/>
+          <circle cx="265" cy="133" r="1" fill="rgba(247,241,230,.35)"/>
+          <circle cx="285" cy="125" r="1" fill="rgba(247,241,230,.3)"/>
+          <!-- sun glint on water -->
+          <ellipse cx="320" cy="210" rx="40" ry="4" fill="rgba(244,189,42,.08)"/>
+        </svg>
+        <div class="photo__cap"><span class="photo__cap-t">✓ Actie & beweging</span></div>
+      </div>
+
+      <!-- FOTO 2: GOLDEN HOUR -->
+      <div class="photo">
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+          <defs>
+            <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0a1a22"/><stop offset="45%" stop-color="#8b3a0f"/><stop offset="70%" stop-color="#F4BD2A"/><stop offset="100%" stop-color="#1C6E7E"/></linearGradient>
+            <linearGradient id="sea2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1C6E7E"/><stop offset="100%" stop-color="#081f27"/></linearGradient>
+            <radialGradient id="sun2" cx="50%" cy="50%"><stop offset="0%" stop-color="#F4BD2A"/><stop offset="40%" stop-color="rgba(244,189,42,.6)"/><stop offset="100%" stop-color="rgba(244,189,42,0)"/></radialGradient>
+          </defs>
+          <!-- sky -->
+          <rect width="400" height="300" fill="url(#sky2)"/>
+          <!-- sun glow -->
+          <ellipse cx="200" cy="148" rx="90" ry="60" fill="rgba(244,189,42,.15)"/>
+          <!-- sun disc -->
+          <circle cx="200" cy="152" r="22" fill="url(#sun2)"/>
+          <circle cx="200" cy="152" r="14" fill="#F4BD2A"/>
+          <!-- horizon haze -->
+          <rect x="0" y="148" width="400" height="8" fill="rgba(244,189,42,.2)"/>
+          <!-- sea -->
+          <rect x="0" y="152" width="400" height="148" fill="url(#sea2)"/>
+          <!-- sun reflection on water -->
+          <path d="M160 155 Q200 152 240 155 Q220 165 200 170 Q180 165 160 155Z" fill="rgba(244,189,42,.45)"/>
+          <path d="M170 170 Q200 166 230 170 Q215 178 200 182 Q185 178 170 170Z" fill="rgba(244,189,42,.28)"/>
+          <path d="M178 182 Q200 179 222 182 Q210 188 200 191 Q190 188 178 182Z" fill="rgba(244,189,42,.16)"/>
+          <!-- wave lines on water -->
+          <path d="M0 190 Q100 184 200 188 Q300 192 400 185" stroke="rgba(244,189,42,.15)" stroke-width="1.5" fill="none"/>
+          <path d="M0 210 Q80 205 160 208 Q240 211 320 206 Q360 203 400 208" stroke="rgba(247,241,230,.1)" stroke-width="1" fill="none"/>
+          <path d="M0 230 Q120 225 240 228 Q320 230 400 226" stroke="rgba(247,241,230,.08)" stroke-width="1" fill="none"/>
+          <!-- SILHOUETTEN op strand -->
+          <!-- persoon 1 staand met board -->
+          <g transform="translate(100,230)">
+            <rect x="-2" y="-55" width="5" height="55" rx="2" fill="rgba(8,31,39,.9)"/>
+            <circle cx="1" cy="-60" r="6" fill="rgba(8,31,39,.9)"/>
+            <path d="M-2 -40 Q-10 -32 -8 -25" stroke="rgba(8,31,39,.9)" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <!-- surfboard verticaal -->
+            <rect x="6" y="-70" width="5" height="45" rx="2" fill="rgba(8,31,39,.75)"/>
+          </g>
+          <!-- persoon 2 zittend -->
+          <g transform="translate(290,248)">
+            <circle cx="0" cy="-18" r="7" fill="rgba(8,31,39,.85)"/>
+            <path d="M-6 -12 Q-10 0 -8 0" stroke="rgba(8,31,39,.85)" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M6 -12 Q12 -4 16 -2" stroke="rgba(8,31,39,.85)" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M-8 0 Q0 2 16 -2" stroke="rgba(8,31,39,.85)" stroke-width="4" fill="none" stroke-linecap="round"/>
+          </g>
+          <!-- persoon 3 lopend -->
+          <g transform="translate(175,240)">
+            <circle cx="0" cy="-50" r="5" fill="rgba(8,31,39,.7)"/>
+            <path d="M-1 -44 L-1 -20" stroke="rgba(8,31,39,.7)" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M-1 -35 Q-8 -28 -10 -22" stroke="rgba(8,31,39,.7)" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M-1 -35 Q6 -28 8 -22" stroke="rgba(8,31,39,.7)" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M-1 -20 Q-6 -8 -5 0" stroke="rgba(8,31,39,.7)" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M-1 -20 Q4 -8 5 0" stroke="rgba(8,31,39,.7)" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </g>
+          <!-- birds -->
+          <path d="M60 60 Q65 55 70 60" stroke="rgba(247,241,230,.4)" stroke-width="1.5" fill="none"/>
+          <path d="M80 45 Q86 40 92 45" stroke="rgba(247,241,230,.3)" stroke-width="1.5" fill="none"/>
+          <path d="M110 70 Q114 66 118 70" stroke="rgba(247,241,230,.25)" stroke-width="1" fill="none"/>
+        </svg>
+        <div class="photo__cap"><span class="photo__cap-t">✓ Golden hour licht</span></div>
+      </div>
+
+      <!-- FOTO 3: CREW / PORTRET -->
+      <div class="photo">
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+          <defs>
+            <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#081f27"/><stop offset="55%" stop-color="#0E343F"/><stop offset="100%" stop-color="#1C6E7E"/></linearGradient>
+            <linearGradient id="sand3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c8a96e"/><stop offset="100%" stop-color="#a07840"/></linearGradient>
+          </defs>
+          <!-- sky -->
+          <rect width="400" height="300" fill="url(#bg3)"/>
+          <!-- water mid -->
+          <path d="M0 195 Q100 185 200 190 Q300 195 400 185 L400 300 L0 300Z" fill="rgba(14,52,63,.7)"/>
+          <!-- small waves -->
+          <path d="M0 200 Q50 196 100 199 Q150 202 200 197 Q250 192 300 196 Q350 200 400 194" stroke="rgba(247,241,230,.2)" stroke-width="1.5" fill="none"/>
+          <!-- sand -->
+          <path d="M0 255 Q200 240 400 252 L400 300 L0 300Z" fill="url(#sand3)"/>
+          <!-- sun glint top left -->
+          <ellipse cx="60" cy="55" rx="35" ry="20" fill="rgba(244,189,42,.12)"/>
+          <circle cx="60" cy="55" r="10" fill="rgba(244,189,42,.3)"/>
+
+          <!-- CREW: 4 personen naast elkaar op strand -->
+          <!-- persoon 1 (links, met board) -->
+          <g transform="translate(62,248)">
+            <circle cx="0" cy="-72" r="10" fill="#d4956a"/>
+            <rect x="-7" y="-62" width="14" height="30" rx="4" fill="#F4BD2A"/>
+            <path d="M-7 -50 Q-16 -42 -18 -34" stroke="#d4956a" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M7 -50 Q12 -42 10 -36" stroke="#d4956a" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M-5 -32 Q-8 -16 -7 0" stroke="#0E343F" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M5 -32 Q8 -16 7 0" stroke="#0E343F" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <!-- board onder arm -->
+            <rect x="10" y="-68" width="6" height="48" rx="3" fill="rgba(8,31,39,.6)" transform="rotate(8,13,-44)"/>
+          </g>
+          <!-- persoon 2 (arm omhoog, juichend) -->
+          <g transform="translate(148,244)">
+            <circle cx="0" cy="-78" r="10" fill="#c07040"/>
+            <rect x="-7" y="-68" width="14" height="30" rx="4" fill="#1C6E7E"/>
+            <!-- arm omhoog -->
+            <path d="M7 -56 Q18 -68 16 -78" stroke="#c07040" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="-7 -56 Q-14 -48 -12 -38" stroke="#c07040" stroke-width="4" fill="none" stroke-linecap="round" d="M-7 -56 Q-14 -48 -12 -40"/>
+            <path d="-5 -38 Q-7 -22 -6 0" stroke="#0E343F" stroke-width="4" fill="none" stroke-linecap="round" d="M-5 -38 Q-7 -20 -6 0"/>
+            <path d="M5 -38 Q8 -20 7 0" stroke="#0E343F" stroke-width="4" fill="none" stroke-linecap="round"/>
+          </g>
+          <!-- persoon 3 (midden, coach met wetsuit) -->
+          <g transform="translate(232,240)">
+            <circle cx="0" cy="-82" r="11" fill="#a0785a"/>
+            <rect x="-8" y="-71" width="16" height="34" rx="4" fill="#0E343F"/>
+            <path d="M-8 -58 Q-17 -48 -15 -40" stroke="#a0785a" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+            <path d="M8 -58 Q17 -50 14 -40" stroke="#a0785a" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+            <path d="-6 -37 Q-8 -18 -7 0" stroke="#0E343F" stroke-width="5" fill="none" stroke-linecap="round" d="M-6 -37 Q-9 -18 -8 0"/>
+            <path d="M6 -37 Q9 -18 8 0" stroke="#0E343F" stroke-width="5" fill="none" stroke-linecap="round"/>
+          </g>
+          <!-- persoon 4 (rechts, lachend met hand op schouder van 3) -->
+          <g transform="translate(318,246)">
+            <circle cx="0" cy="-76" r="9" fill="#e8b080"/>
+            <rect x="-6" y="-67" width="13" height="28" rx="4" fill="#2a8899"/>
+            <path d="M-6 -55 Q-14 -44 -12 -36" stroke="#e8b080" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+            <!-- hand richting persoon 3 -->
+            <path d="M-6 -52 Q-20 -52 -26 -50" stroke="#e8b080" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+            <path d="M6 -55 Q12 -46 10 -38" stroke="#e8b080" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+            <path d="-4 -39 Q-5 -22 -5 0" stroke="#1C6E7E" stroke-width="4" fill="none" stroke-linecap="round" d="M-4 -39 Q-6 -22 -5 0"/>
+            <path d="M4 -39 Q6 -22 5 0" stroke="#1C6E7E" stroke-width="4" fill="none" stroke-linecap="round"/>
+          </g>
+
+          <!-- RTW label op shirt persoon 3 -->
+          <text x="224" y="174" font-family="Anton,sans-serif" font-size="5" fill="rgba(247,241,230,.6)" text-anchor="middle">RTW</text>
+
+          <!-- zand textuur strepen -->
+          <path d="M0 265 Q80 260 160 263 Q240 266 320 262 Q360 260 400 264" stroke="rgba(247,241,230,.1)" stroke-width="1" fill="none"/>
+          <!-- schaduwen voeten op zand -->
+          <ellipse cx="62" cy="252" rx="12" ry="3" fill="rgba(8,31,39,.3)"/>
+          <ellipse cx="148" cy="248" rx="11" ry="3" fill="rgba(8,31,39,.3)"/>
+          <ellipse cx="232" cy="244" rx="13" ry="3" fill="rgba(8,31,39,.3)"/>
+          <ellipse cx="318" cy="249" rx="11" ry="3" fill="rgba(8,31,39,.3)"/>
+        </svg>
+        <div class="photo__cap"><span class="photo__cap-t">✓ Portret & verhaal</span></div>
+      </div>
+    </div>
+    <div class="g2">
+      <div>
+        <div style="font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.3em;color:rgba(244,189,42,.5);margin-bottom:1.25rem">Gebruik</div>
+        <div style="display:flex;flex-direction:column;gap:.75rem">
+          <div style="padding:1rem 1.5rem;background:rgba(247,241,230,.04);border:1px solid rgba(247,241,230,.07);border-radius:2px;font-size:.83rem;color:rgba(247,241,230,.6);line-height:1.6;display:flex;gap:.875rem"><span style="color:var(--sun);flex-shrink:0">✓</span><div><strong style="color:var(--foam)">Warm licht</strong> — golden hour, vroeg ochtend of late middag</div></div>
+          <div style="padding:1rem 1.5rem;background:rgba(247,241,230,.04);border:1px solid rgba(247,241,230,.07);border-radius:2px;font-size:.83rem;color:rgba(247,241,230,.6);line-height:1.6;display:flex;gap:.875rem"><span style="color:var(--sun);flex-shrink:0">✓</span><div><strong style="color:var(--foam)">Echte deelnemers</strong> — authenticiteit is het merk</div></div>
+          <div style="padding:1rem 1.5rem;background:rgba(247,241,230,.04);border:1px solid rgba(247,241,230,.07);border-radius:2px;font-size:.83rem;color:rgba(247,241,230,.6);line-height:1.6;display:flex;gap:.875rem"><span style="color:var(--sun);flex-shrink:0">✓</span><div><strong style="color:var(--foam)">Verhaalmoment</strong> — coach naast deelnemer, fist-bump na eerste golf</div></div>
+          <div style="padding:1rem 1.5rem;background:rgba(247,241,230,.04);border:1px solid rgba(247,241,230,.07);border-radius:2px;font-size:.83rem;color:rgba(247,241,230,.6);line-height:1.6;display:flex;gap:.875rem"><span style="color:var(--sun);flex-shrink:0">✓</span><div><strong style="color:var(--foam)">Clip-path</strong> — afbeeldingen gebruiken schuine hoeken: <code style="color:var(--teal-lt)">polygon(0 0,88% 0,100% 8%,...)</code></div></div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.3em;color:rgba(201,64,64,.6);margin-bottom:1.25rem">Vermijd</div>
+        <div style="display:flex;flex-direction:column;gap:.75rem">
+          <div style="padding:1rem 1.5rem;background:rgba(247,241,230,.04);border:1px solid rgba(247,241,230,.07);border-radius:2px;font-size:.83rem;color:rgba(247,241,230,.6);line-height:1.6;display:flex;gap:.875rem"><span style="color:#c94040;flex-shrink:0">✕</span>Koude of blauwgrijze filters</div>
+          <div style="padding:1rem 1.5rem;background:rgba(247,241,230,.04);border:1px solid rgba(247,241,230,.07);border-radius:2px;font-size:.83rem;color:rgba(247,241,230,.6);line-height:1.6;display:flex;gap:.875rem"><span style="color:#c94040;flex-shrink:0">✕</span>Stockfoto's van onbekende surfers</div>
+          <div style="padding:1rem 1.5rem;background:rgba(247,241,230,.04);border:1px solid rgba(247,241,230,.07);border-radius:2px;font-size:.83rem;color:rgba(247,241,230,.6);line-height:1.6;display:flex;gap:.875rem"><span style="color:#c94040;flex-shrink:0">✕</span>Logo of tekst over gezichten geplaatst</div>
+          <div style="padding:1rem 1.5rem;background:rgba(247,241,230,.04);border:1px solid rgba(247,241,230,.07);border-radius:2px;font-size:.83rem;color:rgba(247,241,230,.6);line-height:1.6;display:flex;gap:.875rem"><span style="color:#c94040;flex-shrink:0">✕</span>Overlay van meer dan 94% opacity — foto verdwijnt</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 08 DIGITAAL ═══ -->
+<div class="strip" id="digitaal">
+  <span class="strip__num">08</span><span class="strip__line"></span><span class="strip__title">Digitale Toepassingen</span>
+</div>
+<section class="page pad" style="background:#fff;min-height:auto">
+  <div class="inner">
+    <span class="ch__label" style="color:var(--teal)">08 — Digitale Toepassingen</span>
+    <div class="g2" style="margin-bottom:4rem;align-items:end">
+      <div class="d2 t-navy">Op elk scherm<br><em class="a">herkenbaar.</em></div>
+      <p class="body body--dark">Consistentie over alle kanalen. Gestapeld logo, donkere achtergrond, "Find. Your. Flow." als leidend visueel — of het nu Instagram is of een doorverwijzingsbrief.</p>
+    </div>
+    <div class="g3" style="margin-bottom:2rem">
+      <div class="spec">
+        <div class="spec__pl">Instagram Feed</div>
+        <div class="spec__sz">1080 × 1080</div>
+        <div class="spec__d">Gestapeld logo linksboven. "Find. Your. Flow." als hero-tekst. Zon-geel CTA rechtsonder.</div>
+        <div style="aspect-ratio:1;background:var(--navy);border-radius:2px;padding:1.25rem;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;margin-top:auto;overflow:hidden">
+          <div class="logo logo--sm logo--light"><span class="logo__r">Ride</span><span class="logo__r">the</span><span class="logo__r logo__r--wave">Wave</span></div>
+          <div>
+            <div style="font-family:var(--d);font-size:1.6rem;text-transform:uppercase;line-height:.9">
+              <div style="color:var(--sun)">Find.</div>
+              <div style="color:transparent;-webkit-text-stroke:2px var(--teal-lt)">Your.</div>
+              <div style="color:var(--foam)">Flow.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="spec">
+        <div class="spec__pl">Instagram Story</div>
+        <div class="spec__sz">1080 × 1920</div>
+        <div class="spec__d">Portretformaat. Max 15 sec. Tekst buiten top/bodem 250px zone. Surfbus-detail werkt goed.</div>
+        <div style="aspect-ratio:9/16;background:var(--deep);border-radius:2px;padding:1.25rem;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;margin-top:auto;overflow:hidden">
+          <div class="logo logo--sm logo--light"><span class="logo__r">Ride</span><span class="logo__r">the</span><span class="logo__r logo__r--wave">Wave</span></div>
+          <div style="font-family:var(--d);font-size:1rem;text-transform:uppercase;color:var(--foam);line-height:.95">DE EERSTE<br>GOLF<br><span style="color:var(--sun)">VERANDERT</span><br>ALLES.</div>
+        </div>
+      </div>
+      <div class="spec">
+        <div class="spec__pl">Meta Feed Ad</div>
+        <div class="spec__sz">1080 × 1350</div>
+        <div class="spec__d">Actieshot boven, navy band onderaan. Stat als haak in kop. KPI: CPC €0,85–€1,40.</div>
+        <div style="aspect-ratio:4/5;background:var(--navy);border-radius:2px;overflow:hidden;display:flex;flex-direction:column;margin-top:auto">
+          <div style="flex:1;background:linear-gradient(135deg,#0a2830,#1C6E7E)"></div>
+          <div style="padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between">
+            <div><div style="font-family:var(--d);font-size:1rem;color:var(--sun);line-height:1">87%</div><div style="font-size:.6rem;color:rgba(247,241,230,.4);margin-top:.1rem">Groeit door</div></div>
+            <div class="logo logo--sm logo--light"><span class="logo__r">Ride</span><span class="logo__r">the</span><span class="logo__r logo__r--wave">Wave</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="spec">
+        <div class="spec__pl">Website Hero</div>
+        <div class="spec__sz">1920px × min 58vh</div>
+        <div class="spec__d">Gele accentbalk links (5px). Diagonale gradient 94%→8%. Slideshow 3 beelden, 7s interval.</div>
+        <div style="aspect-ratio:16/5;background:linear-gradient(108deg,#081f27 0%,#1C6E7E 60%,#2a8899 100%);border-radius:2px;overflow:hidden;position:relative;display:flex;align-items:flex-end;margin-top:auto">
+          <div style="position:absolute;inset:0;background:linear-gradient(108deg,rgba(8,31,39,.94),rgba(8,31,39,.08))"></div>
+          <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--sun)"></div>
+          <div style="position:relative;z-index:1;padding:.75rem 1rem;font-family:var(--d);font-size:.85rem;text-transform:uppercase;line-height:.9">
+            <div style="color:var(--sun)">Surf.</div>
+            <div style="color:transparent;-webkit-text-stroke:1.5px var(--teal-lt)">Leef.</div>
+            <div style="color:var(--foam)">Groei.</div>
+          </div>
+        </div>
+      </div>
+      <div class="spec">
+        <div class="spec__pl">E-mail handtekening</div>
+        <div class="spec__sz">600px · HTML</div>
+        <div class="spec__d">Gestapeld logo op navy. Inter Bold naam, Inter Regular functie. Geen afbeeldingen.</div>
+        <div style="background:var(--navy);padding:1rem 1.25rem;border-radius:2px;margin-top:auto">
+          <div class="logo logo--sm logo--light" style="margin-bottom:.75rem"><span class="logo__r">Ride</span><span class="logo__r">the</span><span class="logo__r logo__r--wave">Wave</span></div>
+          <div style="font-size:.75rem;font-weight:700;color:var(--foam)">Naam Achternaam</div>
+          <div style="font-size:.65rem;color:rgba(247,241,230,.4);margin-top:.1rem">Functie · Ride the Wave</div>
+          <div style="font-size:.65rem;color:var(--teal-lt);margin-top:.3rem">info@ridethewave.nl</div>
+        </div>
+      </div>
+      <div class="spec">
+        <div class="spec__pl">Google Ads</div>
+        <div class="spec__sz">Max 30 / 90 tekens</div>
+        <div class="spec__d">Doelgroep 14–28 jr. USPs: gratis, eigen instructeur, surfbus inbegrepen, alle niveaus.</div>
+        <div style="background:#f8f9fa;padding:.875rem;border-radius:2px;border:1px solid #e0e0e0;margin-top:auto">
+          <div style="font-size:.75rem;color:#1a0dab;text-decoration:underline">Gratis Surfen Amsterdam | Ride the Wave</div>
+          <div style="font-size:.65rem;color:#006621;margin:.15rem 0">ridethewave.nl/surfen</div>
+          <div style="font-size:.65rem;color:#545454;line-height:1.5">Gratis surflessen + surfbus voor jongeren 14–23. Board & wetsuit inbegrepen. Meld je aan.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<div class="closing">
+  <div>
+    <div style="font-family:var(--d);font-size:clamp(2.5rem,6vw,5rem);text-transform:uppercase;line-height:.9;color:var(--navy);letter-spacing:-.01em">Het water<br>wacht op jou.</div>
+    <div class="rule" style="margin:2rem 0 1.5rem;background:var(--navy)"></div>
+    <p style="font-size:.85rem;color:rgba(14,52,63,.58);max-width:40ch;line-height:1.7">Vragen over merkgebruik, logo of campagnes?</p>
+    <a href="mailto:info@ridethewave.nl" style="margin-top:.75rem;display:inline-block;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.2em;color:var(--navy);text-decoration:none;border-bottom:2px solid var(--navy);padding-bottom:.2rem">info@ridethewave.nl →</a>
+  </div>
+  <div class="logo logo--lg logo--dark" style="text-align:right;align-items:flex-end">
+    <span class="logo__r">Ride</span>
+    <span class="logo__r">the</span>
+    <span class="logo__r logo__r--wave">Wave</span>
+    <span class="logo__tagline">Find your flow</span>
+  </div>
+</div>
+
+<footer style="background:var(--deep);padding:2rem clamp(2rem,7vw,7rem);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;border-top:1px solid rgba(247,241,230,.06)">
+  <div style="font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.28em;color:rgba(247,241,230,.18)">Ride the Wave — Brand Bible 2026</div>
+  <div style="font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:rgba(247,241,230,.12)">Spring Marketing Agency</div>
+  <div style="font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.22em;color:rgba(247,241,230,.12)">Vertrouwelijk · Intern gebruik</div>
+</footer>
